@@ -1,0 +1,14 @@
+name: Markdown Links Validation
+
+on: push
+
+jobs:
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@main
+    - uses: gaurav-nelson/github-action-markdown-link-check@v1
+      with:
+        config-file: 'check_links_config.json'
+        use-verbose-mode: 'yes'
+        folder-path: 'docs/'
