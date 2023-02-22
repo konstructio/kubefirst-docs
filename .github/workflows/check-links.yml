@@ -9,6 +9,6 @@ jobs:
     - uses: actions/checkout@main
     - uses: gaurav-nelson/github-action-markdown-link-check@v1
       with:
-        config-file: 'check_links_config.json'
+        config-file: '.markdownlinkcheck.json'
         use-verbose-mode: 'yes'
         folder-path: 'docs/'
