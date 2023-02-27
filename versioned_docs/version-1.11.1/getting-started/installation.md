@@ -40,7 +40,8 @@ Choose one of the available options below
             </p>
             </div>
             <div class="card__footer">
-                <button class="button button--secondary button--block">View install instructions</button>
+                <a class="button button--secondary button--block" href="/docs/local_platform/getting_started/install_local">View install instructions
+                </a>
             </div>
         </div>
     </div>
@@ -62,7 +63,7 @@ Choose one of the available options below
             </p>
             </div>
             <div class="card__footer">
-                <a class="button button--secondary button--block" href="/docs/aws-github/install_aws_github">View install instructions
+                <a class="button button--secondary button--block" href="/docs/aws-github/getting_started/install_aws_github">View install instructions
                 </a>    
             </div>
         </div>

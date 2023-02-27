@@ -64,7 +64,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Home',
+        title: 'Kubefirst',
         logo: {
           alt: 'Kubefirst website',
           src: 'img/logo.svg',

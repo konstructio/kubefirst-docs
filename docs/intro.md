@@ -10,6 +10,5 @@ We support **local, AWS,** and **Civo clouds**. By running our cli commands agai
 
 ![Kubefirst architecture diagram](/img/kubefirst-arch.png)
 
-## Platform type comparison
 
-![table](/img/table.png)
+

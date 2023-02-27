@@ -1,12 +1,12 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
-# Installation
+# 1. Install AWS - GitHub Platform
 
 ## Prerequisites
 
-- Install the Kubefirst CLI if you haven't already done so.
+- Have the <a href="/docs/getting-started/installation#1-install-the-kubefirst-cli">kubefirst CLI installed</a>
 - Create an AWS account with billing enabled.
 - Establish a public hosted zone with dns routing established (<a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-working-with.html">see documentation</a>).
 - Connect with <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/AdministratorAccessserviceLevelSummary">AdministratorAccess</a> IAM credentials to your AWS account (<a href="https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys">see documentation</a>).
@@ -136,3 +136,81 @@ Simply run the following command:
 ```
 kubefirst cluster create
 ```
+
+<br></br>
+
+:::danger Save your URLS and passwords
+
+The kubefirst cluster create execution includes important information toward the end, including URLs and passwords. Please save this information!
+
+:::
+
+<br></br>
+
+You now have an EKS cluster with the following content installed in it:
+
+<table>
+  <thead>
+    <tr>
+      <th width="20%">Application</th>
+      <th width="30%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Nginx Ingress Controller</td>
+      <td>Ingress Controller</td>
+    </tr>
+    <tr>
+      <td>Cert Manager</td>
+      <td>Certificate Automation Utility</td>
+    </tr>
+    <tr>
+      <td>Certificate Issuers</td>
+      <td>Let's Encrypt browser-trusted certificates</td>
+    </tr>
+    <tr>
+      <td>Argo CD</td>
+      <td>GitOps Continuous Delivery</td>
+    </tr>
+    <tr>
+      <td>Argo Workflows</td>
+      <td>Application Continuous Integration</td>
+    </tr>
+    <tr>
+      <td>GitHub Action Runner</td>
+      <td>GitHub CI Executor</td>
+    </tr>
+    <tr>
+      <td>Vault</td>
+      <td>Terraform Workflow Automation</td>
+    </tr>
+    <tr>
+      <td>External Secrets</td>
+      <td>Syncs Kubernetes secrets with Vault secrets</td>
+    </tr>
+    <tr>
+      <td>Chart Museum</td>
+      <td>Helm Chart Registry</td>
+    </tr>
+    <tr>
+      <td>Metaphor JS API</td>
+      <td>(development, staging, production) instance of sample application</td>
+    </tr>
+    <tr>
+      <td>Metaphor Go API</td>
+      <td>(development, staging, production) instance of sample go application</td>
+    </tr>
+    <tr>
+      <td>Metaphor Frontend</td>
+      <td>(development, staging, production) instance of sample frontend application</td>
+    </tr>
+  </tbody>
+</table>
+
+<br></br>
+
+- These apps are all managed by Argo CD and the app configurations are in the ```gitops``` repo's ```registry``` folder.
+- The AWS infrastructure is terraform - that's also in your ```gitops``` repo, but in your ```terraform``` folder.
+
+![aws github gitops assets](/img/gitops-assets-aws-gh.png)
