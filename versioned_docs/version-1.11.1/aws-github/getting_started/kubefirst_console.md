@@ -16,7 +16,6 @@ An example of terminal output following cluster creation:
 
 ![terminal output](/img/cluster-create-result-aws-gh.png)
 
-
 :::caution Protect your secrets
 
 These are not your personal credentials. These are administrator credentials that can be used if you ever need to authenticate and administer your tools if your OIDC provider ever becomes unavailable. Please protect these secrets and store them in a safe place.

@@ -98,7 +98,7 @@ Let's init your local setup providing values for the following flags:
 
 <br />
 
-```
+```shell
 kubefirst init \
 --admin-email yourname@yourcompany.com \
 --cloud aws \
@@ -123,7 +123,7 @@ config:
   cloud: aws
 ```
 
-```
+```shell
 kubefirst init  -c ./config.yaml
 ```
 
@@ -133,7 +133,7 @@ The ```init``` process produces a directory of utilities, a state file, and some
 
 Simply run the following command:
 
-```
+```shell
 kubefirst cluster create
 ```
 
