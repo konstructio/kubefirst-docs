@@ -13,7 +13,7 @@ In this file, you'll see some blocks that represent admin users - the ```kubefir
 
 Edit this code to replace the values for the email, first_name, github_username, last_name, and username.
 
-```
+```terraform
 module "admin_one" {
   source = "./modules/user/github"
   acl_policies        = ["admin"]
@@ -42,7 +42,7 @@ Commit this change to a new branch and create a merge request. This will kick of
 
 To apply these changes, you or someone in the organization can submit a comment on that Merge Request with the following comment text:
 
-```
+```shell
 atlantis apply
 ```
 
@@ -55,7 +55,6 @@ Atlantis will always run plans automatically for you when a merge request is ope
 ## Step 4 - Access Vault for initial password
 
 Any new users you have created through this process will have their temporary initial passwords stored in Vault. You can access Vault using the information provided to you in the terminal as well, and you will find your users' individual initial passwords in the Vault secret store ```/secrets/users/<username>```.
-
 
 ![vault users](/img/vault-users.png)
 

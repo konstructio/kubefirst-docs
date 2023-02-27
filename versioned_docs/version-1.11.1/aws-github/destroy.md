@@ -10,8 +10,7 @@ The kubefirstCLI downloads some tools used during cluster provisioning, for exam
 
 :::
 
-
-## 1. Ensure .kubefirst file is in home directory 
+## 1. Ensure .kubefirst file is in home directory
 
 If you just recently ran install from your localhost, you'll already have the file on your localhost at ```~/.kubefirst``` that's needed to destroy. If you don't have this file locally, you'll need to download it from your s3 bucket that was created during provisioning and add it to your home directory.
 
@@ -19,7 +18,7 @@ If you just recently ran install from your localhost, you'll already have the fi
 
 With your ~/.kubefirst file in place, run:
 
-```
+```shell
 kubefirst cluster destroy
 ```
 
@@ -27,15 +26,15 @@ kubefirst cluster destroy
 
 As AWS selection will create S3 buckets, if you don't want to persist these buckets, run:
 
-``` 
+```shell
 kubefirst clean  --destroy-buckets --destroy-confirm
 ```
 
-**Or**
+Or
 
 To remove the files generated locally and preserve the S3 buckets for future re-use, run:
 
-``` 
+```shell
 kubefirst clean
 ```
 

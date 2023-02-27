@@ -5,9 +5,9 @@ sidebar_position: 1
 # Installing Kubefirst
 
 ## Prerequisites
+
 - Give your AWS Credentials files at: `$HOME/.aws`
 - AWS IAM Authenticator dependency, that is Helm requirement to authenticate to the EKS cluster. - needs to be explained better...
-
 
 ## 1. Install the Kubefirst CLI
 
@@ -33,7 +33,7 @@ Choose one of the available options below
             <div class="card__body">
             <h3>Kubefirst Local (GitHub)</h3>
             <p>
-               The <strong>fastest</strong> way to explore the kubefirst platform! 
+               The <strong>fastest</strong> way to explore the kubefirst platform!
             </p>
             <p>
                With kubefirst local, you can explore some of the best parts of Kubefirst running for free on a local k3d cluster in less than 5 minutes - without any cloud costs or domain prerequisites.
@@ -64,7 +64,7 @@ Choose one of the available options below
             </div>
             <div class="card__footer">
                 <a class="button button--secondary button--block" href="/docs/aws-github/getting_started/install_aws_github">View install instructions
-                </a>    
+                </a>
             </div>
         </div>
     </div>
@@ -104,7 +104,7 @@ Choose one of the available options below
             <h3>Kubefirst on CIVO Cloud (GitHub) 🆕</h3>
             <p>
                The perfect cloud environment where Kubernetes will be the center of attention.
-            </p> 
+            </p>
             <p>A <strong>simple cloud footprint</strong> with a powerful open source cloud native tool   set for identity and infrastructure management, application delivery, and secrets management.
             </p>
             </div>

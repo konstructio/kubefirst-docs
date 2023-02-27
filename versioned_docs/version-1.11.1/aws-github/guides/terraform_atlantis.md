@@ -31,10 +31,9 @@ The following table shows how state is stored based on your installation selecti
 | AWS S3 Bucket                      |         X          |         X          |                    |
 | Local - minio in cluster S3 Bucket |                    |                    |         X          |
 
+### AWS cloud install
 
-### AWS cloud install 
-
-```
+```shell
 kubefirst cluster init -cloud aws
 ```
 
@@ -53,6 +52,7 @@ Attention: if you k3d cluster is destroyed, the state will be destroyed also. Lo
 
 :::tip Tips
 **What is the general flow of changes using atlantis for IaC?**
+
 - **Create a Commit and Merge Request:** The change described by terraform instructions will be created in a PR at a folder which atlantis is listening for it. Once the Change Request is created on github/gitlab, atlantis will plan it and show possible impacts of it.
 
 - **Approve the change:** Once you are ready, someone with access will provide atlantis apply on the change request, triggering the processs of executing the plan created.

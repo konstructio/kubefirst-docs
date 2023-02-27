@@ -14,7 +14,6 @@ Unfortunately, we have some limitations running kubefirst locally, and we listed
 - RAM: 16GB RAM
 - HDD: 10GB HD space (docker images) + 5GB HD space (minio-storage)
 
-
 ## Feature limitations
 
 - **Gitlab:** to keep the local install "slim" we couldn't offer Gitlab as a Git provider option.
