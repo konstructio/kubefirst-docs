@@ -38,6 +38,9 @@
 		},
 		{
 			"pattern": "https://www.tmcnet.com*"
+		},
+		{
+			"pattern": "/img/*"
 		}
 	],
   "timeout": "30s",

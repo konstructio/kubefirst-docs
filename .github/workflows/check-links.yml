@@ -11,4 +11,4 @@ jobs:
       with:
         config-file: '.markdownlinkcheck.json'
         use-verbose-mode: 'yes'
-        folder-path: 'docs/'
+        folder-path: 'docs/, versioned_docs/'
