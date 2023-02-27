@@ -12,7 +12,6 @@ We support **local, AWS,** and **Civo clouds**. By running our cli commands agai
 
 ![Kubefirst architecture diagram](/img/kubefirst-arch.png)
 
-
 ## How kubefirst works
 
 - The ```kubefirst``` CLI runs on your localhost and will create an GitLab or GitHub kubernetes ecosystem including Vault, ArgoCD, Argo Workflows, self-hosted runners for GitHub and GitLab, and an application to demonstrate how everything on the platform works.
@@ -125,7 +124,6 @@ We support **local, AWS,** and **Civo clouds**. By running our cli commands agai
 
 *<em> On local, atlantis uses an ngrok tunnel to allow github to call us back, so it may not be production ready.</em>
 
-
 ## Console UI
 
 ### AWS or CIVO console
@@ -133,7 +131,6 @@ We support **local, AWS,** and **Civo clouds**. By running our cli commands agai
 Once you run ```kubefirst cluster create``` command at the end of the installation will open a new browser tab with the Console UI at ```https://kubefirst.<your.domain>``` to provide you a dashboard to navigate through the different services that were previsioned.
 
 ![table](/img/console_UI.png)
-
 
 ### Local console
 

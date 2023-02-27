@@ -8,7 +8,7 @@ sidebar_position: 8
 
 Before you attempt to recreate a Kubefirst local platform, you'll need to destroy your k3d cluster and the git repositories that we created for you using this command:
 
-```
+```shell
 kubefirst local destroy
 ```
 
@@ -16,7 +16,7 @@ kubefirst local destroy
 
 You can clean kubefirst files from your localhost by running:
 
-```
+```shell
 kubefirst clean
 ```
 
@@ -26,9 +26,10 @@ This command will remove the following content:
 - ```~/.k1/*```
 
 ## Removing CA of trusted store
+
 If you executed the steps of install the CA of MkCert (described on Install process) and if you want, you can also clean your trusted store.
 
-```
+```shell
 mkcert -uninstall
 ```
 

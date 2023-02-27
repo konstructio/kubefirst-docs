@@ -5,6 +5,7 @@ sidebar_position: 2
 # 1. Install Local Platform
 
 ## Prerequisites
+
 - Have the <a href="/docs/getting-started/installation#1-install-the-kubefirst-cli">kubefirst CLI installed</a>
 - Have docker installed (<a href="https://docs.docker.com/get-docker/">here's how</a>)
 - Have created a <a href="https://github.com/">personal github account</a> (gitops and metaphor-frontend repositories will be created in your account and should not pre-exist)
@@ -19,7 +20,7 @@ The ngrok tunnel used for kubefirst local has a 2-hour expiration unless you cre
 
 To create a new Kubefirst cluster locally, run:
 
-```
+```shell
 kubefirst local
 ```
 
@@ -31,7 +32,7 @@ Please export a ```KUBEFIRST_GITHUB_AUTH_TOKEN``` if you need your ephemeral env
 
 The installation process may take a few minutes. If you are successful you should see:
 
-```
+```shell
 Cluster "kubefirst" is up and running!
 ```
 
@@ -58,7 +59,7 @@ After the ~5 minutes installation, your browser will launch a new tab to the **K
 
 To resolve the warning that the browser shows when you access one of your applications, run the command:
 
-```
+```shell
 mkcert -install
 ```
 
