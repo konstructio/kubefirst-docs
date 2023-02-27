@@ -10,7 +10,7 @@ In this tutorial we will show how to add users to your local cluster through <a 
 
 Navigate to the ```gitops``` repository in your personal GitHub, clone the contents, and create a new branch:
 
-```
+```shell
 cd gitops
 git checkout -b new-user
 ```
@@ -19,7 +19,7 @@ git checkout -b new-user
 
 The file ```terraform/users/admins-github.tf``` contains blocks that represent admin users - the kubefirst_bot user, and a commented-out admin_one user:
 
-```
+```terraform
 module "admin_one" {
   source = "./modules/user/github"
   acl_policies        = ["admin"]
@@ -59,10 +59,9 @@ The ngrok tunnel used for kubefirst local has a 2-hour expiration unless you cre
 
 To apply these changes, you or someone in the organization can submit a comment on that Merge Request with the following comment text:
 
-```
+```shell
 atlantis apply
 ```
-
 
 Doing so will instruct Atlantis to apply the plan. It will report back with the results of the apply within a minute or so.
 

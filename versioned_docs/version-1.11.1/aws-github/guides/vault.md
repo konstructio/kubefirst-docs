@@ -56,8 +56,7 @@ The ```external-secrets-operator``` application will be preconfigured with a ser
 
 ### Additional auth methods
 
-There are other authentication schemes available to you as well: 
-https://www.vaultproject.io/docs/auth
+There are [other authentication schemes](https://www.vaultproject.io/docs/auth) available to you as well.
 
 ## Secrets Setup for Applications
 
@@ -125,9 +124,9 @@ metaphor:
 
 Applying the above ExternalSecret resource to your Kubernetes namespace is enough to produce a Kubernetes secret which will stay in sync with Vault's values. Let's confirm:
 
-#### 1. Get all secrets in the staging namespace:
+#### 1. Get all secrets in the staging namespace
 
-```
+```shell
 kubectl -n staging get secrets
 
 NAME                               TYPE                                  DATA   AGE
@@ -142,10 +141,9 @@ metaphor-staging                   Opaque                                2      
 metaphor-tls                       kubernetes.io/tls                     2      12h
 ```
 
-#### 2. Get the yaml of the one named ```metaphor-staging```:
+#### 2. Get the yaml of the one named ```metaphor-staging```
 
-```
-
+```shell
 kubectl -n staging get secret metaphor-staging -oyaml
 
 apiVersion: v1
@@ -175,12 +173,11 @@ metadata:
   resourceVersion: "21526"
   uid: 1c2c9cd8-6aed-4e65-8e5c-57d3fd578b4d
 type: Opaque
-
 ```
 
-#### 3. Confirm that it's your value from vault:
+#### 3. Confirm that it's your value from vault
 
-```
+```shell
 echo "c3RhZ2luZyBzZWNyZXQgMQ==" | base64 -d
 
 staging secret 1%
@@ -198,13 +195,13 @@ There are a ton of other ways secrets can be leveraged in your app, like <a href
 
 :::
 
-## How to...
+## How to
 
 ### Change my users password?
 
 Simple, if you are the owner of the user.
 
-- Log with the user on vault: https://vault.$yourdomain.com/ui/vault/auth?with=userpass
+- Log with the user on vault: `https://vault.$yourdomain.com/ui/vault/auth?with=userpass`
 - Go to "Access" tab
 - Select "Auth Methods" (left side)
 - Select "userpass" (right side)
@@ -212,4 +209,3 @@ Simple, if you are the owner of the user.
 - Click Edit user (right side)
 - Fill new password (right side)
 - Click "Save" (right side)
-

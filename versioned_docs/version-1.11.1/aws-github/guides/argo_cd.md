@@ -30,4 +30,4 @@ The registry of our Argo CD apps are all in the ```/registry``` root directory. 
 
 ## External docs
 
-https://argoproj.github.io/argo-cd/
+The documentation for [Argo CD](https://argo-cd.readthedocs.io/en/stable/)
