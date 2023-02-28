@@ -27,7 +27,7 @@ To create a new Kubefirst cluster locally, run
 kubefirst local
 ```
 
-More information on `kubefirst local`, including optional flags, can be found [in the CLI Documentation](../../tooling/kubefirst-cli.md)
+More information on `kubefirst local`, including optional flags, can be found when running `kubefirst help`.
 
 If your run is not successful, errors and troubleshooting information will be stored in a local log file specified during the installation run.
 
