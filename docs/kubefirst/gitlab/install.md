@@ -72,7 +72,7 @@ config:
 kubefirst init -c config.yaml
 ```
 
-The `init` process produces a directory of utilities, a state file, and some staged platform content that can now be found at `~/.kubefirst`. [Here](../../tooling/kubefirst-cli.md) you can find more details about `init` command.
+The `init` process produces a directory of utilities, a state file, and some staged platform content that can now be found at `~/.kubefirst`.
 
 ### Step 2 - `kubefirst cluster create`
 

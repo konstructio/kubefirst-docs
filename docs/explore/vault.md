@@ -20,7 +20,7 @@ For local it's backed by a local S3-like backend in [MinIO](https://min.io/) and
             devRootToken: "k1_local_vault_token"
 ```
 
-Reference: [vault deployment](https://github.com/kubefirst/gitops-template/blob/main/localhost/components/vault/application.yaml)
+Reference: [vault deployment](https://github.com/kubefirst/gitops-template/blob/main/k3d-github/.kubefirst/clusters/mgmt-template/components/vault/application.yaml)
 
 Your cluster will be set up with Vault running in the k3d cluster. The only backend enabled on the local cluster is the one that provides access to secrets from external-secrets-operator.
 
@@ -211,11 +211,13 @@ Simple, if you are the owner of the user.
 ### Who can change users password?
 
 - Yourself logged with your user/password
-- Somone with the vault root token
+- Somone with the Vault root token
 
-References:  [Vault Policies Cloud/AWS](https://github.com/kubefirst/gitops-template/blob/main/terraform/vault/policies.tf) and [Vault Policies Local](https://github.com/kubefirst/gitops-template/blob/main/localhost/terraform/vault/policies.tf)
+Vault Policies references:
+
+- [AWS with GitHub](https://github.com/kubefirst/gitops-template/blob/main/aws-github/terraform/vault/policies.tf)
+- [Local with GitHub](https://github.com/kubefirst/gitops-template/blob/main/k3d-github/terraform/vault/policies.tf)
 
 ### Can someone with the root token update my password?
 
-yes, just follow the steps at **"How can I change my users password?"** select a user, and edit the user.
-The root token gives full access to update vault secrets.
+yes, just follow the steps at **"How can I change my users password?"** select a user, and edit the user. The root token gives full access to update vault secrets.

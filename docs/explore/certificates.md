@@ -10,7 +10,7 @@ During the installation process, ArgoCD applications are instantiated, applying 
 
 ### Backup and Restore Certificates
 
-Certificates requests for certs provided by LetsEncrypt are rate limited, and Kubefirst can also help in that regard! We have two features to [backupSSL](../tooling/kubefirst-cli.md) and [restoreSSL](../tooling/kubefirst-cli.md) certificates. When a new installation is started, one of the functionalities is to backup your SSL certificates at your AWS account on an S3 bucket followed by `k1 + your-domain-name`.
+Certificates requests for certs provided by LetsEncrypt are rate limited, and Kubefirst can also help in that regard! We have two features to backup SSL and restore SSL certificates. When a new installation is started, one of the functionalities is to backup your SSL certificates at your AWS account on an S3 bucket followed by `k1 + your-domain-name`.
 
 **Practical use case scenario:**
 

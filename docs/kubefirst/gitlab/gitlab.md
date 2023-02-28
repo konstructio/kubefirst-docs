@@ -6,7 +6,7 @@ title: GitLab
 
 ## Self Hosted GitLab Server
 
-Our GitLab server runs in kubernetes in the `gitlab` namespace. It's registered in your `gitops` repository at [registry/gitlab.yaml](https://github.com/kubefirst/gitops-template/blob/main/registry/gitlab.yaml)
+Our GitLab server runs in kubernetes in the `gitlab` namespace. It's registered in your `gitops` repository at [registry/gitlab.yaml](https://github.com/kubefirst/gitops-template/blob/main/aws-gitlab/registry/gitlab.yaml)
 
 The GitLab chart has [great docs](https://docs.gitlab.com/charts/installation/index.html) and administrators should familiarize themselves with their best practices.
 
