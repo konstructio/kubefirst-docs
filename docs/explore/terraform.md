@@ -192,6 +192,7 @@ Any new users you have created through this process will have their temporary in
 ### What else can I use atlantis & terraform for?
 
 For example, you can use your gitops repo to help track the creation of repos:
+
 - [aws+github repo template](https://github.com/kubefirst/gitops-template/blob/main/aws-github/terraform/github/repos.tf)
 - [local+github repo template](https://github.com/kubefirst/gitops-template/blob/main/k3d-github/terraform/github/repos.tf)
 
