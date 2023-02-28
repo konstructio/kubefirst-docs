@@ -12,12 +12,12 @@ At Kubefirst, we believe that every contribution is valuable, not just the code 
 
 - [bug reports](https://github.com/kubefirst/kubefirst/issues/new);
 - [feature requests](https://github.com/kubefirst/kubefirst/issues/new?assignees=&labels=feature-request&template=feature_request.md&title=);
-- [documentations issues reports](https://github.com/kubefirst/kubefirst/issues/new?assignees=&labels=feature-request&template=feature_request.md&title=) like unclear section, missing information or even typos;
-- and, of course, any code contributions to Kubefirst, or the documentations itself.
+- [documentation issues reports](https://github.com/kubefirst/kubefirst/issues/new?assignees=&labels=feature-request&template=feature_request.md&title=) like unclear section, missing information or even typos;
+- and, of course, any code contributions to Kubefirst, or the documentation itself.
 
 Before making a code change, first discuss your idea via an [issue](https://github.com/kubefirst/docs/issues/new/choose). Please check if a feature request or bug report does [already exist](https://github.com/docs/kubefirst/issues/) before creating a new one.
 
-## Getting Started with the documentation
+## Getting Started With the Documentation
 
 We are using [Docusaurus](https://github.com/facebook/docusaurus) as our documentation platform. More information on the platform in their [documentation](https://docusaurus.io/docs).
 
@@ -25,9 +25,26 @@ We are using [Docusaurus](https://github.com/facebook/docusaurus) as our documen
 
 WIP
 
+#### Markdown
+
+Before being able to merge your PR, the [GitHub Action responsible for checking the Markdown validity](https://github.com/kubefirst/docs/blob/main/.github/workflows/check-markdown.yml) needs to pass. If you want to test your changes locally before sending a PR, you can do it by using [act](https://github.com/nektos/act), and run `act -j markdown-check`. We follow the [rules](https://github.com/DavidAnson/markdownlint#rules--aliases) from the [markdownlint application](https://github.com/DavidAnson/markdownlint) with the exceptions of:
+
+- [MD013](https://github.com/DavidAnson/markdownlint/blob/main/doc/md013.md): limiting the line length to 80 as it's easier to manage without line breaks within the text for documentation content.
+- [MD024](https://github.com/DavidAnson/markdownlint/blob/main/doc/md024.md): preventing same text headers as it's needed for our project documentation.
+- [MD033](https://github.com/DavidAnson/markdownlint/blob/main/doc/md033.md): restrict inline HTML as we sometimes need more customization for the content than what Markdown allows.
+
+We also enforce some styling to prevent ambiguity, and ensure consistency for:
+
+- MD049: underscores for italic text.
+- MD050: asterisks for bold text.
+
 ### Update the platform
 
 WIP
+
+### Testing your modifications
+
+To run our documentation locally, simply run `npm start`.
 
 ## Getting Started with the Code
 
