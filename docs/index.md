@@ -1,3 +1,6 @@
+---
+slug: /
+---
 # Kubefirst Platforms
 
 ## What is Kubefirst?

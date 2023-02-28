@@ -38,11 +38,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          routeBasePath: '/'
         },
         blog: {
           showReadingTime: true,
@@ -71,16 +67,9 @@ const config = {
           href: 'https://kubefirst.io/',
         },
         items: [
-          {
-            type: 'doc',
-            docId: 'index',
-            position: 'left',
-            label: 'Documentation',
-          },
-          {
+          /*{
             type: 'docsVersionDropdown',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          },*/
           {
             href: 'https://github.com/kubefirst/kubefirst',
             label: 'GitHub',
@@ -92,24 +81,11 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Documentation',
-                to: '/docs/index',
-              },
-            ],
-          },
-          {
             title: 'Community',
             items: [
               {
                 label: 'Slack',
-                href: 'https://join.slack.com/t/kubefirst/shared_invite/zt-r0r9cfts-OVnH0ooELDLm9n9p2aU7fw',
-              },
-              {
-                label: 'Support',
-                href: 'https://kubefirst.io/support',
+                href: 'https://kubefirst.io/slack',
               },
               {
                 label: 'Twitter',
@@ -122,7 +98,7 @@ const config = {
             items: [
               {
                 label: 'Blog',
-                to: '/blog',
+                to: 'https://kubefirst.io/blog',
               },
               {
                 label: 'GitHub',
@@ -131,7 +107,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Kubeshop.`,
+        copyright: `Copyright © 2021-${new Date().getFullYear()} Kubefirst.`,
       },
       prism: {
         theme: lightCodeTheme,
