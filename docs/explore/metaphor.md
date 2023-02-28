@@ -101,8 +101,8 @@ build
 ```
 
 - **Concept 1:** If you are using github(local or cloud), it will be trigger based at `.github/workflows/`; Or if you are using gitlab, installation, it will be trigger based at `.gitlab-ci.yaml`. The idea is that these are used for simply triggering an **argo workflows**.
-- **Concept 2:** By using **argo workflows** to drive your CI jobs you can re-use some of the **CWFT** we provide and also create your own [**CWFTs**](../tooling/argo/cwft-overview.md) to help build your toolset, the ideia here is to have more generic automations that are not bound to a given git provider tool.
-- **Concept 3:** Use our [**CWFTs**](../tooling/argo/cwft-overview.md) as the basis to build your library of automations by adding new ones that fit your application needs.
+- **Concept 2:** By using **argo workflows** to drive your CI jobs you can re-use some of the **CWFT** we provide and also create your own **CWFTs** to help build your toolset, the ideia here is to have more generic automations that are not bound to a given git provider tool.
+- **Concept 3:** Use our **CWFTs** as the basis to build your library of automations by adding new ones that fit your application needs.
 - **Concept 4:** Application is build from a Dockerfile that is defined on the `build` folder.
 
 ## Metaphor and Helm
@@ -115,7 +115,7 @@ The files you be interested are:
 chart/Metaphor
 ```
 
-There is a [CWFT meant to bump a chart](../tooling/argo/cwft-helm.md#helm-increment-chart-patch) version and update chart museum. This automation is to guide how to leverage the tooling already embeded on kubefirst to serve applications internally.
+There is a CWFT meant to bump a chart version and update chart museum. This automation is to guide how to leverage the tooling already embeded on kubefirst to serve applications internally.
 
 ## Wrapping up
 
@@ -124,7 +124,6 @@ Here is described how metaphor gives you a demo of most of the tooling added to 
 Want to learn more, check:
 
 - Gitops
-- [CWFTs](../tooling/argo/cwft-overview.md)
 - [Vault](./vault.md)
 
 ## Tips
@@ -133,7 +132,7 @@ Want to learn more, check:
 
 If you want to use it as base of your application, and bring a new application to a local installation. Be aware, as we use user accounts for local, you need to add a github runner deployment for that new application repo.
 
-Reference: [runnerdeployment.yaml](https://github.com/kubefirst/gitops-template/blob/main/localhost/components/github-runner/runnerdeployment.yaml)
+Reference: [runnerdeployment.yaml](https://github.com/kubefirst/gitops-template/blob/main/k3d-github/.kubefirst/clusters/mgmt-template/components/github-runner/runnerdeployment.yaml)
 
 At your gitops repo go to `components/github-runner/runnerdeployment.yaml` and clone this file, then update the property `spec.template.spec.repository` to point to `your-user/your-repo`. This will deploy a new set of runners to observe that repo for you, allowing CI triggers to be executed.
 

@@ -40,7 +40,13 @@
 			"pattern": "https://www.tmcnet.com*"
 		},
 		{
-			"pattern": "/img/*"
+			"pattern": "https://.*localdev.me*"
+		}
+	],
+	"replacementPatterns": [
+		{
+		  "pattern": "^/img/*",
+		  "replacement": "/static/img/*"
 		}
 	],
   "timeout": "30s",
