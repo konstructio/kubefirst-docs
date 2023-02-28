@@ -4,7 +4,7 @@ title: GitHub Token
 
 Kubefirst uses a GitHub token to authenticate with the GitHub API. Tokens can be used to perform various actions on a user's behalf, such as creating, and deleting repository files. Kubefirst uses a limited number of scopes (what is allowed with the issued token) to provision the Kubefirst platform such as creating GitHub repositories and updating GitHub repository webhook URL.
 
-Kubefirst issue GitHub Tokens at the beginning of the installation using [GitHub device login flow](https://docs.github.com/en/developers/apps/building-oauth-apps/authorizing-oauth-apps#device-flow).
+Kubefirst issue GitHub Tokens at the beginning of the installation using [GitHub device login flow](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps#device-flow).
 
 ## GitHub Token Scopes
 

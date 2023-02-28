@@ -47,7 +47,7 @@ Your terraform state is stored in a local in cluster s3 bucket named `kubefirst-
 
 ### What is the general flow of changes using atlantis for IaC?
 
-- **Create a Commit and Merge Request:** The change described by terraform instructions will be created in a PR at a folder which [atlantis is listening for it](https://github.com/kubefirst/gitops-template/blob/main/atlantis.yaml). Once the Change Request is created on github/gilab, atlantis will plan it and show possible impacts of it.
+- **Create a Commit and Merge Request:** The change described by terraform instructions will be created in a PR at a folder which [atlantis is listening for it](https://github.com/kubefirst/gitops-template/blob/main/aws-github/atlantis.yaml). Once the Change Request is created on github/gilab, atlantis will plan it and show possible impacts of it.
 - **Approve the change:** Once you are ready, someone with access will provide `atlantis apply` on the change request, triggering the processs of executing the `plan` created.
 - **Change is applied by atlantis**: Atlantis will execute the terraform plan, and terraform will update shared statestore with new current state changes, change request will be merged to main,  reflecting the new desried state.
 
@@ -136,7 +136,7 @@ Once you've provided them this initial password, they can update their own passw
 
 ![HashiCorp Vault Authentification Method](../img/kubefirst/vault/vault-auth-method.gif)
 
-For a more detailed example you can have a look at the [reference file](https://github.com/kubefirst/gitops-template/blob/main/localhost/terraform/users/admins-github.tf)
+For a more detailed example you can have a look at the [reference file](https://github.com/kubefirst/gitops-template/blob/main/k3d-github/terraform/users/admins.tf)
 
 ### How can I use atlantis to add a new user on my gitlab backed installation?
 
@@ -192,11 +192,9 @@ Any new users you have created through this process will have their temporary in
 ### What else can I use atlantis & terraform for?
 
 For example, you can use your gitops repo to help track the creation of repos:
+- [aws+github repo template](https://github.com/kubefirst/gitops-template/blob/main/aws-github/terraform/github/repos.tf)
+- [local+github repo template](https://github.com/kubefirst/gitops-template/blob/main/k3d-github/terraform/github/repos.tf)
 
-- [aws+github repo template](https://github.com/kubefirst/gitops-template/blob/main/terraform/github/repos.tf)
-- [aws+gitlab repo template](https://github.com/kubefirst/gitops-template/blob/main/terraform/gitlab/kubefirst-repos.tf)
-- [local+github repo template](https://github.com/kubefirst/gitops-template/blob/main/localhost/terraform/github/repos.tf)
-
-With terraform using the S3 based state store, you can add any terraform file to the gitops repo on which [atlantis is listeting for](https://github.com/kubefirst/gitops-template/blob/main/atlantis.yaml) and atlantis will try to plan and when approved to apply such plan for you.
+With Terraform using the S3 based state store, you can add any Terraform file to the gitops repo on which [atlantis is listeting for](https://github.com/kubefirst/gitops-template/blob/main/aws-github/atlantis.yaml) and atlantis will try to plan and when approved to apply such plan for you.
 
 Beyond repositories and users, atlantis allow you to have your IaC demands to be tracked by your main branch registry. Easing up the usage of terraform based workflows to update the infractruture you are operating.
