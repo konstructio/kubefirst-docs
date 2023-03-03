@@ -38,6 +38,10 @@ We also enforce some styling to prevent ambiguity, and ensure consistency for:
 - MD049: underscores for italic text.
 - MD050: asterisks for bold text.
 
+#### Syntax Highlight
+
+Docusaurus is using Prism for code block syntax highlighting. Here's a list of [supported languages](https://prismjs.com/#supported-languages).
+
 ### Update the platform
 
 WIP
