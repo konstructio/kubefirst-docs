@@ -6,19 +6,19 @@ title: Install
 
 `kubefirst` is our command line tool that installs the Kubefirst platform to your local or cloud environment. It installs a fully automated platform of open source cloud native tools to your Civo cloud with a simple `kubefirst civo create` command.
 
-![Kubefirst CIVO Cluster Diagram](../../img/kubefirst/civo/kubefirst-cluster-create.png)
+![Kubefirst CIVO Cluster Diagram](../../../img/kubefirst/civo/kubefirst-cluster-create.png)
 
 ### Prerequisites
 
 #### Local Prerequisites
 
-- [kubefirst CLI](../../kubefirst/overview.md#how-to-install-kubefirst-cli)
+- [kubefirst CLI](../../../kubefirst/overview.md#how-to-install-kubefirst-cli)
 
 #### GitHub Prerequesites
 
 - [A github org](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch)
 - [A new github account for your `kbot` automation user](https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account)
-- [A github Personal Access Token for your `kbot` account](../../explore/github-token.md)
+- [A github Personal Access Token for your `kbot` account](../../../explore/github-token.md)
 
 #### Civo Prerequisites
 

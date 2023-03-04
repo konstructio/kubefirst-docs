@@ -2,7 +2,7 @@
 title: GitLab
 ---
 
-![Metaphor app in GitLab](../../img/kubefirst/gitlab/metaphor-in-gl.png)
+![Metaphor app in GitLab](../../../img/kubefirst/gitlab/metaphor-in-gl.png)
 
 ## Self Hosted GitLab Server
 
@@ -26,11 +26,11 @@ If you ever run into an issue on a GitLab upgrade or gitops operation that chang
 
 However since GitLab **is the Git source of truth** for your GitOps, you cannot roll back GitLab by reverting the commit because Git itself may be inaccessible to Argo CD. To remedy this, conduct a rollback to a prior state, go to the `gitlab` application in Argo CD and click the `History and Rollback` button in the header.
 
-![GitLab restore in Argo CD](../../img/kubefirst/gitlab/gitlab-restore-in-argocd.png)
+![GitLab restore in Argo CD](../../../img/kubefirst/gitlab/gitlab-restore-in-argocd.png)
 
 This will bring up a window with all versions of GitLab. Presumably, you'll want to restore to the 2nd version in this list, which would represent GitLab's state just prior to the last change that was made through GitOps. Assuming that's the version you want to restore to, click the vertical elipsis and select Rollback.
 
-![Rollback](../../img/kubefirst/gitlab/restore.png)
+![Rollback](../../../img/kubefirst/gitlab/restore.png)
 
 This will warn you that you're disabling auto-sync, click confirm.
 

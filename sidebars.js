@@ -18,37 +18,73 @@ const sidebars = {
     'kubefirst/overview',
     {
       type: 'category',
-      label: 'Local Platform',
-      items: [
-        {
-          type: 'category',
-          label: 'Explore',
-          items: [
-            'kubefirst/local/install',
-            'kubefirst/local/explore/overview',
-            'kubefirst/local/explore/console',
-            'kubefirst/local/explore/user-creation',
-            'kubefirst/local/explore/metaphor',
-            'kubefirst/local/explore/github-repositories'
-          ]
-        },
-        'kubefirst/local/limitations',
-        'kubefirst/local/destroy'
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Civo Platform',
+      label: 'Local Platform (GitHub)',
       items: [
         {
           type: 'category',
           label: 'Getting Started',
           items: [
-            'kubefirst/civo/install',
-            'kubefirst/civo/getting-started/overview',
-            'kubefirst/civo/getting-started/github-repositories',
-            'kubefirst/civo/getting-started/user-creation',
-            'kubefirst/civo/getting-started/metaphor'
+            'kubefirst/local/github/install',
+            'kubefirst/local/console',
+            'kubefirst/local/overview',
+            'kubefirst/local/github/repositories',
+            'kubefirst/civo/user-creation'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Explore',
+          items: [
+            'kubefirst/local/user-creation',
+            'kubefirst/local/metaphor',
+            'kubefirst/local/limitations',
+            'explore/telemetry'
+          ]
+        },
+        'kubefirst/local/destroy'
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Local Platform (GitLab)',
+      items: [
+        {
+          type: 'category',
+          label: 'Getting Started',
+          items: [
+            'kubefirst/local/gitlab/install',
+            'kubefirst/local/console',
+            'kubefirst/local/overview',
+            'kubefirst/local/gitlab/repositories',
+            'kubefirst/civo/user-creation'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Explore',
+          items: [
+            'kubefirst/local/user-creation',
+            'kubefirst/local/metaphor',
+            'kubefirst/local/limitations',
+            'explore/telemetry'
+          ]
+        },
+        'kubefirst/local/destroy'
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Civo Platform (GitHub)',
+      items: [
+        {
+          type: 'category',
+          label: 'Getting Started',
+          items: [
+            'kubefirst/civo/github/install',
+            'kubefirst/civo/overview',
+            'kubefirst/civo/github/repositories',
+            'kubefirst/civo/user-creation',
+            'kubefirst/civo/metaphor'
           ]
         },
         {
@@ -58,7 +94,37 @@ const sidebars = {
             'explore/argocd',
             'explore/gitops',
             'explore/terraform',
-            'explore/vault'
+            'explore/vault',
+            'explore/telemetry'
+          ]
+        },
+        'kubefirst/civo/destroy'
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Civo Platform (GitLab)',
+      items: [
+        {
+          type: 'category',
+          label: 'Getting Started',
+          items: [
+            'kubefirst/civo/gitlab/install',
+            'kubefirst/civo/overview',
+            'kubefirst/civo/github/repositories',
+            'kubefirst/civo/user-creation',
+            'kubefirst/civo/metaphor'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Explore',
+          items: [
+            'explore/argocd',
+            'explore/gitops',
+            'explore/terraform',
+            'explore/vault',
+            'explore/telemetry'
           ]
         },
         'kubefirst/civo/destroy'
@@ -72,9 +138,9 @@ const sidebars = {
           type: 'category',
           label: 'Getting Started',
           items: [
-            'kubefirst/github/install',
-            'kubefirst/github/github-repositories',
-            'kubefirst/github/overview',
+            'kubefirst/aws/github/install',
+            'kubefirst/aws/github/repositories',
+            'kubefirst/aws/github/overview',
           ]
         },
         {
@@ -84,7 +150,8 @@ const sidebars = {
             'explore/argocd',
             'explore/gitops',
             'explore/terraform',
-            'explore/vault'
+            'explore/vault',
+            'explore/telemetry'
           ]
         },
         {
@@ -97,7 +164,7 @@ const sidebars = {
             'explore/metaphor'
           ]
         },
-        'kubefirst/github/destroy'
+        'kubefirst/aws/destroy'
       ]
     },
     {
@@ -108,10 +175,10 @@ const sidebars = {
           type: 'category',
           label: 'Getting Started',
           items: [
-            'kubefirst/gitlab/install',
-            'kubefirst/gitlab/explore',
-            'kubefirst/gitlab/gitlab',
-            'kubefirst/gitlab/gitlab-repositories',
+            'kubefirst/aws/gitlab/install',
+            'kubefirst/aws/gitlab/overview',
+            'kubefirst/aws/gitlab/gitlab',
+            'kubefirst/aws/gitlab/repositories',
           ]
         },
         {
@@ -121,7 +188,8 @@ const sidebars = {
             'explore/argocd',
             'explore/gitops',
             'explore/terraform',
-            'explore/vault'
+            'explore/vault',
+            'explore/telemetry'
           ]
         },
         {
@@ -133,14 +201,7 @@ const sidebars = {
             'explore/metaphor'
           ]
         },
-        'kubefirst/gitlab/destroy'
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Installer Options',
-      items: [
-        'explore/open-telemetry'
+        'kubefirst/aws/destroy'
       ]
     },
     'kubefirst/FAQ',

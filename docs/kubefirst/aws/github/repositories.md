@@ -4,7 +4,7 @@ title: GitHub Repositories
 
 When you install the GitHub version of Kubefirst, a couple of new repositories will be added to your GitHub organization.
 
-![GitHub repositories](../../img/kubefirst/github/github-repositories.png)
+![GitHub repositories](../../../img/kubefirst/github/github-repositories.png)
 
 ## Repository Summary
 
@@ -16,7 +16,7 @@ The GitOps repo houses all of our IAC and all our GitOps configurations. All the
 
 The Metaphor suite is a set of example applications used to showcase certain features of the Kubefirst platform. The Metaphor apps have CI/CD that deliver each app to a development, staging, and production namespace in your Kubernetes cluster. The metaphor service apps' secrets in vault are bound to the metaphor app through the use of external-secrets, a handy Kubernetes utility to keep Kubernetes secrets in sync with the vault source of truth. It also demonstrates how DNS entries are automatically created in Route 53 using external-dns. It has auto-renewing, hort-lived certificates generated and auto-renewed as well, using cert-manager and the Let's Encrypt cluster-issuer.
 
-The available Metaphor applications are, **Metaphor (NodeJS API)**, **Metaphor (Go API)** and **Metaphor Frontend**. The Metaphor applications are describe in more details [here](../../explore/metaphor.md).
+The available Metaphor applications are, **Metaphor (NodeJS API)**, **Metaphor (Go API)** and **Metaphor Frontend**. The Metaphor applications are describe in more details [here](../../../explore/metaphor.md).
 
 ## GitHub Repository Management
 
@@ -51,4 +51,4 @@ To make infrastructure and configuration changes with Terraform, simply open a p
 
 All this automation is possible because of Atlantis. Atlantis is a tool that runs in your Kubernetes cluster and via a webhook, listens for pull requests in your GitOps repository. When it sees a pull request, it will run `terraform plan`, and post the plan as a comment in the pull request. If the Terraform plan succeed, Atlantis will run `terraform apply`, and post the results as a comment in the pull request.
 
-![Atlantis Plan Apply Example](../../img/kubefirst/github/atlantis-plan-appy-example.png)
+![Atlantis Plan Apply Example](../../../img/kubefirst/github/atlantis-plan-appy-example.png)

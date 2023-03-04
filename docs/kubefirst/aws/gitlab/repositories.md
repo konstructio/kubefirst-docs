@@ -6,7 +6,7 @@ In the GitOps nature, we rely on repositories to have a single source of truth w
 
 ## Repositories
 
-![GitLab repositories](../../img/kubefirst/gitlab-repositories/gitlab-repositories.png)
+![GitLab repositories](../../../img/kubefirst/gitlab-repositories/gitlab-repositories.png)
 
 ### gitops
 
@@ -17,7 +17,7 @@ The GitOps repo houses all of our IAC and all of our GitOps configurations. All 
 The metaphor suite is set of example microservice applications used to showcase certain features of the Kubefirst platform. The metaphor apps have CI/CD that deliver the apps to a development, staging, and production namespace in your Kubernetes cluster. Its secrets in Vault are bound to the Metaphor apps through the use of external-secrets, a handy Kubernetes utility to keep Kubernetes secrets in sync with the Vault source of truth. It also demonstrates how DNS entries will be automatically created in route53 using external-dns. It has auto-renewing short-lived certificates generated and auto-renewed as well using cert-manager and the Let's Encrypt cluster-issuer.
 
 The available Metaphor applications are **Metaphor (NodeJS API)**, **Metaphor (Go API)** and **Metaphor Frontend**.
-The Metaphor applications are describe in more details [here](../../explore/metaphor.md).
+The Metaphor applications are describe in more details [here](../../../explore/metaphor.md).
 
 ## GitLab Repository Management
 
@@ -52,4 +52,4 @@ To make infrastructure and configuration changes with Terraform, simply open a m
 
 All this automation is possible because of Atlantis. Atlantis is a tool that runs in your Kubernetes cluster and via a webhook, listens for merge requests in your GitOps repository. When it sees a merge request, it will run `terraform plan`, and post the plan as a comment in the merge request. If the Terraform plan succeed, Atlantis will run `terraform apply`, and post the results as a comment in the merge request.
 
-![Terraform Atlantis Merge Request](../../img/kubefirst/gitlab-repositories/terraform-atlantis-merge-request.png)
+![Terraform Atlantis Merge Request](../../../img/kubefirst/gitlab-repositories/terraform-atlantis-merge-request.png)

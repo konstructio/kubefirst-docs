@@ -8,7 +8,7 @@ title: Install
 
 It installs a fully automated platform of open source cloud native tools with a simple `init` and `create` command.
 
-![Kubefirst Cluster](../../img/kubefirst/github/kubefirst-cluster-create.png)
+![Kubefirst Cluster](../../../img/kubefirst/github/kubefirst-cluster-create.png)
 
 ### Prerequisites
 

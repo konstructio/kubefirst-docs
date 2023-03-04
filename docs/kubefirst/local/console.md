@@ -6,8 +6,8 @@ The `kubefirst local` command will open a new browser tab at completion with the
 
 ## Console UI Screen
 
-![terminal handoff](../../../img/kubefirst/local/console.png)
+![terminal handoff](../../img/kubefirst/local/console.png)
 
 ## Example of terminal output following cluster creation
 
-![terminal handoff](../../../img/kubefirst/local/handoff-screen.png)
+![terminal handoff](../../img/kubefirst/local/handoff-screen.png)

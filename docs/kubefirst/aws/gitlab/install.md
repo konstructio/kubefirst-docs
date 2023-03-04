@@ -8,11 +8,11 @@ title: Install
 
 It installs a fully automated platform of open source cloud native tools with a simple `init` and `create` command.
 
-![Kubernetes Cluster](../../img/kubefirst/gitlab/kubefirst-cluster-create.png)
+![Kubernetes Cluster](../../../img/kubefirst/gitlab/kubefirst-cluster-create.png)
 
 ### Prerequisites
 
-- [To install kubefirst CLI](../overview.md#how-to-install-kubefirst-cli)
+- [To install kubefirst CLI](./overview.md#how-to-install-kubefirst-cli)
 
 #### AWS Prerequisites
 

@@ -40,7 +40,7 @@ git push --set-upstream origin new-user
 
 Create a pull request. This will kick off the Atlantis workflow. Within a minute or so of submitting the pull request, a comment will appear on the pull request that shows the terraform plan with the changes it will be making to your infrastructure.
 
-![atlantis comments](../../../img/kubefirst/local/atlantis-comments.png)
+![atlantis comments](../../img/kubefirst/local/atlantis-comments.png)
 
 ### Are you not getting comments on your PR? Your cert may have expired
 
@@ -56,10 +56,10 @@ Atlantis will always run plans automatically for you when a merge request is ope
 
 Any new users you have created through this process will have their temporary initial passwords stored in [your local Vault cluster](https://argocd.localdev.me/applications/vault). You can access Vault using the information provided to you in the terminal as well, and you will find your users' individual initial passwords in the Vault secret store `/secrets/users/<username>`.
 
-![vault token login](../../../img/kubefirst/local/vault-token-login.png)
+![vault token login](../../img/kubefirst/local/vault-token-login.png)
 
 Once you've provided them this initial password, they can update their own password throughout the platform by updating their user password entity in vault. Anyone can change their own password, and Admins can reset anyone's password. These rules, just like everything else on Kubefirst, can be configured in your new gitops repository.
 
-![default user creation](../../../img/kubefirst/local/default-user-creation.png)
+![default user creation](../../img/kubefirst/local/default-user-creation.png)
 
 The existence of a new user with your specified parameters demonstrates that you have successfully updated your users using Atlantis!

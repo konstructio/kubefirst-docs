@@ -6,7 +6,7 @@ Join the `kubefirst` slack workspace by following [this link](https://join.slack
 
 ## Issues
 
-Open an issue or request a [here](https://github.com/kubefirst/kubefirst/issues)
+Open an issue or request [here](https://github.com/kubefirst/kubefirst/issues)
 
 ## Zoom
 
@@ -14,4 +14,4 @@ We're happy to engage with you to talk through your use cases and any points of 
 
 ## Email
 
-To request more information or schedule a demo email <info@kubefirst.com>
+To request more information or schedule a demo email <info@kubefirst.io>

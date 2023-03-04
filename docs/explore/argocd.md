@@ -10,7 +10,7 @@ Argo CD is really great at providing a straightforward mechanism for you to mana
 
 ## Managing Apps in Argo CD
 
-The configuration for all of your apps in your kubernetes cluster can be found in your new `gitops` repository at path `/registry`.
+The configuration for all of your apps in your kubernetes cluster can be found in your new `gitops` repository at path `/registry/<cluster-name>`.
 
 GitLab registry applications:
 ![GitLab Applications Registry](../img/kubefirst/gitops/registry.png)

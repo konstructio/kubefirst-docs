@@ -32,15 +32,15 @@ You now have an EKS cluster with the following content installed in it:
 - These apps are all managed by Argo CD and the app configurations are in the `gitops` repo's `registry` folder.
 - The AWS infrastructure is terraform - that's also in your `gitops` repo, but in your `terraform` folder.
 
-![GitOps Assets](../../img/kubefirst/getting-started/gitops-assets.png)
+![GitOps Assets](../../../img/kubefirst/getting-started/gitops-assets.png)
 
 ### Step 1: Console UI
 
 Once you run the `cluster create` command at the end of the installation, a new browser tab will open with the Console UI at `http://localhost:9094` to provide you a dashboard to navigate through the different services that were previsioned.
 
-![console ui](../../img/kubefirst/gitlab/console.png)
+![console ui](../../../img/kubefirst/gitlab/console.png)
 
-![terminal handoff](../../img/kubefirst/getting-started/cluster-create-result.png)
+![terminal handoff](../../../img/kubefirst/getting-started/cluster-create-result.png)
 
 These are **not your personal credentials**. These are administrator credentials that can be used if you ever need to authenticate and administer your tools if your OIDC provider ever become unavailable. Please protect these secrets and store them in a safe place.
 
@@ -48,7 +48,7 @@ These are **not your personal credentials**. These are administrator credentials
 
 This step is meant to explore the onboarding process of a new user to your installation:
 
-- [Explore Atlantis & Terraform to manage users](../../explore/terraform.md#how-can-i-use-atlantis-to-add-a-new-user-on-my-gitlab-backed-installation)
+- [Explore Atlantis & Terraform to manage users](../../../explore/terraform.md#how-can-i-use-atlantis-to-add-a-new-user-on-my-gitlab-backed-installation)
 
 ### Step 3: Deliver Metaphor to Development, Staging, and Production
 
@@ -68,10 +68,10 @@ To watch this pipeline occur, make any change to the `main` branch of the `metap
 
 You can visit the metaphor development, staging, and production apps in your browser to see the versions change as your releases complete and argocd syncs the apps. The metaphor URLs can be found in your gitops and metaphor project `README.md` files.
 
-![Metaphor Frontend](../../img/kubefirst/metaphor/metaphor-frontend.png)
+![Metaphor Frontend](../../../img/kubefirst/metaphor/metaphor-frontend.png)
 
 ### Learning the Ropes
 
 We've tried our best to surface available customizations and patterns of the Kubefirst platform here on our docs site. We've also made [links available](../credit.md) to all of our open source tools' own sources of documentation as well.
 
-You can [reach out to us](../../community/index.md) if you have any issues along the way. We're also available for consultation about where you should take the platform based on your organization's needs. We know the technologies inside and out and would love to help you do the same.
+You can [reach out to us](../../../community/index.md) if you have any issues along the way. We're also available for consultation about where you should take the platform based on your organization's needs. We know the technologies inside and out and would love to help you do the same.
