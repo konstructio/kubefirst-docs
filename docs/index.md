@@ -71,7 +71,7 @@ Choose one of the available options below
         </div>
     </div>
 </div>
-<div class="row">    
+<div class="row">
     <div class="col col--6 margin-bottom--lg">
         <div class="card">
             <div class="card__image">
