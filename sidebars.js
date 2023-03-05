@@ -27,8 +27,7 @@ const sidebars = {
             'kubefirst/local/github/install',
             'kubefirst/local/console',
             'kubefirst/local/overview',
-            'kubefirst/local/github/repositories',
-            'kubefirst/civo/user-creation'
+            'kubefirst/local/github/repositories'
           ]
         },
         {
@@ -55,8 +54,7 @@ const sidebars = {
             'kubefirst/local/gitlab/install',
             'kubefirst/local/console',
             'kubefirst/local/overview',
-            'kubefirst/local/gitlab/repositories',
-            'kubefirst/civo/user-creation'
+            'kubefirst/local/gitlab/repositories'
           ]
         },
         {

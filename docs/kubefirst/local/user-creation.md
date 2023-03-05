@@ -15,6 +15,8 @@ git checkout -b new-user
 
 The file `terraform/users/admins-github.tf` contains blocks that represent admin users - the kubefirst_bot user, and a commented-out admin_one user:
 
+<!-- TODO: 2.0 - github and gitlab have different user modules, split this doc and put in the github/gitlab folder -->
+<!-- TODO: 2.0 - splat expression being added in 2.0 may impact this doc -->
 ```terraform
 module "admin_one" {
   source = "./modules/user/github"
@@ -42,10 +44,6 @@ Create a pull request. This will kick off the Atlantis workflow. Within a minute
 
 ![atlantis comments](../../img/kubefirst/local/atlantis-comments.png)
 
-### Are you not getting comments on your PR? Your cert may have expired
-
-The ngrok tunnel used for kubefirst local has a 2-hour expiration unless you create an account with ngrok. This expiration will prevent you from using automated infrastructure as code through atlantis, but the rest of the platform will continue to function beyond that ngrok evaluation period. [Create an account with ngrok](https://dashboard.ngrok.com/signup) to prevent this.
-
 To apply these changes, you or someone in the organization can submit a comment on that Merge Request with the following comment text: `atlantis apply`.
 
 Doing so will instruct Atlantis to apply the plan. It will report back with the results of the apply within a minute or so.
@@ -63,3 +61,10 @@ Once you've provided them this initial password, they can update their own passw
 ![default user creation](../../img/kubefirst/local/default-user-creation.png)
 
 The existence of a new user with your specified parameters demonstrates that you have successfully updated your users using Atlantis!
+
+### Troubleshooting Atlantis
+
+<!-- TODO: 2.0 - actively spiking to see if we can change this narrative. confirm release status -->
+The ngrok tunnel used for kubefirst local has a 2-hour expiration unless you create an account with ngrok. This expiration will prevent you from using automated infrastructure as code through atlantis, but the rest of the platform will continue to function beyond that ngrok evaluation period. [Create an account with ngrok](https://dashboard.ngrok.com/signup) to prevent this.
+
+Atlantis works by sending a webhook to atlantis from your gitops repository. If you're not receiving terraform plan comments, check the webhooks section of your `gitops` repository settings and review the responses from the sent webhook requests.

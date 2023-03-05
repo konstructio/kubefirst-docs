@@ -1,25 +1,22 @@
 ---
-title: Limitations
+title: Local Limitations
 ---
-
-## Limitations running Kubefirst Locally
-
-`Kubefirst local` bring to our local machine the experience of having a cloud environment running locally. This is the best effort to abstract all the convenience of cloud services running inside containers.
-
-Thank you for all the projects listed in the [Credit](../credit.md) section.
-
-Unfortunately, we have some limitations running kubefirst locally, and we listed below these limitations and possible ways to solve them.
 
 ### Hardware recommendation
 
-- OS: macOS (Intel or Apple Silicon M1/M2) and Linux AMD64
+- OS: macOS (Intel or Apple Silicon M1/M2) or Linux AMD64
 - CPU: A Quad Core CPU or Apple Silicon with M1 or M2 chip
-- RAM: 16GB RAM
-- HDD: 10GB HD space (docker images) + 5GB HD space (minio-storage)
+- RAM: 8 GB RAM
+- HDD: 10 GB HD space (docker images) + 5 GB HD space (minio-storage)
+
+### Docker desktop recommendation
+
+Allocated RAM: 5 GB
+Allocated CPU: 5 Cores
 
 ### Features Limitations
 
-- Gitlab: to keep the local install "slim" we couldn't offer Gitlab as a Git provider option.
+<!-- TODO: 2.0 - check ngrok status with 2.0 release -->
 - Ngrok: to allow Github Webhook to reach your machine without exposing them directly to the internet, we use Ngrok to create a tunnel and assign the Ngrok endpoint to Github Webhook.
 
 We use a free tier of this service and have rate limits for data transfer and limited session duration of the tunnel. If the tunnel was closed, we didn't support the reconnect process. If you want to reconnect, you should use the Ngrok tool and update the webhook on GitHub to keep the Atlantis working.
@@ -38,6 +35,7 @@ We use a free tier of this service and have rate limits for data transfer and li
 
 ### Avoiding tools re-download
 
+<!-- TODO: 2.0 - is this true with 2.0 release? -->
 The kubefirstCLI download some tools used during cluster provisioning, for example, Terraform, Helm, and Kubectl, in versions compatible with Kubefirst and stores them in the K1 folder. If you are using Kufibefirst to demo in conferences or using poor connections (mobile, hotels) you should consider using this additional flag `--preserve-tools` for each cycle of create/destroy.
 
 This will preserve tools downloaded and will save time and network bandwidth during cluster provisioning.
