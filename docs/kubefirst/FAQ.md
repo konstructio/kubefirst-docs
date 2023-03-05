@@ -16,9 +16,9 @@ If you think it's a bug, you can also open an [issue](https://github.com/kubefir
 
 Please find that information in the destroying your Kubefirst platform documentation related to your installation type:
 
-- [AWS with GitHub](github/destroy.md)
-- [AWS with GitLab](gitlab/destroy.md)
-- [Local with GitHub](local/destroy.md)
+- [Local with GitHub of GitLab](local/destroy.md)
+- [AWS with GitHub of GitLab](aws/destroy.md)
+- [Civo with GitHub of GitLab](civo/destroy.md)
 
 ### I'm experiencing timeouts when kubefirst deploys Argo CD or HashiCorp Vault through the Helm installations
 

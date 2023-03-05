@@ -48,7 +48,7 @@ These are **not your personal credentials**. These are administrator credentials
 
 This step is meant to explore the onboarding process of a new user to your installation:
 
-- [Explore Atlantis & Terraform to manage users](../../explore/terraform.md#how-can-i-use-atlantis-to-add-a-new-user-on-my-github-backed-installation)
+- [Explore Atlantis & Terraform to manage users](../../../explore/terraform.md#how-can-i-use-atlantis-to-add-a-new-user-on-my-github-backed-installation)
 
 ## Step 3: Deliver Metaphor to Development, Staging, and Production
 
@@ -70,10 +70,10 @@ You can visit the metaphor development, staging, and production apps in your bro
 
 ## Learning the Ropes
 
-We've tried our best to provide the available customizations and patterns of the Kubefirst platform here on our docs site. We've also made [links available](../credit.md) to all of our open source tool's sources of documentation.
+We've tried our best to provide the available customizations and patterns of the Kubefirst platform here on our docs site. We've also made [links available](../../credit.md) to all of our open source tool's sources of documentation.
 
-You can [reach out to us](../../community/index.md) if you have any issues along the way. We're also available for consultation of where you should take the platform based on your organization's needs. We know the technologies inside and out and would love to help you do the same.
+You can [reach out to us](../../../community/index.md) if you have any issues along the way. We're also available for consultation of where you should take the platform based on your organization's needs. We know the technologies inside and out and would love to help you do the same.
 
 ## What to do next
 
-[Continue your journey](../../explore/overview.md)
+[Continue your journey](../../../explore/overview.md)

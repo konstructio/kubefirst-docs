@@ -12,7 +12,7 @@ It installs a fully automated platform of open source cloud native tools with a 
 
 ### Prerequisites
 
-- [To install kubefirst CLI](../overview.md#how-to-install-kubefirst-cli)
+- [To install kubefirst CLI](./overview.md#how-to-install-kubefirst-cli)
 
 #### AWS Prerequisites
 
@@ -37,7 +37,7 @@ Your new bot account will need to be associated with a GitHub organization.
 
 #### GitHub Authorization during install
 
-Kubefirst utilizes the user's GitHub token to generate resources within the user's GitHub account, [details](../../explore/github-token.md).
+Kubefirst utilizes the user's GitHub token to generate resources within the user's GitHub account, [details](../../../explore/github-token.md).
 
 At the beginning of the installation, Kubefirst will ask you to generate the GitHub token.
 

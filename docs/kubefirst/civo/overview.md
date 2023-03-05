@@ -27,7 +27,7 @@ kubectl get namespaces
 
 ### Your new `gitops` repo
 
-[GitHub repos managed as Terraform IaC](./github-repositories.md)
+[GitHub repos managed as Terraform IaC](./github/repositories.md)
 
 ### User onboarding
 

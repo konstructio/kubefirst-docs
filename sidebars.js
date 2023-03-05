@@ -18,7 +18,7 @@ const sidebars = {
     'kubefirst/overview',
     {
       type: 'category',
-      label: 'Local Platform (GitHub)',
+      label: 'Local with GitHub',
       items: [
         {
           type: 'category',
@@ -46,7 +46,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Local Platform (GitLab)',
+      label: 'Local with GitLab',
       items: [
         {
           type: 'category',
@@ -74,7 +74,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Civo Platform (GitHub)',
+      label: 'Civo with GitHub',
       items: [
         {
           type: 'category',
@@ -103,7 +103,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Civo Platform (GitLab)',
+      label: 'Civo with GitLab',
       items: [
         {
           type: 'category',
@@ -132,7 +132,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'AWS Platform (GitHub)',
+      label: 'AWS with GitHub',
       items: [
         {
           type: 'category',
@@ -169,7 +169,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'AWS Platform (GitLab)',
+      label: 'AWS with GitLab',
       items: [
         {
           type: 'category',

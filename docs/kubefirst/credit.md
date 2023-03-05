@@ -8,33 +8,29 @@ The Kubefirst platform uses some of the most popular open source projects in the
 
 |Project |AWS + Github|AWS + Gitlab|Civo + Github|Local + Github|
 |:--|:--:|:--:|:--:|:--:|
-|[Argo CD](https://argoproj.github.io/cd/)|X|X|X|X|
-|[Argo Workflows](https://argoproj.github.io/workflows)|X|X|X|X|
-|[Atlantis](https://www.runatlantis.io/)|X|X|X|X|
+|[argo cd](https://argoproj.github.io/cd/)|X|X|X|X|
+|[argo workflows](https://argoproj.github.io/workflows)|X|X|X|X|
+|[atlantis](https://www.runatlantis.io/)|X|X|X|X|
 |[cert-manager](https://cert-manager.io/docs/)|X|X|X| |
-|[ChartMuseum](https://chartmuseum.com/docs/)|X|X|X|X|
-|[Docker](https://docker.com)| | |X| |
-|[ExternalDNS](https://github.com/kubernetes-sigs/external-dns)|X|X|X| |
-|[External Secrets Operator](https://external-secrets.io/)|X|X|X| |
-|[GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)|X| |X|X|
-|[Gitlab Server](https://docs.gitlab.com/charts/installation/deployment.html)| |X| | |
-|[Gitlab-runners](https://docs.gitlab.com/runner/)| |X| | |
-|[summerwind/actions-runner](https://hub.docker.com/r/summerwind/actions-runner)|X| |X|X|
-|[Ingress-Nginx](https://kubernetes.github.io/ingress-nginx/)|X|X|X|X|
-|[K3d](https://k3d.io)| | | |X|
-|[Kubernetes](https://kubernetes.io/)|X|X|X|X|
-|[Material for mkdocs](https://squidfunk.github.io/mkdocs-material)|X|X|X|X|
-|[MinIO](https://min.io/product/kubernetes)| | | |X|
+|[chartmuseum](https://chartmuseum.com/docs/)|X|X|X|X|
+|[docker](https://docker.com)| | |X| |
+|[external-dns](https://github.com/kubernetes-sigs/external-dns)|X|X|X| |
+|[external-secrets-operator](https://external-secrets.io/)|X|X|X| |
+|[github actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)|X| |X|X|
+|[gitlab-runners](https://docs.gitlab.com/runner/)| |X| | |
+|[github actions runner controller](https://hub.docker.com/r/summerwind/actions-runner)|X| |X|X|
+|[ingress-nginx](https://kubernetes.github.io/ingress-nginx/)|X|X|X|X|
+|[k3d](https://k3d.io)| | | |X|
+|[kubernetes](https://kubernetes.io/)|X|X|X|X|
+|[minio](https://min.io/product/kubernetes)| | | |X|
 |[mkcert](https://github.com/FiloSottile/mkcert)| | | |X|
 |[ngrok](https://ngrok.com/)| | ||X|
-|[Terraform](https://www.terraform.io/)|X|X|X|X|
-|[Soft-serve](https://github.com/charmbracelet/soft-serve)| |X| | |
-|[Vault](https://www.vaultproject.io/)|X|X|X|X|
+|[terraform](https://www.terraform.io/)|X|X|X|X|
+|[vault](https://www.vaultproject.io/)|X|X|X|X|
 
-### References
+### Additional References
 
-* Ingress-Nginx: [available annotations](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/)
-
+* ingress-nginx: [available annotations](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/)
 * Kubernetes:  [training](https://kubernetes.io/training/)
 * Terraform:  [docs](https://www.terraform.io/docs/index.html) and [training](https://learn.hashicorp.com/terraform)
 * Vault: [training](https://learn.hashicorp.com/vault)
