@@ -86,5 +86,5 @@ kubefirst cluster create
 
 Continue your journey:
 
-- [Explore your installation](../../../explore/overview.md) 
+- [Explore your installation](../../../explore/overview.md)
 - [Destroying](../destroy.md)
