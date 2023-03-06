@@ -52,14 +52,14 @@ jobs:
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        SOURCE_DIR: 'dist'
+        SOURCE_DIR: 'build'
         DEST_DIR: 'preprod'
 
   invalidate-cloudfront:
     name: Invalidate CloudFront
     needs: [build, deploy-preprod]
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: chetan/invalidate-cloudfront-action@v2
       if: ${{ github.ref }} == ${{ env.RELEASE_DOCS_BRANCH_REF }}
