@@ -24,81 +24,31 @@ It installs a fully automated platform of open source cloud native tools with a 
 
 4. Our brew package will automatically install the [AWS IAM Authenticator](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html) dependency. If you use another installation method, you will need to install this utility.
 
-### Step 1 - Create your kubefirst bot user and a personal access token
+### Step 1 - Create your kbot user and a personal access token
 
-The kubefirst cli will automatically create one admin user for you. We refer to this initial user as the `kubefirst bot`. After the installation, you will temporarily use that `kubefirst bot` to onboard yourself and the rest your team to the platform. From that point forward, the kubefirst bot should only be used for automated activities, and you can use your own personal account.
+The kubefirst cli will automatically create one admin user for you named `kbot`. After the installation, you will temporarily use that `kbot` account to onboard yourself and the rest your team to the platform. From that point forward, the kbot should only be used for automated activities, and you should use your own personal account.
 
-This kubefirst bot user needs to be associated with a GitHub user account. Log out of GitHub and create a new GitHub account to represent this new `kubefirst bot` account. Because this account will be used for automation, it's a good to choose a username that generically represents your company or project name - something like yourcompany-bot is a good idea. You can also have fun with it and give your bot a fun name - the point is that this is not an account for your long term personal use, it's for the kubefirst system to use.
+The `kbot` user needs to be associated with a GitHub user account that can be used as your organization's bot account. Log out of GitHub and create a new GitHub account to represent this new `kbot` account. Because this account will be used for automation, it's a good to choose a username that generically represents your company or project name - something like `yourcompany-kbot` would be a good name. You can also have fun with it and give your bot a fun name - the point is that this is not an account for your long term personal use, it's for the kubefirst platform system to use.
 
-Your new bot account will need to be associated with a GitHub organization.
+Your new `kbot` account will need to be associated with a GitHub organization.
 
-- If you don't already have one that you want to use, while logged into GitHub with your new bot account, establish a new [GitHub organization](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch).
-- If you do already have a GitHub org that you want to add Kubefirst to, you'll need to add your new kubefirst bot to the existing organization now.
+- If you don't already have one that you want to use, while logged into GitHub with your new kbot account, establish a new [GitHub organization](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch).
+- If you do already have a GitHub org that you want to add Kubefirst to, you'll need to add your new kubefirst bot as an owner to the existing organization now.
 
-#### GitHub Authorization during install
+#### GitHub ephemeral authorization during install
 
-Kubefirst utilizes the user's GitHub token to generate resources within the user's GitHub account, [details](../../../explore/github-token.md).
+If you don't export a [GITHUB_TOKEN](../../../explore/github-token.md) to your shell, the kubefirst cli can generate an ephemeral token that last 8 hours.
 
-At the beginning of the installation, Kubefirst will ask you to generate the GitHub token.
+### Step 2 - Create your platform
 
-### Step 2 - `kubefirst init`
-
-Let's init your local setup providing values for the following flags:
-
-| Flag               | Description                                                                                                                            | Example                   |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
-| --admin-email      | an email address that can be used for certificate renewal alerts                                           | your_name@yourcompany.com |
-| --cloud            | we only support aws, gcp coming soon                                                                                                   | aws                       |
-| --hosted-zone-name | name of the platform's hosted zone domain - this will drive the URLs of your tools (gitlab.yourdomain.com, argocd.yourdomain.com, etc) | yourdomain.com            |
-| --cluster-name     | the name of your cluster                                                                                                               | your_cluster_name         |
-| --region           | name of the aws region in which to place your region specific resources                                                                | us-east-1                 |
-| --profile          | name of the aws profile the cli should leverage                                                                                        | default                   |
-| --s3-suffix        | unique identifier for s3 buckets                                                                                                       | you-s3-bucket-name        |
-| --github-owner       | name of your github organization name                                                                                                  | your_organization         |
-| --aws-nodes-graviton| Graviton nodes (ARM) on AWS EKS compute nodes                                                                                         | true                      |
-| --aws-nodes-spot   | nodes spot on AWS EKS compute nodes                                                                                                    | true                      |
-
+<!-- TODO: 2.0 - check all flags and minimize command -->
 ```shell
-kubefirst init \
---admin-email yourname@yourcompany.com \
---cloud aws \
---hosted-zone-name yourdomain.com \
---region us-east-1 \
---profile default \
---cluster-name your-cluster-name \
---github-owner your-github-organization-name
+export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxx
+
+kubefirst aws create \
+  --alerts-email yourdistro@your-company.io \
+  --hosted-zone-name your-company.io \
+  --cluster-name kubefirst-mgmt \
+  --github-owner your-github-organization-name \
+  --git-provider github
 ```
-
-#### Using a config file
-
-```yaml
-# config.yaml
-config:
-  admin-email:  yourname@yourcompany.com
-  hosted-zone-name: yourdomain.com
-  region: us-east-1
-  profile: default
-  cluster-name: your-cluster-name
-  github-owner: your-github-organization-name
-  cloud: aws
-```
-
-```shell
-kubefirst init  -c ./config.yaml
-```
-
-The `init` process produces a directory of utilities, a state file, and some staged platform content that can now be found at `~/.kubefirst`
-
-### Step 3 - `kubefirst cluster create`
-
-Now it's time to create the platform, to do so, simply run
-
-```shell
-kubefirst cluster create
-```
-
-## What to do next
-
-Continue your journey:
-
-- [Explore your installation](./overview.md)

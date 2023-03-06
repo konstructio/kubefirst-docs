@@ -175,7 +175,6 @@ const sidebars = {
           items: [
             'kubefirst/aws/gitlab/install',
             'kubefirst/aws/gitlab/overview',
-            'kubefirst/aws/gitlab/gitlab',
             'kubefirst/aws/gitlab/repositories',
           ]
         },

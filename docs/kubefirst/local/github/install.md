@@ -84,4 +84,4 @@ During cluster provisioning, Terraform communicates with the host machine to cre
 
 ## After installation
 
-After the ~6 minute installation, your browser will launch a new tab to the [Kubefirst Console application](https://github.com/kubefirst/console), which will help you navigate your new suite of tools running in your local k3d cluster.
+After the ~5 minute installation, your browser will launch a new tab to the [Kubefirst Console application](https://github.com/kubefirst/console), which will help you navigate your new suite of tools running in your local k3d cluster.
