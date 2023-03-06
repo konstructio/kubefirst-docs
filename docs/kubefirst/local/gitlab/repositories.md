@@ -4,23 +4,24 @@ title: Repositories
 
 # GitLab Repositories
 
-The `kubefirst k3d create` command will create a `gitops` and `metaphor` repository in your personal github account as shown here.
+The `kubefirst k3d create` command will create a `gitops` and `metaphor` repository in your personal GitLab account as shown here.
 
+<!-- TODO: 2.0 - fix this image, not GitLab -->
 ![GitLab repositories](../../../img/kubefirst/local/repos-list.png)
 
-## Repository Summary
+## Repositories
 
 ### gitops
 
-The `gitops` repo houses all of our IAC and all our GitOps configurations. All of the infrastructure and application configutation that you receive with Kubefirst was produced by some combination of Terraform and Argo CD in the `gitops` repository. You will add to this repository as extend your infrastructure or new applications.
+The `gitops` repo houses all of our IAC and all our GitOps configurations. All of the infrastructure and application configutation that you receive with kubefirst was produced by some combination of Terraform and Argo CD in the `gitops` repository. You will add to this repository as extend your infrastructure or new applications.
 
 ### metaphor
 
 `metaphor` is a suite of demo microservice applications to demonstrate how an application can be integrated into the kubefirst platform following best practices. It is described in more details [here](../../../explore/metaphor.md).
 
-## GitLab Repository Management
+## Management
 
-As you need additional GitHub repositories, just add a new section of Terraform code to `terraform/gitlab/repos.tf` in your new gitops repository:
+As you need additional GitLab repositories, just add a new section of Terraform code to `terraform/gitlab/repos.tf` in your new `gitops` repository:
 
 ```terraform
 # set auto_init to false if importing an existing repository
@@ -35,7 +36,7 @@ module "your_repo_name" {
 }
 ```
 
-GitLab's Terraform provider provides many more configuration options than just these settings. Check them out and add to your default settings once you're comfortable with the platform.
+GitLab's Terraform provider provides [more configuration options](https://registry.terraform.io/providers/gitlabhq/gitlab/latest/docs) than just these settings.
 
 ## Making Terraform Changes
 
