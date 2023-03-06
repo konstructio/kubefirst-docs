@@ -35,4 +35,4 @@ kubectl get namespaces
 
 ### Deliver `metaphor` to your new `development`, `staging`, and `production` environments
 
-Explore gitops application delivery and platform integrations with [metaphor](./metaphor.md)
+Explore gitops application delivery and platform integrations with [metaphor](../../explore/metaphor.md)

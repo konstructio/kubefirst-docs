@@ -27,4 +27,4 @@ Your k3d cluster will include:
 
 ### Deliver `metaphor` to your new Development, Staging, and Production Environments
 
-[Build and deliver a microservice](./metaphor.md) using our example `metaphor` sample application. Making any change to the main branch of your new `metaphor` repository will build and deliver your application to your new cluster.
+[Build and deliver a microservice](../../explore/metaphor.md) using our example `metaphor` sample application. Making any change to the main branch of your new `metaphor` repository will build and deliver your application to your new cluster.
