@@ -1,15 +1,15 @@
 ---
 slug: /
 ---
-# Kubefirst Platforms
+# kubefirst Platforms
 
-## What is Kubefirst?
+## What is kubefirst?
 
-Kubefirst is a fully automated and operational open source platform that includes some of the most popular open source tools available in the Kubernetes space, all working together from a single command.
+kubefirst is a fully automated and operational open source platform that includes some of the most popular open source tools available in the Kubernetes space, all working together from a single command.
 
 We support local, AWS, and Civo clouds. By running our cli commands against your empty environment, you'll get a GitOps cloud management and application delivery ecosystem complete with automated Terraform workflows, Vault secrets management, GitLab or GitHub integrations with Argo, and demo applications that demonstrate how it all pieces together.
 
-![Kubefirst Architecture](./img/kubefirst/kubefirst-arch.png)
+![kubefirst Architecture](./img/kubefirst/kubefirst-arch.png)
 
 ---
 
@@ -31,12 +31,12 @@ Choose one of the available options below
                title="Local k3d with GitHub" />
             </div>
             <div class="card__body">
-            <h3>Kubefirst Local (k3d with GitHub)</h3>
+            <h3>kubefirst Local (k3d with GitHub)</h3>
             <p>
                The <strong>fastest</strong> way to explore the kubefirst platform!
             </p>
             <p>
-               With kubefirst k3d, you can explore some of the best parts of the Kubefirst platform running for free on a local k3d cluster in less than 5 minutes - without any cloud costs or domain prerequisites.
+               With kubefirst k3d, you can explore some of the best parts of the kubefirst platform running for free on a local k3d cluster in less than 5 minutes - without any cloud costs or domain prerequisites.
             </p>
             </div>
             <div class="card__footer">
@@ -55,12 +55,12 @@ Choose one of the available options below
                title="Local k3d with GitLab" />
             </div>
             <div class="card__body">
-            <h3>🆕 Kubefirst Local (k3d with GitLab)</h3>
+            <h3>🆕 kubefirst Local (k3d with GitLab)</h3>
             <p>
                The <strong>fastest</strong> way to explore the kubefirst platform!
             </p>
             <p>
-               With kubefirst k3d, you can explore some of the best parts of the Kubefirst platform running for free on a local k3d cluster in less than 5 minutes - without any cloud costs or domain prerequisites.
+               With kubefirst k3d, you can explore some of the best parts of the kubefirst platform running for free on a local k3d cluster in less than 5 minutes - without any cloud costs or domain prerequisites.
             </p>
             </div>
             <div class="card__footer">
@@ -81,7 +81,7 @@ Choose one of the available options below
                title="CIVO Cloud with GitHub" />
             </div>
             <div class="card__body">
-            <h3>🆕 Kubefirst on CIVO Cloud (GitHub)</h3>
+            <h3>🆕 kubefirst on CIVO Cloud (GitHub)</h3>
             <p>
                The perfect cloud environment when Kubernetes will be the center of attention.
             </p>
@@ -129,7 +129,7 @@ Choose one of the available options below
                title="AWS Cloud with GitHub" />
             </div>
             <div class="card__body">
-            <h3> Kubefirst on AWS (GitHub)</h3>
+            <h3> kubefirst on AWS (GitHub)</h3>
             <p>
                Our AWS cloud platform can accommodate all of the <strong>needs of your enterprise</strong> and supports the <strong>Github</strong> git provider. All you need is a domain and a hosted zone and in a single command and 35 minutes you'll have a secure EKS infrastructure management and application delivery platform.
             </p>
@@ -150,7 +150,7 @@ Choose one of the available options below
                title="AWS Cloud with GitLab" />
             </div>
             <div class="card__body">
-            <h3> Kubefirst on AWS (GitLab)</h3>
+            <h3> kubefirst on AWS (GitLab)</h3>
             <p>
                Our AWS cloud platform can accommodate all of the <strong>needs of your enterprise</strong> and supports the <strong>GitLab</strong> git provider. All you need is a domain and a hosted zone and in a single command and 35 minutes you'll have a secure EKS infrastructure management and application delivery platform.
             </p>
@@ -164,4 +164,4 @@ Choose one of the available options below
     </div>
 </div>
 
-To learn more about Kubefirst check out our [overview](kubefirst/overview.md).
+To learn more about kubefirst check out our [overview](kubefirst/overview.md).
