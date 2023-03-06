@@ -15,11 +15,10 @@ To use the local version of kubefirst, you will need [docker installed](https://
 
 - [Install kubefirst CLI](../overview.md#how-to-install-kubefirst-cli)
 - [Install docker](https://docs.docker.com/get-docker/)
-<!-- - GitHub users will need [a personal github account](https://github.com/) -->
 - GitLab users will need [a personal gitlab account](https://gitlab.com/)
 
 > **2 Hour Expiration Warning**
-> The ngrok tunnel used for kubefirst local has a 2-hour expiration unless you create an account with ngrok. This expiration will prevent you from using automated infrastructure as code through atlantis, but the rest of the platform will continue to function beyond that ngrok evaluation period. [Create an account with ngrok](https://dashboard.ngrok.com/signup) to prevent this.
+> The ngrok tunnel used for kubefirst local has a 2-hour expiration unless you create an account with ngrok. This expiration will prevent you from using automated infrastructure as code through Atlantis, but the rest of the platform will continue to function beyond that ngrok evaluation period. [Create an account with ngrok](https://dashboard.ngrok.com/signup) to prevent this.
 
 <!-- TODO: [2.0] the above warning is being spiked actively to see if we can remove it from the system as a part of the 2.0 release. confirm when releasing. -->
 
