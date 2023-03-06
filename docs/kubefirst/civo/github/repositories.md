@@ -4,25 +4,24 @@ title: Repositories
 
 # GitHub Repositories
 
-When you install the civo version of kubefirst, 2 new repositories will be added to your organization's github account as shown here.
+When you deploy a cluster on Civo using kubefirst, new repositories will be added to your organization's GitHub account.
 
+<!-- TODO: 2.0 - fix this image, metaphor repo name changed  -->
 ![GitHub repositories](../../../img/kubefirst/local/repos-list.png)
 
-## Repository Summary
+## Repositories
 
 ### gitops
 
-The GitOps repo houses all of our IAC and all our GitOps configurations. All of the infrastructure that you receive with Kubefirst was produced by some combination of Terraform and ArgoCD. You can add any infrastructure or application to your platform by pull requesting it to your new `gitops` repository.
+The `gitops` repository houses all of our IAC and all your GitOps configurations. The infrastructure created by kubefirst was produced by some combination of Terraform and Argo CD. You modify the infrastructure or add new applications to your cluster by creating a pull request to your new `gitops` repository.
 
 ### metaphor
 
 `metaphor` is a suite of demo microservice applications to demonstrate how an application can be integrated into the kubefirst platform following best practices. It is described in more details [here](../../../explore/metaphor.md).
 
-## GitHub Repository Management
+## Repositories Management
 
-These GitHub repositories are being managed in Terraform.
-
-As you need additional GitHub repositories, just add a new section of Terraform code to `terraform/github/repos.tf`:
+The repositories are being managed with Terraform. If you need additional ones, you need to add new section of Terraform code to `terraform/github/repos.tf`:
 
 ```terraform
 # set auto_init to false if importing an existing repository
@@ -39,6 +38,6 @@ module "your_repo_name" {
 
 ## Making Terraform Changes
 
-To make infrastructure and configuration changes with Terraform, simply open a pull request against any of the terraform directory folders in the `gitops` repository. Your pull request will automatically provide plans, state locks, and applies, and even comment in the merge request itself. You'll have a simple, peer reviewable, auditable changelog of all infrastructure and configuration changes.
+To make infrastructure and configuration changes with Terraform, simply open a pull request against any of the Terraform directory folders in the `gitops` repository. Your pull request will automatically provide plans, state locks, and applies, and even comment in the merge request itself. You'll have a simple, peer reviewable, auditable changelog of all infrastructure and configuration changes.
 
 ![Atlantis GitHub](../../../img/kubefirst/local/atlantis.png)
