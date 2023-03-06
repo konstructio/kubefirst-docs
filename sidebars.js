@@ -34,7 +34,7 @@ const sidebars = {
           type: 'category',
           label: 'Explore',
           items: [
-            'kubefirst/local/user-creation',
+            'kubefirst/local/github/user-creation',
             'explore/metaphor',
             'kubefirst/local/limitations',
             'explore/telemetry'
@@ -61,7 +61,7 @@ const sidebars = {
           type: 'category',
           label: 'Explore',
           items: [
-            'kubefirst/local/user-creation',
+            'kubefirst/local/gitlab/user-creation',
             'explore/metaphor',
             'kubefirst/local/limitations',
             'explore/telemetry'
