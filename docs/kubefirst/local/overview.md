@@ -23,7 +23,7 @@ Your k3d cluster will include:
 
 ### Atlantis Example / User Creation Walkthrough
 
-[Onboard users](./user-creation.md) by pull requesting a terraform change to your gitops repository and applying the change using atlantis.
+Onboard users with [GitHub](github/user-creation.md) or [GitLab](gitlab/user-creation.md) by doing a pull request with Terraform changes to your `gitops` repository and applying the change using Atlantis.
 
 ### Deliver `metaphor` to your new Development, Staging, and Production Environments
 
