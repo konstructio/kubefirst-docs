@@ -43,15 +43,15 @@ kubefirst provides a preconfigured set of platform tools powered by your new `gi
 A newly created local Kubefirst cluster contains:
 
 - A private repo named `gitops` that contains all IaC and GitOps configurations that power the entire platform.
-- [Argo CD](https://github.com/argoproj/argo-cd) - GitOps Continuous Delivery.
-- [Argo Workflows](https://argoproj.github.io/argo-workflows/) - Kubernetes Native Workflow Engine.
-- [ChartMuseum](https://github.com/helm/chartmuseum) - Helm Chart Registry.
-- [External Secrets Operator](https://github.com/external-secrets/external-secrets) - Syncs Kubernetes secrets with Vault secrets.
-- [GitHub Action Runner](https://github.com/features/actions) - Self Hosted GitHub Action Runner.
-- [HashiCorp Vault](https://github.com/hashicorp/vault) - Secrets Management.
-- [Metaphor](https://github.com/kubefirst/metaphor-frontend-template) - A sample app to demonstrate CI/CD in on Kubernetes. Contains Devlopment, Staging, and Production environments.
-- [Terraform Atlantis](https://www.runatlantis.io/) - Terraform Workflow Automation.
-- [Traefik](https://github.com/traefik/traefik) - Default Ingress Controller for K3D Clusters.
+- [Argo CD](https://github.com/argoproj/argo-cd): GitOps Continuous Delivery.
+- [Argo Workflows](https://argoproj.github.io/argo-workflows/): Kubernetes Native Workflow Engine.
+- [ChartMuseum](https://github.com/helm/chartmuseum): Helm Chart Registry.
+- [External Secrets Operator](https://github.com/external-secrets/external-secrets): Syncs Kubernetes secrets with Vault secrets.
+- [GitHub Action Runner Controller](https://github.com/actions/actions-runner-controller): Self Hosted GitHub Action Runner.
+- [HashiCorp Vault](https://github.com/hashicorp/vault): Secrets Management.
+- [Metaphor](https://github.com/kubefirst/metaphor-frontend-template): A sample app to demonstrate CI/CD in on Kubernetes. Contains Development, Staging, and Production environments.
+- [Terraform Atlantis](https://www.runatlantis.io/): Terraform Workflow Automation.
+- [Traefik](https://github.com/traefik/traefik): Default Ingress Controller for K3D Clusters.
 
 ### How to resolve HTTPS Certificate Warnings
 
