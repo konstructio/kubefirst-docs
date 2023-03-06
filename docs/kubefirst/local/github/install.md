@@ -2,25 +2,17 @@
 title: Install
 ---
 
-## Local Platform Installation
+# Local Platform Installation with GitHub
 
-`kubefirst` is the name of our command line tool that installs the Kubefirst platform to your local or cloud environment.
-
-To use the local version of Kubefirst, you will need to have [Docker installed](https://docs.docker.com/get-docker/). You will need a github.com account.
+`kubefirst` is the name of our CLI that installs the platform of the same name to your local or cloud environment.
 
 ![Kubefirst local installation diagram](../../../img/kubefirst/local/kubefirst-cluster-create.png)
 
-### Prerequisites
+## Prerequisites
 
-- [To install kubefirst CLI](../overview.md#how-to-install-kubefirst-cli)
-- [To install docker](https://docs.docker.com/get-docker/)
-- GitHub users will need [a personal github account](https://github.com/)
-<!-- - GitLab users will need [a personal gitlab account](https://gitlab.com/) -->
-
-> **2 Hour Expiration Warning**
-> The ngrok tunnel used for kubefirst local has a 2-hour expiration unless you create an account with ngrok. This expiration will prevent you from using automated infrastructure as code through atlantis, but the rest of the platform will continue to function beyond that ngrok evaluation period. [Create an account with ngrok](https://dashboard.ngrok.com/signup) to prevent this.
-
-<!-- TODO: [2.0] the above warning is being spiked actively to see if we can remove it from the system as a part of the 2.0 release. confirm when releasing. -->
+- [Install](../overview.md#how-to-install-kubefirst-cli) the kubefirst CLI.
+- [Install](https://docs.docker.com/get-docker/) Docker Desktop.
+- Create or use an actual [GitHub](https://github.com) personal account
 
 ## Create your new local cluster
 
@@ -30,34 +22,36 @@ To create a new Kubefirst cluster locally, run
 kubefirst k3d create
 ```
 
-More information on `kubefirst k3d`, including optional flags, can be discovered by running `kubefirst k3d help`.
+Details about your execution will be logged to your `~/.k1/logs` directory. More information on `kubefirst k3d`, including optional flags, can be discovered by running `kubefirst k3d help`.
 
-Details about your execution will be logged to your `~/.k1/logs` directory.
+<!-- TODO: [2.0] the above warning is being spiked actively to see if we can remove it from the system as a part of the 2.0 release. confirm when releasing. -->
+> **2 Hour Expiration Warning**
+> The ngrok tunnel used for kubefirst local has a 2-hour expiration unless you [create a ngrok account](https://dashboard.ngrok.com/signup). This expiration will prevent you from using automated infrastructure as code through Terraform Atlantis, but the rest of the platform will continue to function beyond that ngrok evaluation period.
 
-We are able to create an ephemeral GitHub token that expires after 8 hours using a process that will prompt you in your browser for access. If you just need a quick environment this is a great frictionless approach. However if you need this environment longer than 8 hours, please follow our [github token guide](../../../explore/github-token.md) and export a more permanent token to your terminal.
+We are able to create an ephemeral GitHub token that expires after 8 hours using a process that will prompt your browser to request access to your account. If you need a quick environment, this is a frictionless approach. However, if you need this environment for longer than 8 hours, which is probably the case, please follow our [GitHub Token Guide](../../../explore/github-token.md) and export a more permanent token to your terminal by using the following command:
 
-```bash
+```shell
 export GITHUB_TOKEN=ghp_xxxxxxxx
 ```
 
-When docker is provided 5 GB memory and 5 cpus the local kubefirst platform will provision in about 6 minutes and deprovision in about 1 minute.
+When Docker is provided 5 GB of memory and 5 CPUs, the local kubefirst platform will provision in about 6 minutes and deprovision in about 1 minute.
 
 ### Installed Applications
 
-Kubefirst provides a preconfigured set of platform tools powered by your new gitops repository. Operational knowledge of all applications is not necessary to begin using Kubefirst but is useful to understand your cluster.
+kubefirst provides a preconfigured set of platform tools powered by your new `gitops` repository. Operational knowledge of all applications is not necessary to begin using kubefirst but is useful to understand your cluster.
 
 A newly created local Kubefirst cluster contains:
 
-- A private repo named `gitops` that contains all IaC and GitOps configurations that power the entire platform
-- [Argo CD](https://github.com/argoproj/argo-cd) - GitOps Continuous Delivery
-- [Argo Workflows](https://argoproj.github.io/argo-workflows/) - Kubernetes Native Workflow Engine
-- [Atlantis](https://www.runatlantis.io/) - Terraform Workflow Automation
-- [Chart Museum](https://github.com/helm/chartmuseum) - Helm Chart Registry
-- [External Secrets Operator](https://github.com/external-secrets/external-secrets) - Syncs Kubernetes secrets with Vault secrets
-- [GitHub Action Runner](https://github.com/features/actions) - Self Hosted GitHub Action Runner
+- A private repo named `gitops` that contains all IaC and GitOps configurations that power the entire platform.
+- [Argo CD](https://github.com/argoproj/argo-cd) - GitOps Continuous Delivery.
+- [Argo Workflows](https://argoproj.github.io/argo-workflows/) - Kubernetes Native Workflow Engine.
+- [ChartMuseum](https://github.com/helm/chartmuseum) - Helm Chart Registry.
+- [External Secrets Operator](https://github.com/external-secrets/external-secrets) - Syncs Kubernetes secrets with Vault secrets.
+- [GitHub Action Runner](https://github.com/features/actions) - Self Hosted GitHub Action Runner.
+- [HashiCorp Vault](https://github.com/hashicorp/vault) - Secrets Management.
 - [Metaphor](https://github.com/kubefirst/metaphor-frontend-template) - A sample app to demonstrate CI/CD in on Kubernetes. Contains Devlopment, Staging, and Production environments.
-- [Traefik](https://github.com/traefik/traefik) - Default Ingress Controller for K3D Clusters
-- [Vault](https://github.com/hashicorp/vault) - Secrets Management
+- [Terraform Atlantis](https://www.runatlantis.io/) - Terraform Workflow Automation.
+- [Traefik](https://github.com/traefik/traefik) - Default Ingress Controller for K3D Clusters.
 
 ### How to resolve HTTPS Certificate Warnings
 
@@ -67,21 +61,17 @@ To resolve the warning that the browser shows when you access one of your applic
 mkcert -install
 ```
 
-We use [Mkcert](https://github.com/FiloSottile/mkcert) to generate local certificates and serve `https` with the Traefik Ingress Controller.
+This step will install the CA (Certificate Authority) of mkcert in your trusted store and will allow the browser to trust in certificates generated by your kubefirst local install.
 
-During installation, Kubefirst generates these certificates and pushes them to Kubernetes as secrets to attach to Ingress resources. The browser does not recognize auto-assigned certificates as trusted certificates and will generate security errors.
+> We use [mkcert](https://github.com/FiloSottile/mkcert) to generate local certificates and serve `https` with the Traefik Ingress Controller. During the installation, kubefirst generates these certificates and pushes them to Kubernetes as secrets to attach to Ingress resources. The browser does not recognize auto-assigned certificates as trusted ones and will generate security errors.
 
-This step will install the CA (Certificate Authority) of MkCert in your trusted store and will allow the browser to trust in certificates generated by your Kubefirst local install.
-
-### Atlantis and Ngrok integration
-
-[Ngrok](https://ngrok.com/) is a tool that allows Kubefirst to expose a local server to the internet via an [ngrok Secure Tunnel](https://ngrok.com/docs/secure-tunnels/). Kubefirst opens an ngrok Secure Tunnel tunnel during the installation to send events to Atlantis. When the installation finishes, the terminal window hangs at the handoff screen.
-If the handoff screen in your terminal is closed, the Kubefirst installation terminates and the Ngrok Secure Tunnel is closed.
+### ngrok & Atlantis Integrations
 
 <!-- TODO: 2.0 - check the legitimacy of the above before releasing docs -->
+[ngrok](https://ngrok.com/) is a tool that allows kubefirst to expose a local server to the internet via [ngrok Secure Tunnels](https://ngrok.com/docs/secure-tunnels/). kubefirst opens an ngrok Secure Tunnel tunnel during the installation to send events to Atlantis. When the installation finishes, the terminal window hangs at the handoff screen. If the handoff screen in your terminal is closed, the Kubefirst installation terminates and the Ngrok Secure Tunnel is closed.
 
-During cluster provisioning, Terraform communicates with the host machine to create the desired resources. When Atlantis is installed via Kubefirst, it will use ngrok to expose the Atlantis server to the internet via [webhook](https://zapier.com/blog/what-are-webhooks/?utm_source=google&utm_medium=cpc&utm_campaign=gaw-usa-nua-search-blog-dsa&utm_adgroup=DSA-Guides-What_are_webhooks&utm_term=&utm_content=_pcrid_630760751271_pkw__pmt__pdv_c_slid__pgrid_145358980000_ptaid_dsa-1873981911115_&gclid=Cj0KCQiAw8OeBhCeARIsAGxWtUxZLa8mXxQUt484tVLVjTCCl3zlHEmklG2Gu-EXdy1u521wyIg6EcoaAlS5EALw_wcB).
+During cluster provisioning, Terraform communicates with the host machine to create the desired resources. When Atlantis is installed via kubefirst, it will use ngrok to expose the Atlantis server to the internet via [webhooks](https://zapier.com/blog/what-are-webhooks/).
 
 ## After installation
 
-After the ~5 minute installation, your browser will launch a new tab to the [Kubefirst Console application](https://github.com/kubefirst/console), which will help you navigate your new suite of tools running in your local k3d cluster.
+After the ~5 minute installation, your browser will launch a new tab to the [kubefirst Console application](https://github.com/kubefirst/console), which will help you navigate your new suite of tools running in your local k3d cluster.
