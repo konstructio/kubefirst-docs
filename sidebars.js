@@ -109,7 +109,7 @@ const sidebars = {
           items: [
             'kubefirst/civo/gitlab/install',
             'kubefirst/civo/overview',
-            'kubefirst/civo/github/repositories'
+            'kubefirst/civo/gitlab/repositories'
           ]
         },
         {
