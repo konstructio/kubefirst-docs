@@ -57,17 +57,17 @@ kubefirst implicitly contains many applications to provide starting capabilities
 A newly created Civo kubefirst cluster contains:
 
 - A private repo named `gitops`. The applications that you build and release on the kubefirst platform will also be registered here in the development, staging, and production folders.
-- [Argo CD](https://github.com/argoproj/argo-cd) - GitOps Continuous Delivery
-- [Argo Workflows](https://argoproj.github.io/argo-workflows/) - Application Continuous Integration
-- [Atlantis](https://www.runatlantis.io/) - Terraform Workflow Automation
-- [Cert Manager](https://cert-manager.io/) - Automated TLS Certificate Creation and Renewal
-- [Chart Museum](https://github.com/helm/chartmuseum) - Helm Chart Registry
-- [External DNS](https://github.com/kubernetes-sigs/external-dns) - Automated DNS Management
-- [External Secrets Operator](https://external-secrets.io/) - Syncs Kubernetes secrets with Vault secrets
-- [GitHub Action Runner](https://github.com/features/actions) - Self Hosted GitHub Action Runner
+- [Argo CD](https://github.com/argoproj/argo-cd) - GitOps Continuous Delivery.
+- [Argo Workflows](https://argoproj.github.io/argo-workflows/) - Application Continuous Integration.
+- [Atlantis](https://www.runatlantis.io/) - Terraform Workflow Automation.
+- [Cert Manager](https://cert-manager.io/) - Automated TLS Certificate Creation and Renewal.
+- [Chart Museum](https://github.com/helm/chartmuseum) - Helm Chart Registry.
+- [External DNS](https://github.com/kubernetes-sigs/external-dns) - Automated DNS Management.
+- [External Secrets Operator](https://external-secrets.io/) - Syncs Kubernetes secrets with Vault secrets.
+- [GitHub Action Runner](https://github.com/features/actions) - Self Hosted GitHub Action Runner.
 - [Metaphor](https://github.com/kubefirst/metaphor-frontend-template) - A sample app to demonstrate CI/CD in on Kubernetes. Contains Devlopment, Staging, and Production environments.
-- [Nginx Ingress Controller](https://github.com/kubernetes/ingress-nginx) - Popular Ingress Controller to allow external access to your cluster services
-- [Vault](https://github.com/hashicorp/vault) - Secrets Management, Identity Provider, OIDC Provider
+- [Nginx Ingress Controller](https://github.com/kubernetes/ingress-nginx) - Popular Ingress Controller to allow external access to your cluster services.
+- [Vault](https://github.com/hashicorp/vault) - Secrets Management, Identity Provider, OIDC Provider.
 
 ## After installation
 
