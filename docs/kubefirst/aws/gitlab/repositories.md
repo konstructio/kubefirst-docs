@@ -4,10 +4,11 @@ title: Repositories
 
 # GitLab Repositories
 
-In the GitOps nature, we rely on repositories to have a single source of truth when it comes to project updates. Kubefirst makes heavy use of the GitOps approach to automate the development and maintenance of applications. In that regard, during the installation process, Kubefirst will bring up few GitLab repositories as described below.
+In the GitOps nature, we rely on repositories to have a single source of truth when it comes to project updates. kubefirst makes heavy use of the GitOps approach to automate the development and maintenance of applications. In that regard, during the installation process, kubefirst will create a few GitLab repositories as described below.
 
 ## Repositories
 
+<!-- TODO: 2.0 - fix this image! -->
 ![GitLab repositories](../../../img/kubefirst/gitlab-repositories/gitlab-repositories.png)
 
 ### gitops
@@ -18,11 +19,9 @@ The GitOps repo houses all of our IAC and all of our GitOps configurations. All 
 
 `metaphor` is a suite of demo microservice applications to demonstrate how an application can be integrated into the kubefirst platform following best practices. It is described in more details [here](../../../explore/metaphor.md).
 
-## GitLab Repository Management
+## Repositories Management
 
-These GitLab repositories are being managed in Terraform.
-
-As you need additional GitLab repositories, just add a new section of Terraform code to `terraform/gitlab/kubefirst-repos.tf`
+The repositories are being managed in Terraform. If you need additional repositories, just add a new section of Terraform code to `terraform/gitlab/kubefirst-repos.tf`
 
 ```terraform
 module "your_repo_name" {
@@ -39,16 +38,12 @@ module "your_repo_name" {
 }
 ```
 
-GitLab's Terraform provider provides many more configuration options than just these settings. Check them out and add to your default settings once you're comfortable with the platform.
-
-Take a look at the `Resources` section of the [GitLab provider documentation](https://registry.terraform.io/providers/gitlabhq/gitlab/latest/docs/resources).
-
-That was just GitLab. Take a look at all of the Terraform providers that are available, the list of technologies you can manage in Terraform is really getting impressive. [](https://www.terraform.io/docs/providers/index.html)
+GitLab's Terraform provider offer many more configuration options than just these settings. Take a look at the `Resources` section of the [GitLab provider documentation](https://registry.terraform.io/providers/gitlabhq/gitlab/latest/docs/resources).
 
 ## Making Terraform Changes
 
 To make infrastructure and configuration changes with Terraform, simply open a merge request in the `gitops` repository. Your merge request will automatically provide plans, state locks, and applies, and even comment in the merge request itself. You'll have a simple, peer reviewable, auditable changelog of all infrastructure and configuration changes.
 
-All this automation is possible because of Atlantis. Atlantis is a tool that runs in your Kubernetes cluster and via a webhook, listens for merge requests in your GitOps repository. When it sees a merge request, it will run `terraform plan`, and post the plan as a comment in the merge request. If the Terraform plan succeed, Atlantis will run `terraform apply`, and post the results as a comment in the merge request.
+All this automation is possible because of Atlantis. Atlantis is a tool that runs in your Kubernetes cluster and via a webhook, listens for merge requests in your `gitops` repository. When it detect a merge request, it will run `terraform plan`, and post the plan as a comment in the merge request. If the Terraform plan succeed, Atlantis will run `terraform apply`, and post the results as a comment in the merge request.
 
 ![Terraform Atlantis Merge Request](../../../img/kubefirst/gitlab-repositories/terraform-atlantis-merge-request.png)
