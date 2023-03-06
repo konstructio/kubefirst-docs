@@ -1,6 +1,8 @@
 ---
-title: GitLab Repositories
+title: Repositories
 ---
+
+# GitLab Repositories
 
 In the GitOps nature, we rely on repositories to have a single source of truth when it comes to project updates. Kubefirst makes heavy use of the GitOps approach to automate the development and maintenance of applications. In that regard, during the installation process, Kubefirst will bring up few GitLab repositories as described below.
 

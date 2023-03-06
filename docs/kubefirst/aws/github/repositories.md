@@ -1,6 +1,8 @@
 ---
-title: GitHub Repositories
+title: Repositories
 ---
+
+# GitHub Repositories
 
 When you install the aws github version of kubefirst, 2 new repositories will be added to your organization's github account as shown here.
 <!-- TODO: 2.0 - update with correct image -->

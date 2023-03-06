@@ -1,6 +1,8 @@
 ---
-title: GitLab Repositories
+title: Repositories
 ---
+
+# GitLab Repositories
 
 The `kubefirst k3d create` command will create a `gitops` and `metaphor` repository in your personal github account as shown here.
 
