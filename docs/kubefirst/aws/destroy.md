@@ -2,7 +2,7 @@
 title: Destroy
 ---
 
-## Teardown (GitLab)
+## Teardown
 
 ### Step 1: `~/.kubefirst`
 
@@ -36,7 +36,7 @@ This step it is not mandatory, but before any new execution of the kubefirstCLI 
 
 ### Tips
 
-### Avoiding tools re-download
+#### Avoiding tools re-download
 
 The kubefirstCLI download some tools used during cluster provisioning, for example, Terraform, Helm, and Kubectl, in versions compatible with Kubefirst and stores them in the K1 folder. If you are using Kufibefirst to demo in conferences or using poor connections (mobile, hotels) you should consider using this additional flag `--preserve-tools` for each cycle of create/destroy.
 

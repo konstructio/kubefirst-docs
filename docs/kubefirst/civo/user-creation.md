@@ -4,6 +4,8 @@ title: Onboard Users
 
 ## Platform User Onboarding
 
+<!-- TODO: 2.0 - users are different between github and gitlab, separate docs -->
+
 In this tutorial we will show how to add users to your platform through [Atlantis](https://www.runatlantis.io/), which will allow a preview of how changes made will be expressed through terraform before branches are merged into your repository.
 
 Navigate to the `gitops` repository in your GitHub org, clone the contents, and create a new branch:
@@ -12,9 +14,10 @@ Navigate to the `gitops` repository in your GitHub org, clone the contents, and 
 cd gitops
 git checkout -b new-user
 ```
-
+<!-- TODO: 2.0 - check path docs -->
 The file `terraform/users/admins-github.tf` contains blocks that represent admin users - the kubefirst_bot user, and a commented-out admin_one user:
 
+<!-- TODO: 2.0 - check example and splat -->
 ```terraform
 module "admin_one" {
   source = "./modules/user/github"
@@ -42,7 +45,7 @@ git push --set-upstream origin new-user
 
 Create a pull request. This will kick off the Atlantis workflow. Within a minute or so of submitting the pull request, a comment will appear on the pull request that shows the terraform plan with the changes it will be making to your infrastructure.
 
-![atlantis comments](../../../img/kubefirst/local/atlantis-comments.png)
+![atlantis comments](../../img/kubefirst/local/atlantis-comments.png)
 
 To apply these changes, you or someone in the organization can submit a comment on that Merge Request with the following comment text:
 
@@ -56,10 +59,10 @@ Atlantis will always run plans automatically for you when a merge request is ope
 
 Any new users you have created through this process will have their temporary initial passwords stored in your Vault cluster. You can access Vault using the root login credentials provided to you during your kubefirst installation. Only the root vault token can access these secrets. You will find your users' initial passwords in the Vault secret store `/secrets/users/<username>`.
 
-![vault token login](../../../img/kubefirst/local/vault-token-login.png)
+![vault token login](../../img/kubefirst/local/vault-token-login.png)
 
 Once you've provided them their initial password, they can update their own password throughout the platform by updating their user password entity in vault. Anyone can change their own password, and Admins can reset anyone's password. These rules, just like everything else on Kubefirst, can be configured in your new gitops repository.
 
-![default user creation](../../../img/kubefirst/local/default-user-creation.png)
+![default user creation](../../img/kubefirst/local/default-user-creation.png)
 
 The admins and developers that you add through IaC will automatically propagate to all tools due to the Vault oidc provider that's preconfigured throughout the kubefirst platform tools.

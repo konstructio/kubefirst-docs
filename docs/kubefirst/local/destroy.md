@@ -2,43 +2,28 @@
 title: Destroy
 ---
 
-## Destroying your Kubefirst local platform
+## Destroying your local kubefirst k3d platform
 
 ### Automated Teardown
 
-Before you attempt to recreate a Kubefirst local platform, you'll need to destroy your k3d cluster and the git repositories that we created for you using this command:
+To destroy your k3d cluster, and the Git repositories that we created for you, run:
 
 ```shell
-kubefirst local destroy
+kubefirst k3d destroy
 ```
 
-### Localhost file cleanup
+### Removing CA from the trusted store
 
-You can clean kubefirst files from your localhost by running
-
-```shell
-kubefirst clean
-```
-
-This command will remove the following content:
-
-- `~/.kubefirst`
-- `~/.k1/*`
-
-### Removing CA of trusted store
-
-If you executed the steps of install the CA of MkCert (described on Install process) and if you want, you can also clean your trusted store.
+If you installed the MkCert CA to the trusted store you can remove it with:
 
 ```shell
 mkcert -uninstall
 ```
 
-But when you will execute `kubefirst local` posteriorly, to have the certificates trusted in browsers again, you will need to execute `mkcert -install` again.
-
 ### Tips
 
 #### Avoiding tools re-download
-
-The kubefirstCLI download some tools used during cluster provisioning, for example, Terraform, Helm, and Kubectl, in versions compatible with Kubefirst and stores them in the K1 folder. If you are using Kufibefirst to demo in conferences or using poor connections (mobile, hotels) you should consider using this additional flag `--preserve-tools` for each cycle of create/destroy.
+<!-- TODO: 2.0 - confirm flag on 2.0 -->
+The kubefirst CLI download some tools used during cluster provisioning, for example, Terraform, Helm, and Kubectl, in versions compatible with Kubefirst and stores them in the K1 folder. If you are using Kufibefirst to demo in conferences or using poor connections (mobile, hotels) you should consider using this additional flag `--preserve-tools` for each cycle of create/destroy.
 
 This will preserve tools downloaded and will save time and network bandwidth during cluster provisioning.
