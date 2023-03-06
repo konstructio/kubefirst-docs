@@ -49,7 +49,6 @@ Cluster "kubefirst" is up and running!
 ```
 <!-- TODO: 2.0 - above still true? -->
 
-
 #### Installed Applications
 
 Kubefirst implicitly contains many applications to provide starting capabilities for new users. Operational knowledge of all applications is not necessary to begin using Kubefirst, but is useful to understand your cluster.

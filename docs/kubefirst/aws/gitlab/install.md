@@ -35,7 +35,6 @@ Your new `kbot` account will need to be associated with a GitHub organization.
 - If you don't already have one that you want to use, while logged into GitHub with your new kbot account, establish a new [GitHub organization](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch).
 - If you do already have a GitHub org that you want to add Kubefirst to, you'll need to add your new kubefirst bot as an owner to the existing organization now.
 
-
 ### Step 2 - Create your platform
 
 <!-- TODO: 2.0 - check all flags and minimize command -->
