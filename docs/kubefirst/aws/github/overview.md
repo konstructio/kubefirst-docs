@@ -68,4 +68,4 @@ The metaphor pipeline will:
 
 To watch this pipeline occur, make any change to the `main` branch of the `metaphor` repo. If you're not feeling creative, you can just add a newline to the README.md. Once a file in `main` is changed, navigate to metaphor's CI/CD in the github Actions tab to see the workflows get submitted to Argo workflows.
 
-You can visit the metaphor development, staging, and production apps in your browser to see the versions change as you complete resources and ArgoCD syncs the apps. The metaphor URLs can be found in your GitOps and metaphor project `README.md` files.
+You can visit the metaphor development, staging, and production apps in your browser to see the versions change and Argo CD syncs the apps. The metaphor URLs can be found in your GitOps and metaphor project `README.md` files.
