@@ -11,7 +11,7 @@ cd gitops
 git checkout -b new-user
 ```
 
-The file `terraform/users/admins-github.tf` contains blocks that represent admin users - the kubefirst_bot user, and a commented-out admin_one user:
+The file `k3d-github/terraform/users/admins.tf` contains blocks that represent admin users - the kubefirst_bot user, and a commented-out admin_one user:
 
 <!-- TODO: 2.0 - splat expression being added in 2.0 may impact this doc -->
 ```terraform
