@@ -33,6 +33,6 @@ kubectl get namespaces
 
 [Onboard yourself and your team](./user-creation.md)
 
-### Deliver `metaphor-frontend` to your new Development, Staging, and Production Environments
+### Deliver `metaphor` to your new `development`, `staging`, and `production` environments
 
 Explore gitops application delivery and platform integrations with [metaphor](./metaphor.md)

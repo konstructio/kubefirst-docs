@@ -4,6 +4,8 @@ title: Onboard Users
 
 ## Platform User Onboarding
 
+<!-- TODO: 2.0 - users are different between github and gitlab, separate docs -->
+
 In this tutorial we will show how to add users to your platform through [Atlantis](https://www.runatlantis.io/), which will allow a preview of how changes made will be expressed through terraform before branches are merged into your repository.
 
 Navigate to the `gitops` repository in your GitHub org, clone the contents, and create a new branch:
@@ -12,9 +14,10 @@ Navigate to the `gitops` repository in your GitHub org, clone the contents, and 
 cd gitops
 git checkout -b new-user
 ```
-
+<!-- TODO: 2.0 - check path docs -->
 The file `terraform/users/admins-github.tf` contains blocks that represent admin users - the kubefirst_bot user, and a commented-out admin_one user:
 
+<!-- TODO: 2.0 - check example and splat -->
 ```terraform
 module "admin_one" {
   source = "./modules/user/github"

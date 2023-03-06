@@ -35,7 +35,7 @@ Adjust the following commands to include your new GitHub Personal Access Token f
 # change each of these lines to your values
 export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxx
 export CIVO_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-kubefirst civo create --admin-email you@your-company.io --github-owner your-github-org --domain-name your-domain.io --cluster-name kubefirst
+kubefirst civo create --alerts-email yourdistro@your-company.io --github-owner your-github-org --domain-name your-domain.io --cluster-name kubefirst
 ```
 
 The `kubefirst` cli will produce a directory of utilities, a state file, and some staged platform content that can now be found at `~/.kubefirst` and `~/.k1`.
@@ -47,6 +47,8 @@ The installation process may take about 10 minutes. If you are successful you sh
 ```shell
 Cluster "kubefirst" is up and running!
 ```
+<!-- TODO: 2.0 - above still true? -->
+
 
 #### Installed Applications
 
@@ -69,4 +71,4 @@ A newly created Civo Kubefirst cluster contains:
 
 ### After installation
 
-After the ~10 minute installation, your browser will launch a new tab to the [Kubefirst Console application](https://github.com/kubefirst/console), which will help you navigate your new suite of tools running in your new civo cluster.
+After the ~6 minute installation, your browser will launch a new tab to the [Kubefirst Console application](https://github.com/kubefirst/console), which will help you navigate your new suite of tools running in your new civo cluster.

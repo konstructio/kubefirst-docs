@@ -80,15 +80,15 @@ const sidebars = {
           items: [
             'kubefirst/civo/github/install',
             'kubefirst/civo/overview',
-            'kubefirst/civo/github/repositories',
-            'kubefirst/civo/user-creation',
-            'kubefirst/civo/metaphor'
+            'kubefirst/civo/github/repositories'
           ]
         },
         {
           type: 'category',
           label: 'Explore',
           items: [
+            'kubefirst/civo/user-creation',
+            'kubefirst/civo/metaphor',
             'explore/argocd',
             'explore/gitops',
             'explore/terraform',
@@ -109,15 +109,15 @@ const sidebars = {
           items: [
             'kubefirst/civo/gitlab/install',
             'kubefirst/civo/overview',
-            'kubefirst/civo/github/repositories',
-            'kubefirst/civo/user-creation',
-            'kubefirst/civo/metaphor'
+            'kubefirst/civo/github/repositories'
           ]
         },
         {
           type: 'category',
           label: 'Explore',
           items: [
+            'kubefirst/civo/user-creation',
+            'kubefirst/civo/metaphor',
             'explore/argocd',
             'explore/gitops',
             'explore/terraform',

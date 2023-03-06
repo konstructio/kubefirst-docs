@@ -1,10 +1,10 @@
 ---
-title: GitHub Repositories
+title: GitLab Repositories
 ---
 
-When you install the civo version of kubefirst, 2 new repositories will be added to your organization's github account as shown here.
-
-![GitHub repositories](../../../img/kubefirst/local/repos-list.png)
+When you install the civo version of kubefirst, 2 new repositories will be added to your gitlab project as shown here.
+<!-- TODO: 2.0 - gitlab image -->
+![GitLab repositories](../../../img/kubefirst/local/repos-list.png)
 
 ## Repository Summary
 
@@ -21,12 +21,13 @@ created in Route 53 using external-dns. It has auto-renewing, short-lived certif
 
 For more details see [metaphor](../../../explore/metaphor.md).
 
-## GitHub Repository Management
+## GitLab Repository Management
 
-These GitHub repositories are being managed in Terraform.
+These GitLab repositories are being managed in Terraform.
+<!-- TODO: 2.0 - check path on next line -->
+As you need additional GitLab repositories, just add a new section of Terraform code to `terraform/gitlab/repos.tf`:
 
-As you need additional GitHub repositories, just add a new section of Terraform code to `terraform/github/repos.tf`:
-
+<!-- TODO: 2.0 - check repo example -->
 ```terraform
 module "your_repo_name" {
   source = "./modules/repository"
@@ -41,4 +42,5 @@ module "your_repo_name" {
 
 To make infrastructure and configuration changes with Terraform, simply open a pull request against any of the terraform directory folders in the `gitops` repository. Your pull request will automatically provide plans, state locks, and applies, and even comment in the merge request itself. You'll have a simple, peer reviewable, auditable changelog of all infrastructure and configuration changes.
 
-![Atlantis GitHub](../../../img/kubefirst/local/atlantis.png)
+<!-- TODO: 2.0 - get gitlab image -->
+![Atlantis GitLab](../../../img/kubefirst/local/atlantis.png)

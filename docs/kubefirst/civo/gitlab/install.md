@@ -14,11 +14,10 @@ title: Install
 
 - [kubefirst CLI](../../../kubefirst/overview.md#how-to-install-kubefirst-cli)
 
-#### GitHub Prerequesites
-
-- [A github org](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch)
-- [A new github account for your `kbot` automation user](https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account)
-- [A github Personal Access Token for your `kbot` account](../../../explore/github-token.md)
+#### GitLab Prerequesites
+<!-- TODO: 2.0 - hydrate this whole section with details -->
+- [A gitlab.com user for your `kbot` automation user](https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account)
+- [A gitlab Personal Access Token for your `kbot` account](../../../explore/github-token.md)
 
 #### Civo Prerequisites
 
@@ -33,9 +32,9 @@ Adjust the following commands to include your new GitHub Personal Access Token f
 
 ```shell
 # change each of these lines to your values
-export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxx
+export GITLAB_TOKEN=xxxxxxxxxxxxxxxx
 export CIVO_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-kubefirst civo create --admin-email you@your-company.io --github-owner your-github-org --domain-name your-domain.io --cluster-name kubefirst
+kubefirst civo create --alerts-email yourdistro@your-company.io --github-owner your-github-org --domain-name your-domain.io --cluster-name kubefirst
 ```
 
 The `kubefirst` cli will produce a directory of utilities, a state file, and some staged platform content that can now be found at `~/.kubefirst` and `~/.k1`.
@@ -47,13 +46,15 @@ The installation process may take about 10 minutes. If you are successful you sh
 ```shell
 Cluster "kubefirst" is up and running!
 ```
+<!-- TODO: 2.0 - above still true? -->
+
 
 #### Installed Applications
 
 Kubefirst implicitly contains many applications to provide starting capabilities for new users. Operational knowledge of all applications is not necessary to begin using Kubefirst, but is useful to understand your cluster.
 
 A newly created Civo Kubefirst cluster contains:
-
+<!-- TODO: 2.0 - add gitlab components -->
 - A private repo named `gitops`. The applications that you build and release on the kubefirst platform will also be registered here in the development, staging, and production folders.
 - [Argo CD](https://github.com/argoproj/argo-cd) - GitOps Continuous Delivery
 - [Argo Workflows](https://argoproj.github.io/argo-workflows/) - Application Continuous Integration
@@ -62,11 +63,10 @@ A newly created Civo Kubefirst cluster contains:
 - [Chart Museum](https://github.com/helm/chartmuseum) - Helm Chart Registry
 - [External DNS](https://github.com/kubernetes-sigs/external-dns) - Automated DNS Management
 - [External Secrets Operator](https://external-secrets.io/) - Syncs Kubernetes secrets with Vault secrets
-- [GitHub Action Runner](https://github.com/features/actions) - Self Hosted GitHub Action Runner
 - [Metaphor](https://github.com/kubefirst/metaphor-frontend-template) - A sample app to demonstrate CI/CD in on Kubernetes. Contains Devlopment, Staging, and Production environments.
 - [Nginx Ingress Controller](https://github.com/kubernetes/ingress-nginx) - Popular Ingress Controller to allow external access to your cluster services
 - [Vault](https://github.com/hashicorp/vault) - Secrets Management, Identity Provider, OIDC Provider
 
 ### After installation
 
-After the ~10 minute installation, your browser will launch a new tab to the [Kubefirst Console application](https://github.com/kubefirst/console), which will help you navigate your new suite of tools running in your new civo cluster.
+After the ~6 minute installation, your browser will launch a new tab to the [Kubefirst Console application](https://github.com/kubefirst/console), which will help you navigate your new suite of tools running in your new civo cluster.
