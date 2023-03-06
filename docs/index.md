@@ -131,7 +131,7 @@ Choose one of the available options below
             <div class="card__body">
             <h3> kubefirst on AWS (GitHub)</h3>
             <p>
-               Our AWS cloud platform can accommodate all of the <strong>needs of your enterprise</strong> and supports the <strong>Github</strong> git provider. All you need is a domain and a hosted zone and in a single command and 35 minutes you'll have a secure EKS infrastructure management and application delivery platform.
+               Our AWS cloud platform can accommodate all the <strong>needs of your enterprise</strong> and supports the <strong>GitHub</strong> git provider. All you need is a domain in addition to a hosted zone, and within 35 minutes of running a single command, you'll have a secure EKS infrastructure management and application delivery platform.
             </p>
             </div>
             <div class="card__footer">
@@ -152,7 +152,7 @@ Choose one of the available options below
             <div class="card__body">
             <h3> kubefirst on AWS (GitLab)</h3>
             <p>
-               Our AWS cloud platform can accommodate all of the <strong>needs of your enterprise</strong> and supports the <strong>GitLab</strong> git provider. All you need is a domain and a hosted zone and in a single command and 35 minutes you'll have a secure EKS infrastructure management and application delivery platform.
+               Our AWS cloud platform can accommodate all the <strong>needs of your enterprise</strong> and supports the <strong>GitLab</strong> git provider. All you need is a domain in addition to a hosted zone, and within 35 minutes of running a single command, you'll have a secure EKS infrastructure management and application delivery platform.
             </p>
             </div>
             <div class="card__footer">
