@@ -27,11 +27,11 @@ Choose one of the available options below
             <div class="card__image">
             <img
                src="\img\local_github.jpg"
-               alt="Local K3D with GitHub"
-               title="Local K3D with GitHub" />
+               alt="Local k3d with GitHub"
+               title="Local k3d with GitHub" />
             </div>
             <div class="card__body">
-            <h3>Kubefirst Local (K3D with GitHub)</h3>
+            <h3>Kubefirst Local (k3d with GitHub)</h3>
             <p>
                The <strong>fastest</strong> way to explore the kubefirst platform!
             </p>
@@ -51,11 +51,11 @@ Choose one of the available options below
             <div class="card__image">
             <img
                src="\img\local_github.jpg"
-               alt="Local K3D with GitLab"
-               title="Local K3D with GitLab" />
+               alt="Local k3d with GitLab"
+               title="Local k3d with GitLab" />
             </div>
             <div class="card__body">
-            <h3>🆕 Kubefirst Local (K3D with GitLab)</h3>
+            <h3>🆕 Kubefirst Local (k3d with GitLab)</h3>
             <p>
                The <strong>fastest</strong> way to explore the kubefirst platform!
             </p>
