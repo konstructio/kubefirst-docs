@@ -16,10 +16,7 @@ The GitOps repo houses all of our IAC and all of our GitOps configurations. All 
 
 ### metaphor
 
-The metaphor suite is set of example microservice applications used to showcase certain features of the Kubefirst platform. The metaphor apps have CI/CD that deliver the apps to a development, staging, and production namespace in your Kubernetes cluster. Its secrets in Vault are bound to the Metaphor apps through the use of external-secrets, a handy Kubernetes utility to keep Kubernetes secrets in sync with the Vault source of truth. It also demonstrates how DNS entries will be automatically created in route53 using external-dns. It has auto-renewing short-lived certificates generated and auto-renewed as well using cert-manager and the Let's Encrypt cluster-issuer.
-
-The available Metaphor applications are **Metaphor (NodeJS API)**, **Metaphor (Go API)** and **Metaphor Frontend**.
-The Metaphor applications are describe in more details [here](../../../explore/metaphor.md).
+`metaphor` is a suite of demo microservice applications to demonstrate how an application can be integrated into the kubefirst platform following best practices. It is described in more details [here](../../../explore/metaphor.md).
 
 ## GitLab Repository Management
 
