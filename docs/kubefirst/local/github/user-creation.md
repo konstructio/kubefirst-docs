@@ -4,7 +4,7 @@ title: Atlantis User Creation
 
 In this tutorial we will show how to add users to your local cluster through [Atlantis](https://www.runatlantis.io/), which will allow a preview of how changes made will be expressed through Terraform before branches are merged into your repository.
 
-Navigate to the `gitops` repository in your personal GitHub, clone the contents, and create a new branch:
+Navigate to the `gitops` repository in your personal GitHub account, clone the contents, and create a new branch:
 
 ```shell
 cd gitops
