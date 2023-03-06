@@ -50,7 +50,7 @@ Choose one of the available options below
         <div class="card">
             <div class="card__image">
             <img
-               src="\img\local_github.jpg"
+               src="\img\local_gitlab.jpg"
                alt="Local k3d with GitLab"
                title="Local k3d with GitLab" />
             </div>
@@ -99,7 +99,7 @@ Choose one of the available options below
         <div class="card">
             <div class="card__image">
             <img
-               src="\img\civo_github.jpg"
+               src="\img\civo_gitlab.jpg"
                alt="CIVO Cloud with GitLab"
                title="CIVO Cloud with GitLab" />
             </div>
