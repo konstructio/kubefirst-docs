@@ -35,7 +35,7 @@ const sidebars = {
           label: 'Explore',
           items: [
             'kubefirst/local/user-creation',
-            'kubefirst/local/metaphor',
+            'explore/metaphor',
             'kubefirst/local/limitations',
             'explore/telemetry'
           ]
@@ -62,7 +62,7 @@ const sidebars = {
           label: 'Explore',
           items: [
             'kubefirst/local/user-creation',
-            'kubefirst/local/metaphor',
+            'explore/metaphor',
             'kubefirst/local/limitations',
             'explore/telemetry'
           ]
@@ -88,7 +88,7 @@ const sidebars = {
           label: 'Explore',
           items: [
             'kubefirst/civo/user-creation',
-            'kubefirst/civo/metaphor',
+            'explore/metaphor',
             'explore/argocd',
             'explore/gitops',
             'explore/terraform',
@@ -117,7 +117,7 @@ const sidebars = {
           label: 'Explore',
           items: [
             'kubefirst/civo/user-creation',
-            'kubefirst/civo/metaphor',
+            'explore/metaphor',
             'explore/argocd',
             'explore/gitops',
             'explore/terraform',
