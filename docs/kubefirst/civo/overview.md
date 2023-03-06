@@ -27,12 +27,12 @@ kubectl get namespaces
 
 ### Your new `gitops` repo
 
-[GitHub repos managed as Terraform IaC](./github-repositories.md)
+[GitHub repos managed as Terraform IaC](./github/repositories.md)
 
 ### User onboarding
 
 [Onboard yourself and your team](./user-creation.md)
 
-### Deliver `metaphor-frontend` to your new Development, Staging, and Production Environments
+### Deliver `metaphor` to your new `development`, `staging`, and `production` environments
 
-Explore gitops application delivery and platform integrations with [metaphor](./metaphor.md)
+Explore gitops application delivery and platform integrations with [metaphor](../../explore/metaphor.md)

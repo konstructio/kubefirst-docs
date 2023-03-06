@@ -3,7 +3,7 @@ title: Overview
 ---
 
 <div class="video-wrapper">
-  <iframe width="1280" height="400" src="https://www.youtube.com/embed/KEUOaNMUqOM" frameborder="0" allowfullscreen></iframe>
+  <iframe width="784" height="441" src="https://www.youtube.com/embed/KEUOaNMUqOM" frameborder="0" allowfullscreen></iframe>
 </div>
 
 **psssst** _- if you plan to destroy your kubefirst platform and recreate it again we recommend running `kubefirst backupSSL` to re-use your ssl certs from Let's Encrypt. See the [docs](https://docs.kubefirst.io/explore/certificates.html#backup-and-restore-certificates)._
@@ -31,16 +31,18 @@ You now have an EKS cluster with the following content installed in it:
 - These apps are all managed by Argo CD and the app configurations are in the `gitops` repo's `registry` folder.
 - The AWS infrastructure is terraform - that's also in your `gitops` repo, but in your `terraform` folder.
 
-![GitOps Assets](../../img/kubefirst/getting-started/gitops-assets.png)
+<!-- TODO: 2.0 - fix this image! -->
+![GitOps Assets](../../../img/kubefirst/getting-started/gitops-assets.png)
 
 ## Step 1: Console UI
 
 Once you run the `cluster create` command at the end of the installation will open a new browser tab with the Console UI at
 `http://localhost:9094` to provide you a dashboard to navigate through the different services that were provisioned.
 
-![console ui](../../img/kubefirst/github/console.png)
+![console ui](../../../img/kubefirst/github/console.png)
 
-![terminal handoff](../../img/kubefirst/getting-started/cluster-create-result.png)
+<!-- TODO: 2.0 - fix this image! -->
+![terminal handoff](../../../img/kubefirst/getting-started/cluster-create-result.png)
 
 These are **not your personal credentials**. These are administrator credentials that can be used if you ever need to authenticate and administer your tools if your OIDC provider ever becomes unavailable. Please protect these secrets and store them in a safe place.
 
@@ -48,7 +50,7 @@ These are **not your personal credentials**. These are administrator credentials
 
 This step is meant to explore the onboarding process of a new user to your installation:
 
-- [Explore Atlantis & Terraform to manage users](../../explore/terraform.md#how-can-i-use-atlantis-to-add-a-new-user-on-my-github-backed-installation)
+- [Explore Atlantis & Terraform to manage users](../../../explore/terraform.md#how-can-i-use-atlantis-to-add-a-new-user-on-my-github-backed-installation)
 
 ## Step 3: Deliver Metaphor to Development, Staging, and Production
 
@@ -66,14 +68,4 @@ The metaphor pipeline will:
 
 To watch this pipeline occur, make any change to the `main` branch of the `metaphor` repo. If you're not feeling creative, you can just add a newline to the README.md. Once a file in `main` is changed, navigate to metaphor's CI/CD in the github Actions tab to see the workflows get submitted to Argo workflows.
 
-You can visit the metaphor development, staging, and production apps in your browser to see the versions change as you complete resources and ArgoCD syncs the apps. The metaphor URLs can be found in your GitOps and metaphor project `README.md` files.
-
-## Learning the Ropes
-
-We've tried our best to provide the available customizations and patterns of the Kubefirst platform here on our docs site. We've also made [links available](../credit.md) to all of our open source tool's sources of documentation.
-
-You can [reach out to us](../../community/index.md) if you have any issues along the way. We're also available for consultation of where you should take the platform based on your organization's needs. We know the technologies inside and out and would love to help you do the same.
-
-## What to do next
-
-[Continue your journey](../../explore/overview.md)
+You can visit the metaphor development, staging, and production apps in your browser to see the versions change and Argo CD syncs the apps. The metaphor URLs can be found in your GitOps and metaphor project `README.md` files.
