@@ -23,12 +23,15 @@ The `gitops` repo houses all of our IAC and all our GitOps configurations. All o
 As you need additional GitHub repositories, just add a new section of Terraform code to `terraform/gitlab/repos.tf` in your new gitops repository:
 
 ```terraform
+# set auto_init to false if importing an existing repository
+# true if it's a new repository
+
 module "your_repo_name" {
   source = "./modules/repository"
   visibility         = "private"
   repo_name          = "your-repo-name"
   archive_on_destroy = true
-  auto_init          = false # set to false if importing an existing repository, set to true if brand new
+  auto_init          = false
 }
 ```
 
