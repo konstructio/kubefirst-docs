@@ -25,7 +25,6 @@ const sidebars = {
           label: 'Getting Started',
           items: [
             'kubefirst/local/github/install',
-            'kubefirst/local/console',
             'kubefirst/local/overview',
             'kubefirst/local/github/repositories'
           ]
@@ -52,7 +51,6 @@ const sidebars = {
           label: 'Getting Started',
           items: [
             'kubefirst/local/gitlab/install',
-            'kubefirst/local/console',
             'kubefirst/local/overview',
             'kubefirst/local/gitlab/repositories'
           ]
