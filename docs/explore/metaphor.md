@@ -26,6 +26,7 @@ When a new version of our CI is needed, it's best to adopt that new version of t
 
 The `metaphor` applications are multi-instance load balanced applications. It's deployed to the `development`, `staging`, and `production` namespaces in your `kubefirst` cluster.
 
+<!-- TODO: 2.0 - add a dark theme image OR create an image that show well in light & dark theme -->
 ![Metaphor Diagram](../img/kubefirst/metaphor/metaphor-kubernetes-manifests.png)
 
 The Kubernetes manifests produced by the `metaphor` applications CI include a working example of a Kubernetes deployment with downstream ReplicaSet and pods, a service account with a security context used, a service to make the application available to the cluster, and an Ingress to make the service available outside the cluster.
