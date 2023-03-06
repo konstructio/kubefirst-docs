@@ -25,8 +25,8 @@ title: Install
 For kubefirst to be able to provision your Civo cloud resources:
 
 - A [Civo account](https://dashboard.civo.com/signup) in which you are an account owner.
-- A publicly routable [ DNS](https://www.civo.com/learn/configure-dns#adding-a-domain-name).
-- A [Civo token](https://dashboard.civo.com/security)
+- A publicly routable [DNS](https://www.civo.com/learn/configure-dns#adding-a-domain-name).
+- A [Civo token](https://dashboard.civo.com/security).
 
 ## Create your new kubefirst cluster
 
