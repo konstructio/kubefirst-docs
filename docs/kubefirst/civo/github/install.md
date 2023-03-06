@@ -16,9 +16,9 @@ title: Install
 
 ### GitHub Prerequesites
 
-- [A GitHub organisation](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch)
-- [A new GitHub account for your `kbot` automation user](https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account)
-- [A GitHub personal access token for your `kbot` account](../../../explore/github-token.md)
+- A GitHub [organisation](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch).
+- A new GitHub [account](https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account) for your `kbot` automation user.
+- A GitHub [personal access token](../../../explore/github-token.md) for your `kbot` account.
 
 ### Civo Prerequisites
 
