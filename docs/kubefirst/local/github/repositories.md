@@ -6,10 +6,10 @@ title: Repositories
 
 The `kubefirst k3d create` command will create a `gitops` and `metaphor` repository in your personal GitHub account as shown here.
 
-<!-- TODO: 2.0 - new repo list - metaphor not metaphor-frontend-->
+<!-- TODO: 2.0 - new repo list - metaphor not metaphor-frontend -->
 ![GitHub repositories](../../../img/kubefirst/local/repos-list.png)
 
-## Repositories Summary
+## Repositories
 
 ### gitops
 
@@ -19,9 +19,9 @@ The `gitops` repository houses all of our IAC and all our GitOps configurations.
 
 `metaphor` is a suite of demo microservice applications to demonstrate how an application can be integrated into the kubefirst platform following best practices. It is described in more details [here](../../../explore/metaphor.md).
 
-## Repositories Management
+## Management
 
-As you need additional GitHub repositories, just add a new section of Terraform code to `terraform/github/repos.tf` in your new `gitops` repository:
+If you need additional GitHub repositories, add a new section of Terraform code to `terraform/github/repos.tf` in your new `gitops` repository:
 
 ```terraform
 # set auto_init to false if importing an existing repository
@@ -36,7 +36,7 @@ module "your_repo_name" {
 }
 ```
 
-GitHub's Terraform provider give you access to many more configuration options than just these settings. More information about those in the `Resources` section of the GitHub provider [documentation](https://registry.terraform.io/providers/integrations/github/latest/docs).
+GitHub's Terraform provider give you access to [many more configuration options](https://registry.terraform.io/providers/integrations/github/latest/docs) than just these settings.
 
 ## Making Changes with Terraform
 
