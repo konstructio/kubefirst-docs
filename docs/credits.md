@@ -1,5 +1,5 @@
 ---
-title: Credit
+title: Credits
 ---
 
 ## The Open Source Tools We Love

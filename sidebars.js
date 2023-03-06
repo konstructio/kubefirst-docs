@@ -201,8 +201,8 @@ const sidebars = {
         'kubefirst/aws/destroy'
       ]
     },
-    'kubefirst/FAQ',
-    'kubefirst/credit'
+    'FAQ',
+    'credits'
   ]
 };
 
