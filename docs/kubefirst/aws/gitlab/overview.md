@@ -74,6 +74,6 @@ You can visit the metaphor development, staging, and production apps in your bro
 
 ### Learning the Ropes
 
-We've tried our best to surface available customizations and patterns of the Kubefirst platform here on our docs site. We've also made [links available](../../credit.md) to all of our open source tools' own sources of documentation as well.
+We've tried our best to surface available customizations and patterns of the Kubefirst platform here on our docs site. We've also made [links available](../../../credits.md) to all of our open source tools' own sources of documentation as well.
 
 You can [reach out to us](../../../community/index.md) if you have any issues along the way. We're also available for consultation about where you should take the platform based on your organization's needs. We know the technologies inside and out and would love to help you do the same.
