@@ -78,7 +78,7 @@ jobs:
 
   update-typesense-data:
       name: Index the content
-      needs: [build, deploy-preprod, invalidate-cloudfront]
+      #needs: [build, deploy-preprod, invalidate-cloudfront]
       runs-on: ubuntu-latest
 
       steps:
