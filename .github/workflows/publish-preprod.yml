@@ -3,8 +3,6 @@ on:
   push:
     branches: 
       - main
-    paths:
-      - docs/**
 env:
   RELEASE_DOCS_BRANCH_REF: 'refs/heads/main'
 
