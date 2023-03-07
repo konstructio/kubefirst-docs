@@ -77,7 +77,7 @@ jobs:
         DISTRIBUTION: ${{ secrets.DISTRIBUTION_ID }}
 
   update-typesense-data:
-      name: Build Docs
+      name: Index the content
       runs-on: ubuntu-latest
 
       steps:
