@@ -41,6 +41,9 @@ const config = {
       }),
     ],
   ],
+
+  themes: ['docusaurus-theme-search-typesense'],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -99,7 +102,21 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-      }
+      },
+      typesense: {
+        typesenseCollectionName: 'kubefirst',
+        typesenseServerConfig: {
+          nodes: [
+            {
+              host: 'typesense.mgmt.kubefirst.com',
+              port: 443,
+              protocol: 'https',
+            },
+          ],
+          apiKey: 'AeeRpiguwfTpmcKHGbBkTmUCkjoPg8nh',
+        },
+        contextualSearch: true,
+      },
     }),
 
 };
