@@ -86,7 +86,7 @@ jobs:
         uses: actions/checkout@v3
 
       # Need to update the index_name for the preprod one
-      - name: Update typesense start_urls
+      - name: Update typesense index_name
         uses: jossef/action-set-json-field@v2.1
         with:
           file: typesense.docsearch.config.json
@@ -99,7 +99,7 @@ jobs:
         with:
           file: typesense.docsearch.config.json
           field: start_urls[0]
-          value: "https://docs.kubefirst.io/preprod"
+          value: "https://docs.kubefirst.io/preprod/index.html"
 
       # Need to update the sitemap_urls for the preprod one
       - name: Update typesense sitemap_urls
