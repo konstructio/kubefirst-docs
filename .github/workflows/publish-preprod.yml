@@ -99,7 +99,7 @@ jobs:
         with:
           file: typesense.docsearch.config.json
           field: start_urls[0]
-          value: "https://docs.kubefirst.io/preprod/"
+          value: "https://docs.kubefirst.io/preprod"
 
       # Need to update the sitemap_urls for the preprod one
       - name: Update typesense sitemap_urls
