@@ -12,7 +12,7 @@ const config = {
 
   // Set the production url of your site here
   url: 'https://docs.kubefirst.io',
-  baseUrl: process.env.BASEURL,
+  baseUrl: process.env.BASEURL || "/",
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
