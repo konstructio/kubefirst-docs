@@ -21,6 +21,23 @@ Before making a code change, first discuss your idea via an [issue](https://gith
 
 We are using [Docusaurus](https://github.com/facebook/docusaurus) as our documentation platform. More information on the platform in their [documentation](https://docusaurus.io/docs).
 
+### Commit messages
+
+We subscribe to the [Conventional Commits specification](https://www.conventionalcommits.org). It can be a bit difficult to choose the right commit message prefix since this repository is for documentation, and not an application per se. Here are the guidelines for the documentation specific ones:
+
+- `docs`: when adding new information to the docs (ex.: creating a new page, adding a section to an existing one).
+- `fix`: when fixing the documentation (ex.: correcting a typo, rectifying untrue content).
+- `refactor`: rewording part of the content or restructuring the documentation.
+
+Here's the non content related ones:
+
+- `chore`: anything that isn't Docusaurus code related (see `feat` prefix) or documentation content (ex.: updating the `CONTRIBUTING.md` file or releasing a new version of the docs).
+- `ci`: any automation, probably GitHub Actions related.
+- `feat`: anything related to Docusaurus as our documentation platform (ex.: updating Docusaurus, changing the configurations), aside from styling.
+- `style`: anything about styling, mostly CSS.
+
+As of now, we don't see usage for the `perf` & `test` prefixes.
+
 ### Update the content
 
 WIP
@@ -50,7 +67,7 @@ WIP
 
 To run our documentation locally, simply run `npm start`.
 
-## Getting Started with the Code
+## Getting Started with Kubefirst Code
 
 Please check the [CONTRIBUTING.md](https://github.com/kubefirst/kubefirst/blob/main/CONTRIBUTING.md) file from the [kubefirst](https://github.com/kubefirst/kubefirst/) repository.
 
