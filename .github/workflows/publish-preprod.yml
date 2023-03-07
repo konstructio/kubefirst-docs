@@ -17,7 +17,7 @@ jobs:
         node-version: 16
     - run: npm ci
     - run: rm -rf ./build
-    - run: npm run build
+    - run: npm run build-preprod
     - uses: actions/upload-artifact@master
       with:
         name: build
@@ -56,4 +56,5 @@ jobs:
         AWS_REGION: 'us-east-2'
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        DISTRIBUTION: ${{ secrets.DISTRIBUTION_ID }}
         DISTRIBUTION: ${{ secrets.DISTRIBUTION_ID }}
