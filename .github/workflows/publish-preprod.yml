@@ -19,7 +19,7 @@ jobs:
         node-version: 16
     - run: npm ci
     - run: rm -rf ./build
-    - run: npm run build
+    - run: npm run build-preprod
     - uses: actions/upload-artifact@master
       with:
         name: build
