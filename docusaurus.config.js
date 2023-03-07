@@ -104,7 +104,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       typesense: {
-        typesenseCollectionName: 'kubefirst',
+        typesenseCollectionName: process.env.INDEX_NAME || 'kubefirst',
         typesenseServerConfig: {
           nodes: [
             {

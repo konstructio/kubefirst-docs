@@ -1,11 +1,12 @@
 name: Publish Docs in Preprod
 on:
   push:
-    branches: 
+    branches:
       - main
   workflow_dispatch:
 env:
   BASEURL: "/preprod/"
+  INDEX_NAME: "kubefirst-preprod"
 
 jobs:
   build:
@@ -74,3 +75,44 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         DISTRIBUTION: ${{ secrets.DISTRIBUTION_ID }}
+
+  update-typesense-data:
+      name: Build Docs
+      runs-on: ubuntu-latest
+
+      steps:
+      - name: Checkout the docs repo
+        uses: actions/checkout@v3
+
+      # Need to update the index_name for the preprod one
+      - name: Update typesense start_urls
+        uses: jossef/action-set-json-field@v2.1
+        with:
+          file: typesense.docsearch.config.json
+          field: index_name
+          value: ${{ env.INDEX_NAME }}
+
+      # Need to update the start_urls for the preprod one
+      - name: Update typesense start_urls
+        uses: jossef/action-set-json-field@v2.1
+        with:
+          file: typesense.docsearch.config.json
+          field: start_urls
+          value: "https://docs.kubefirst.io/preprod"
+
+      # Need to update the sitemap_urls for the preprod one
+      - name: Update typesense sitemap_urls
+        uses: jossef/action-set-json-field@v2.1
+        with:
+          file: typesense.docsearch.config.json
+          field: sitemap_urls
+          value: "https://docs.kubefirst.io/preprod/sitemap.xml"
+
+      - name: Run TypeSense DocSearch Scraper
+        uses: celsiusnarhwal/typesense-scraper@v2
+        with:
+          api-key: ${{ secrets.TYPESENSE_ADMIN_KEY }}
+          host: typesense.mgmt.kubefirst.com
+          port: 443
+          protocol: https
+          config: typesense.docsearch.config.json
