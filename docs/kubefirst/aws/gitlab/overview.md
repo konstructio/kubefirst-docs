@@ -32,8 +32,7 @@ You now have an EKS cluster with the following content installed in it:
 - These apps are all managed by Argo CD and the app configurations are in the `gitops` repo's `registry` folder.
 - The AWS infrastructure is terraform - that's also in your `gitops` repo, but in your `terraform` folder.
 
-<!-- TODO: 2.0 - fix this image! -->
-![GitOps Assets](../../../img/kubefirst/getting-started/gitops-assets.png)
+![GitOps Assets](../../../img/kubefirst/gitlab/gitops-assets.png)
 
 ### Step 1: Console UI
 
