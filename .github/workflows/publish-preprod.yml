@@ -112,10 +112,23 @@ jobs:
           value: "https://docs.kubefirst.io/preprod/sitemap.xml"
 
       - name: Run TypeSense DocSearch Scraper
-        uses: celsiusnarhwal/typesense-scraper@v2
-        with:
-          api-key: ${{ secrets.TYPESENSE_ADMIN_KEY }}
-          host: typesense.mgmt.kubefirst.com
-          port: 443
-          protocol: https
-          config: typesense.docsearch.config.json
+        shell: bash
+        run: |
+          docker run \
+            -e TYPESENSE_API_KEY=${{ secrets.TYPESENSE_ADMIN_KEY }} \
+            -e TYPESENSE_HOST="typesense.mgmt.kubefirst.com" \
+            -e TYPESENSE_PORT="443" \
+            -e TYPESENSE_PROTOCOL="https" \
+            -e CONFIG="$(cat typesense.docsearch.config.json | jq -r tostring)" \
+            -e DOCSEARCH_BASICAUTH_USERNAME=${{ secrets.DOCSEARCH_BASICAUTH_USERNAME }} \
+            -e DOCSEARCH_BASICAUTH_PASSWORD=${{ secrets.DOCSEARCH_BASICAUTH_PASSWORD }} \
+            typesense/docsearch-scraper
+
+      # - name: Run TypeSense DocSearch Scraper
+      #   uses: celsiusnarhwal/typesense-scraper@v2
+      #   with:
+      #     api-key: ${{ secrets.TYPESENSE_ADMIN_KEY }}
+      #     host: typesense.mgmt.kubefirst.com
+      #     port: 443
+      #     protocol: https
+      #     config: typesense.docsearch.config.json
