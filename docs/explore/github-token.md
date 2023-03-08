@@ -9,10 +9,10 @@ Kubefirst issue GitHub Tokens at the beginning of the installation using [GitHub
 ## GitHub Token Scopes
 
 Kubefirst uses the following scopes to provision the Kubefirst platform:
-![GitHub Token Scopes](../img/kubefirst/github/scopes.png)
+![GitHub Token Scopes](../img/common/github/scopes.png)
 
 ## How to create a GitHub Token
 
 There are different ways to create a GitHub token. The easiest way is to start the Kubefirst installer, and follow the screen instructions. It will guide you to issue a token with the list of scope described above.
 
-There are other ways to create a GitHub token. You can login into your GitHub account and issue a Personal Access token following the list of scopes above. With the manually generated token, you can provide it via environment variable: `export KUBEFIRST_GITHUB_AUTH_TOKEN`.
+There are other ways to create a GitHub token. You can login into your GitHub account and issue a Personal Access token following the list of scopes above. With the manually generated token, you can provide it via environment variable: `export GITHUB_TOKEN`.
