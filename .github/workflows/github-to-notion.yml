@@ -15,4 +15,9 @@ jobs:
       uses: distributhor/workflow-webhook@v3
       env:
         webhook_url: ${{ secrets.NOTION_WEBHOOK_URL }}
-        data: '{ "issue": "${{ github.event.issue.html_url }}", "title": "${{ github.event.issue.title }}", "content": "${{ github.event.issue.body }}" }'
+        data: |
+          {
+            "issue": "${{ toJSON(github.event.issue.html_url) }}",
+            "title": "${{ toJSON(github.event.issue.title) }}",
+            "content": "${{ toJSON(github.event.issue.body) }}"
+          }
