@@ -5,8 +5,8 @@ title: Repositories
 # GitLab Repositories
 
 When you install the civo version of kubefirst, 2 new repositories will be added to your gitlab project as shown here.
-<!-- TODO: 2.0 - gitlab image -->
-![GitLab repositories](../../../img/kubefirst/local/repos-list.png)
+
+![GitLab repositories](../../../img/common/gitlab/repositories.png)
 
 ## Repository Summary
 
