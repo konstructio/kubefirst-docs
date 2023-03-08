@@ -7,6 +7,8 @@ on:
 env:
   BASEURL: "/preprod/"
   INDEX_NAME: "kubefirst-preprod"
+  DOCSEARCH_BASICAUTH_USERNAME: ${{ secrets.DOCSEARCH_BASICAUTH_USERNAME }}
+  DOCSEARCH_BASICAUTH_PASSWORD: ${{ secrets.DOCSEARCH_BASICAUTH_PASSWORD }}
 
 jobs:
   # build:

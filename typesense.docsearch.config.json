@@ -1,10 +1,10 @@
 {
 	"index_name": "kubefirst",
 	"start_urls": [
-	  "https://docs.kubefirst.io/preprod/index.html"
+	  "https://kubefirst:preprod@docs.kubefirst.io/preprod/"
 	],
 	"sitemap_urls": [
-	  "https://docs.kubefirst.io/preprod/sitemap.xml"
+	  "https://kubefirst:preprod@docs.kubefirst.io/preprod/sitemap.xml"
 	],
 	"sitemap_alternate_links": true,
 	"selectors": {
