@@ -94,12 +94,12 @@ jobs:
           value: ${{ env.INDEX_NAME }}
 
       # Need to update the start_urls for the preprod one
-      - name: Update typesense start_urls
-        uses: jossef/action-set-json-field@v2.1
-        with:
-          file: typesense.docsearch.config.json
-          field: start_urls[0]
-          value: "https://docs.kubefirst.io/preprod/index.html"
+      # - name: Update typesense start_urls
+      #   uses: jossef/action-set-json-field@v2.1
+      #   with:
+      #     file: typesense.docsearch.config.json
+      #     field: start_urls[0]
+      #     value: "https://docs.kubefirst.io/preprod/index.html"
 
       # Need to update the sitemap_urls for the preprod one
       - name: Update typesense sitemap_urls
