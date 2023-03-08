@@ -7,76 +7,74 @@ on:
 env:
   BASEURL: "/preprod/"
   INDEX_NAME: "kubefirst-preprod"
-  DOCSEARCH_BASICAUTH_USERNAME: ${{ secrets.DOCSEARCH_BASICAUTH_USERNAME }}
-  DOCSEARCH_BASICAUTH_PASSWORD: ${{ secrets.DOCSEARCH_BASICAUTH_PASSWORD }}
 
 jobs:
-  # build:
-  #   name: Build Docs
-  #   runs-on: ubuntu-latest
+  build:
+    name: Build Docs
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #   - name: Checkout the docs repo
-  #     uses: actions/checkout@v3
+    steps:
+    - name: Checkout the docs repo
+      uses: actions/checkout@v3
 
-  #   - name: Setup Node.js
-  #     uses: actions/setup-node@v3
-  #     with:
-  #       node-version: 19.7.0
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 19.7.0
 
-  #   - name: Install dependencies
-  #     run: npm ci
+    - name: Install dependencies
+      run: npm ci
 
-  #   - name: Clean the build
-  #     run: rm -rf ./build
+    - name: Clean the build
+      run: rm -rf ./build
 
-  #   - name: Generate the docs
-  #     run: npm run build
+    - name: Generate the docs
+      run: npm run build
 
-  #   - name: Stage docs for the deploy-preprod job
-  #     uses: actions/upload-artifact@master
-  #     with:
-  #       name: build
-  #       path: ./build
+    - name: Stage docs for the deploy-preprod job
+      uses: actions/upload-artifact@master
+      with:
+        name: build
+        path: ./build
 
-  # deploy-preprod:
-  #   name: Deploy to Preprod
-  #   needs: build
-  #   runs-on: ubuntu-latest
+  deploy-preprod:
+    name: Deploy to Preprod
+    needs: build
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #   - name: Get docs for the build job
-  #     uses: actions/download-artifact@master
-  #     with:
-  #       name: build
-  #       path: ./build
+    steps:
+    - name: Get docs for the build job
+      uses: actions/download-artifact@master
+      with:
+        name: build
+        path: ./build
 
-  #   - name: Update S3 with the docs
-  #     uses: jakejarvis/s3-sync-action@master
-  #     with:
-  #       args: --acl public-read --follow-symlinks --delete
-  #     env:
-  #       AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-  #       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  #       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  #       SOURCE_DIR: 'build'
-  #       DEST_DIR: 'preprod'
+    - name: Update S3 with the docs
+      uses: jakejarvis/s3-sync-action@master
+      with:
+        args: --acl public-read --follow-symlinks --delete
+      env:
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        SOURCE_DIR: 'build'
+        DEST_DIR: 'preprod'
 
-  # invalidate-cloudfront:
-  #   name: Invalidate CloudFront
-  #   needs: [build, deploy-preprod]
-  #   runs-on: ubuntu-latest
+  invalidate-cloudfront:
+    name: Invalidate CloudFront
+    needs: [build, deploy-preprod]
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #   - name: Invalidate CloudFront for preprod
-  #     uses: chetan/invalidate-cloudfront-action@v2
-  #     if: ${{ github.ref }} == ${{ env.RELEASE_DOCS_BRANCH_REF }}
-  #     env:
-  #       PATHS: '/preprod/*'
-  #       AWS_REGION: 'us-east-2'
-  #       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  #       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  #       DISTRIBUTION: ${{ secrets.DISTRIBUTION_ID }}
+    steps:
+    - name: Invalidate CloudFront for preprod
+      uses: chetan/invalidate-cloudfront-action@v2
+      if: ${{ github.ref }} == ${{ env.RELEASE_DOCS_BRANCH_REF }}
+      env:
+        PATHS: '/preprod/*'
+        AWS_REGION: 'us-east-2'
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        DISTRIBUTION: ${{ secrets.DISTRIBUTION_ID }}
 
   update-typesense-data:
       name: Index the content
@@ -96,19 +94,19 @@ jobs:
           value: ${{ env.INDEX_NAME }}
 
       # Need to update the start_urls for the preprod one
-      # - name: Update typesense start_urls
-      #   uses: jossef/action-set-json-field@v2.1
-      #   with:
-      #     file: typesense.docsearch.config.json
-      #     field: start_urls[0]
-      #     value: "https://docs.kubefirst.io/preprod/index.html"
+      - name: Update typesense start_urls
+        uses: jossef/action-set-json-field@v2.1
+        with:
+          file: typesense.docsearch.config.json
+          field: .start_urls[0]
+          value: "https://docs.kubefirst.io/preprod/"
 
       # Need to update the sitemap_urls for the preprod one
       - name: Update typesense sitemap_urls
         uses: jossef/action-set-json-field@v2.1
         with:
           file: typesense.docsearch.config.json
-          field: sitemap_urls[0]
+          field: .sitemap_urls[0]
           value: "https://docs.kubefirst.io/preprod/sitemap.xml"
 
       - name: Run TypeSense DocSearch Scraper
@@ -124,11 +122,11 @@ jobs:
             -e DOCSEARCH_BASICAUTH_PASSWORD=${{ secrets.DOCSEARCH_BASICAUTH_PASSWORD }} \
             typesense/docsearch-scraper
 
-      # - name: Run TypeSense DocSearch Scraper
-      #   uses: celsiusnarhwal/typesense-scraper@v2
-      #   with:
-      #     api-key: ${{ secrets.TYPESENSE_ADMIN_KEY }}
-      #     host: typesense.mgmt.kubefirst.com
-      #     port: 443
-      #     protocol: https
-      #     config: typesense.docsearch.config.json
+      - name: Run TypeSense DocSearch Scraper
+        uses: celsiusnarhwal/typesense-scraper@v2
+        with:
+          api-key: ${{ secrets.TYPESENSE_ADMIN_KEY }}
+          host: typesense.mgmt.kubefirst.com
+          port: 443
+          protocol: https
+          config: typesense.docsearch.config.json
