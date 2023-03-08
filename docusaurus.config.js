@@ -37,12 +37,21 @@ const config = {
         blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
-        },
+        }
       }),
     ],
   ],
 
   themes: ['docusaurus-theme-search-typesense'],
+
+  plugins: [
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'GTM-KZLF3TJ'
+      },
+    ],
+  ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
