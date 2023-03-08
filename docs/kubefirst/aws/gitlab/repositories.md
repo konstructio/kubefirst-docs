@@ -8,8 +8,7 @@ In the GitOps nature, we rely on repositories to have a single source of truth w
 
 ## Repositories
 
-<!-- TODO: 2.0 - fix this image! -->
-![GitLab repositories](../../../img/kubefirst/gitlab-repositories/gitlab-repositories.png)
+![GitLab repositories](../../../img/common/gitlab/repositories.png)
 
 ### gitops
 
