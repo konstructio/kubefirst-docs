@@ -6,8 +6,7 @@ title: Repositories
 
 The `kubefirst k3d create` command will create a `gitops` and `metaphor` repository in your personal GitHub account as shown here.
 
-<!-- TODO: 2.0 - new repo list - metaphor not metaphor-frontend -->
-![GitHub repositories](../../../img/kubefirst/local/repos-list.png)
+![GitHub repositories](../../../img/common/github/repositories.png)
 
 ## Repositories
 

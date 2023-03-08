@@ -6,8 +6,7 @@ title: Repositories
 
 When you deploy a cluster on Civo using kubefirst, new repositories will be added to your organization's GitHub account.
 
-<!-- TODO: 2.0 - fix this image, metaphor repo name changed  -->
-![GitHub repositories](../../../img/kubefirst/local/repos-list.png)
+![GitHub repositories](../../../img/common/github/repositories.png)
 
 ## Repositories
 
