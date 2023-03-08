@@ -1,8 +1,5 @@
 {
 	"index_name": "kubefirst",
-	"start_urls": [
-	  "https://docs.kubefirst.io"
-	],
 	"sitemap_urls": [
 	  "https://docs.kubefirst.io/sitemap.xml"
 	],
