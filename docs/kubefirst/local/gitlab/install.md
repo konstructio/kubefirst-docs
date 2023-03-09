@@ -22,7 +22,7 @@ title: Install
 To create a new kubefirst cluster locally, run
 
 ```shell
-kubefirst k3d create k3d create \
+kubefirst k3d create \
   --git-provider gitlab \
   --gitlab-owner your-group \
   --cluster-name kubefirst
