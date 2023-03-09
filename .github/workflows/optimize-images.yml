@@ -5,7 +5,7 @@ on:
       - main
     paths:
       - "**.png"
-      - "**.jpe?g"
+      - "**.jpeg"
       - "**.svg"
       - "**.gif"
 
