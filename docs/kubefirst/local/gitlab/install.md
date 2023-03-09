@@ -56,7 +56,7 @@ A newly created local kubefirst cluster contains:
 - [External Secrets Operator](https://github.com/external-secrets/external-secrets): Syncs Kubernetes secrets with Vault secrets.
 - [GitHub Action Runner Controller](https://github.com/actions/actions-runner-controller):Self Hosted GitHub Action Runner.
 - [HashiCorp Vault](https://github.com/hashicorp/vault): Secrets Management.
-- [Metaphor](https://github.com/kubefirst/metaphor-frontend-template): A sample app to demonstrate CI/CD in on Kubernetes. Contains Devlopment, Staging, and Production environments.
+- [Metaphor](https://github.com/kubefirst/metaphor): A sample app to demonstrate CI/CD in on Kubernetes. Contains Devlopment, Staging, and Production environments.
 - [Traefik](https://github.com/traefik/traefik): Default Ingress Controller for K3D Clusters.
 
 ### How to resolve HTTPS Certificate Warnings

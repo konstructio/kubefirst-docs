@@ -65,7 +65,7 @@ A newly created Civo kubefirst cluster contains:
 - [External DNS](https://github.com/kubernetes-sigs/external-dns) - Automated DNS Management.
 - [External Secrets Operator](https://external-secrets.io/) - Syncs Kubernetes secrets with Vault secrets.
 - [GitHub Action Runner](https://github.com/features/actions) - Self Hosted GitHub Action Runner.
-- [Metaphor](https://github.com/kubefirst/metaphor-frontend-template) - A sample app to demonstrate CI/CD in on Kubernetes. Contains Devlopment, Staging, and Production environments.
+- [Metaphor](https://github.com/kubefirst/metaphor) - A sample app to demonstrate CI/CD in on Kubernetes. Contains Devlopment, Staging, and Production environments.
 - [Nginx Ingress Controller](https://github.com/kubernetes/ingress-nginx) - Popular Ingress Controller to allow external access to your cluster services.
 - [Vault](https://github.com/hashicorp/vault) - Secrets Management, Identity Provider, OIDC Provider.
 

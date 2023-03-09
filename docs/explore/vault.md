@@ -20,7 +20,7 @@ For local it's backed by a local S3-like backend in [MinIO](https://min.io/) and
             devRootToken: "k1_local_vault_token"
 ```
 
-Reference: [vault deployment](https://github.com/kubefirst/gitops-template/blob/main/k3d-github/.kubefirst/clusters/mgmt-template/components/vault/application.yaml)
+Reference: [vault deployment](https://github.com/kubefirst/gitops-template/blob/main/k3d-github/cluster-types/mgmt/components/vault/application.yaml)
 
 Your cluster will be set up with Vault running in the k3d cluster. The only backend enabled on the local cluster is the one that provides access to secrets from external-secrets-operator.
 
