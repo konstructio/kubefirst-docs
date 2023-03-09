@@ -38,7 +38,6 @@ If you don't export a [GITHUB_TOKEN](../../../explore/github-token.md) to your s
 
 ### Step 2 - Create your platform
 
-<!-- TODO: 2.0 - check all flags and minimize command -->
 ```shell
 export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxx
 
