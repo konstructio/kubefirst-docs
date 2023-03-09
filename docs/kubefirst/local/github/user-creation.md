@@ -11,21 +11,22 @@ cd gitops
 git checkout -b new-user
 ```
 
-The file `k3d-github/terraform/users/admins.tf` contains blocks that represent admin users - the kubefirst_bot user, and a commented-out admin_one user:
+The folder `k3d-github/terraform/users/admins` contains two separate files that represent admin users: `admin-one.tf` (commented-out), and the `kubefirst_bot` user. Here's the module from `admin-one.tf`:
 
-<!-- TODO: 2.0 - splat expression being added in 2.0 may impact this doc -->
+<!-- TODO: 2.0 - check example and splat -->
 ```terraform
 module "admin_one" {
   source = "./modules/user/github"
-  acl_policies        = ["admin"]
-  email               = "admin@your-company-io.com"
-  first_name          = "Admin"
-  github_username     = "admin_one_github_username"
-  last_name           = "One"
-  initial_password    = var.initial_password
-  username            = "aone"
-  user_disabled       = false
-  userpass_accessor   = data.vault_auth_backend.userpass.accessor
+
+  acl_policies            = ["admin"]
+  email                   = "your.admin@your-company.io"
+  first_name              = "Admin"
+  github_username         = "admin-one-github-username"
+  last_name               = "One"
+  team_id                 = data.github_team.admins.id
+  username                = "aone"
+  user_disabled           = false
+  userpass_accessor       = data.vault_auth_backend.userpass.accessor
 }
 ```
 
