@@ -6,7 +6,6 @@ title: Install
 
 `kubefirst` is the name of our CLI that installs the platform of the same name to your local or cloud environment.
 
-<!-- TODO: 2.0 - need gitlab variation -->
 ![Kubefirst local installation diagram](../../../img/kubefirst/local/kubefirst-cluster-create.png)
 
 ## Prerequisites
@@ -29,8 +28,11 @@ Details about your execution will be logged to your `~/.k1/logs` directory. More
 > **2 Hour Expiration Warning**
 > The ngrok tunnel used for kubefirst local has a 2-hour expiration unless you [create a ngrok account](https://dashboard.ngrok.com/signup). This expiration will prevent you from using automated infrastructure as code through Terraform Atlantis, but the rest of the platform will continue to function beyond that ngrok evaluation period.
 
-<!-- TODO: [2.0] will we be able to generate a GITLAB_TOKEN like we do on github or no? -->
-<!-- TODO: [2.0] need a detail about exporting GITLAB_TOKEN -->
+We are able to create an ephemeral GitLab token that expires after 8 hours using a process that will prompt your browser to request access to your account. If you need a quick environment, this is a frictionless approach. However, if you need this environment for longer than 8 hours, which is probably the case, please follow our [GitHub Token Guide](../../../explore/gitlab-token.md) and export a more permanent token to your terminal by using the following command:
+
+```shell
+export GITLAB_TOKEN=gl_xxxxxxxx
+```
 
 When Docker is provided 5 GB of memory and 5 CPUs, the local kubefirst platform will provision in about 6 minutes and deprovision in about 1 minute.
 
@@ -81,5 +83,4 @@ After the ~5 minute installation, your browser will open a new browser tab at co
 
 ## Example of terminal output following cluster creation
 
-<!-- TODO: [2.0] update with 2.0 terminal output from local & GitLab -->
-![terminal handoff](../../../img/kubefirst/local/handoff-screen.png)
+![terminal handoff](../../../img/local/gitlab/handoff-screen.png)
