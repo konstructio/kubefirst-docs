@@ -2,7 +2,6 @@
 title: Overview
 ---
 
-<!-- TODO: this shoul be merged with the index (kubefirst Platforms) or better organized (with content duplication removal) -->
 ## Install the kubefirst CLI
 
 If you are on macOS, and have [Homebrew](https://brew.sh) installed, you can run:
@@ -34,21 +33,23 @@ The kubefirst CLI runs on your localhost and will create an GitLab or GitHub Kub
 
 ### Platforms Details
 
-<!-- TODO: this is a painful table, need to redo it -->
-|   | local + github | local + gitlab | aws + github | aws + gitlab | civo + github | civo + gitlab |
-|:--|:--:|:--:|:--:|:--:|:--:|:--:|
-|how to use | `kubefirst k3d create` | `kubefirst k3d create --git-provider gitlab` | `kubefirst aws create` | `kubefirst aws create --git-provider gitlab` | `kubefirst civo create` | `kubefirst civo create --git-provider gitlab` |
-|argocd | yes | yes | yes | yes | yes | yes |
-|argo workflows | yes | yes | yes | yes | yes | yes |
-|vault | yes |  yes | yes, backed with DynamoDB and KMS| yes, backed with DynamoDB and KMS| yes | yes |
-|atlantis | yes | yes | yes | yes | yes | yes |
-|metaphor | yes | yes | yes | yes | yes | yes |
-|chartmuseum | yes | yes | yes | yes |
-|self-hosted runner | actions-runner-controller | gitlab-runner | actions-runner-controller | gitlab-runner | actions-runner-controller | gitlab-runner |
-|HTTPS/SSL Certificates | mkcert | mkcert | let's encrypt | let's encrypt | let's encrypt | let's encrypt |
-|external-secrets-operator | yes | yes | yes | yes | yes | yes |
-|kubefirst console| yes | yes | yes| yes | yes | yes |
-|oidc | no | no | yes | yes | yes | yes |
+|                           | k3d + GitHub    | k3d + GitLab  | AWS + GitHub  | AWS + GitLab  | Civo + GitHub | Civo + GitLab |
+|---------------------------|-----------------|---------------|---------------|---------------|---------------|---------------|
+| Argo CD                   | X               | X             | X             | X             | X             | X             |
+| Argo Workflows            | X               | X             | X             | X             | X             | X             |
+| Atlantis                  | X               | X             | X             | X             | X             | X             |
+| ChartMuseum               | X               | X             | X             | X             | X             | X             |
+| External Secrets Operator | X               | X             | X             | X             | X             | X             |
+| HashiCorp Vault           | X               | X             | X *           | X *           | X             | X             |
+| kubefirst console         | X               | X             | X             | X             | X             | X             |
+| metaphor                  | X               | X             | X             | X             | X             | X             |
+| OpenID Connect (OIDC)     |                 |               | X             | X             | X             | X             |
+| Self-Hosted Runners       | ARC             | GitLab Runner | ARC           | GitLab Runner | ARC           | GitLab Runner |
+| SSL Certificates          | mkcert          | mkcert        | Let's Encrypt | Let's Encrypt | Let's Encrypt | Let's Encrypt |
+
+ARC is the [Actions Runner Controller](https://github.com/actions/actions-runner-controller), a Kubernetes controller for GitHub Actions self-hosted runners.
+
+\* AWS with GitHub & GitLab have HashiCorp Vault backed with DynamoDB & KMS.
 
 ## Kubefirst Console
 
