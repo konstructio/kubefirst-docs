@@ -80,5 +80,4 @@ After the ~5 minute installation, your browser will open a new browser tab at co
 
 ## Example of terminal output following cluster creation
 
-<!-- TODO: [2.0] update with 2.0 terminal output from local & GitLab -->
-![terminal handoff](../../../img/kubefirst/local/handoff-screen.png)
+![terminal handoff](../../../img/local/gitlab/handoff-screen.png)
