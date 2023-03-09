@@ -8,8 +8,7 @@ title: Install
 
 It installs a fully automated platform of open source cloud native tools with a simple `init` and `create` command.
 
-<!-- TODO: 2.0 - fix this image! -->
-![Kubernetes Cluster](../../../img/kubefirst/gitlab/kubefirst-cluster-create.png)
+![Kubernetes Cluster](../../../img/aws/gitlab/installation-diagram.png)
 
 ### Prerequisites
 
