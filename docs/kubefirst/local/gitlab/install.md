@@ -13,13 +13,19 @@ title: Install
 - [Install](../overview.md#how-to-install-kubefirst-cli) the kubefirst CLI.
 - [Install](https://docs.docker.com/get-docker/) Docker Desktop.
 - Create or use an existing [GitLab account](https://gitlab.com)
+- Create a [GitLab group](https://docs.gitlab.com/ee/user/group/)
+
+> GitLab SaaS offering has limitations that require us to use groups contraty to GitHub which can be use without an organization.
 
 ## Create your new local cluster
 
 To create a new kubefirst cluster locally, run
 
 ```shell
-kubefirst k3d create
+kubefirst k3d create k3d create \
+  --git-provider gitlab \
+  --gitlab-owner your-group \
+  --cluster-name kubefirst
 ```
 
 Details about your execution will be logged to your `~/.k1/logs` directory. More information on `kubefirst k3d`, including optional flags, can be discovered by running `kubefirst k3d help`.
