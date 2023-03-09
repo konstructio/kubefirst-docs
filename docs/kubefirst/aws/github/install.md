@@ -42,9 +42,9 @@ If you don't export a [GITHUB_TOKEN](../../../explore/github-token.md) to your s
 export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxx
 
 kubefirst aws create \
-  --alerts-email your@email.com \
-  --domain-name website.com \
-  --cluster-name kubefirst \
-  --github-owner your-github-organization \
+  --alerts-email yourdistro@your-company.io \
+  --domain-name your-company.io \
+  --cluster-name kubefirst-mgmt \
+  --github-owner your-github-organization-name \
   --git-provider github
 ```
