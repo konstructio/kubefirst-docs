@@ -40,7 +40,6 @@ Once you run the `cluster create` command at the end of the installation will op
 
 ![console ui](../../../img/kubefirst/github/console.png)
 
-<!-- TODO: 2.0 - fix this image! -->
 ![terminal handoff](../../../img/kubefirst/getting-started/cluster-create-result.png)
 
 These are **not your personal credentials**. These are administrator credentials that can be used if you ever need to authenticate and administer your tools if your OIDC provider ever becomes unavailable. Please protect these secrets and store them in a safe place.
