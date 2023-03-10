@@ -34,17 +34,16 @@ Your new `kbot` account will need to be associated with a GitHub organization.
 
 #### GitHub ephemeral authorization during install
 
-If you don't export a [GITHUB_TOKEN](../../../explore/github-token.md) to your shell, the kubefirst cli can generate an ephemeral token that last 8 hours.
+If you don't export a [GITHUB_TOKEN](../../../explore/github-token.md) to your shell, the kubefirst CLI can generate an ephemeral token that last 8 hours.
 
 ### Step 2 - Create your platform
 
-<!-- TODO: 2.0 - check all flags and minimize command -->
 ```shell
 export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxx
 
 kubefirst aws create \
   --alerts-email yourdistro@your-company.io \
-  --hosted-zone-name your-company.io \
+  --domain-name your-company.io \
   --cluster-name kubefirst-mgmt \
   --github-owner your-github-organization-name \
   --git-provider github
