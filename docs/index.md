@@ -24,7 +24,7 @@ Choose one of the available options below
         <div class="card">
             <div class="card__image">
             <img
-               src="\img\local_github.jpg"
+               src={require("/static/img/local_github.jpg").default}
                alt="Local k3d with GitHub"
                title="Local k3d with GitHub" />
             </div>
@@ -48,7 +48,7 @@ Choose one of the available options below
         <div class="card">
             <div class="card__image">
             <img
-               src="\img\local_gitlab.jpg"
+               src={require("/static/img/local_gitlab.jpg").default}
                alt="Local k3d with GitLab"
                title="Local k3d with GitLab" />
             </div>
@@ -74,7 +74,7 @@ Choose one of the available options below
         <div class="card">
             <div class="card__image">
             <img
-               src="\img\civo_github.jpg"
+               src={require("/static/img/civo_github.jpg").default}
                alt="CIVO Cloud with GitHub"
                title="CIVO Cloud with GitHub" />
             </div>
@@ -97,7 +97,7 @@ Choose one of the available options below
         <div class="card">
             <div class="card__image">
             <img
-               src="\img\civo_gitlab.jpg"
+               src={require("/static/img/civo_gitlab.jpg").default}
                alt="CIVO Cloud with GitLab"
                title="CIVO Cloud with GitLab" />
             </div>
@@ -122,7 +122,7 @@ Choose one of the available options below
         <div class="card">
             <div class="card__image">
             <img
-               src="\img\aws_github.jpg"
+               src={require("/static/img/aws_github.jpg").default}
                alt="AWS Cloud with GitHub"
                title="AWS Cloud with GitHub" />
             </div>
@@ -143,7 +143,7 @@ Choose one of the available options below
         <div class="card">
             <div class="card__image">
             <img
-               src="\img\aws_gitlab.jpg"
+               src={require("/static/img/aws_gitlab.jpg").default}
                alt="AWS Cloud with GitLab"
                title="AWS Cloud with GitLab" />
             </div>
