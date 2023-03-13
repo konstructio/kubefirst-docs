@@ -34,7 +34,13 @@ Adjust the following command with your GitHub and Civo tokens in addition to the
 ```shell
 export GITLAB_TOKEN=xxxxxxxxxxxxxxxx
 export CIVO_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-kubefirst civo create --alerts-email yourdistro@your-company.io --github-owner your-github-org --domain-name your-domain.io --cluster-name kubefirst
+
+kubefirst civo create \
+  --alerts-email yourdistro@your-company.io \
+  --git-provider gitlab \
+  --gitlab-group your-gitlab-group \
+  --domain-name your-domain.io \
+  --cluster-name kubefirst
 ```
 
 The kubefirst cli will produce a directory of utilities, a state file, and some staged platform content that can now be found in the `~/.kubefirst` and `~/.k1` folders on your local machine.
