@@ -37,7 +37,7 @@ export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxx
 export CIVO_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 kubefirst civo create \
   --alerts-email yourdistro@your-company.io \
-  --github-owner your-github-org \
+  --github-org your-github-org \
   --domain-name your-domain.io \
   --cluster-name kubefirst
 ```
