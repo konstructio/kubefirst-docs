@@ -25,8 +25,8 @@ Please find that information in the destroying your Kubefirst platform documenta
 You may need a more stable connection / higher download speed. Check with your internet provider or use an online speed test to confirm you have at least 100mbps download speed, or else you may experience timeouts.
 
 ### Where can I find the services passwords?
-<!-- TODO: 2.0 - do we still keep passwords in .kubefirst? -->
-The passwords are stored in the `~/.kubefirst` file. You can find the password for each service in the `services` section. The handoff screen (the purple screen at the end of the installation) also displays the passwords.
+
+Some passwords are stored in the `~/.kubefirst` file, and the others in your HashiCorp Vault. You can find the password for each service in the `services` section. The handoff screen (the purple screen at the end of the installation) also displays the passwords.
 
 ## Local with GitHub
 
