@@ -38,8 +38,8 @@ Your new `kbot` account will need to be associated with a GitLab organization.
 ```shell
 kubefirst aws create \
   --alerts-email yourdistro@your-company.io \
-  --hosted-zone-name your-company.io \
-  --cluster-name kubefirst-mgmt \
-  --gitlab-owner your-gitlab-group \
-  --git-provider gitlab
+  --git-provider gitlab \
+  --gitlab-group your-gitlab-group \
+  --domain-name your-domain.io \
+  --cluster-name kubefirst
 ```

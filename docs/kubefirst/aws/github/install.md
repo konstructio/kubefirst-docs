@@ -45,6 +45,5 @@ kubefirst aws create \
   --alerts-email yourdistro@your-company.io \
   --domain-name your-company.io \
   --cluster-name kubefirst-mgmt \
-  --github-owner your-github-organization-name \
-  --git-provider github
+  --github-org your-github-organization-name
 ```
