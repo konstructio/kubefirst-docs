@@ -150,3 +150,8 @@
   padding: var(--ifm-global-spacing);
   transition: border-color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
 }
+
+[data-theme='light'] img[src$='#dark-mode'],
+[data-theme='dark'] img[src$='#light-mode'] {
+  display: none;
+}
