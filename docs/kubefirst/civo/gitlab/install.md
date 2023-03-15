@@ -45,34 +45,10 @@ kubefirst civo create \
 
 The kubefirst cli will produce a directory of utilities, a state file, and some staged platform content that can now be found in the `~/.kubefirst` and `~/.k1` folders on your local machine.
 
-The installation process may take about 10 minutes. If you are successful you should see:
-
-```shell
-Cluster "kubefirst" is up and running!
-```
+After the ~6 minute installation, your browser will launch a new tab to the [kubefirst Console](https://github.com/kubefirst/console), which will help you navigate your new suite of tools running in your new Civo cluster.
 
 If your deployment is not successful, errors and troubleshooting information will be stored in a local log file specified during the installation run.
 
-<!-- TODO: 2.0 - above still true? -->
-<!-- TODO: 2.0 - should be moved to a common page mentioning small exceptions for local, to avoir duplication -->
 ### Installed Applications
 
-kubefirst implicitly contains many applications to provide starting capabilities for new users. Operational knowledge of all applications is not necessary to begin using kubefirst, but is useful to understand your cluster.
-
-A newly created Civo kubefirst cluster contains:
-<!-- TODO: 2.0 - add gitlab components -->
-- A private repo named `gitops`. The applications that you build and release on the kubefirst platform will also be registered here in the development, staging, and production folders.
-- [Argo CD](https://github.com/argoproj/argo-cd) - GitOps Continuous Delivery.
-- [Argo Workflows](https://argoproj.github.io/argo-workflows/) - Application Continuous Integration.
-- [Atlantis](https://www.runatlantis.io/) - Terraform Workflow Automation.
-- [Cert Manager](https://cert-manager.io/) - Automated TLS Certificate Creation and Renewal.
-- [Chart Museum](https://github.com/helm/chartmuseum) - Helm Chart Registry.
-- [External DNS](https://github.com/kubernetes-sigs/external-dns) - Automated DNS Management.
-- [External Secrets Operator](https://external-secrets.io/) - Syncs Kubernetes secrets with Vault secrets.
-- [Metaphor](https://github.com/kubefirst/metaphor-template) - A sample app to demonstrate CI/CD in on Kubernetes. Contains Devlopment, Staging, and Production environments.
-- [Nginx Ingress Controller](https://github.com/kubernetes/ingress-nginx) - Popular Ingress Controller to allow external access to your cluster services.
-- [Vault](https://github.com/hashicorp/vault) - Secrets Management, Identity Provider, OIDC Provider.
-
-## After installation
-
-After the ~6 minute installation, your browser will launch a new tab to the [kubefirst Console](https://github.com/kubefirst/console), which will help you navigate your new suite of tools running in your new Civo cluster.
+To see what is installed by kubefirst, check the [overview page](http://localhost:3000/kubefirst/overview#platforms-details).
