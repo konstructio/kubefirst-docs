@@ -38,7 +38,7 @@ When Docker is provided 5 GB of memory and 5 CPUs, the local kubefirst platform 
 
 ### Installed Applications
 
-To see what is installed by kubefirst, check the [overview page](../../overview#platforms-details).
+To see what is installed by kubefirst, check the [overview page](../../overview.md#platforms-details).
 
 ### How to resolve HTTPS Certificate Warnings
 

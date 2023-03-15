@@ -12,7 +12,7 @@ title: Install
 
 ### Local Prerequisites
 
-[Install](../../../kubefirst/overview.md#how-to-install-kubefirst-cli) the kubefirst CLI.
+[Install](../../overview.md#how-to-install-kubefirst-cli) the kubefirst CLI.
 
 ### GitHub Prerequesites
 
@@ -51,4 +51,4 @@ If your deployment is not successful, errors and troubleshooting information wil
 <!-- TODO: 2.0 - should be moved to a common page mentioning small exceptions for local, to avoir duplication -->
 ### Installed Applications
 
-To see what is installed by kubefirst, check the [overview page](../../overview#platforms-details).
+To see what is installed by kubefirst, check the [overview page](../../overview.md#platforms-details).

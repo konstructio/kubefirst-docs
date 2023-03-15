@@ -51,4 +51,4 @@ If your deployment is not successful, errors and troubleshooting information wil
 
 ### Installed Applications
 
-To see what is installed by kubefirst, check the [overview page](../../overview#platforms-details).
+To see what is installed by kubefirst, check the [overview page](../../overview.md#platforms-details).
