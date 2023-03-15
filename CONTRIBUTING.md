@@ -67,6 +67,8 @@ WIP
 
 To run our documentation locally, simply run `npm start`.
 
+> If you modify the CSS, the changes aren't picked up by the development server as when you modify the documentation content. You need to restart the server with npm.
+
 ## Getting Started with Kubefirst Code
 
 Please check the [CONTRIBUTING.md](https://github.com/kubefirst/kubefirst/blob/main/CONTRIBUTING.md) file from the [kubefirst](https://github.com/kubefirst/kubefirst/) repository.
