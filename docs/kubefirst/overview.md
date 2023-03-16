@@ -44,6 +44,7 @@ The kubefirst CLI runs on your localhost and will create an GitLab or GitHub Kub
 | kubefirst console         | X               | X             | X             | X             | X             | X             |
 | metaphor                  | X               | X             | X             | X             | X             | X             |
 | OpenID Connect (OIDC)     |                 |               | X             | X             | X             | X             |
+| Reloader                  | X               | X             | X             | X             | X             | X             |
 | Self-Hosted Runners       | ARC             | GitLab Runner | ARC           | GitLab Runner | ARC           | GitLab Runner |
 | SSL Certificates          | mkcert          | mkcert        | Let's Encrypt | Let's Encrypt | Let's Encrypt | Let's Encrypt |
 
