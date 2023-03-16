@@ -8,7 +8,7 @@ title: Install
 
 It installs a fully automated platform of open source cloud native tools with a simple `init` and `create` command.
 
-![Kubernetes Cluster](../../../img/aws/gitlab/installation-diagram.png)
+![Kubefirst Cluster](../../../img/aws/gitlab/installation-diagram-dark.png#dark-mode)![Kubefirst Cluster](../../../img/aws/gitlab/installation-diagram-light.png#light-mode)
 
 ### Prerequisites
 
@@ -34,7 +34,6 @@ Your new `kbot` account will need to be associated with a GitLab organization.
 
 ### Step 2 - Create your platform
 
-<!-- TODO: 2.0 - check all flags and minimize command -->
 ```shell
 kubefirst aws create \
   --alerts-email yourdistro@your-company.io \
