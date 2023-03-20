@@ -20,21 +20,17 @@ The GitOps repo houses all of our IAC and all our GitOps configurations. All of 
 
 ## GitLab Repository Management
 
-These GitLab repositories are being managed in Terraform.
-<!-- TODO: 2.0 - check path on next line -->
-As you need additional GitLab repositories, just add a new section of Terraform code to `terraform/gitlab/repos.tf`:
+These GitLab projects (repositories) are being managed in Terraform. As you need additional GitLab projects, just add a new section of Terraform code to `civo-gitlab/terraform/gitlab/projects.tf`:
 
-<!-- TODO: 2.0 - check repo example -->
 ```terraform
-# set auto_init to false if importing an existing repository
-# true if it's a new repository
-
 module "your_repo_name" {
-  source = "./modules/repository"
-  visibility         = "private"
-  repo_name          = "your-repo-name"
-  archive_on_destroy = true
-  auto_init          = false
+  source       = "./modules/project"
+  group_name   = data.gitlab_group.owner.id
+  project_name = "your_repo_name"
+  # create_ecr                            = true
+  initialize_with_readme                = false
+  only_allow_merge_if_pipeline_succeeds = false
+  remove_source_branch_after_merge      = true
 }
 ```
 

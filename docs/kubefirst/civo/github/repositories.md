@@ -20,18 +20,17 @@ The `gitops` repository houses all of our IAC and all your GitOps configurations
 
 ## Repositories Management
 
-The repositories are being managed with Terraform. If you need additional ones, you need to add new section of Terraform code to `terraform/github/repos.tf`:
+These GitHub repositories are being managed in Terraform. As you need additional GitHub repositories, just add a new section of Terraform code to `civo-github/terraform/github/repos.tf`:
 
 ```terraform
-# set auto_init to false if importing an existing repository
-# true if it's a new repository
-
 module "your_repo_name" {
   source = "./modules/repository"
-  visibility         = "private"
-  repo_name          = "your-repo-name"
-  archive_on_destroy = true
-  auto_init          = false
+
+  repo_name          = "your_repo_name"
+  archive_on_destroy = false
+  auto_init          = false # set to false if importing an existing repository
+  team_developers_id = github_team.developers.id
+  team_admins_id     = github_team.admins.id
 }
 ```
 
