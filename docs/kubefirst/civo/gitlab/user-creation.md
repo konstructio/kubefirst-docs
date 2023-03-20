@@ -13,7 +13,7 @@ cd gitops
 git checkout -b new-user
 ```
 
-The folder `civo-gitlab/terraform/users/admins` contains two separate files that represent admin users: `admin-one.tf` (commented-out), and the kubefirst_bot user in the `kbot.tf` file. Here's the module from `admin-one.tf`:
+The folder `civo-gitlab/terraform/users/admins` contains two separate files that represent admin users: `admin-one.tf` (commented-out), and the kbot user in the `kbot.tf` file. Here's the module from `admin-one.tf`:
 
 ```terraform
 module "admin_one" {
