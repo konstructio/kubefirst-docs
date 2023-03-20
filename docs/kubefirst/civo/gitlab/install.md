@@ -15,7 +15,7 @@ title: Install
 [Install](../../../kubefirst/overview.md#how-to-install-kubefirst-cli) the kubefirst CLI.
 
 ### GitLab Prerequesites
-<!-- TODO: 2.0 - hydrate this whole section with details -->
+
 - A GitLab [user](https://docs.gitlab.com/ee/user/profile/account/create_accounts.html) for your `kbot` automation user.
 - A GitLab [personal access token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html)  for your `kbot` account.
 

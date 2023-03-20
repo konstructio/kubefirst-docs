@@ -17,7 +17,6 @@ git checkout -b new-user
 
 The folder `civo-github/terraform/users/admins` contains two separate files that represent admin users: `admin-one.tf` (commented-out), and the `kubefirst_bot` user. Here's the module from `admin-one.tf`:
 
-<!-- TODO: 2.0 - check example and splat -->
 ```terraform
 module "admin_one" {
   source = "./modules/user/github"

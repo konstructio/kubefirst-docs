@@ -24,7 +24,7 @@ kubefirst k3d create
 
 Details about your execution will be logged to your `~/.k1/logs` directory. More information on `kubefirst k3d`, including optional flags, can be discovered by running `kubefirst k3d help`.
 
-<!-- TODO: [2.0] the above warning is being spiked actively to see if we can remove it from the system as a part of the 2.0 release. confirm when releasing. -->
+<!-- TODO: [2.0] this warning is being spiked actively to see if we can remove it from the system as a part of the 2.0 release. confirm when releasing. -->
 > **2 Hour Expiration Warning**
 > The ngrok tunnel used for kubefirst local has a 2-hour expiration unless you [create a ngrok account](https://dashboard.ngrok.com/signup). This expiration will prevent you from using automated infrastructure as code through Terraform Atlantis, but the rest of the platform will continue to function beyond that ngrok evaluation period.
 
@@ -42,7 +42,7 @@ To see what is installed by kubefirst, check the [overview page](../../overview.
 
 ### ngrok & Atlantis Integrations
 
-<!-- TODO: 2.0 - check the legitimacy of the above before releasing docs -->
+<!-- TODO: [2.0] this warning is being spiked actively to see if we can remove it from the system as a part of the 2.0 release. confirm when releasing. -->
 [ngrok](https://ngrok.com/) is a tool that allows kubefirst to expose a local server to the internet via [ngrok Secure Tunnels](https://ngrok.com/docs/secure-tunnels/). kubefirst opens an ngrok Secure Tunnel tunnel during the installation to send events to Atlantis. When the installation finishes, the terminal window hangs at the handoff screen. If the handoff screen in your terminal is closed, the Kubefirst installation terminates and the Ngrok Secure Tunnel is closed.
 
 During cluster provisioning, Terraform communicates with the host machine to create the desired resources. When Atlantis is installed via kubefirst, it will use ngrok to expose the Atlantis server to the internet via [webhooks](https://zapier.com/blog/what-are-webhooks/).

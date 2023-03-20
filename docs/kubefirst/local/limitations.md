@@ -18,7 +18,7 @@ Allocated CPU: 5 Cores
 
 ## Features Limitations
 
-<!-- TODO: 2.0 - check ngrok status with 2.0 release -->
+<!-- TODO: [2.0] this warning is being spiked actively to see if we can remove it from the system as a part of the 2.0 release. confirm when releasing. -->
 - Ngrok: to allow Github Webhook to reach your machine without exposing them directly to the internet, we use Ngrok to create a tunnel and assign the Ngrok endpoint to Github Webhook.
 
 We use a free tier of this service and have rate limits for data transfer and limited session duration of the tunnel. If the tunnel was closed, we didn't support the reconnect process. If you want to reconnect, you should use the Ngrok tool and update the webhook on GitHub to keep the Atlantis working.
