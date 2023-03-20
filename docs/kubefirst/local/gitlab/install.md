@@ -59,8 +59,7 @@ After the ~5 minute installation, your browser will open a new browser tab at co
 
 ## Console UI Screen
 
-<!-- TODO: [2.0] update with 2.0 console from local & GitLab -->
-![kubefirst console screen](../../../img/kubefirst/local/console.png)
+![kubefirst console screen](../../../img/local/gitlab/console.png)
 
 ## Example of terminal output following cluster creation
 
