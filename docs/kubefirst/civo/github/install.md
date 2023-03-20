@@ -48,7 +48,6 @@ After the ~6 minute installation, your browser will launch a new tab to the [kub
 
 If your deployment is not successful, errors and troubleshooting information will be stored in a local log file specified during the installation run.
 
-<!-- TODO: 2.0 - should be moved to a common page mentioning small exceptions for local, to avoir duplication -->
 ### Installed Applications
 
 To see what is installed by kubefirst, check the [overview page](../../overview.md#platforms-details).

@@ -17,8 +17,6 @@ We support local, AWS, and Civo clouds. By running our cli commands against your
 
 Choose one of the available options below
 
-<!-- TODO: 2.0 - consider reframing this section with 1 card per cloud and a github / gitlab button so we're not duplicating the message -->
-
 <div class="row">
     <div class="col col--6 margin-bottom--lg">
         <div class="card">
