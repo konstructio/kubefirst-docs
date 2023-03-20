@@ -85,7 +85,7 @@ const sidebars = {
           type: 'category',
           label: 'Explore',
           items: [
-            'kubefirst/civo/user-creation',
+            'kubefirst/civo/github/user-creation',
             'explore/metaphor',
             'explore/argocd',
             'explore/gitops',
@@ -114,7 +114,7 @@ const sidebars = {
           type: 'category',
           label: 'Explore',
           items: [
-            'kubefirst/civo/user-creation',
+            'kubefirst/civo/gitlab/user-creation',
             'explore/metaphor',
             'explore/argocd',
             'explore/gitops',

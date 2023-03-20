@@ -14,7 +14,7 @@ title: Install
 
 [Install](../../overview.md#how-to-install-kubefirst-cli) the kubefirst CLI.
 
-### GitHub Prerequesites
+### GitHub Prerequisites
 
 - A GitHub [organisation](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch).
 - A new GitHub [account](https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account) for your `kbot` automation user.
