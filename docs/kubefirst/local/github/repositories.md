@@ -20,18 +20,15 @@ The `gitops` repository houses all of our IAC and all our GitOps configurations.
 
 ## Management
 
-If you need additional GitHub repositories, add a new section of Terraform code to `terraform/github/repos.tf` in your new `gitops` repository:
+If you need additional GitHub repositories, add a new section of Terraform code to `k3d-github/terraform/github/repos.tf` in your new `gitops` repository:
 
 ```terraform
-# set auto_init to false if importing an existing repository
-# true if it's a new repository
-
 module "your_repo_name" {
-  source = "./modules/repository"
+  source             = "./modules/repository"
   visibility         = "private"
-  repo_name          = "your-repo-name"
-  archive_on_destroy = true
-  auto_init          = false
+  repo_name          = "your_repo_name"
+  archive_on_destroy = false
+  auto_init          = false # set to false if importing an existing repository
 }
 ```
 
