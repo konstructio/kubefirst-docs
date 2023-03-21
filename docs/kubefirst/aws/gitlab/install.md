@@ -12,9 +12,16 @@ It installs a fully automated platform of open source cloud native tools with a 
 
 ### Prerequisites
 
-[Install](./overview.md#how-to-install-kubefirst-cli) the kubefirst CLI.
+- [Install](../../../kubefirst/overview.md#install-the-kubefirst-cli) the kubefirst CLI.
 
-#### AWS Prerequisites
+#### GitLab
+
+- Create or use an existing [GitLab account](https://gitlab.com).
+- Create a [GitLab group](https://docs.gitlab.com/ee/user/group/) developer permissions.
+
+> GitLab SaaS offering has limitations that require us to use groups contrary to GitHub which can be use without an organization.
+
+#### AWS
 
 1. Create an AWS account with billing enabled.
 2. Establish a public hosted zone with DNS routing established([docs](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/AboutHZWorkingWith.html)).

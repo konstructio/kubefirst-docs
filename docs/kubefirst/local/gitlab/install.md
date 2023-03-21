@@ -12,10 +12,13 @@ title: Install
 
 - [Install](../overview.md#how-to-install-kubefirst-cli) the kubefirst CLI.
 - [Install](https://docs.docker.com/get-docker/) Docker Desktop.
-- Create or use an existing [GitLab account](https://gitlab.com)
-- Create a [GitLab group](https://docs.gitlab.com/ee/user/group/)
 
-> GitLab SaaS offering has limitations that require us to use groups contraty to GitHub which can be use without an organization.
+### GitLab
+
+- Create or use an existing [GitLab account](https://gitlab.com).
+- Create a [GitLab group](https://docs.gitlab.com/ee/user/group/) developer permissions.
+
+> GitLab SaaS offering has limitations that require us to use groups contrary to GitHub which can be use without an organization.
 
 ## Create your new local cluster
 

@@ -10,16 +10,16 @@ title: Install
 
 ## Prerequisites
 
-### Local Prerequisites
+[Install](../../../kubefirst/overview.md#install-the-kubefirst-cli) the kubefirst CLI.
 
-[Install](../../../kubefirst/overview.md#how-to-install-kubefirst-cli) the kubefirst CLI.
+### GitLab
 
-### GitLab Prerequesites
+- Create or use an existing [GitLab account](https://gitlab.com).
+- Create a [GitLab group](https://docs.gitlab.com/ee/user/group/) developer permissions.
 
-- A GitLab [user](https://docs.gitlab.com/ee/user/profile/account/create_accounts.html) for your `kbot` automation user.
-- A GitLab [personal access token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html)  for your `kbot` account.
+> GitLab SaaS offering has limitations that require us to use groups contrary to GitHub which can be use without an organization.
 
-### Civo Prerequisites
+### Civo
 
 For kubefirst to be able to provision your Civo cloud resources:
 
