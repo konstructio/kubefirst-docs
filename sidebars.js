@@ -34,9 +34,13 @@ const sidebars = {
           label: 'Explore',
           items: [
             'kubefirst/local/github/user-creation',
+            'explore/argocd',
+            'explore/gitops',
             'explore/metaphor',
+            'explore/telemetry',
+            'explore/terraform',
+            'explore/vault',,
             'kubefirst/local/limitations',
-            'explore/telemetry'
           ]
         },
         'kubefirst/local/destroy'
@@ -60,9 +64,13 @@ const sidebars = {
           label: 'Explore',
           items: [
             'kubefirst/local/gitlab/user-creation',
+            'explore/argocd',
+            'explore/gitops',
             'explore/metaphor',
-            'kubefirst/local/limitations',
-            'explore/telemetry'
+            'explore/telemetry',
+            'explore/terraform',
+            'explore/vault',,
+            'kubefirst/local/limitations'
           ]
         },
         'kubefirst/local/destroy'
@@ -86,12 +94,12 @@ const sidebars = {
           label: 'Explore',
           items: [
             'kubefirst/civo/github/user-creation',
-            'explore/metaphor',
             'explore/argocd',
             'explore/gitops',
+            'explore/metaphor',
+            'explore/telemetry',
             'explore/terraform',
             'explore/vault',
-            'explore/telemetry'
           ]
         },
         'kubefirst/civo/destroy'
@@ -115,12 +123,12 @@ const sidebars = {
           label: 'Explore',
           items: [
             'kubefirst/civo/gitlab/user-creation',
-            'explore/metaphor',
             'explore/argocd',
             'explore/gitops',
+            'explore/metaphor',
+            'explore/telemetry',
             'explore/terraform',
             'explore/vault',
-            'explore/telemetry'
           ]
         },
         'kubefirst/civo/destroy'
@@ -145,9 +153,10 @@ const sidebars = {
           items: [
             'explore/argocd',
             'explore/gitops',
+            'explore/metaphor',
+            'explore/telemetry',
             'explore/terraform',
             'explore/vault',
-            'explore/telemetry'
           ]
         },
         {
@@ -182,9 +191,10 @@ const sidebars = {
           items: [
             'explore/argocd',
             'explore/gitops',
+            'explore/metaphor',
+            'explore/telemetry',
             'explore/terraform',
             'explore/vault',
-            'explore/telemetry'
           ]
         },
         {
