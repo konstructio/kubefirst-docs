@@ -26,20 +26,21 @@ Your cluster will be set up with Vault running in the k3d cluster. The only back
 
 ### Token authentication
 
-Your first login to Vault will be with the root token that is provided to you at the end of your kubefirst cluster creation(`kubefirst cluster create` or `kubefirst local`). This root token has full administrative permission throughout Vault.
+![Vault section of the handoff screen](../img/vault/handoff-screen.png)
 
-This token is presented on the final installer screen of the CLI or at the `vault.token` field in your `~/.kubefirst` file. You can copy the value it. Then navigate to your vault instance in your browser, select `Token` and paste the token in the password field.
+Your first login to Vault will be with the root token which has full administrative permissions. As mentioned in the handoff screen (the purple screen at the end of the installation), it is sotred in a secret named `vault-unseal-secret`, which is in the `vault` namespace of your newly deployed cluster. To read the value, use [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl), and run the following command:
+
+```shell
+kubectl -n vault get secrets/vault-unseal-secret --template='{{index .data "root-token"}}'
+```
+
+It will output the root token. Copy it, then open your browser, and navigate to your Vault instance. Select `Token` and paste the value into the password field.
 
 ![HashiCorp Vault Token Login](../img/kubefirst/vault/token-login.png)
 
-While logged in with the root token, navigate to the secret:
-`Secrets -> Users -> kbot`
-
-This secret is the userpass/oidc password for the kubefirst bot user `kbot`. Copy this value to your clipboard, log out of vault and let's try using the userpass authentication backend in the next section.
+While logged in with the root token, navigate to the secret at `Users -> kbot`. This secret is the username, and OIDC password for the kubefirst bot user named `kbot`. Copy the value, log out of Vault and use it to authenticate with this user in the next section.
 
 ### Username authentication (human users)
-
-Now that you have collected the kbot password, let's log out and back into Vault, this time using the `kbot` bot account.
 
 When logging in with users instead of tokens, select method `Username` as the login method on the login screen. Enter `kbot` as the username, and paste the password you collected in the Password field and log in.
 
