@@ -14,11 +14,7 @@ If you think there is a bug, you can also open an [issue](https://github.com/kub
 
 ### How do I tear my cluster down?
 
-Please find that information in the destroying your Kubefirst platform documentation related to your installation type:
-
-- [Local with GitHub or GitLab](kubefirst/local/destroy.md)
-- [AWS with GitHub or GitLab](kubefirst/aws/destroy.md)
-- [Civo with GitHub or GitLab](kubefirst/civo/destroy.md)
+You can easily take your cluster down, by using the [destroy command](explore/destroy.md).
 
 ### I'm experiencing timeouts when kubefirst deploys Argo CD or HashiCorp Vault through the Helm installations
 
