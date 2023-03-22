@@ -28,10 +28,10 @@ Your cluster will be set up with Vault running in the k3d cluster. The only back
 
 ![Vault section of the handoff screen](../img/vault/handoff-screen.png)
 
-Your first login to Vault will be with the root token which has full administrative permissions. As mentioned in the handoff screen (the purple screen at the end of the installation), it is sotred in a secret named `vault-unseal-secret`, which is in the `vault` namespace of your newly deployed cluster. To read the value, use [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl), and run the following command:
+Your first login to Vault will be with the root token which has full administrative permissions. As mentioned in the handoff screen (the purple screen at the end of the installation), it is sotred in a secret named `vault-unseal-secret`, which is in the `vault` namespace of your newly deployed cluster. To read the value, use [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) (which is already in the `~/.k1/` tools folder), and run the following command:
 
 ```shell
-kubectl -n vault get secrets/vault-unseal-secret --template='{{index .data "root-token"}}'
+~/.k1/tools/kubectl -n vault get secrets/vault-unseal-secret --template='{{index .data "root-token"}}'
 ```
 
 It will output the root token. Copy it, then open your browser, and navigate to your Vault instance. Select `Token` and paste the value into the password field.
