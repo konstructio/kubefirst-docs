@@ -73,6 +73,32 @@ We also enforce some styling to prevent ambiguity, and ensure consistency for:
 - MD049: underscores for italic text.
 - MD050: asterisks for bold text.
 
+#### Special Syntax
+
+If you want to create tabs, it will possible, thanks to the [remark-docusaurus-tabs plugin](https://github.com/mccleanp/remark-docusaurus-tabs). You can do it by using the following syntax:
+
+```markdown
+<!--tabs-->
+# Apple
+
+This is an apple 🍎
+
+# Orange
+
+This is an orange 🍊
+
+# Banana
+
+This is a banana 🍌
+<!--/tabs-->
+```
+
+It will generate the following:
+
+![Animated GIF showing the rendered tabs from the above example](img/tabs.gif)
+
+In a nutshell, H1 inside the `<!--tabs--><!--/tabs-->` will be use as tab title, and everything in between as the tab content. It is useful when the documentation is similar to most platforms with small exceptions, like CLI commands.
+
 #### Syntax Highlight
 
 Docusaurus is using Prism for code block syntax highlighting. Here's a list of [supported languages](https://prismjs.com/#supported-languages).
