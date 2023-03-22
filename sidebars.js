@@ -43,7 +43,7 @@ const sidebars = {
             'kubefirst/local/limitations',
           ]
         },
-        'kubefirst/local/destroy'
+        'explore/destroy'
       ]
     },
     {
@@ -73,7 +73,7 @@ const sidebars = {
             'kubefirst/local/limitations'
           ]
         },
-        'kubefirst/local/destroy'
+        'explore/destroy'
       ]
     },
     {
@@ -102,7 +102,7 @@ const sidebars = {
             'explore/vault',
           ]
         },
-        'kubefirst/civo/destroy'
+        'explore/destroy'
       ]
     },
     {
@@ -131,7 +131,7 @@ const sidebars = {
             'explore/vault',
           ]
         },
-        'kubefirst/civo/destroy'
+        'explore/destroy'
       ]
     },
     {
@@ -169,7 +169,7 @@ const sidebars = {
             'explore/metaphor'
           ]
         },
-        'kubefirst/aws/destroy'
+        'explore/destroy'
       ]
     },
     {
@@ -206,7 +206,7 @@ const sidebars = {
             'explore/metaphor'
           ]
         },
-        'kubefirst/aws/destroy'
+        'explore/destroy'
       ]
     },
     'FAQ',
