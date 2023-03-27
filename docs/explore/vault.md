@@ -217,7 +217,11 @@ Simple, if you are the owner of the user.
 Vault Policies references:
 
 - [AWS with GitHub](https://github.com/kubefirst/gitops-template/blob/main/aws-github/terraform/vault/policies.tf)
-- [Local with GitHub](https://github.com/kubefirst/gitops-template/blob/main/k3d-github/terraform/vault/policies.tf)
+- [AWS with GitLab](https://github.com/kubefirst/gitops-template/blob/main/aws-gitlab/terraform/vault/policies.tf)
+- [Civo with GitHub](https://github.com/kubefirst/gitops-template/blob/main/civo-github/terraform/vault/policies.tf)
+- [Civo with GitLab](https://github.com/kubefirst/gitops-template/blob/main/civo-gitlab/terraform/vault/policies.tf)
+- [local with GitHub](https://github.com/kubefirst/gitops-template/blob/main/k3d-github/terraform/vault/policies.tf)
+- [local with GitLab](https://github.com/kubefirst/gitops-template/blob/main/k3d-gitlab/terraform/vault/policies.tf)
 
 ### Can someone with the root token update my password?
 
