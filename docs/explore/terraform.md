@@ -24,10 +24,11 @@ If the apply is successful, your code will automatically be merged with master, 
 
 The following table shows how state is stored based on your installation selection:
 
-| State Backed                       | AWS + Github | AWS + Gitlab | Local + Github |
-| :--------------------------------- | :----------: | :----------: | :------------: |
-| AWS S3 Bucket                      |      X       |      X       |                |
-| Local - minio in cluster S3 Bucket |              |              |       X        |
+| State Backed      | AWS | Local | Civo |
+|-------------------|-----|-------|------|
+| AWS S3 Bucket     | X   |       |      |
+| Civo object store |     |       | X    |
+| MinIO (locally)   |     | X     |      |
 
 ### AWS cloud install - `kubefirst cluster init -cloud aws`
 
