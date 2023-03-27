@@ -166,7 +166,6 @@ const sidebars = {
             'explore/security',
             'explore/certificates',
             'explore/github-token',
-            'explore/metaphor'
           ]
         },
         'explore/destroy'
@@ -202,8 +201,7 @@ const sidebars = {
           label: 'Advanced',
           items: [
             'explore/security',
-            'explore/certificates',
-            'explore/metaphor'
+            'explore/certificates',=
           ]
         },
         'explore/destroy'
