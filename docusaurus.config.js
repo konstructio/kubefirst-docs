@@ -127,6 +127,11 @@ const config = {
         },
         contextualSearch: true,
       },
+      docs: {
+        sidebar: {
+          autoCollapseCategories: true,
+        }
+      }
     }),
 
 };
