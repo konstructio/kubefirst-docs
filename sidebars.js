@@ -201,7 +201,7 @@ const sidebars = {
           label: 'Advanced',
           items: [
             'explore/security',
-            'explore/certificates',=
+            'explore/certificates',
           ]
         },
         'explore/destroy'
