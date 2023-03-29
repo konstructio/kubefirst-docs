@@ -8,7 +8,6 @@ title: Install
 
 ![Kubefirst CIVO with GitHub Cluster Diagram](../../../img/civo/github/installation-diagram-light.png#light-mode)![Kubefirst CIVO with GitHub Cluster Diagram](../../../img/civo/github/installation-diagram-dark.png#dark-mode)
 
-
 ## Prerequisites
 
 ### Local Prerequisites
