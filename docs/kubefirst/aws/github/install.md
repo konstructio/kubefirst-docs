@@ -8,7 +8,7 @@ title: Install
 
 It installs a fully automated platform of open source cloud native tools with a simple `init` and `create` command.
 
-![Kubefirst Cluster](../../../img/aws/github/installation-diagram.png)
+![Kubefirst AWS with GitHub Cluster Diagram](../../../img/aws/github/installation-diagram-light.png#light-mode)![Kubefirst AWS with GitHub Cluster Diagram](../../../img/aws/github/installation-diagram-dark.png#dark-mode)
 
 ### Prerequisites
 
