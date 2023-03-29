@@ -6,7 +6,8 @@ title: Install
 
 `kubefirst` is our command line tool that installs a fully automated platform of open source cloud native tools to your Civo cloud with a simple `kubefirst civo create` command.
 
-![Kubefirst CIVO Cluster Diagram](../../../img/kubefirst/civo/kubefirst-cluster-create.png)
+![Kubefirst CIVO with GitHub Cluster Diagram](../../../img/civo/github/installation-diagram-light.png#light-mode)![Kubefirst CIVO with GitHub Cluster Diagram](../../../img/civo/github/installation-diagram-dark.png#dark-mode)
+
 
 ## Prerequisites
 
