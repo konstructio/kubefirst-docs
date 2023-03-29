@@ -6,7 +6,7 @@ title: Install
 
 `kubefirst` is the name of our CLI that installs the platform of the same name to your local or cloud environment.
 
-![Kubefirst local installation diagram](../../../img/kubefirst/local/kubefirst-cluster-create.png)
+![Kubefirst k3d with GitLab Cluster Diagram](../../../img/local/gitlab/installation-diagram-light.png#light-mode)![Kubefirst k3d with GitLab Cluster Diagram](../../../img/local/gitlab/installation-diagram-dark.png#dark-mode)
 
 ## Prerequisites
 
