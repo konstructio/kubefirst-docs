@@ -31,8 +31,7 @@ You now have an EKS cluster with the following content installed in it:
 - These apps are all managed by Argo CD and the app configurations are in the `gitops` repo's `registry` folder.
 - The AWS infrastructure is terraform - that's also in your `gitops` repo, but in your `terraform` folder.
 
-<!-- TODO: 2.0 - fix this image! -->
-![GitOps Assets](../../../img/kubefirst/getting-started/gitops-assets.png)
+![GitOps Assets](../../../img/kubefirst/github/gitops-assets.png)
 
 ## Step 1: Console UI
 
@@ -41,7 +40,6 @@ Once you run the `cluster create` command at the end of the installation will op
 
 ![console ui](../../../img/kubefirst/github/console.png)
 
-<!-- TODO: 2.0 - fix this image! -->
 ![terminal handoff](../../../img/kubefirst/getting-started/cluster-create-result.png)
 
 These are **not your personal credentials**. These are administrator credentials that can be used if you ever need to authenticate and administer your tools if your OIDC provider ever becomes unavailable. Please protect these secrets and store them in a safe place.

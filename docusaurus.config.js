@@ -33,16 +33,26 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
+          remarkPlugins: [require('remark-docusaurus-tabs')],
         },
         blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
-        },
+        }
       }),
     ],
   ],
 
   themes: ['docusaurus-theme-search-typesense'],
+
+  plugins: [
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'GTM-KZLF3TJ'
+      },
+    ],
+  ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -117,6 +127,11 @@ const config = {
         },
         contextualSearch: true,
       },
+      docs: {
+        sidebar: {
+          autoCollapseCategories: true,
+        }
+      }
     }),
 
 };

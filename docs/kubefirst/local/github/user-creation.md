@@ -11,21 +11,21 @@ cd gitops
 git checkout -b new-user
 ```
 
-The file `k3d-github/terraform/users/admins.tf` contains blocks that represent admin users - the kubefirst_bot user, and a commented-out admin_one user:
+The folder `k3d-github/terraform/users/admins` contains two separate files that represent admin users: `admin-one.tf` (commented-out), and the `kubefirst_bot` user. Here's the module from `admin-one.tf`:
 
-<!-- TODO: 2.0 - splat expression being added in 2.0 may impact this doc -->
 ```terraform
 module "admin_one" {
   source = "./modules/user/github"
-  acl_policies        = ["admin"]
-  email               = "admin@your-company-io.com"
-  first_name          = "Admin"
-  github_username     = "admin_one_github_username"
-  last_name           = "One"
-  initial_password    = var.initial_password
-  username            = "aone"
-  user_disabled       = false
-  userpass_accessor   = data.vault_auth_backend.userpass.accessor
+
+  acl_policies            = ["admin"]
+  email                   = "your.admin@your-company.io"
+  first_name              = "Admin"
+  github_username         = "admin-one-github-username"
+  last_name               = "One"
+  team_id                 = data.github_team.admins.id
+  username                = "aone"
+  user_disabled           = false
+  userpass_accessor       = data.vault_auth_backend.userpass.accessor
 }
 ```
 
@@ -57,7 +57,7 @@ The existence of a new user with your specified parameters demonstrates that you
 
 ### Troubleshooting Atlantis
 
-<!-- TODO: 2.0 - actively spiking to see if we can change this narrative. confirm release status -->
+<!-- TODO: [2.0] this warning is being spiked actively to see if we can remove it from the system as a part of the 2.0 release. confirm when releasing. -->
 The ngrok tunnel used for kubefirst local has a 2-hour expiration unless you create an account with ngrok. This expiration will prevent you from using automated infrastructure as code through Atlantis, but the rest of the platform will continue to function beyond that ngrok evaluation period. Create a [ngrok account](https://dashboard.ngrok.com/signup) to prevent this.
 
 Atlantis works by sending a webhooks to Atlantis from your gitops repository. If you're not receiving Terraform plan comments, check the webhooks section of your `gitops` repository settings and review the responses from the sent webhook requests.

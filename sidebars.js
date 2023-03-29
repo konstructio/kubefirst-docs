@@ -34,12 +34,16 @@ const sidebars = {
           label: 'Explore',
           items: [
             'kubefirst/local/github/user-creation',
+            'explore/argocd',
+            'explore/gitops',
             'explore/metaphor',
+            'explore/telemetry',
+            'explore/terraform',
+            'explore/vault',,
             'kubefirst/local/limitations',
-            'explore/telemetry'
           ]
         },
-        'kubefirst/local/destroy'
+        'explore/destroy'
       ]
     },
     {
@@ -60,12 +64,16 @@ const sidebars = {
           label: 'Explore',
           items: [
             'kubefirst/local/gitlab/user-creation',
+            'explore/argocd',
+            'explore/gitops',
             'explore/metaphor',
-            'kubefirst/local/limitations',
-            'explore/telemetry'
+            'explore/telemetry',
+            'explore/terraform',
+            'explore/vault',,
+            'kubefirst/local/limitations'
           ]
         },
-        'kubefirst/local/destroy'
+        'explore/destroy'
       ]
     },
     {
@@ -85,16 +93,16 @@ const sidebars = {
           type: 'category',
           label: 'Explore',
           items: [
-            'kubefirst/civo/user-creation',
-            'explore/metaphor',
+            'kubefirst/civo/github/user-creation',
             'explore/argocd',
             'explore/gitops',
+            'explore/metaphor',
+            'explore/telemetry',
             'explore/terraform',
             'explore/vault',
-            'explore/telemetry'
           ]
         },
-        'kubefirst/civo/destroy'
+        'explore/destroy'
       ]
     },
     {
@@ -114,16 +122,16 @@ const sidebars = {
           type: 'category',
           label: 'Explore',
           items: [
-            'kubefirst/civo/user-creation',
-            'explore/metaphor',
+            'kubefirst/civo/gitlab/user-creation',
             'explore/argocd',
             'explore/gitops',
+            'explore/metaphor',
+            'explore/telemetry',
             'explore/terraform',
             'explore/vault',
-            'explore/telemetry'
           ]
         },
-        'kubefirst/civo/destroy'
+        'explore/destroy'
       ]
     },
     {
@@ -145,9 +153,10 @@ const sidebars = {
           items: [
             'explore/argocd',
             'explore/gitops',
+            'explore/metaphor',
+            'explore/telemetry',
             'explore/terraform',
             'explore/vault',
-            'explore/telemetry'
           ]
         },
         {
@@ -157,10 +166,9 @@ const sidebars = {
             'explore/security',
             'explore/certificates',
             'explore/github-token',
-            'explore/metaphor'
           ]
         },
-        'kubefirst/aws/destroy'
+        'explore/destroy'
       ]
     },
     {
@@ -182,9 +190,10 @@ const sidebars = {
           items: [
             'explore/argocd',
             'explore/gitops',
+            'explore/metaphor',
+            'explore/telemetry',
             'explore/terraform',
             'explore/vault',
-            'explore/telemetry'
           ]
         },
         {
@@ -193,10 +202,9 @@ const sidebars = {
           items: [
             'explore/security',
             'explore/certificates',
-            'explore/metaphor'
           ]
         },
-        'kubefirst/aws/destroy'
+        'explore/destroy'
       ]
     },
     'FAQ',

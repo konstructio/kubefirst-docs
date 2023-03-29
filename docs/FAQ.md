@@ -14,19 +14,15 @@ If you think there is a bug, you can also open an [issue](https://github.com/kub
 
 ### How do I tear my cluster down?
 
-Please find that information in the destroying your Kubefirst platform documentation related to your installation type:
-
-- [Local with GitHub or GitLab](kubefirst/local/destroy.md)
-- [AWS with GitHub or GitLab](kubefirst/aws/destroy.md)
-- [Civo with GitHub or GitLab](kubefirst/civo/destroy.md)
+You can easily take your cluster down, by using the [destroy command](explore/destroy.md).
 
 ### I'm experiencing timeouts when kubefirst deploys Argo CD or HashiCorp Vault through the Helm installations
 
 You may need a more stable connection / higher download speed. Check with your internet provider or use an online speed test to confirm you have at least 100mbps download speed, or else you may experience timeouts.
 
 ### Where can I find the services passwords?
-<!-- TODO: 2.0 - do we still keep passwords in .kubefirst? -->
-The passwords are stored in the `~/.kubefirst` file. You can find the password for each service in the `services` section. The handoff screen (the purple screen at the end of the installation) also displays the passwords.
+
+Some passwords are stored in the `~/.kubefirst` file, and the others in your HashiCorp Vault. You can find the password for each service in the `services` section. The handoff screen (the purple screen at the end of the installation) also displays the passwords.
 
 ## Local with GitHub
 

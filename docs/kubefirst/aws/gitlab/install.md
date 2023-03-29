@@ -8,14 +8,20 @@ title: Install
 
 It installs a fully automated platform of open source cloud native tools with a simple `init` and `create` command.
 
-<!-- TODO: 2.0 - fix this image! -->
-![Kubernetes Cluster](../../../img/kubefirst/gitlab/kubefirst-cluster-create.png)
+![Kubefirst Cluster](../../../img/aws/gitlab/installation-diagram-dark.png#dark-mode)![Kubefirst Cluster](../../../img/aws/gitlab/installation-diagram-light.png#light-mode)
 
 ### Prerequisites
 
-[Install](./overview.md#how-to-install-kubefirst-cli) the kubefirst CLI.
+- [Install](../../../kubefirst/overview.md#install-the-kubefirst-cli) the kubefirst CLI.
 
-#### AWS Prerequisites
+#### GitLab
+
+- Create or use an existing [GitLab account](https://gitlab.com).
+- Create a [GitLab group](https://docs.gitlab.com/ee/user/group/) developer permissions.
+
+> GitLab SaaS offering has limitations that require us to use groups contrary to GitHub which can be use without an organization.
+
+#### AWS
 
 1. Create an AWS account with billing enabled.
 2. Establish a public hosted zone with DNS routing established([docs](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/AboutHZWorkingWith.html)).
@@ -35,12 +41,11 @@ Your new `kbot` account will need to be associated with a GitLab organization.
 
 ### Step 2 - Create your platform
 
-<!-- TODO: 2.0 - check all flags and minimize command -->
 ```shell
 kubefirst aws create \
   --alerts-email yourdistro@your-company.io \
-  --hosted-zone-name your-company.io \
-  --cluster-name kubefirst-mgmt \
-  --gitlab-owner your-gitlab-group \
-  --git-provider gitlab
+  --git-provider gitlab \
+  --gitlab-group your-gitlab-group \
+  --domain-name your-domain.io \
+  --cluster-name kubefirst
 ```
