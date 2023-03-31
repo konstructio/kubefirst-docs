@@ -54,8 +54,6 @@ ARC is the [Actions Runner Controller](https://github.com/actions/actions-runner
 
 ## Kubefirst Console
 
-### AWS or Civo Console UI
-
 Once you run `kubefirst <platform> create` command, a new brower tab will launch with the kubefirst Console app to provide you a launch page with access to the different services that were provisioned.
 
 ![console ui](../img/kubefirst/github/console.png)
