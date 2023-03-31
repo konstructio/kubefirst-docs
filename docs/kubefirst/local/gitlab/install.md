@@ -62,7 +62,7 @@ After the ~5 minute installation, your browser will open a new browser tab at co
 
 ## Console UI Screen
 
-![kubefirst console screen](../../../img/local/gitlab/console.png)
+![kubefirst console screen](../../../img/common/gitlab/console.png)
 
 ## Example of terminal output following cluster creation
 
