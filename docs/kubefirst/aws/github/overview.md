@@ -38,7 +38,7 @@ You now have an EKS cluster with the following content installed in it:
 Once you run the `cluster create` command at the end of the installation will open a new browser tab with the Console UI at
 `http://localhost:9094` to provide you a dashboard to navigate through the different services that were provisioned.
 
-![console ui](../../../img/kubefirst/github/console.png)
+![console ui](../../../img/common/github/console.png)
 
 ![terminal handoff](../../../img/kubefirst/getting-started/cluster-create-result.png)
 
