@@ -57,7 +57,6 @@ The existence of a new user with your specified parameters demonstrates that you
 
 ### Troubleshooting Atlantis
 
-<!-- TODO: [2.0] this warning is being spiked actively to see if we can remove it from the system as a part of the 2.0 release. confirm when releasing. -->
-The ngrok tunnel used for kubefirst local has a 2-hour expiration unless you create an account with ngrok. This expiration will prevent you from using automated infrastructure as code through Atlantis, but the rest of the platform will continue to function beyond that ngrok evaluation period. Create a [ngrok account](https://dashboard.ngrok.com/signup) to prevent this.
+The free ngrok tunnel used for kubefirst local has a 2-hour expiration by default. In order to prevent this expiration from interfering with automated atlantis executions, we have added an auto-rotating ngrok tunnel cronjob to the atlantis namespace. The job will rotate the ngrok tunnel automatically register the new ngrok url with your atlantis secrets in vault and your gitops webhook.
 
 Atlantis works by sending a webhooks to Atlantis from your gitops repository. If you're not receiving Terraform plan comments, check the webhooks section of your `gitops` repository settings and review the responses from the sent webhook requests.
