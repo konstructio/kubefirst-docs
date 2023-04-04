@@ -35,7 +35,7 @@ Uncomment and edit this code to replace the values for the `email`, `first_name`
 
 Then navigate to the file `terraform/users/admins/admin-one.tf`. You shold see one line of code commented with the admin_one user, please uncomment this line to look as follows:
 
-```
+```terraform
 # every admin that is added to the platform will need to have their ID
 # added to this list so that its client id is added to the group in vault
 output "vault_identity_entity_ids" {
