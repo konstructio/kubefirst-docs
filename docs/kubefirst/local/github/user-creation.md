@@ -20,16 +20,28 @@ module "admin_one" {
   acl_policies            = ["admin"]
   email                   = "your.admin@your-company.io"
   first_name              = "Admin"
-  github_username         = "admin-one-github-username"
+  github_username         = "admin_one_github_username"
   last_name               = "One"
-  team_id                 = data.github_team.admins.id
   username                = "aone"
   user_disabled           = false
   userpass_accessor       = data.vault_auth_backend.userpass.accessor
 }
 ```
 
-Uncomment and edit this code to replace the values for the `email`, `first_name`, `github_username`, `last_name`, and `username` before pushing to your branch.
+Uncomment and edit this code to replace the values for the `email`, `first_name`, `github_username`, `last_name`, and `username`.
+
+Then at the top of the same file `terraform/users/admins/admin-one.tf`. You shold see one line of code commented with the admin_one user, please uncomment this line to look as follows:
+
+```terraform
+resource "vault_identity_group_member_entity_ids" "admins_membership" {
+  member_entity_ids = [
+    module.kbot.vault_identity_entity_id
+    , module.admin_one.vault_identity_entity_id # <- this line used to be commented
+  ]
+
+  group_id = data.vault_identity_group.admins.group_id
+}
+```
 
 ```shell
 git add .
@@ -38,6 +50,8 @@ git push --set-upstream origin new-user
 ```
 
 Now, create a pull request. This will kick off the Atlantis workflow. Within a minute or so, a comment will appear on the pull request that shows the Terraform plan with the changes it will be making to your infrastructure.
+
+New plans can be requested on demand by commenting `atlantis plan` on your pull request.
 
 ![Atlantis comments example](../../../img/kubefirst/local/atlantis-comments.png)
 
