@@ -38,7 +38,6 @@ git push --set-upstream origin new-user
 
 Now, create a merge request. This will kick off the Atlantis workflow. Within a minute or so, a comment will appear on the merge request that shows the Terraform plan with the changes it will be making to your infrastructure.
 
-<!-- TODO: 2.0 - fix this image for a GitLab one -->
 ![Atlantis comments example](../../../img/kubefirst/local/atlantis-comments.png)
 
 To apply these changes, you or someone in the organization can submit a comment on that merge request with the following text: `atlantis apply`. Doing so will instruct Atlantis to apply the plan. It will report back with the results within a minute or so.
