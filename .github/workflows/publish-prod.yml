@@ -1,0 +1,73 @@
+name: Publish Docs in Prod
+on:
+  workflow_dispatch:
+env:
+  BASEURL: "/"
+
+jobs:
+  build:
+    name: Build Docs
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the docs repo
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 19.7.0
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Clean the build
+      run: rm -rf ./build
+
+    - name: Generate the docs
+      run: npm run build
+
+    - name: Stage docs for the deploy-preprod job
+      uses: actions/upload-artifact@master
+      with:
+        name: build
+        path: ./build
+
+  deploy-prod:
+    name: Deploy to Preprod
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Get docs for the build job
+      uses: actions/download-artifact@master
+      with:
+        name: build
+        path: ./build
+
+    - name: Update S3 with the docs
+      uses: jakejarvis/s3-sync-action@master
+      with:
+        args: --acl public-read --follow-symlinks --delete
+      env:
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        SOURCE_DIR: 'build'
+        DEST_DIR: '/'
+
+  invalidate-cloudfront:
+    name: Invalidate CloudFront
+    needs: [build, deploy-prod]
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Invalidate CloudFront for preprod
+      uses: chetan/invalidate-cloudfront-action@v2
+      if: ${{ github.ref }} == ${{ env.RELEASE_DOCS_BRANCH_REF }}
+      env:
+        PATHS: '/*'
+        AWS_REGION: 'us-east-2'
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        DISTRIBUTION: ${{ secrets.DISTRIBUTION_ID }}
