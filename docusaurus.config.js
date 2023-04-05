@@ -126,11 +126,6 @@ const config = {
           apiKey: 'AeeRpiguwfTpmcKHGbBkTmUCkjoPg8nh',
         },
         contextualSearch: true,
-      },
-      docs: {
-        sidebar: {
-          autoCollapseCategories: true,
-        }
       }
     }),
 
