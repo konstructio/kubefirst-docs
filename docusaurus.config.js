@@ -67,9 +67,9 @@ const config = {
           href: 'https://kubefirst.io/',
         },
         items: [
-          /*{
+          {
             type: 'docsVersionDropdown',
-          },*/
+          },
           {
             href: 'https://github.com/kubefirst/kubefirst',
             label: 'GitHub',

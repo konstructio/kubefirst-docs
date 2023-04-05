@@ -39,7 +39,7 @@ const sidebars = {
             'explore/metaphor',
             'explore/telemetry',
             'explore/terraform',
-            'explore/vault',,
+            'explore/vault',
             'kubefirst/local/limitations',
           ]
         },
@@ -69,7 +69,7 @@ const sidebars = {
             'explore/metaphor',
             'explore/telemetry',
             'explore/terraform',
-            'explore/vault',,
+            'explore/vault',
             'kubefirst/local/limitations'
           ]
         },
