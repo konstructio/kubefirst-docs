@@ -53,7 +53,7 @@ Now, create a pull request. This will kick off the Atlantis workflow. Within a m
 
 New plans can be requested on demand by commenting `atlantis plan` on your pull request.
 
-![Atlantis comments example](../../../img/kubefirst/local/atlantis-comments.png)
+![Atlantis Plan Comment Example](../../../img/common/github/atlantis-comments.png)
 
 To apply these changes, you or someone in the organization can submit a comment on that pull request with the following text: `atlantis apply`. Doing so will instruct Atlantis to apply the plan. It will report back with the results within a minute or so.
 

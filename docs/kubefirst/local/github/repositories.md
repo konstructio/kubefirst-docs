@@ -38,4 +38,4 @@ GitHub's Terraform provider give you access to [many more configuration options]
 
 To make infrastructure and configuration changes with Terraform, simply open a pull request in the `gitops` repository. Your pull request will automatically provide plans, state locks, and applies, and even comment in the pull request itself. You'll have a simple, peer reviewable, auditable changelog of all infrastructure and configuration changes.
 
-![Atlantis Example on GitHub](../../../img/kubefirst/local/atlantis.png)
+![Atlantis Example on GitHub](../../../img/common/github/atlantis.png)
