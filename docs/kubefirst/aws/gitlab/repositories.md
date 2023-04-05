@@ -45,4 +45,4 @@ To make infrastructure and configuration changes with Terraform, simply open a m
 
 All this automation is possible because of Atlantis. Atlantis is a tool that runs in your Kubernetes cluster and via a webhook, listens for merge requests in your `gitops` repository. When it detect a merge request, it will run `terraform plan`, and post the plan as a comment in the merge request. If the Terraform plan succeed, Atlantis will run `terraform apply`, and post the results as a comment in the merge request.
 
-![Terraform Atlantis Merge Request](../../../img/kubefirst/gitlab-repositories/terraform-atlantis-merge-request.png)
+![Terraform Atlantis Merge Request](../../../img/common/gitlab/atlantis.png)
