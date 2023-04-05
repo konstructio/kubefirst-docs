@@ -11,24 +11,42 @@ cd gitops
 git checkout -b new-user
 ```
 
-The file `k3d-gitlab/terraform/users/admins.tf` contains blocks that represent admin users - the kubefirst_bot user, and a commented-out admin_one user:
+The file `terraform/users/admins/admin-one.tf` contains a block that represents a new admin user:
 
 ```terraform
 module "admin_one" {
-  source = "./modules/user/gitlab"
-  acl_policies        = ["admin"]
-  email               = "admin@your-company-io.com"
-  first_name          = "Admin"
-  gitlab_username     = "admin_one_gitlab_username"
-  last_name           = "One"
-  initial_password    = var.initial_password
-  username            = "aone"
-  user_disabled       = false
-  userpass_accessor   = data.vault_auth_backend.userpass.accessor
+  source = "../modules/user"
+
+  acl_policies            = ["admin"]
+  email                   = "your.admin@your-company.io"
+  first_name              = "Admin"
+  fullname                = "Admin One"
+  group_id                = data.vault_identity_group.admins.group_id
+  gitlab_username         = "your-admins-gitlab-username"
+  last_name               = "One"
+  username                = "aone"
+  user_disabled           = false
+  userpass_accessor       = data.vault_auth_backend.userpass.accessor
+}
+
+```
+
+Uncomment and edit this code to replace the values for the `email`, `first_name`, `github_username`, `last_name`, `full_name` and `username`.
+
+Then navigate to the file `terraform/users/admins/admin-one.tf`. You shold see one line of code commented with the admin_one user, please uncomment this line to look as follows:
+
+```terraform
+# every admin that is added to the platform will need to have their ID
+# added to this list so that its client id is added to the group in vault
+output "vault_identity_entity_ids" {
+  value = [
+    module.kbot.vault_identity_entity_id,
+    module.admin_one.vault_identity_entity_id, # <- this line used to be commented
+  ]
 }
 ```
 
-Uncomment and edit this code to replace the values for the `email`, `first_name`, `github_username`, `last_name`, and `username` before pushing to your branch.
+Now let's commit and push your change
 
 ```shell
 git add .
@@ -38,7 +56,8 @@ git push --set-upstream origin new-user
 
 Now, create a merge request. This will kick off the Atlantis workflow. Within a minute or so, a comment will appear on the merge request that shows the Terraform plan with the changes it will be making to your infrastructure.
 
-<!-- TODO: 2.0 - fix this image for a GitLab one -->
+New plans can be requested on demand by commenting `atlantis plan` on your merge request.
+
 ![Atlantis comments example](../../../img/kubefirst/local/atlantis-comments.png)
 
 To apply these changes, you or someone in the organization can submit a comment on that merge request with the following text: `atlantis apply`. Doing so will instruct Atlantis to apply the plan. It will report back with the results within a minute or so.
