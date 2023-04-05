@@ -41,3 +41,15 @@ Once it's done, you can delete the GitHub assets we created by logging into your
 gh repo delete <GITHUB_USERNAME>/metaphor --confirm
 gh repo delete <GITHUB_USERNAME>/gitops --confirm
 ```
+
+## Civo
+
+### Dummy website served at your domain root
+
+<!-- Add screenshot of website served -->
+
+With Civo, Google Search Crawlers are flagging domains as deceptive when they have no apex records. It is a problem happening only with Civo: you won't have this issue with AWS or local (k3d) deployment. To fix the issue, we added an apex record, and created a pod with a Nginx server at the domain root, delivering a dummy website.
+
+If you want to replace the dummy website with yours or serve an application instead, it should still prevent the problem from happening. If removed, you may see the following error when accessing your domain (or any of its subdomains) in the browser.
+
+![Deceptive Browser Warning](img/civo/deceptive-warning.png)
