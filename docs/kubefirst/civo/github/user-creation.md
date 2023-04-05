@@ -43,7 +43,7 @@ git push --set-upstream origin new-user
 
 Create a pull request. This will kick off the Atlantis workflow. Within a minute or so of submitting the pull request, a comment will appear on the pull request that shows the Terraform plan with the changes it will be making to your infrastructure.
 
-![atlantis comments](../../../img/kubefirst/local/atlantis-comments.png)
+![Atlantis Plan Comment Example](../../../img/common/github/atlantis-comments.png)
 
 To apply these changes, you or someone in the organization can submit a comment on that pull request with the following comment text:
 
