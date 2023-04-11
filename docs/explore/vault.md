@@ -2,17 +2,17 @@
 title: Vault
 ---
 
-[Vault](https://www.vaultproject.io) is an open source secrets manager and identity provider created by hashicorp.
+[Vault](https://www.vaultproject.io) is an open source secrets manager and identity provider created by HashiCorp.
 
 ## Vault for AWS install
 
-If you run `kubefirst cluster create --cloud aws`  kubefirst will install vault and provision a [DynamoDB](https://aws.amazon.com/dynamodb/) backend that's encrypted with [AWS KMS](https://aws.amazon.com/kms/) with point in time recovery enabled.
+If you run `kubefirst cluster create --cloud aws`  kubefirst will install Vault and provision a [DynamoDB](https://aws.amazon.com/dynamodb/) backend that's encrypted with [AWS KMS](https://aws.amazon.com/kms/) with point in time recovery enabled.
 
 Your infrastructure will be set up with Vault running in the EKS cluster. It will come with multiple Authentication Backends enabled.
 
 ## Vault for local install
 
-For local it's backed by a local S3-like backend in [MinIO](https://min.io/) and it is a vault in development mode. It is meant to help to board developers to the vault integrations experience without the overhead of a full install setup to save resources.
+For local it's backed by a local S3-like backend in [MinIO](https://min.io/) and it is a Vault in development mode. It is meant to help to board developers to the Vault integrations experience without the overhead of a full install setup to save resources.
 
 ```yaml
           dev:
@@ -48,11 +48,11 @@ When logging in with users instead of tokens, select method `Username` as the lo
 
 This is the login experience that your team will use when authenticating with Vault. Initially, there will only be a singular `kbot` user created that represents the kubefirst bot account. You can pull request additional admins and developers from your team onto the platform, and they will all log in using the Username method.
 
-Once a user is logged into vault with Username auth, they will be automatically provided single-sign-on access to argo workflows, argo cd, console, and gitlab applications.
+Once a user is logged into Vault with Username auth, they will be automatically provided single-sign-on access to Argo Workflows, Argo CD, console, and GitLab applications.
 
 ### Kubernetes authentication
 
-The `external-secrets-operator` application will be preconfigured with a service account that can pull secrets from your cluster's vault instance. This is accomplished by leveraging the `kubernetes/kubefirst/` auth backend. By default, external-secrets will be able to pull your cluster secrets, and make them available as native kubernetes secrets for your applications to leverage.
+The `external-secrets-operator` application will be preconfigured with a service account that can pull secrets from your cluster's Vault instance. This is accomplished by leveraging the `kubernetes/kubefirst/` auth backend. By default, external-secrets will be able to pull your cluster secrets, and make them available as native Kubernetes secrets for your applications to leverage.
 
 ### Additional auth methods
 
@@ -97,9 +97,9 @@ spec:
       secretKey: SECRET_TWO
 ```
 
-This is going to be a very common file type for you on the kubefirst platform. This kubernetes resource deploys with metaphor, connecting to the `vault-secrets-backend` cluster secret store, and pulls secrets from the path specified in the values.yaml property `vaultSecretPath`. You can either pull all secrets from Vault into the kubernetes secret, or as this secret demonstrates, you can also specify exactly which specific key/value pairs to pull when creating the secret.
+This is going to be a very common file type for you on the kubefirst platform. This Kubernetes resource deploys with metaphor, connecting to the `vault-secrets-backend` cluster secret store, and pulls secrets from the path specified in the values.yaml property `vaultSecretPath`. You can either pull all secrets from Vault into the Kubernetes secret, or as this secret demonstrates, you can also specify exactly which specific key/value pairs to pull when creating the secret.
 
-The result will be a native kubernetes secret, which can be used by your application. Since the path is driven by helm values.yaml values, the source for these secrets can be different in your different environments. For example, when you go to your gitops repository and look at `gitops/components/staging/metaphor/values.yaml` you'll see on the last line that we're pulling the staging secrets from the staging path in vault.
+The result will be a native Kubernetes secret, which can be used by your application. Since the path is driven by helm values.yaml values, the source for these secrets can be different in your different environments. For example, when you go to your gitops repository and look at `gitops/components/staging/metaphor/values.yaml` you'll see on the last line that we're pulling the staging secrets from the staging path in Vault.
 
 ```yaml
 metaphor:
@@ -175,7 +175,7 @@ metadata:
 type: Opaque
 ```
 
-#### 3. Confirm that it's your value from vault
+#### 3. Confirm that it's your value from Vault
 
 ```shell
 echo "c3RhZ2luZyBzZWNyZXQgMQ==" | base64 -d
@@ -198,7 +198,7 @@ Now that you have native Kubernetes secrets available, you can use them however 
 
 Simple, if you are the owner of the user.
 
-- Log with the user on vault: `https://vault.$yourdomain.com/ui/vault/auth?with=userpass`
+- Log with the user on Vault: `https://vault.$yourdomain.com/ui/vault/auth?with=userpass`
 - Go to "Access" tab
 - Select "Auth Methods" (left side)
 - Select "userpass" (right side)
@@ -225,4 +225,4 @@ Vault Policies references:
 
 ### Can someone with the root token update my password?
 
-yes, just follow the steps at **"How can I change my users password?"** select a user, and edit the user. The root token gives full access to update vault secrets.
+yes, just follow the steps at **"How can I change my users password?"** select a user, and edit the user. The root token gives full access to update Vault secrets.
