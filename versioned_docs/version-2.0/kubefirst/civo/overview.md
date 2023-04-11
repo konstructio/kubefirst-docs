@@ -7,7 +7,7 @@ title: Overview
 You'll need to know about 4 things pretty quickly:
 
 1. connecting to your Kubernetes cluster
-2. your new `gitops` repo in your github org and how to use it
+2. your new `gitops` repo in your GitHub org and how to use it
 3. user management with automated Terraform iac
 4. gitops application delivery with the `metaphor-frontend` sample app
 

@@ -48,7 +48,7 @@ Your Terraform state is stored in a local in cluster s3 bucket named `kubefirst-
 
 ### What is the general flow of changes using Atlantis for IaC?
 
-- **Create a Commit and Merge Request:** The change described by Terraform instructions will be created in a PR at a folder which [Atlantis is listening for it](https://github.com/kubefirst/gitops-template/blob/main/aws-github/atlantis.yaml). Once the Change Request is created on github/gilab, Atlantis will plan it and show possible impacts of it.
+- **Create a Commit and Merge Request:** The change described by Terraform instructions will be created in a PR at a folder which [Atlantis is listening for it](https://github.com/kubefirst/gitops-template/blob/main/aws-github/atlantis.yaml). Once the Change Request is created on GitHub/GitLab, Atlantis will plan it and show possible impacts of it.
 - **Approve the change:** Once you are ready, someone with access will provide `atlantis apply` on the change request, triggering the processs of executing the `plan` created.
 - **Change is applied by Atlantis**: Atlantis will execute the Terraform plan, and Terraform will update shared statestore with new current state changes, change request will be merged to main,  reflecting the new desried state.
 
@@ -139,9 +139,9 @@ Once you've provided them this initial password, they can update their own passw
 
 For a more detailed example you can have a look at the [reference file](https://github.com/kubefirst/gitops-template/blob/main/k3d-github/terraform/users/admins.tf)
 
-### How can I use Atlantis to add a new user on my gitlab backed installation?
+### How can I use Atlantis to add a new user on my GitLab backed installation?
 
-Log into gitlab using the root credentials that were provided to you in your terminal.
+Log into GitLab using the root credentials that were provided to you in your terminal.
 
 Once logged in, navigate to the `gitops` project and edit the file `terraform/users/admin.tf`. In this file, you'll see some blocks that represent admin users:
 
@@ -194,8 +194,8 @@ Any new users you have created through this process will have their temporary in
 
 For example, you can use your gitops repo to help track the creation of repos:
 
-- [aws+github repo template](https://github.com/kubefirst/gitops-template/blob/main/aws-github/terraform/github/repos.tf)
-- [local+github repo template](https://github.com/kubefirst/gitops-template/blob/main/k3d-github/terraform/github/repos.tf)
+- [AWS + GitHub repository template](https://github.com/kubefirst/gitops-template/blob/main/aws-github/terraform/github/repos.tf)
+- [local + GitHub repository template](https://github.com/kubefirst/gitops-template/blob/main/k3d-github/terraform/github/repos.tf)
 
 With Terraform using the S3 based state store, you can add any Terraform file to the gitops repo on which [Atlantis is listeting for](https://github.com/kubefirst/gitops-template/blob/main/aws-github/atlantis.yaml) and Atlantis will try to plan and when approved to apply such plan for you.
 

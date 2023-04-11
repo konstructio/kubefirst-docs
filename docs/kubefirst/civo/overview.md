@@ -2,37 +2,37 @@
 title: Overview
 ---
 
-# Getting Started
+## Getting Started
 
-To get started with kubefirst, you'll need to know about four things pretty quickly:
+You'll need to know about 4 things pretty quickly:
 
-1. [Connecting to your Kubernetes cluster with third-party tools](#connecting-to-your-new-cluster-with-third-party-tools).
-2. [How to use your new `gitops` repository](#how-to-use-your-new-gitops-repository).
-3. [User management with automated Terraform IaC](#user-management-with-automated-terraform-iac).
-4. [GitOps application delivery with the `metaphor` sample application](#gitops-application-delivery-with-the-metaphor-sample-application).
+1. connecting to your kubernetes cluster
+2. your new `gitops` repo in your github org and how to use it
+3. user management with automated terraform iac
+4. gitops application delivery with the `metaphor-frontend` sample app
 
-## Connecting to your new cluster with third-party tools
+### Connecting to your new cluster
 
-To connect to your new cluster with third-party tools like [kubectl](https://github.com/kubernetes/kubectl), run this command in your terminal:
+Run this in your terminal to use the kubefirst cluster's kubeconfig
 
 ```shell
 export KUBECONFIG=~/.k1/kubeconfig
 ```
 
-You can then run `kubectl` commands against your new cluster, like getting the `namespaces`:
+You can then run kubectl commands against your new cluster
 
 ```shell
 kubectl get namespaces
 ```
 
-## How to use your new gitops repository
+### Your new `gitops` repo
 
-[GitHub](github/repositories.md), and [GitLab](gitlab/repositories.md) repositories managed with Terraform IaC (Infrastructure as Code).
+[GitHub repos managed as Terraform IaC](github/repositories.md)
 
-## User management with automated Terraform IaC
+### User onboarding
 
-Onboard yourself and your team with [GitHub](github/user-creation.md) or with [GitLab](gitlab/user-creation.md).
+Onboard yourself and your team with [GitHub](github/user-creation.md) or with [GitLab](gitlab/user-creation.md)
 
-## GitOps application delivery with the metaphor sample application
+### Deliver `metaphor` to your new `development`, `staging`, and `production` environments
 
-Explore gitops application delivery and platform integrations with our [metaphor](../../explore/metaphor.md) simple application.
+Explore gitops application delivery and platform integrations with [metaphor](../../explore/metaphor.md)

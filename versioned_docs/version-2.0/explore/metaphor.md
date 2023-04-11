@@ -90,8 +90,8 @@ build
 .gitlab-ci.yaml
 ```
 
-- **Concept 1:** If you are using github(local or cloud), it will be trigger based at `.github/workflows/`; Or if you are using gitlab, installation, it will be trigger based at `.gitlab-ci.yaml`. The idea is that these are used for simply triggering an **argo workflows**.
-- **Concept 2:** By using **argo workflows** to drive your CI jobs you can re-use some of the **CWFT** we provide and also create your own **CWFTs** to help build your toolset, the ideia here is to have more generic automations that are not bound to a given git provider tool.
+- **Concept 1:** If you are using GitHub (local or cloud), it will be trigger based at `.github/workflows/`; Or if you are using GitLab, installation, it will be trigger based at `.gitlab-ci.yaml`. The idea is that these are used for simply triggering an **Argo Workflows**.
+- **Concept 2:** By using **Argo Workflows** to drive your CI jobs you can re-use some of the **CWFT** we provide and also create your own **CWFTs** to help build your toolset, the ideia here is to have more generic automations that are not bound to a given git provider tool.
 - **Concept 3:** Use our **CWFTs** as the basis to build your library of automations by adding new ones that fit your application needs.
 - **Concept 4:** Application is build from a Dockerfile that is defined on the `build` folder.
 
@@ -120,7 +120,7 @@ Want to learn more, check:
 
 ### Metaphor and Local - Special Attention
 
-If you want to use it as base of your application, and bring a new application to a local installation. Be aware, as we use user accounts for local, you need to add a github runner deployment for that new application repo.
+If you want to use it as base of your application, and bring a new application to a local installation. Be aware, as we use user accounts for local, you need to add a GitHub runner deployment for that new application repo.
 
 Reference: [runnerdeployment.yaml](https://github.com/kubefirst/gitops-template/blob/main/k3d-github/cluster-types/mgmt/components/github-runner/runnerdeployment.yaml)
 
