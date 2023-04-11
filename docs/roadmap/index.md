@@ -23,10 +23,10 @@ Please note that we may not be able to prioritize all requests, but if you want 
 ### Improvements
 
 - Add retry logic to create ngrok tunnel [#929](https://github.com/kubefirst/kubefirst/pull/929)
-- Ask user for confirmation at github token screen [#863](https://github.com/kubefirst/kubefirst/issues/863)
+- Ask user for confirmation at GitHub token screen [#863](https://github.com/kubefirst/kubefirst/issues/863)
 - Establish a frictionless user password management through Vault [#748](https://github.com/kubefirst/kubefirst/issues/748)
 - Improve template download logic [#757](https://github.com/kubefirst/kubefirst/issues/757)
-- kubefirst console - HashiCorp Vault should be in tile position #2 on aws github, aws gitlab, and k3d github stacks [#824](https://github.com/kubefirst/kubefirst/issues/824)
+- kubefirst console - HashiCorp Vault should be in tile position #2 on AWS GitHub, AWS GitLab, and k3d GitHub stacks [#824](https://github.com/kubefirst/kubefirst/issues/824)
 - Kubefirst EKS needs upgrade to newest supported version [#811](https://github.com/kubefirst/kubefirst/issues/811)
 
 #### Kubefirst Console

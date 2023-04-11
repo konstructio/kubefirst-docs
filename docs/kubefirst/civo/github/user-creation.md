@@ -4,7 +4,7 @@ title: Onboard Users
 
 ## Platform User Onboarding
 
-In this tutorial we will show how to add users to your platform through [Atlantis](https://www.runatlantis.io/), which will allow a preview of how changes made will be expressed through terraform before branches are merged into your repository.
+In this tutorial we will show how to add users to your platform through [Atlantis](https://www.runatlantis.io/), which will allow a preview of how changes made will be expressed through Terraform before branches are merged into your repository.
 
 Navigate to the `gitops` repository in your GitHub org, clone the contents, and create a new branch:
 
@@ -53,13 +53,13 @@ Doing so will instruct Atlantis to apply the plan. It will report back with the 
 
 NOTE: Atlantis merges your pull request automatically once an apply is successfully executed. Don't merge Terraform pull requests yourself.
 
-Atlantis will always run plans automatically for you when a pull request is opened that changes files mapped in atlantis.yaml
+Atlantis will always run plans automatically for you when a pull request is opened that changes files mapped in `atlantis.yaml`.
 
-Any new users you have created through this process will have their temporary initial passwords stored in your Vault cluster. You can access Vault using the root login credentials provided to you during your kubefirst installation. Only the root vault token can access these secrets. You will find your users' initial passwords in the Vault secret store `/secrets/users/<username>`.
+Any new users you have created through this process will have their temporary initial passwords stored in your Vault cluster. You can access Vault using the root login credentials provided to you during your kubefirst installation. Only the root Vault token can access these secrets. You will find your users' initial passwords in the Vault secret store `/secrets/users/<username>`.
 
 ![vault token login](../../../img/kubefirst/local/vault-token-login.png)
 
-Once you've provided them their initial password, they can update their own password throughout the platform by updating their user password entity in vault. Anyone can change their own password, and Admins can reset anyone's password. These rules, just like everything else on Kubefirst, can be configured in your new gitops repository.
+Once you've provided them their initial password, they can update their own password throughout the platform by updating their user password entity in Vault. Anyone can change their own password, and Admins can reset anyone's password. These rules, just like everything else on Kubefirst, can be configured in your new gitops repository.
 
 ![default user creation](../../../img/kubefirst/local/default-user-creation.png)
 
