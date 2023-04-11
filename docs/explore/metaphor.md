@@ -29,7 +29,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   annotations:
-    Kubernetes.io/ingress.class: nginx
+    kubernetes.io/ingress.class: nginx
     # Change the next line to "letsencrypt-staging" while testing adjustments, change to "letsencrypt-prod" after confirming LE certificate was issued
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
   name: metaphor

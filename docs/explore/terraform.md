@@ -48,7 +48,7 @@ Your Terraform state is stored in a local in cluster s3 bucket named `kubefirst-
 
 ### What is the general flow of changes using Atlantis for IaC?
 
-- **Create a Commit and Merge Request:** The change described by Terraform instructions will be created in a PR at a folder which [atlantis is listening for it](https://github.com/kubefirst/gitops-template/blob/main/aws-github/atlantis.yaml). Once the Change Request is created on github/gilab, Atlantis will plan it and show possible impacts of it.
+- **Create a Commit and Merge Request:** The change described by Terraform instructions will be created in a PR at a folder which [Atlantis is listening for it](https://github.com/kubefirst/gitops-template/blob/main/aws-github/atlantis.yaml). Once the Change Request is created on github/gilab, Atlantis will plan it and show possible impacts of it.
 - **Approve the change:** Once you are ready, someone with access will provide `atlantis apply` on the change request, triggering the processs of executing the `plan` created.
 - **Change is applied by Atlantis**: Atlantis will execute the Terraform plan, and Terraform will update shared statestore with new current state changes, change request will be merged to main,  reflecting the new desried state.
 
@@ -197,6 +197,6 @@ For example, you can use your gitops repo to help track the creation of repos:
 - [aws+github repo template](https://github.com/kubefirst/gitops-template/blob/main/aws-github/terraform/github/repos.tf)
 - [local+github repo template](https://github.com/kubefirst/gitops-template/blob/main/k3d-github/terraform/github/repos.tf)
 
-With Terraform using the S3 based state store, you can add any Terraform file to the gitops repo on which [atlantis is listeting for](https://github.com/kubefirst/gitops-template/blob/main/aws-github/atlantis.yaml) and Atlantis will try to plan and when approved to apply such plan for you.
+With Terraform using the S3 based state store, you can add any Terraform file to the gitops repo on which [Atlantis is listeting for](https://github.com/kubefirst/gitops-template/blob/main/aws-github/atlantis.yaml) and Atlantis will try to plan and when approved to apply such plan for you.
 
 Beyond repositories and users, Atlantis allow you to have your IaC demands to be tracked by your main branch registry. Easing up the usage of Terraform based workflows to update the infractruture you are operating.
