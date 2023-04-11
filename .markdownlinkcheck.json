@@ -40,7 +40,7 @@
 			"pattern": "https://www.tmcnet.com*"
 		},
 		{
-			"pattern": "https://.*localdev.me*"
+			"pattern": "https://.*kubefirst.dev*"
 		}
 	],
 	"replacementPatterns": [

@@ -59,7 +59,7 @@ To apply these changes, you or someone in the organization can submit a comment 
 
 > Atlantis merges your Pull Request automatically once an apply is successfully executed. Don't merge Terraform pull requests yourself. Atlantis will always run plans automatically for you when a pull request is opened that changes files mapped in `atlantis.yaml`.
 
-Any new users you have created through this process will have their temporary initial passwords stored in your local [HashiCorp Vault](https://argocd.localdev.me/applications/vault) cluster. You can also access Vault using the information provided to you in the terminal: you will find your users' individual initial passwords in the Vault secret store `/secrets/users/<username>`.
+Any new users you have created through this process will have their temporary initial passwords stored in your local [HashiCorp Vault](https://argocd.kubefirst.dev/applications/vault) cluster. You can also access Vault using the information provided to you in the terminal: you will find your users' individual initial passwords in the Vault secret store `/secrets/users/<username>`.
 
 ![vault token login](../../../img/kubefirst/local/vault-token-login.png)
 
