@@ -197,6 +197,6 @@ For example, you can use your gitops repo to help track the creation of repos:
 - [aws+github repo template](https://github.com/kubefirst/gitops-template/blob/main/aws-github/terraform/github/repos.tf)
 - [local+github repo template](https://github.com/kubefirst/gitops-template/blob/main/k3d-github/terraform/github/repos.tf)
 
-With Terraform using the S3 based state store, you can add any Terraform file to the gitops repo on which Atlantis is listeting for](https://github.com/kubefirst/gitops-template/blob/main/aws-github/atlantis.yaml) and Atlantis will try to plan and when approved to apply such plan for you.
+With Terraform using the S3 based state store, you can add any Terraform file to the gitops repo on which [Atlantis is listeting for](https://github.com/kubefirst/gitops-template/blob/main/aws-github/atlantis.yaml) and Atlantis will try to plan and when approved to apply such plan for you.
 
 Beyond repositories and users, Atlantis allow you to have your IaC demands to be tracked by your main branch registry. Easing up the usage of Terraform based workflows to update the infractruture you are operating.

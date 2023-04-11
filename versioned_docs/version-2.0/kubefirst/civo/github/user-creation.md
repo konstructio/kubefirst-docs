@@ -53,7 +53,7 @@ Doing so will instruct Atlantis to apply the plan. It will report back with the 
 
 NOTE: Atlantis merges your pull request automatically once an apply is successfully executed. Don't merge Terraform pull requests yourself.
 
-Atlantis will always run plans automatically for you when a pull request is opened that changes files mapped in Atlantis.yaml
+Atlantis will always run plans automatically for you when a pull request is opened that changes files mapped in `atlantis.yaml`.
 
 Any new users you have created through this process will have their temporary initial passwords stored in your Vault cluster. You can access Vault using the root login credentials provided to you during your kubefirst installation. Only the root Vault token can access these secrets. You will find your users' initial passwords in the Vault secret store `/secrets/users/<username>`.
 
