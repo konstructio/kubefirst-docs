@@ -29,7 +29,7 @@ You now have an EKS cluster with the following content installed in it:
 | Metaphor Frontend            | (development, staging, production) instance of sample frontend application |
 
 - These apps are all managed by Argo CD and the app configurations are in the `gitops` repo's `registry` folder.
-- The AWS infrastructure is terraform - that's also in your `gitops` repo, but in your `terraform` folder.
+- The AWS infrastructure is Terraform - that's also in your `gitops` repo, but in your `terraform` folder.
 
 ![GitOps Assets](../../../img/kubefirst/github/gitops-assets.png)
 

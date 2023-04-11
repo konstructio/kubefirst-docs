@@ -37,7 +37,7 @@ Then navigate to the file `terraform/users/admins/admin-one.tf`. You shold see o
 
 ```terraform
 # every admin that is added to the platform will need to have their ID
-# added to this list so that its client id is added to the group in vault
+# added to this list so that its client id is added to the group in Vault
 output "vault_identity_entity_ids" {
   value = [
     module.kbot.vault_identity_entity_id,
