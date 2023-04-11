@@ -51,7 +51,7 @@ To see what is installed by kubefirst, check the [overview page](../../overview.
 
 ## After installation
 
-After the ~5 minute installation, your browser will open a new browser tab at completion with the Console UI at [https://kubefirst.localdev.me](https://kubefirst.localdev.me) to provide you an easy way to navigate through the different services that were provisioned.
+After the ~5 minute installation, your browser will open a new browser tab at completion with the Console UI at [https://kubefirst.kubefirst.dev](https://kubefirst.kubefirst.dev) to provide you an easy way to navigate through the different services that were provisioned.
 
 ## Console UI Screen
 
