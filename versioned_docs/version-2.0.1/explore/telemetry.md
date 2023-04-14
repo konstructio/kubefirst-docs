@@ -8,14 +8,12 @@ Kubefirst collects data in order to optimize future releases. By collecting metr
 
 ### What Metrics are collected?
 
-- cli_version:          The version of CLI being used (eg. `2.0.0`)
-- cloud_provider:       The cloud environment (`k3d`|`aws`|`civo`)
-- cluster_id:           The ID of the cluster being created (eg. `123ABC`)
-- cluster_type:         The type of cluster being created (`mgmt`)
-- domain:               The domain of the cluster being created (eg. `kubefirst.io`)
-- git_provider:         Type of git provider leveraged (`github`|`gitlab`)
-- kubefirst_team:       For internal use only
-- kubefirst_team_info:  For internal use only
-- machine_id:           An anonymized ID representing a distinct client host (eg. `123456-123abc-abc123123abc-123123`)
+- cli_version:      The version of CLI being used (eg. `2.0.0`)
+- cluster_type:     The type of cluster being created (`mgmt`)
+- cloud_provider:   The cloud environment (`k3d`|`aws`|`civo`)
+- git_provider:     Type of git provider leveraged (`github`|`gitlab`)
+- cluster_id:       The ID of the cluster being created (eg. `123ABC`)
+- domain:           The domain of the cluster being created (eg. `kubefirst.io`)
+- kubefirst_team:   For internal use only
 
-When installing your Kubefirst cluster through the cli, append the `--use-telemetry=false` flag to opt out of this process.
+When installing your Kubefirst cluster through the cli, append the `--use-telemetry=false` flag to opt ourself out of this process.
