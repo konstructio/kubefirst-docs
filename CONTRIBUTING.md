@@ -1,27 +1,37 @@
 # Contributing to the Kubefirst documentation
 
-Firstly, we want to thank you for investing your valuable time to contribute to Kubefirst!
-
-_⚠️ Please note that this file is a work-in-progress, so more details will be added in the future._
+Firstly, we want to thank you for investing your valuable time to contribute to kubefirst!
 
 Note we have a [code of conduct](CODE_OF_CONDUCT.md) which needs to be followed in all your interactions with the project to keep our community healthy.
 
+_For contribution to the kubefirst CLI, please refer yourself to the [CONTRIBUTING.md](https://github.com/kubefirst/kubefirst/blob/main/CONTRIBUTING.md) from the [kubefirst repository](https://github.com/kubefirst/kubefirst)._
+
+- [Ways to Contribute](#ways-to-contribute)
+- [Getting Started](#getting-started)
+  - [Commits](#commits)
+  - [Images](#images)
+  - [Markdown](#markdown)
+  - [Search Index](#search-index)
+  - [Testing](#testing)
+- [Help](#help)
+
 ## Ways to Contribute
 
-At Kubefirst, we believe that every contribution is valuable, not just the code one, which means we welcome
+At Kubefirst, we believe that every contribution is valuable, not just the code one.
 
-- [bug reports](https://github.com/kubefirst/kubefirst/issues/new);
-- [feature requests](https://github.com/kubefirst/kubefirst/issues/new?assignees=&labels=feature-request&template=feature_request.md&title=);
-- [documentation issues reports](https://github.com/kubefirst/kubefirst/issues/new?assignees=&labels=feature-request&template=feature_request.md&title=) like unclear section, missing information or even typos;
-- and, of course, any code contributions to Kubefirst, or the documentation itself.
+Whether you want to add more details to a specific section or a page, or that you want to fix a typo in the text or in a code example, you are more than welcome to can create a pull request.
 
-Before making a code change, first discuss your idea via an [issue](https://github.com/kubefirst/docs/issues/new/choose). Please check if a feature request or bug report does [already exist](https://github.com/docs/kubefirst/issues/) before creating a new one.
+For more substantial changes, it is highly suggested that you discuss your idea with us first. You can do that by either creating an [issue](https://github.com/kubefirst/kubefirst/issues/new?assignees=&labels=feature-request&template=feature_request.md&title=), or by joining us in our [Slack community](https://kubefirst.io/slack), and start a thread in the #contributors channel.
 
-## Getting Started With the Documentation
+If you don't want to make the changes yourself, no worries, we got your back: just report the problem by creating an [issue](https://github.com/kubefirst/kubefirst/issues/new?assignees=&labels=feature-request&template=feature_request.md&title=) or letting us know on our [Slack Community](https://kubefirst.io/slack).
 
-We are using [Docusaurus](https://github.com/facebook/docusaurus) as our documentation platform. More information on the platform in their [documentation](https://docusaurus.io/docs).
+Please check if a problem or a suggestion has already been created as an [issue](https://github.com/kubefirst/docs/issues/) before creating a new one.
 
-### Commit messages
+## Getting Started
+
+We are using [Docusaurus](https://github.com/facebook/docusaurus) as our documentation platform. More information on Docusaurus is available in their [documentation](https://docusaurus.io/docs). Here's some guidelines that you need to follow or useful information you need to know about before doing any content modification.
+
+### Commits
 
 We subscribe to the [Conventional Commits specification](https://www.conventionalcommits.org). It can be a bit difficult to choose the right commit message prefix since this repository is for documentation, and not an application per se. Here are the guidelines for the documentation specific ones:
 
@@ -38,19 +48,15 @@ Here's the non content related ones:
 
 As of now, we don't see usage for the `perf` & `test` prefixes.
 
-### Update the content
-
-WIP
-
-#### Images
+### Images
 
 All images will be automatically optimized with a lossless compression level to ensure the best possible experience, while minimizing the image size for slower or expensive internet connection.
 
-##### Alt Text
+#### Alt Text
 
 All images must have alternative text (alt text) that are representative, and descriptive of the image. It is important as we want our documentation to be accessible to everyone. Images with complex or with a lot of information, such as diagrams, should have a short description in the alt text, and have a full-fledge text explaining every part either within the documentation or as an additional page. As for "utility images", the alt text should be a description of the information or action intended by the image, and not the image or icon itself (ex.: a Twitter logo icon that links to our Twitter page should have "kubefirst Twitter account" instead of "Twitter logo" alt text).
 
-##### Themed images
+#### Themed images
 
 If you want to use a different image for light, and dark mode, you can use the following syntax:
 
@@ -60,7 +66,7 @@ If you want to use a different image for light, and dark mode, you can use the f
 
 The magic happens with the CSS looking for path fragments, in our case, a URL with either `#light-mode` or `#dark-mode` in it, and don't display the other image.
 
-#### Markdown
+### Markdown
 
 Before being able to merge your PR, the [GitHub Action responsible for checking the Markdown validity](https://github.com/kubefirst/docs/blob/main/.github/workflows/check-markdown.yml) needs to pass. If you want to test your changes locally before sending a PR, you can do it by using [act](https://github.com/nektos/act), and run `act -j markdown-check`. We follow the [rules](https://github.com/DavidAnson/markdownlint#rules--aliases) from the [markdownlint application](https://github.com/DavidAnson/markdownlint) with the exceptions of:
 
@@ -103,17 +109,7 @@ In a nutshell, H1 inside the `<!--tabs--><!--/tabs-->` will be use as tab title,
 
 Docusaurus is using Prism for code block syntax highlighting. Here's a list of [supported languages](https://prismjs.com/#supported-languages).
 
-### Update the platform
-
-WIP
-
-### Testing your modifications
-
-To run our documentation locally, simply run `npm start`.
-
-> If you modify the CSS, the changes aren't picked up by the development server as when you modify the documentation content. You need to restart the server with npm.
-
-### Update the Search Index
+### Search Index
 
 We use [Typesense](https://github.com/typesense/typesense) as the search engine for our documentation. The index should be updated automatically when we deploy a new version using GitHub Actions, but it's not possible right now. The technology we use to serve the docs doesn't manage the trailing slashes, and 404 well, which makes the [Typesense DocSearch scraper](https://github.com/typesense/typesense-docsearch-scraper) loop infinitely on content. So until we have a proper documentation deployment in place, we have to update the search index manually. To do so, you will need [npm](https://github.com/npm/cli), and [Docker](https://www.docker.com) installed.
 
@@ -143,9 +139,11 @@ docker run -it --env-file=.env -e "CONFIG=$(cat typesense.docsearch.config.json 
 
 If everything goes right, you'll see a bunch of output, and the process should end with the line `Nb hits: 935` (the number of hits will probably differ as we update the content).
 
-## Getting Started with Kubefirst Code
+### Testing
 
-Please check the [CONTRIBUTING.md](https://github.com/kubefirst/kubefirst/blob/main/CONTRIBUTING.md) file from the [kubefirst](https://github.com/kubefirst/kubefirst/) repository.
+To run our documentation locally, simply run `npm start`.
+
+> If you modify the CSS, the changes aren't picked up by the development server like when you modify the documentation content. You need to restart the server with npm.
 
 ## Help
 
