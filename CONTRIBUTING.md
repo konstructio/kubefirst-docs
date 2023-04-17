@@ -13,6 +13,7 @@ _For contribution to the kubefirst CLI, please refer yourself to the [CONTRIBUTI
   - [Markdown](#markdown)
   - [Search Index](#search-index)
   - [Testing](#testing)
+  - [Versioning](#versioning)
 - [Help](#help)
 
 ## Ways to Contribute
