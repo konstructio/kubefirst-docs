@@ -145,6 +145,24 @@ To run our documentation locally, simply run `npm start`.
 
 > If you modify the CSS, the changes aren't picked up by the development server like when you modify the documentation content. You need to restart the server with npm.
 
+### Versioning
+
+Docusaurus manages [documentation versions](https://docusaurus.io/docs/versioning), which we started to use since the v2.0.0 release. It means that every time we release a new version of kubefirst, we need to freeze the `next` documentation, meaning the documentation updated in the `docs` directory, into a versioned one inside the `versioned_docs\version-X.X.X` folder. For now, this process is manual, and can be done using the following commands (replace X.X.X by the new release version):
+
+```shell
+git checkout -b vX.X.X
+npm run docusaurus docs:version X.X.X
+git add versioned_docs/version-X.X.X
+git commit -m "docs: create vX.X.X documentation"
+git push -u origin && gh pr create --assignee @me \
+  --title "$(git log --format=%s -n 1)" --body "$(git log --format=%b -n 1)"
+# or you can use the GitHub CLI with the following command: gh pr create
+```
+
+It will create a duplication of the `docs` folder inside the newly created `version-X.X.X` folder located into `versioned_docs`. From this point forward, the new changes need to be done in the `docs` folder, which is now the documentation for the next release.
+
+> In the case of documentation modifications that are not only valuable for the next release (i.e.: typo in a sentence, clarification of a section, or missing information from a feature that precedes the latest release), you should apply the same changes in the `version-X.X.X` folder that you did in the `docs` one. Note that we decided to update only `next` and the latest release in that situation, even if it applies to multiple previous versions.
+
 ## Help
 
 If you need help in your Kubefirst journey as a contributor, please join our [Slack Community](http://kubefirst.io/slack). We have the `#contributors` channel where you can ask any questions or get help with anything contribution-related. For support as a user, please ask in the `#helping-hands` channel, or directly to @fharper (Fred in Slack), our Developer Advocate.
