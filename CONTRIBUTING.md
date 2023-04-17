@@ -147,20 +147,20 @@ To run our documentation locally, simply run `npm start`.
 
 ### Versioning
 
-Docusaurus manages [documentation versions](https://docusaurus.io/docs/versioning), which we started to use since the v2.0.0 release. It means that every time we release a new version of kubefirst, we need to freeze the `next` documentation, meaning the documentation updated in the `docs` directory, into a versioned one inside the `versioned_docs\version-X.X.X` folder. For now, this process is manual, and can be done using the following commands (replace X.X.X by the new release version):
+Docusaurus manages [documentation versions](https://docusaurus.io/docs/versioning), which we started to use since the v2.0.0 release. It means that every time we release a new version (minor or major only) of kubefirst, we need to freeze the `next` documentation, meaning the documentation updated in the `docs` directory, into a versioned one inside the `versioned_docs\version-X.X` folder. For now, this process is manual, and can be done using the following commands (replace X.X by the new release version):
 
 ```shell
-git checkout -b vX.X.X
-npm run docusaurus docs:version X.X.X
-git add versioned_docs/version-X.X.X
-git commit -m "docs: create vX.X.X documentation"
+git checkout -b vX.X
+npm run docusaurus docs:version X.X
+git add versioned_docs/version-X.X
+git commit -m "docs: create vX.X documentation"
 git push -u origin && gh pr create --assignee @me \
   --title "$(git log --format=%s -n 1)" --body "$(git log --format=%b -n 1)"
 ```
 
-It will create a duplication of the `docs` folder inside the newly created `version-X.X.X` folder located into `versioned_docs`. From this point forward, the new changes need to be done in the `docs` folder, which is now the documentation for the next release.
+It will create a duplication of the `docs` folder inside the newly created `version-X.X` folder located into `versioned_docs`. From this point forward, the new changes need to be done in the `docs` folder, which is now the documentation for the next release.
 
-> In the case of documentation modifications that are not only valuable for the next release (i.e.: typo in a sentence, clarification of a section, or missing information from a feature that precedes the latest release), you should apply the same changes in the `version-X.X.X` folder that you did in the `docs` one. Note that we decided to update only `next` and the latest release in that situation, even if it applies to multiple previous versions.
+> In the case of documentation modifications that are not only valuable for the next release (i.e.: typo in a sentence, clarification of a section, or missing information from a feature that precedes the latest release), you should apply the same changes in the `version-X.X` folder that you did in the `docs` one. Note that we decided to update only `next` and the latest docs release (last minor or major release) in that situation, even if it applies to multiple previous versions.
 
 ## Help
 
