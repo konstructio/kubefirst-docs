@@ -156,7 +156,6 @@ git add versioned_docs/version-X.X.X
 git commit -m "docs: create vX.X.X documentation"
 git push -u origin && gh pr create --assignee @me \
   --title "$(git log --format=%s -n 1)" --body "$(git log --format=%b -n 1)"
-# or you can use the GitHub CLI with the following command: gh pr create
 ```
 
 It will create a duplication of the `docs` folder inside the newly created `version-X.X.X` folder located into `versioned_docs`. From this point forward, the new changes need to be done in the `docs` folder, which is now the documentation for the next release.
