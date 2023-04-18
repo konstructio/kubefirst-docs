@@ -24,7 +24,6 @@ You may need a more stable connection / higher download speed. Check with your i
 
 Run the command `kubefirst <platform> root-credentials` where `<platform>` is one of `k3d`, `aws`, `civo`
 
-
 ### I'm stuck with artifacts after a failed local installation and can't continue
 
 If you still cannot complete the installation due to remaining artifacts after completing a `kubefirst k3d destroy`, you may have to do a manual teardown. Firsly, you need to delete the k3d cluster with the following command:
