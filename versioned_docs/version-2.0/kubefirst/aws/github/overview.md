@@ -6,36 +6,15 @@ title: Overview
   <iframe width="784" height="441" src="https://www.youtube.com/embed/KEUOaNMUqOM" frameborder="0" allowfullscreen></iframe>
 </div>
 
-**psssst** _- if you plan to destroy your kubefirst platform and recreate it again we recommend running `kubefirst backupSSL` to re-use your ssl certs from Let's Encrypt. See the [docs](https://docs.kubefirst.io/explore/certificates.html#backup-and-restore-certificates)._
-
-The `kubefirst cluster create` execution includes important information toward the end, including URLs and passwords. Please save this information!
-
-You now have an EKS cluster with the following content installed in it:
-
-| Application                  | Description                                                                |
-|------------------------------|----------------------------------------------------------------------------|
-| Nginx Ingress Controller     | Ingress Controller                                                         |
-| Cert Manager                 | Certificate Automation Utility                                             |
-| Certificate Issuers          | Let's Encrypt browser-trusted certificates                                 |
-| Argo CD                      | GitOps Continuous Delivery                                                 |
-| Argo Workflows               | Application Continuous Integration                                         |
-| GitHub Action Runner         | GitHub CI Executor                                                         |
-| Vault                        | Secrets Management                                                         |
-| Atlantis                     | Terraform Workflow Automation                                              |
-| External Secrets             | Syncs Kubernetes secrets with Vault secrets                                |
-| Chart Museum                 | Helm Chart Registry                                                        |
-| Metaphor JS API              | (development, staging, production) instance of sample application          |
-| Metaphor Go API              | (development, staging, production) instance of sample go application       |
-| Metaphor Frontend            | (development, staging, production) instance of sample frontend application |
-
-- These apps are all managed by Argo CD and the app configurations are in the `gitops` repo's `registry` folder.
-- The AWS infrastructure is Terraform - that's also in your `gitops` repo, but in your `terraform` folder.
+### Installed Applications
 
 ![GitOps Assets](../../../img/kubefirst/github/gitops-assets.png)
 
+For details on the installed platform components see our [overview page](../../overview.md#platforms-details).
+
 ## Step 1: Console UI
 
-Once you run the `cluster create` command at the end of the installation will open a new browser tab with the Console UI at
+Once the `kubefirst aws create` command has completed provisioning, it will open a new browser tab with the Console UI at
 `http://localhost:9094` to provide you a dashboard to navigate through the different services that were provisioned.
 
 ![console ui](../../../img/common/github/console.png)
@@ -44,7 +23,7 @@ Once you run the `cluster create` command at the end of the installation will op
 
 These are **not your personal credentials**. These are administrator credentials that can be used if you ever need to authenticate and administer your tools if your OIDC provider ever becomes unavailable. Please protect these secrets and store them in a safe place.
 
-## Step 2: Add Your Team(optional)
+## Step 2: Add Your Team (optional)
 
 This step is meant to explore the onboarding process of a new user to your installation:
 

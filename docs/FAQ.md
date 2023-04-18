@@ -22,9 +22,7 @@ You may need a more stable connection / higher download speed. Check with your i
 
 ### Where can I find the services passwords?
 
-Some passwords are stored in the `~/.kubefirst` file, and the others in your HashiCorp Vault. You can find the password for each service in the `services` section. The handoff screen (the purple screen at the end of the installation) also displays the passwords.
-
-## Local with GitHub
+Run the command `kubefirst <platform> root-credentials` where `<platform>` is one of `k3d`, `aws`, `civo`
 
 ### I'm stuck with artifacts after a failed local installation and can't continue
 
@@ -32,7 +30,7 @@ If you still cannot complete the installation due to remaining artifacts after c
 
 ```shell
 $HOME/.k1/tools/k3d cluster delete kubefirst
-kubefirst clean
+kubefirst reset
 ```
 
 Once it's done, you can delete the GitHub assets we created by logging into your account and removing the `gitops`, and `metaphor` repositories. You can also use the GitHub CLI to do that1:

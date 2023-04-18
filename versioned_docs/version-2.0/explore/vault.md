@@ -4,26 +4,6 @@ title: Vault
 
 [Vault](https://www.vaultproject.io) is an open source secrets manager and identity provider created by HashiCorp.
 
-## Vault for AWS install
-
-If you run `kubefirst cluster create --cloud aws`  kubefirst will install Vault and provision a [DynamoDB](https://aws.amazon.com/dynamodb/) backend that's encrypted with [AWS KMS](https://aws.amazon.com/kms/) with point in time recovery enabled.
-
-Your infrastructure will be set up with Vault running in the EKS cluster. It will come with multiple Authentication Backends enabled.
-
-## Vault for local install
-
-For local it's backed by a local S3-like backend in [MinIO](https://min.io/) and it is a Vault in development mode. It is meant to help to board developers to the Vault integrations experience without the overhead of a full install setup to save resources.
-
-```yaml
-          dev:
-            enabled: true
-            devRootToken: "k1_local_vault_token"
-```
-
-Reference: [vault deployment](https://github.com/kubefirst/gitops-template/blob/main/k3d-github/cluster-types/mgmt/components/vault/application.yaml)
-
-Your cluster will be set up with Vault running in the k3d cluster. The only backend enabled on the local cluster is the one that provides access to secrets from external-secrets-operator.
-
 ### Token authentication
 
 ![Vault section of the handoff screen](../img/vault/handoff-screen.png)
@@ -48,7 +28,7 @@ When logging in with users instead of tokens, select method `Username` as the lo
 
 This is the login experience that your team will use when authenticating with Vault. Initially, there will only be a singular `kbot` user created that represents the kubefirst bot account. You can pull request additional admins and developers from your team onto the platform, and they will all log in using the Username method.
 
-Once a user is logged into Vault with Username auth, they will be automatically provided single-sign-on access to Argo Workflows, Argo cCD, console, and GitLab applications.
+Once a user is logged into Vault with Username auth, they will be automatically provided single-sign-on access to Argo Workflows, Argo CD, console, and GitLab applications.
 
 ### Kubernetes authentication
 

@@ -47,3 +47,33 @@ kubefirst aws create \
   --cluster-name kubefirst-mgmt \
   --github-org your-github-organization-name
 ```
+
+## Example of terminal output following cluster creation
+
+![terminal handoff](../../../img/aws/github/handoff-screen.png)
+
+## Root credentials
+
+To obtain your 3 initial passwords, run
+
+```bash
+kubefirst aws root-credentials
+```
+
+![terminal handoff](../../../img/common/kubefirst/root-credentials.png)
+
+:::note the `kubefirst aws root-credentials` command was introduced in 2.0.1
+
+## Connecting to Kubernetes
+
+Replace `kubefirst` in the command below with your cluster's name if you specified one
+
+```bash
+aws eks update-kubeconfig --name kubefirst
+```
+
+To view all cluster pods run
+
+```bash
+kubectl get pods -A
+```

@@ -14,7 +14,7 @@ kubefirst aws destroy
 # Civo
 
 ```shell
-kubefirst cluster destroy
+kubefirst civo destroy
 ```
 
 # k3d
@@ -34,7 +34,7 @@ If the `destroy` command isn't successful, you can use the `kubefirst reset` com
 
 ### Removing CA from the trusted store
 
-If you [installed the mkcert CA (Certificate Authority) to your trusted store,](../kubefirst/local/github/install.md#install-the-ca-certificate-authority-of-mkcert-in-your-trusted-store-optional) you can remove it with:
+If you [installed the mkcert CA (Certificate Authority) to your trusted store,](../kubefirst/local/github/install.md#install-the-ca-certificate-authority-of-mkcert-in-your-trusted-store) you can remove it with:
 
 ```shell
 mkcert -uninstall
