@@ -2,41 +2,15 @@
 title: Overview
 ---
 
-## Explore (GitLab)
+### Installed Applications
 
-**psssst** _- if you plan to destroy your kubefirst platform and recreate it again we recommend running `kubefirst backupSSL` to re-use your ssl certs from Let's Encrypt. See the [docs](https://docs.kubefirst.io/common/certificates.html#backup-and-restore-certificates)._
+![GitOps Assets](../../../img/kubefirst/github/gitops-assets.png)
 
-<iframe width="784" height="441" src="https://www.youtube.com/embed/KEUOaNMUqOM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+For details on the installed platform components see our [overview page](../../overview.md#platforms-details).
 
-The `kubefirst cluster create` execution includes a lot of important information toward the end including URLs and passwords. Do not lose this information.
+## Step 1: Console UI
 
-You now have an EKS cluster with the following content installed in it:
-
-| Application              | Description                                 |
-|--------------------------|---------------------------------------------|
-| Nginx Ingress Controller | Ingress Controller                          |
-| Cert Manager             | Certificate Automation Utility              |
-| Certificate Issuers      | Let's Encrypt browser-trusted certificates  |
-| Argo CD                  | GitOps Continuous Delivery                  |
-| Argo Workflows           | Application Continuous Integration          |
-| GitLab                   | GitLab Server                               |
-| GitLab Runner            | GitLab CI Executor                          |
-| Vault                    | Secrets Management                          |
-| Atlantis                 | Terraform Workflow Automation               |
-| External Secrets         | Syncs Kubernetes secrets with Vault secrets |
-| Chart Museum             | Helm Chart Registry                         |
-| Metaphor Development     | Development instance of sample application  |
-| Metaphor Staging         | Staging instance of sample application      |
-| Metaphor Production      | Production instance of sample application   |
-
-- These apps are all managed by Argo CD and the app configurations are in the `gitops` repo's `registry` folder.
-- The AWS infrastructure is Terraform - that's also in your `gitops` repo, but in your `terraform` folder.
-
-![GitOps Assets](../../../img/kubefirst/gitlab/gitops-assets.png)
-
-### Step 1: Console UI
-
-Once you run the `cluster create` command at the end of the installation, a new browser tab will open with the Console UI at `http://localhost:9094` to provide you a dashboard to navigate through the different services that were previsioned.
+Once you run the `kubefirst` command at the end of the installation will open a new browser tab with the Console UI at `http://localhost:9094` to provide you a dashboard to navigate through the different services that were previsioned.
 
 ![console ui](../../../img/common/gitlab/console.png)
 
@@ -44,7 +18,7 @@ Once you run the `cluster create` command at the end of the installation, a new 
 
 These are **not your personal credentials**. These are administrator credentials that can be used if you ever need to authenticate and administer your tools if your OIDC provider ever become unavailable. Please protect these secrets and store them in a safe place.
 
-### Step 2: Add Your Team(optional)
+### Step 2: Add Your Team (optional)
 
 This step is meant to explore the onboarding process of a new user to your installation:
 

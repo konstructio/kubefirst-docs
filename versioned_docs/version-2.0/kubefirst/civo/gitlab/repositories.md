@@ -36,6 +36,6 @@ module "your_repo_name" {
 
 ## Making Terraform Changes
 
-To make infrastructure and configuration changes with Terraform, simply open a pull request against any of the `terraform` directory folders in the `gitops` repository. Your pull request will automatically provide plans, state locks, and applies, and even comment in the merge request itself. You'll have a simple, peer reviewable, auditable changelog of all infrastructure and configuration changes.
+To make infrastructure and configuration changes with Terraform, simply open a pull request against any of the Terraform directory folders in the `gitops` repository. Your pull request will automatically provide plans, state locks, and applies, and even comment in the merge request itself. You'll have a simple, peer reviewable, auditable changelog of all infrastructure and configuration changes.
 
 ![Atlantis GitLab](../../../img/common/gitlab/atlantis.png)
