@@ -4,26 +4,6 @@ title: Vault
 
 [Vault](https://www.vaultproject.io) is an open source secrets manager and identity provider created by HashiCorp.
 
-## Vault for AWS install
-
-If you run `kubefirst cluster create --cloud aws`  kubefirst will install Vault and provision a [DynamoDB](https://aws.amazon.com/dynamodb/) backend that's encrypted with [AWS KMS](https://aws.amazon.com/kms/) with point in time recovery enabled.
-
-Your infrastructure will be set up with Vault running in the EKS cluster. It will come with multiple Authentication Backends enabled.
-
-## Vault for local install
-
-For local it's backed by a local S3-like backend in [MinIO](https://min.io/) and it is a Vault in development mode. It is meant to help to board developers to the Vault integrations experience without the overhead of a full install setup to save resources.
-
-```yaml
-          dev:
-            enabled: true
-            devRootToken: "k1_local_vault_token"
-```
-
-Reference: [vault deployment](https://github.com/kubefirst/gitops-template/blob/main/k3d-github/cluster-types/mgmt/components/vault/application.yaml)
-
-Your cluster will be set up with Vault running in the k3d cluster. The only backend enabled on the local cluster is the one that provides access to secrets from external-secrets-operator.
-
 ### Token authentication
 
 ![Vault section of the handoff screen](../img/vault/handoff-screen.png)
