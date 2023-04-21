@@ -51,3 +51,17 @@ With Civo, Google Search Crawlers are flagging domains as deceptive when they ha
 If you want to replace the dummy website with yours or serve an application instead, it should still prevent the problem from happening. If removed, you may see the following error when accessing your domain (or any of its subdomains) in the browser.
 
 ![Deceptive Browser Warning](img/civo/deceptive-warning.png)
+
+## Local (k3d)
+
+### Cannot connect to the Docker daemon
+
+```shell
+Error: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+```
+
+If Docker is running, and working properly (run `docker run hello-world` in your terminal to test it), but you get the error above while trying to create a cluster with k3d, it may be related to [this Docker issue](https://github.com/docker/for-mac/issues/6529). It was fixed a while ago, but it seems like the problem is back. Since it's a Docker issue, and that the Unix sockets default path should be `/var/run/docker.sock`, you can create the symlink yourself by using the following command:
+
+```shell
+sudo ln -s "$HOME/.docker/run/docker.sock" /var/run/docker.sock
+```
