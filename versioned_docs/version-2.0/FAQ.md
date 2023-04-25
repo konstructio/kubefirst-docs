@@ -60,8 +60,8 @@ If you want to replace the dummy website with yours or serve an application inst
 Error: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
 ```
 
-If Docker is running, and working properly (run `docker run hello-world` in your terminal to test it), but you get the error above while trying to create a cluster with k3d, it may be related to [this Docker issue](https://github.com/docker/for-mac/issues/6529). It was fixed a while ago, but it seems like the problem is back. Since it's a Docker issue, and that the Unix sockets default path should be `/var/run/docker.sock`, you can create the symlink yourself by using the following command:
+If Docker is running, and working properly (run `docker run hello-world` in your terminal to test it), but you get the error above while trying to create a cluster with k3d, it may be related to [this Docker issue](https://github.com/docker/for-mac/issues/6529). It was fixed a while ago, but it seems like the problem is back. Since it's a Docker issue, and that the Unix sockets default path should be `/var/run/docker.sock`, you can specify the path using the `DOCKER_HOST` variable:
 
 ```shell
-sudo ln -s "$HOME/.docker/run/docker.sock" /var/run/docker.sock
+export DOCKER_HOST="unix://$HOME/.docker/run/docker.sock"
 ```
