@@ -136,13 +136,6 @@ spec:
 ...
 ```
 
-### Can I remove Metaphor on my install?
-
-yes, how to do it:
-
-- If you are using `kubefirst create cluster` just pass the flag `--skip-metaphor-services` that will prevent the metaphor applications to be installed at your cluster and repos will not be created.
-- If you are using `kubefirst local` just pass the flag `--skip-metaphor` that will prevent the metaphor applications to be installed at your cluster and repos will not be created.
-
 ### Can I add gates to prevent metaphor to move between development to production?
 
 Yes, the idea of our current approach of self-unfold to all enviroments it is to allow you to test the tires of of your clusterwith minimal need of clicks on the ui, but yes you can create and add a logic on the deployment artifacts to hold until a giving situation is satisfied.
