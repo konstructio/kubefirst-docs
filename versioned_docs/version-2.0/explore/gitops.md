@@ -64,7 +64,7 @@ If you want to customize the template before creating a new cluster, you can for
 ```shell
 # Replace <yourusername> by your GitHub username or the organization into which you fork gitops-template
 # If you give another name to your gitops-template repository, update it also
-git remote add upstream git@github.com:yourusername/gitops-template.git
+git remote add upstream git@github.com:<yourusername>/gitops-template.git
 git fetch upstream
 git push --tags
 ```
