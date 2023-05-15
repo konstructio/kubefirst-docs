@@ -62,7 +62,6 @@ Any Helm value that should deviate from the default chart can be set here so you
 If you want to customize the template before creating a new cluster, you can fork the [gitops-template repository](https://github.com/kubefirst/gitops-template), and use it as the source for cluster creation. To do so, follow the [forking instructions from GitHub](https://docs.github.com/en/get-started/quickstart/fork-a-repo). Note that the tags won't follow, and they may be needed in order for the CLI to properly function. [Clone your new repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) locally, and once inside the repository folder, run the following commands in your terminal to update your repository with the tags:
 
 ```shell
-# Replace <yourusername> by your GitHub username or the organization into which you fork gitops-template
 # If you give another name to your gitops-template repository, update it also
 git remote add upstream git@github.com:kubefirst/gitops-template.git
 git fetch upstream
