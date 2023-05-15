@@ -59,14 +59,16 @@ Any Helm value that should deviate from the default chart can be set here so you
 
 ## Using Your Own gitops-template Repository Fork
 
-If you want to customize the template before creating a new cluster, you can fork the [gitops-template repository](https://github.com/kubefirst/gitops-template), and use it as the source for cluster creation. To do so, follow the [forking instructions from GitHub](https://docs.github.com/en/get-started/quickstart/fork-a-repo). Note that the tags won't follow, and they are needed for the CLI to properly function. [Clone your new repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) locally, and once inside the repository folder, run the following commands in your terminal to update your repository with the tags:
+If you want to customize the template before creating a new cluster, you can fork the [gitops-template repository](https://github.com/kubefirst/gitops-template), and use it as the source for cluster creation. To do so, follow the [forking instructions from GitHub](https://docs.github.com/en/get-started/quickstart/fork-a-repo). Note that the tags won't follow, and they may be needed in order for the CLI to properly function. [Clone your new repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) locally, and once inside the repository folder, run the following commands in your terminal to update your repository with the tags:
 
 ```shell
 # Replace <yourusername> by your GitHub username or the organization into which you fork gitops-template
 # If you give another name to your gitops-template repository, update it also
-git remote add upstream git@github.com:<yourusername>/gitops-template.git
+git remote add upstream git@github.com:kubefirst/gitops-template.git
 git fetch upstream
 git push --tags
 ```
 
 Now you can use the `--gitops-template-url` flag pointing to your new repository when creating a new Kubernetes cluster.
+
+When the kubefirst cli checks out the gitops-template-url repository, it will default to checking out the git tag that matches the cli's version. For example a v2.0.0 cli would check out the gitops-template-url at the tag `v2.0.0`. This is not always the desired effect, as you may be forking in order to introduce some new changes to the gitops-template structure. In order to checkout the `main` branch of your forked gitops-template repo instead of the version tag, you would also include the `--gitops-template-branch main` on your `create` command.
