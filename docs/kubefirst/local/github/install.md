@@ -6,7 +6,7 @@ title: Install
 
 `kubefirst` is the name of our CLI that installs the platform of the same name to your local or cloud environment.
 
-![Kubefirst k3d with GitHub Cluster Diagram](../../../img/local/github/installation-diagram-light.png#light-mode)![Kubefirst k3d with GitHub Cluster Diagram](../../../img/local/github/installation-diagram-dark.png#dark-mode)
+![kubefirst k3d with GitHub Cluster Diagram](../../../img/local/github/installation-diagram-light.png#light-mode)![kubefirst k3d with GitHub Cluster Diagram](../../../img/local/github/installation-diagram-dark.png#dark-mode)
 
 ## Prerequisites
 
@@ -29,7 +29,7 @@ This is not an optional step: the cluster creation will fail if you don't instal
 
 ## Create your new local cluster
 
-To create a new Kubefirst cluster locally, run
+To create a new kubefirst cluster locally, run
 
 ```shell
 kubefirst k3d create
@@ -75,7 +75,7 @@ kubefirst k3d root-credentials
 
 ## Connecting to Kubernetes
 
-You will be automatically connected to your new kubernetes cluster. To view all cluster pods, run
+You will be automatically connected to your new Kubernetes cluster. To view all cluster pods, run
 
 ```bash
 kubectl get pods -A

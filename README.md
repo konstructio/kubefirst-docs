@@ -1,6 +1,6 @@
-# Kubefirst Docs
+# kubefirst Docs
 
-Welcome to the open source repositoriy that powers [docs.kubefirst.io](https://docs.kubefirst.io)
+Welcome to the open source repository that powers [docs.kubefirst.io](https://docs.kubefirst.io)
 
 # Contributing
 

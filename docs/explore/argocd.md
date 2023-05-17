@@ -18,7 +18,7 @@ GitLab registry applications:
 GitHub registry applications:
 ![GitHub Applications Registry](../img/kubefirst/local/gitops-registry.png)
 
-Each of these yaml files will include details regarding the application's source, destination, and Helm configuration overrides.
+Each of these YAML files will include details regarding the application's source, destination, and Helm configuration overrides.
 
 ## Applying Changes in Argo CD
 

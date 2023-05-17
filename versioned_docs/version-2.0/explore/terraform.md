@@ -37,18 +37,18 @@ The following table shows how state is stored based on your installation selecti
 ### What is the general flow of changes using Atlantis for IaC?
 
 - **Create a Commit and Change Request:** The change described by Terraform instructions will be created in a PR at a folder which [Atlantis is listening for it](https://github.com/kubefirst/gitops-template/blob/main/aws-github/atlantis.yaml). Once the Change Request is created on GitHub/GitLab, Atlantis will plan it and show possible impacts of it.
-- **Approve the change:** Once you are ready, someone with access will provide `atlantis apply` on the change request, triggering the processs of executing the `plan` created.
-- **Change is applied by Atlantis**: Atlantis will execute the Terraform plan, and Terraform will update shared statestore with new current state changes, change request will be merged to main,  reflecting the new desried state.
+- **Approve the change:** Once you are ready, someone with access will provide `atlantis apply` on the change request, triggering the process of executing the `plan` created.
+- **Change is applied by Atlantis**: Atlantis will execute the Terraform plan, and Terraform will update shared statestore with new current state changes, change request will be merged to main,  reflecting the new desired state.
 
-:::note The term "Change Request" is a "Pull Request" on Github and "Merge Request" on Gitlab.
+:::note The term "Change Request" is a "Pull Request" on GitHub and "Merge Request" on GitLab.
 
 ### What can I use Atlantis & Terraform for?
 
-For example, you can use your gitops repo to help track the creation of repos:
+For example, you can use your `gitops` repository to help track the creation of repositories:
 
 - [AWS + GitHub repository template](https://github.com/kubefirst/gitops-template/blob/main/aws-github/terraform/github/repos.tf)
 - [local + GitHub repository template](https://github.com/kubefirst/gitops-template/blob/main/k3d-github/terraform/github/repos.tf)
 
-With Terraform using the S3 based state store, you can add any Terraform file to the gitops repo on which [Atlantis is listeting for](https://github.com/kubefirst/gitops-template/blob/main/aws-github/atlantis.yaml) and Atlantis will try to plan and when approved to apply such plan for you.
+With Terraform using the S3 based state store, you can add any Terraform file to the `gitops` repository on which [Atlantis is listening for](https://github.com/kubefirst/gitops-template/blob/main/aws-github/atlantis.yaml) and Atlantis will try to plan and when approved to apply such plan for you.
 
-Beyond repositories and users, Atlantis allow you to have your IaC demands to be tracked by your main branch registry. Easing up the usage of Terraform based workflows to update the infractruture you are operating.
+Beyond repositories and users, Atlantis allow you to have your IaC demands to be tracked by your main branch registry. Easing up the usage of Terraform based workflows to update the infrastructure you are operating.

@@ -6,7 +6,7 @@ title: Install
 
 `kubefirst` is our command line tool that installs a fully automated platform of open source cloud native tools to your Civo cloud with a simple `kubefirst civo create` command.
 
-![Kubefirst CIVO with GitHub Cluster Diagram](../../../img/civo/github/installation-diagram-light.png#light-mode)![Kubefirst CIVO with GitHub Cluster Diagram](../../../img/civo/github/installation-diagram-dark.png#dark-mode)
+![kubefirst Civo with GitHub Cluster Diagram](../../../img/civo/github/installation-diagram-light.png#light-mode)![kubefirst Civo with GitHub Cluster Diagram](../../../img/civo/github/installation-diagram-dark.png#dark-mode)
 
 ## Prerequisites
 
@@ -66,7 +66,7 @@ kubefirst civo root-credentials
 
 ## Connecting to Kubernetes
 
-To connect to your new kubernetes cluster, run
+To connect to your new Kubernetes cluster, run
 
 ```bash
 export KUBECONFIG=~/.k1/kubeconfig
