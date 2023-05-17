@@ -31,7 +31,7 @@ module "admin_one" {
 }
 ```
 
-Uncomment and edit this code to replace the values for the email, first_name, github_username, last_name, and username before pushing to your branch.
+Uncomment and edit this code to replace the values for the `email`, `first_name`, `github_username`, `last_name`, and `username` before pushing to your branch.
 
 Note: If you are doing using this walkthrough simply to test Atlantis, you do not need to update these fields to be accurate.
 
@@ -59,8 +59,8 @@ Any new users you have created through this process will have their temporary in
 
 ![vault token login](../../../img/kubefirst/local/vault-token-login.png)
 
-Once you've provided them their initial password, they can update their own password throughout the platform by updating their user password entity in Vault. Anyone can change their own password, and Admins can reset anyone's password. These rules, just like everything else on Kubefirst, can be configured in your new gitops repository.
+Once you've provided them their initial password, they can update their own password throughout the platform by updating their user password entity in Vault. Anyone can change their own password, and Admins can reset anyone's password. These rules, just like everything else on kubefirst, can be configured in your new `gitops` repository.
 
 ![default user creation](../../../img/kubefirst/local/default-user-creation.png)
 
-The admins and developers that you add through IaC will automatically propagate to all tools due to the Vault oidc provider that's preconfigured throughout the kubefirst platform tools.
+The admins and developers that you add through IaC will automatically propagate to all tools due to the Vault OIDC provider that's preconfigured throughout the kubefirst platform tools.

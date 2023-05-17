@@ -10,9 +10,9 @@ In the GitOps nature, we rely on repositories to have a single source of truth w
 
 ![GitLab repositories](../../../img/common/gitlab/repositories.png)
 
-### gitops
+### `gitops`
 
-The GitOps repo houses all of our IAC and all of our GitOps configurations. All of the infrastructure that you receive with Kubefirst was produced by Terraform and all of your applications are delivered with Argo CD. You will add to this GitOps repository as your business needs require additional infrastructure or applications.
+The `gitops` repository houses all of our IAC and all of our GitOps configurations. All of the infrastructure that you receive with kubefirst was produced by Terraform and all of your applications are delivered with Argo CD. You will add to this `gitops` repository as your business needs require additional infrastructure or applications.
 
 ### metaphor
 

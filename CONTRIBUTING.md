@@ -1,4 +1,4 @@
-# Contributing to the Kubefirst documentation
+# Contributing to the kubefirst documentation
 
 Firstly, we want to thank you for investing your valuable time to contribute to kubefirst!
 
@@ -18,7 +18,7 @@ _For contribution to the kubefirst CLI, please refer yourself to the [CONTRIBUTI
 
 ## Ways to Contribute
 
-At Kubefirst, we believe that every contribution is valuable, not just the code one.
+At kubefirst, we believe that every contribution is valuable, not just the code one.
 
 Whether you want to add more details to a specific section or a page, or that you want to fix a typo in the text or in a code example, you are more than welcome to can create a pull request.
 
@@ -34,7 +34,7 @@ We are using [Docusaurus](https://github.com/facebook/docusaurus) as our documen
 
 ### Commits
 
-We subscribe to the [Conventional Commits specification](https://www.conventionalcommits.org). It can be a bit difficult to choose the right commit message prefix since this repository is for documentation, and not an application per se. Here are the guidelines for the documentation specific ones:
+We subscribe to the [Conventional Commits specification](https://www.conventionalcommits.org). It can be a bit difficult to choose the right commit message prefix since this repository is for documentation, and not an application. Here are the guidelines for the documentation specific ones:
 
 - `docs`: when adding new information to the docs (ex.: creating a new page, adding a section to an existing one).
 - `fix`: when fixing the documentation (ex.: correcting a typo, rectifying untrue content).
@@ -165,4 +165,4 @@ It will create a duplication of the `docs` folder inside the newly created `vers
 
 ## Help
 
-If you need help in your Kubefirst journey as a contributor, please join our [Slack Community](http://kubefirst.io/slack). We have the `#contributors` channel where you can ask any questions or get help with anything contribution-related. For support as a user, please ask in the `#helping-hands` channel, or directly to @fharper (Fred in Slack), our Developer Advocate.
+If you need help in your kubefirst journey as a contributor, please join our [Slack Community](http://kubefirst.io/slack). We have the `#contributors` channel where you can ask any questions or get help with anything contribution-related. For support as a user, please ask in the `#helping-hands` channel, or directly to @fharper (Fred in Slack), our Developer Advocate.

@@ -25,7 +25,7 @@ You can then run `kubectl` commands against your new cluster, like getting the `
 kubectl get namespaces
 ```
 
-## How to use your new gitops repository
+## How to use your new `gitops` repository
 
 [GitHub](github/repositories.md), and [GitLab](gitlab/repositories.md) repositories managed with Terraform IaC (Infrastructure as Code).
 
@@ -35,4 +35,4 @@ Onboard yourself and your team with [GitHub](github/user-creation.md) or with [G
 
 ## GitOps application delivery with the metaphor sample application
 
-Explore gitops application delivery and platform integrations with our [metaphor](../../explore/metaphor.md) simple application.
+Explore GitOps application delivery and platform integrations with our [metaphor](../../explore/metaphor.md) simple application.

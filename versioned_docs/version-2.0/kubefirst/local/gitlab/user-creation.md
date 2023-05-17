@@ -33,7 +33,7 @@ module "admin_one" {
 
 Uncomment and edit this code to replace the values for the `email`, `first_name`, `github_username`, `last_name`, `full_name` and `username`.
 
-Then navigate to the file `terraform/users/admins/admin-one.tf`. You shold see one line of code commented with the admin_one user, please uncomment this line to look as follows:
+Then navigate to the file `terraform/users/admins/admin-one.tf`. You should see one line of code commented with the `admin_one` user, please uncomment this line to look as follows:
 
 ```terraform
 # every admin that is added to the platform will need to have their ID
@@ -68,7 +68,7 @@ Any new users you have created through this process will have their temporary in
 
 ![vault token login](../../../img/kubefirst/local/vault-token-login.png)
 
-Once you've provided them their initial password, they can update it throughout the platform by modifying their user password entity in Vault. Anyone can change their own password, and admins can reset anyone's password. These rules, just like everything else on kubefirst, can be configured in your new gitops repository.
+Once you've provided them their initial password, they can update it throughout the platform by modifying their user password entity in Vault. Anyone can change their own password, and admins can reset anyone's password. These rules, just like everything else on kubefirst, can be configured in your new `gitops` repository.
 
 ![default user creation](../../../img/kubefirst/local/default-user-creation.png)
 
@@ -76,6 +76,6 @@ The existence of a new user with your specified parameters demonstrates that you
 
 ### Troubleshooting Atlantis
 
-The free ngrok tunnel used for kubefirst local has a 2-hour expiration by default. In order to prevent this expiration from interfering with automated Atlantis executions, we have added an auto-rotating ngrok tunnel cronjob to the Atlantis namespace. The job will rotate the ngrok tunnel automatically register the new ngrok url with your Atlantis secrets in Vault and your gitops webhook.
+The free ngrok tunnel used for kubefirst local has a 2-hour expiration by default. In order to prevent this expiration from interfering with automated Atlantis executions, we have added an auto-rotating ngrok tunnel CronJob to the Atlantis namespace. The job will rotate the ngrok tunnel automatically register the new ngrok URL with your Atlantis secrets in Vault and your `gitops` repository webhook.
 
-Atlantis works by sending a webhooks to Atlantis from your gitops repository. If you're not receiving Terraform plan comments, check the webhooks section of your `gitops` repository settings and review the responses from the sent webhook requests.
+Atlantis works by sending a webhooks to Atlantis from your `gitops` repository. If you're not receiving Terraform plan comments, check the webhooks section of your `gitops` repository settings and review the responses from the sent webhook requests.

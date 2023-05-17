@@ -8,7 +8,7 @@ title: Install
 
 It installs a fully automated platform of open source cloud native tools with a simple `init` and `create` command.
 
-![Kubefirst AWS with GitHub Cluster Diagram](../../../img/aws/github/installation-diagram-light.png#light-mode)![Kubefirst AWS with GitHub Cluster Diagram](../../../img/aws/github/installation-diagram-dark.png#dark-mode)
+![kubefirst AWS with GitHub Cluster Diagram](../../../img/aws/github/installation-diagram-light.png#light-mode)![kubefirst AWS with GitHub Cluster Diagram](../../../img/aws/github/installation-diagram-dark.png#dark-mode)
 
 ### Prerequisites
 
@@ -23,7 +23,7 @@ It installs a fully automated platform of open source cloud native tools with a 
 
 ### Step 1 - Create your kbot user and a personal access token
 
-The kubefirst cli will automatically create one admin user for you named `kbot`. After the installation, you will temporarily use that `kbot` account to onboard yourself and the rest your team to the platform. From that point forward, the `kbot` user should only be used for automated activities, and you should use your own personal account for everything else.
+The kubefirst CLI will automatically create one admin user for you named `kbot`. After the installation, you will temporarily use that `kbot` account to onboard yourself and the rest your team to the platform. From that point forward, the `kbot` user should only be used for automated activities, and you should use your own personal account for everything else.
 
 The `kbot` user needs to be associated with a GitHub user account that can be used as your organization's bot account. Log out of GitHub and create a new GitHub account to represent this new `kbot` account. Because this account will be used for automation, it's good to choose a username that generically represents your company or your project name - something like `yourcompany-kbot`. You can also have fun with it and give your bot a fun name - the point is that this is not an account for your long term personal use, it's for the kubefirst platform system to use.
 

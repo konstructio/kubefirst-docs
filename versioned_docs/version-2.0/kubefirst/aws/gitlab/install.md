@@ -8,7 +8,7 @@ title: Install
 
 It installs a fully automated platform of open source cloud native tools with a simple `init` and `create` command.
 
-![Kubefirst Cluster](../../../img/aws/gitlab/installation-diagram-dark.png#dark-mode)![Kubefirst Cluster](../../../img/aws/gitlab/installation-diagram-light.png#light-mode)
+![kubefirst Cluster](../../../img/aws/gitlab/installation-diagram-dark.png#dark-mode)![kubefirst Cluster](../../../img/aws/gitlab/installation-diagram-light.png#light-mode)
 
 ### Prerequisites
 

@@ -10,9 +10,9 @@ When you install the civo version of kubefirst, 2 new repositories will be added
 
 ## Repository Summary
 
-### gitops
+### `gitops`
 
-The GitOps repo houses all of our IAC and all our GitOps configurations. All of the infrastructure that you receive with Kubefirst was produced by some combination of Terraform and ArgoCD. You can add any infrastructure or application to your platform by pull requesting it to your new `gitops` repository.
+The `gitops` repository houses all of our IAC and all our GitOps configurations. All of the infrastructure that you receive with kubefirst was produced by some combination of Terraform and Argo CD. You can add any infrastructure or application to your platform by pull requesting it to your new `gitops` repository.
 
 ### metaphor
 
