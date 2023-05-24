@@ -27,6 +27,7 @@ The kubefirst platform uses some of the most popular open source projects in the
 |[ngrok](https://ngrok.com)| | | | |X|X|
 |[Terraform](https://www.terraform.io)|X|X|X|X|X|X|
 |[Terraform Atlantis](https://www.runatlantis.io)|X|X|X|X|X|X|
+|[Traefik](https://github.com/traefik/traefik)| | | | |X|X|
 
 ### Additional References
 
