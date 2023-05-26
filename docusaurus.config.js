@@ -43,7 +43,7 @@ const config = {
     ],
   ],
 
-  themes: ['docusaurus-theme-search-typesense'],
+  themes: ['docusaurus-theme-search-typesense', '@saucelabs/theme-github-codeblock'],
 
   plugins: [
     [
