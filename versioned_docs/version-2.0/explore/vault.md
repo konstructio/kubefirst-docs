@@ -64,7 +64,7 @@ spec:
     name: {{ template "metaphor.fullname" . }}
   secretStoreRef:
     kind: ClusterSecretStore
-    name: vault-secrets-backend
+    name: vault-kv-secret
   refreshInterval: "10s"
   data:
     - remoteRef:
@@ -77,7 +77,7 @@ spec:
       secretKey: SECRET_TWO
 ```
 
-This is going to be a very common file type for you on the kubefirst platform. This Kubernetes resource deploys with metaphor, connecting to the `vault-secrets-backend` cluster secret store, and pulls secrets from the path specified in the values.yaml property `vaultSecretPath`. You can either pull all secrets from Vault into the Kubernetes secret, or as this secret demonstrates, you can also specify exactly which specific key/value pairs to pull when creating the secret.
+This is going to be a very common file type for you on the kubefirst platform. This Kubernetes resource deploys with metaphor, connecting to the `vault-kv-secret` cluster secret store, and pulls secrets from the path specified in the values.yaml property `vaultSecretPath`. You can either pull all secrets from Vault into the Kubernetes secret, or as this secret demonstrates, you can also specify exactly which specific key/value pairs to pull when creating the secret.
 
 The result will be a native Kubernetes secret, which can be used by your application. Since the path is driven by Helm `values.yaml` values, the source for these secrets can be different in your different environments. For example, when you go to your `gitops` repository and look at `gitops/components/staging/metaphor/values.yaml` you'll see on the last line that we're pulling the staging secrets from the staging path in Vault.
 
@@ -135,7 +135,7 @@ kind: Secret
 metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"external-secrets.io/v1alpha1","kind":"ExternalSecret","metadata":{"annotations":{},"labels":{"argocd.argoproj.io/instance":"metaphor-staging","chart":"metaphor-0.1.0-rc.e54452a0"},"name":"metaphor-staging","namespace":"staging"},"spec":{"data":[{"remoteRef":{"key":"staging/metaphor","property":"SECRET_ONE"},"secretKey":"SECRET_ONE"},{"remoteRef":{"key":"staging/metaphor","property":"SECRET_TWO"},"secretKey":"SECRET_TWO"}],"refreshInterval":"10s","secretStoreRef":{"kind":"ClusterSecretStore","name":"vault-secrets-backend"},"target":{"name":"metaphor-staging"}}}
+      {"apiVersion":"external-secrets.io/v1alpha1","kind":"ExternalSecret","metadata":{"annotations":{},"labels":{"argocd.argoproj.io/instance":"metaphor-staging","chart":"metaphor-0.1.0-rc.e54452a0"},"name":"metaphor-staging","namespace":"staging"},"spec":{"data":[{"remoteRef":{"key":"staging/metaphor","property":"SECRET_ONE"},"secretKey":"SECRET_ONE"},{"remoteRef":{"key":"staging/metaphor","property":"SECRET_TWO"},"secretKey":"SECRET_TWO"}],"refreshInterval":"10s","secretStoreRef":{"kind":"ClusterSecretStore","name":"vault-kv-secret"},"target":{"name":"metaphor-staging"}}}
     reconcile.external-secrets.io/data-hash: fdc2f634a31c8e93dd8d47e940aa7939
   creationTimestamp: "2022-10-18T04:21:57Z"
   labels:
