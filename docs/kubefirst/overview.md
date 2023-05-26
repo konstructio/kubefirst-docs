@@ -27,7 +27,7 @@ The kubefirst CLI runs on your localhost and will create an GitLab or GitHub Kub
 - The install takes about 30 minutes to execute on AWS, 6 minutes on Civo, and 5 minutes on local.
 - kubefirst will create a new `gitops` and `metaphor` repository on your GitLab or GitHub account.
 - All of the infrastructure as code (IAC) will be in your `gitops` repository in the `/terraform` directory. IAC workflows are fully automated with Terraform Atlantis by opening a merge or pull request against the `gitops` repository.
-- All of the applications running in your Kubernetes cluster are registered in the gitops repository in the root `/registry` directory.
+- All of the applications running in your Kubernetes cluster are registered in the `gitops` repository in the root `/registry` directory.
 - The [metaphor](../explore/metaphor.md) repositories only needs an update to the main branch to deliver the example application to your new development, staging, and production environments. It will hook into your new HashiCorp Vault for secrets, demonstrate automated certs, automated DNS, and GitOps application delivery.
 - Our CI/CD is powered by Argo CD, Argo Workflows, GitLab or GitHub, and HashiCorp Vault.
 
@@ -52,17 +52,17 @@ ARC is the [Actions Runner Controller](https://github.com/actions/actions-runner
 
 \* AWS with GitHub & GitLab have HashiCorp Vault backed with DynamoDB & KMS.
 
-## Kubefirst Console
+## kubefirst Console
 
-Once you run `kubefirst <platform> create` command, a new brower tab will launch with the kubefirst Console app to provide you a launch page with access to the different services that were provisioned.
+Once you run `kubefirst <platform> create` command, a new browser tab will launch with the kubefirst Console app to provide you a launch page with access to the different services that were provisioned.
 
 <!--tabs-->
 # GitHub
 
-![console ui](../img/common/github/console.png)
+![console UI](../img/common/github/console.png)
 
 # GitLab
 
-![console ui](../img/common/gitlab/console.png)
+![console UI](../img/common/gitlab/console.png)
 
 <!--/tabs-->

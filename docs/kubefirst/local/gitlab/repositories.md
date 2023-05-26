@@ -10,9 +10,9 @@ The `kubefirst k3d create` command will create a `gitops` and `metaphor` reposit
 
 ## Repositories
 
-### gitops
+### `gitops`
 
-The `gitops` repo houses all of our IAC and all our GitOps configurations. All of the infrastructure and application configutation that you receive with kubefirst was produced by some combination of Terraform and Argo CD in the `gitops` repository. You will add to this repository as extend your infrastructure or new applications.
+The `gitops` repository houses all of our IAC and all our GitOps configurations. All of the infrastructure and application configuration that you receive with kubefirst was produced by some combination of Terraform and Argo CD in the `gitops` repository. You will add to this repository as extend your infrastructure or new applications.
 
 ### metaphor
 

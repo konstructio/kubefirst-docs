@@ -2,18 +2,20 @@
 title: Telemetry
 ---
 
-## Kubefirst Telemetry
+# kubefirst Telemetry
 
-Kubefirst collects data in order to optimize future releases. By collecting metrics on what type of clusters are being deployed and how they are being used, Kubefirst prioritizes the features that are being used across the majority of the user base. While we rely on this data to make improvements to the platform, you are always allowed to opt out for any reason.
+kubefirst collects data in order to optimize future releases. By collecting metrics on what type of clusters are being deployed and how they are being used, kubefirst prioritizes the features that are being used across the majority of the user base. While we rely on this data to make improvements to the platform, you are always allowed to opt out for any reason.
 
-### What Metrics are collected?
+## What Metrics are collected?
 
-- cli_version:      The version of CLI being used (eg. `2.0.0`)
-- cluster_type:     The type of cluster being created (`mgmt`)
-- cloud_provider:   The cloud environment (`k3d`|`aws`|`civo`)
-- git_provider:     Type of git provider leveraged (`github`|`gitlab`)
-- cluster_id:       The ID of the cluster being created (eg. `123ABC`)
-- domain:           The domain of the cluster being created (eg. `kubefirst.io`)
-- kubefirst_team:   For internal use only
+- `cli_version`:          The version of CLI being used (e.g. `2.0.0`)
+- `cloud_provider`       The cloud environment (`k3d`|`aws`|`civo`)
+- `cluster_id`:           The ID of the cluster being created (e.g. `123ABC`)
+- `cluster_type`:         The type of cluster being created (`mgmt`)
+- `domain`:               The domain of the cluster being created (e.g. `kubefirst.io`)
+- `git_provider`:         Type of git provider leveraged (`github`|`gitlab`)
+- `kubefirst_team`:       For internal use only
+- `kubefirst_team_info`:  For internal use only
+- `machine_id`:           An anonymized ID representing a distinct client host (e.g. `123456-123abc-abc123123abc-123123`)
 
-When installing your Kubefirst cluster through the cli, append the `--use-telemetry=false` flag to opt ourself out of this process.
+When installing your kubefirst cluster through the CLI, append the `--use-telemetry=false` flag to opt out of this process.

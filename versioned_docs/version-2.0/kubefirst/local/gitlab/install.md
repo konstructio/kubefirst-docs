@@ -6,7 +6,7 @@ title: Install
 
 `kubefirst` is the name of our CLI that installs the platform of the same name to your local or cloud environment.
 
-![Kubefirst k3d with GitLab Cluster Diagram](../../../img/local/gitlab/installation-diagram-light.png#light-mode)![Kubefirst k3d with GitLab Cluster Diagram](../../../img/local/gitlab/installation-diagram-dark.png#dark-mode)
+![kubefirst k3d with GitLab Cluster Diagram](../../../img/local/gitlab/installation-diagram-light.png#light-mode)![kubefirst k3d with GitLab Cluster Diagram](../../../img/local/gitlab/installation-diagram-dark.png#dark-mode)
 
 ## Prerequisites
 
@@ -69,3 +69,23 @@ After the ~5 minute installation, your browser will open a new browser tab at co
 ## Example of terminal output following cluster creation
 
 ![terminal handoff](../../../img/local/gitlab/handoff-screen.png)
+
+## Root credentials
+
+To obtain your 3 initial passwords, run
+
+```bash
+kubefirst k3d root-credentials
+```
+
+![terminal handoff](../../../img/common/kubefirst/root-credentials.png)
+
+:::note the `kubefirst k3d root-credentials` command was introduced in 2.0.1
+
+## Connecting to Kubernetes
+
+You will be automatically connected to your new Kubernetes cluster. To view all cluster pods, run
+
+```bash
+kubectl get pods -A
+```

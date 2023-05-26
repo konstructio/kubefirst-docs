@@ -10,7 +10,7 @@ When you deploy a cluster on Civo using kubefirst, new repositories will be adde
 
 ## Repositories
 
-### gitops
+### `gitops`
 
 The `gitops` repository houses all of our IAC and all your GitOps configurations. The infrastructure created by kubefirst was produced by some combination of Terraform and Argo CD. You modify the infrastructure or add new applications to your cluster by creating a pull request to your new `gitops` repository.
 

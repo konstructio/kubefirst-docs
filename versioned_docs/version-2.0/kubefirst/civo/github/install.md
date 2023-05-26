@@ -6,7 +6,7 @@ title: Install
 
 `kubefirst` is our command line tool that installs a fully automated platform of open source cloud native tools to your Civo cloud with a simple `kubefirst civo create` command.
 
-![Kubefirst CIVO with GitHub Cluster Diagram](../../../img/civo/github/installation-diagram-light.png#light-mode)![Kubefirst CIVO with GitHub Cluster Diagram](../../../img/civo/github/installation-diagram-dark.png#dark-mode)
+![kubefirst Civo with GitHub Cluster Diagram](../../../img/civo/github/installation-diagram-light.png#light-mode)![kubefirst Civo with GitHub Cluster Diagram](../../../img/civo/github/installation-diagram-dark.png#dark-mode)
 
 ## Prerequisites
 
@@ -44,9 +44,39 @@ kubefirst civo create \
 
 The kubefirst cli will produce a directory of utilities, a state file, and some staged platform content that can now be found in the `~/.kubefirst` and `~/.k1` folders on your local machine.
 
-After the ~6 minute installation, your browser will launch a new tab to the [kubefirst Console](https://github.com/kubefirst/console), which will help you navigate your new suite of tools running in your new Civo cluster.
+After the ~10 minute installation, your browser will launch a new tab to the [kubefirst Console](https://github.com/kubefirst/console), which will help you navigate your new suite of tools running in your new Civo cluster.
 
 If your deployment is not successful, errors and troubleshooting information will be stored in a local log file specified during the installation run.
+
+## Example of terminal output following cluster creation
+
+![terminal handoff](../../../img/civo/github/handoff-screen.png)
+
+## Root credentials
+
+To obtain your 3 initial passwords, run
+
+```bash
+kubefirst civo root-credentials
+```
+
+![terminal handoff](../../../img/common/kubefirst/root-credentials.png)
+
+:::note the `kubefirst civo root-credentials` command was introduced in 2.0.1
+
+## Connecting to Kubernetes
+
+To connect to your new Kubernetes cluster, run
+
+```bash
+export KUBECONFIG=~/.k1/kubeconfig
+```
+
+To view all cluster pods, run
+
+```bash
+kubectl get pods -A
+```
 
 ### Installed Applications
 

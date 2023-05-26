@@ -6,7 +6,7 @@ title: Install
 
 `kubefirst` is the name of our CLI that installs the platform of the same name to your local or cloud environment.
 
-![Kubefirst k3d with GitHub Cluster Diagram](../../../img/local/github/installation-diagram-light.png#light-mode)![Kubefirst k3d with GitHub Cluster Diagram](../../../img/local/github/installation-diagram-dark.png#dark-mode)
+![kubefirst k3d with GitHub Cluster Diagram](../../../img/local/github/installation-diagram-light.png#light-mode)![kubefirst k3d with GitHub Cluster Diagram](../../../img/local/github/installation-diagram-dark.png#dark-mode)
 
 ## Prerequisites
 
@@ -29,7 +29,7 @@ This is not an optional step: the cluster creation will fail if you don't instal
 
 ## Create your new local cluster
 
-To create a new Kubefirst cluster locally, run
+To create a new kubefirst cluster locally, run
 
 ```shell
 kubefirst k3d create
@@ -60,3 +60,23 @@ After the ~5 minute installation, your browser will open a new browser tab at co
 ## Example of terminal output following cluster creation
 
 ![terminal handoff](../../../img/local/github/handoff-screen.png)
+
+## Root credentials
+
+To obtain your 3 initial passwords, run
+
+```bash
+kubefirst k3d root-credentials
+```
+
+![terminal handoff](../../../img/common/kubefirst/root-credentials.png)
+
+:::note the `kubefirst k3d root-credentials` command was introduced in 2.0.1
+
+## Connecting to Kubernetes
+
+You will be automatically connected to your new Kubernetes cluster. To view all cluster pods, run
+
+```bash
+kubectl get pods -A
+```
