@@ -12,7 +12,7 @@ title: Install
 
 ### Local Prerequisites
 
-[Install](../../overview.md#how-to-install-kubefirst-cli) the kubefirst CLI.
+[Install](../../overview.md#install-the-kubefirst-cli) the kubefirst CLI.
 
 ### GitHub Prerequisites
 
