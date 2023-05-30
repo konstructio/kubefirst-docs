@@ -25,6 +25,7 @@
 # Configurations
 #
 YELLOW="\033[1;93m"
+RED="\033[0;31m"
 NOCOLOR="\033[0m"
 
 #
@@ -53,6 +54,11 @@ gum style --foreground 212 --border-foreground 212 --border double --align cente
 # Get staged file(s)
 #
 local files=("${(@f)$(git diff --name-only --cached | grep '^docs/')}")
+if [[ -z "$files" ]] ;
+then
+  echo "${RED}No files staged: please staged the modified files you would like to duplicate, and run this script again."
+  exit
+fi
 
 #
 # Get file(s) to copy
@@ -61,7 +67,7 @@ local command='git diff --name-only --cached | grep '^docs/' | gum choose --no-l
 
 for file in $files;
 do
-    command="$command --selected \"$file\""
+  command="$command --selected \"$file\""
 done
 
 gum format -- "Unselect files you don't want to updates:"
