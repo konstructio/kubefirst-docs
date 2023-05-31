@@ -123,16 +123,10 @@ If you want to use it as base of your application, and bring a new application t
 
 Reference: [runnerdeployment.yaml](https://github.com/kubefirst/gitops-template/blob/main/k3d-github/cluster-types/mgmt/components/github-runner/runnerdeployment.yaml)
 
-At your `gitops` repository go to `components/github-runner/runnerdeployment.yaml` and clone this file, then update the property `spec.template.spec.repository` to point to `your-user/your-repo`. This will deploy a new set of runners to observe that repository for you, allowing CI triggers to be executed.
+At your `gitops` repository go to `components/github-runner/runnerdeployment.yaml` and clone this file, then update the property `spec.template.spec.repository` to point to `your-user/your-repo`. This will deploy a new set of runners to observe that repository for you, allowing CI triggers to be executed. 
 
-```yaml
-...
-spec:
-  replicas: 1
-  template:
-    spec:
-      repository: <your-user>/<your-repo>
-...
+```yaml reference
+https://github.com/kubefirst/gitops-template/blob/main/k3d-github/cluster-types/mgmt/components/github-runner/runnerdeployment.yaml#L7-L11
 ```
 
 ### Can I add gates to prevent metaphor to move between development to production?
