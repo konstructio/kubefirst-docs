@@ -13,6 +13,7 @@ _For contribution to the kubefirst CLI, please refer yourself to the [CONTRIBUTI
   - [Markdown](#markdown)
   - [Search Index](#search-index)
   - [Testing](#testing)
+  - [Update docs accross versions](#update-docs-accross-versions)
   - [Versioning](#versioning)
 - [Help](#help)
 
@@ -145,6 +146,18 @@ If everything goes right, you'll see a bunch of output, and the process should e
 To run our documentation locally, simply run `npm start`.
 
 > If you modify the CSS, the changes aren't picked up by the development server like when you modify the documentation content. You need to restart the server with npm.
+
+### Update docs accross versions
+
+Sometimes changes in `v.next` are also valid for previous versions, which is often the case when refactoring a section, or adding missing information to a page. You can either copy the change content manually, or use the ZSH tools we created easily for that. First, you need to stage the file(s) you modified or created. Once it's done, run this command from the documentation folder in your terminal:
+
+```shell
+zsh tools/duplicator.zsh
+```
+
+You'll be presented with a menu giving you the opportunity to select the files you want to copy, and also the possibility to select to which version you want to do it. Once the selections are done, the script will copy or overwrite existing files with the one you modified, and will stage them. You only need to create a new branch for the PR, and [commit](#commits) the changes.
+
+> Note that it is copying the entire file, so it will overwrite the content to the targeted version. We may support updating only changes content in the future.
 
 ### Versioning
 
