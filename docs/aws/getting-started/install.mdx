@@ -14,13 +14,11 @@ last_update:
 ---
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import styles from "./styles.module.css";
+import styles from "@site/docs/stylesheets/tabs.module.css";
 const urlParams = new URLSearchParams(window.location.search);
 const gitProvider = urlParams.get("git-provider");  
 import ReactDom from 'react-dom'
-
-export const imgURL =
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/512px-Amazon_Web_Services_Logo.svg.png?20170912170050";
+import * as config from "@site/docs/constants.js"
 
 <div
   style={{
@@ -30,7 +28,7 @@ export const imgURL =
   }}
 >
   <div>
-    <img src={imgURL} height="50" width="120" />
+    <img src={config.AWS_LOGO_URL} height="50" width="120" />
   </div>
 </div>
 

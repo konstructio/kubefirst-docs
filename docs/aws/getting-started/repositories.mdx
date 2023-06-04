@@ -1,10 +1,10 @@
 ---
 hide_title: true
 hide_table_of_contents: false
-sidebar_label: Overview
-sidebar_position: 1
+sidebar_label: Repositories
+sidebar_position: 3
 # custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
-description: an overview of the kubefirst platform on aws elastic kubernetes service (EKS)
+description: the git repositories created by the kubefirst platform
 keywords:
   - aws
 image: "https://docs.kubefirst.io/img/logo.svg"
@@ -14,13 +14,11 @@ last_update:
 ---
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import styles from "./styles.module.css";
+import styles from "@site/docs/stylesheets/tabs.module.css";
 const urlParams = new URLSearchParams(window.location.search);
 const gitProvider = urlParams.get("git-provider");  
 import ReactDom from 'react-dom'
-
-export const imgURL =
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/512px-Amazon_Web_Services_Logo.svg.png?20170912170050";
+import * as config from "@site/docs/constants.js"
 
 <div
   style={{
@@ -30,21 +28,18 @@ export const imgURL =
   }}
 >
   <div>
-    <img src={imgURL} height="50" width="120" />
+    <img src={config.AWS_LOGO_URL} height="50" width="120" />
   </div>
 </div>
 
-import GitHubOverview from '@site/docs/aws/partials/github/_overview.mdx'
-import GitLabOverview from '@site/docs/aws/partials/gitlab/_overview.mdx'
+import GitHubRepositories from '@site/docs/aws/partials/github/_repositories.mdx'
+import GitLabRepositories from '@site/docs/aws/partials/gitlab/_repositories.mdx'
 
 <Tabs groupId="git_provider" queryString>
     <TabItem value="github" label="GitHub" attributes={{className: styles.github}}>
-      <div class="video-wrapper">
-        <iframe width="784" height="441" src="https://www.youtube.com/embed/KEUOaNMUqOM" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <GitHubOverview />
+      <GitHubRepositories />
     </TabItem>
     <TabItem value="gitlab" label="GitLab" attributes={{className: styles.gitlab}}> 
-      <GitLabOverview />
+      <GitLabRepositories />
     </TabItem>
 </Tabs>

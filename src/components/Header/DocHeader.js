@@ -1,7 +1,7 @@
 import React from "react";
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import styles from './styles.module.css';
+import styles from '@site/docs/stylesheets/tabs.module.css';
 import { useLocation } from '@docusaurus/router';
 
 export default function DocHeader({ imgURL }) {
