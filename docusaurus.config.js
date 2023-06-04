@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Kubefirst',
+  title: 'Kubefirst Docs',
   tagline: 'Instant Kubernetes Platforms',
   favicon: 'img/favicon.ico',
 
@@ -64,17 +64,78 @@ const config = {
         logo: {
           alt: 'Kubefirst website',
           src: 'img/logo.svg',
-          href: 'https://kubefirst.io/',
+          href: 'http://localhost:3000/next',
+          // href: 'https://docs.kubefirst.io/',
         },
         items: [
-          {
-            type: 'docsVersionDropdown',
-          },
-          {
-            href: 'https://github.com/kubefirst/kubefirst',
-            label: 'GitHub',
-            position: 'right',
-          },
+            {
+              type: 'docSidebar',
+              position: 'left',
+              sidebarId: 'aws',
+              label: 'AWS',
+            },
+            {
+              type: 'docSidebar',
+              position: 'left',
+              sidebarId: 'civo',
+              label: 'Civo',
+            },
+            {
+              type: 'docSidebar',
+              position: 'left',
+              sidebarId: 'k3d',
+              label: 'K3D (local)',
+            },
+            {
+              type: 'docsVersionDropdown',
+              position: 'right',
+            },
+            {
+              href: 'https://github.com/kubefirst/kubefirst',
+              label: 'GitHub',
+              position: 'right',
+            },
+            {
+              href: 'https:/kubefirst.io',
+              label: 'kubefirst.io',
+              position: 'right',
+            },
+          // {
+          //   type: 'dropdown',
+          //   label: 'AWS',
+          //   position: 'left',
+          //   items: [
+          //     {
+          //       type: 'docSidebar',
+          //       label: 'GitHub',
+          //       sidebarId: 'aws', // AWS-GITHUB
+          //     },
+          //     {
+          //       type: 'docSidebar',
+          //       label: 'GitLab', // AWS-Gitlab
+          //       sidebarId: 'aws',
+          //     },
+          //     // ... more items
+          //   ],
+          // },
+          // {
+          //   type: 'dropdown',
+          //   label: 'Civo',
+          //   position: 'left',
+          //   items: [
+          //     {
+          //       type: 'docSidebar',
+          //       label: 'GitHub',
+          //       sidebarId: 'aws', // AWS-GITHUB
+          //     },
+          //     {
+          //       type: 'docSidebar',
+          //       label: 'GitLab', // AWS-Gitlab
+          //       sidebarId: 'aws',
+          //     },
+          //     // ... more items
+          //   ],
+          // },
         ],
       },
       footer: {
