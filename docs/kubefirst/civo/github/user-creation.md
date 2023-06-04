@@ -1,5 +1,6 @@
 ---
 title: Onboard Users
+sidebar_position: 5
 ---
 
 ## Platform User Onboarding
