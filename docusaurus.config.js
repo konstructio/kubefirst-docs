@@ -100,42 +100,6 @@ const config = {
               label: 'kubefirst.io',
               position: 'right',
             },
-          // {
-          //   type: 'dropdown',
-          //   label: 'AWS',
-          //   position: 'left',
-          //   items: [
-          //     {
-          //       type: 'docSidebar',
-          //       label: 'GitHub',
-          //       sidebarId: 'aws', // AWS-GITHUB
-          //     },
-          //     {
-          //       type: 'docSidebar',
-          //       label: 'GitLab', // AWS-Gitlab
-          //       sidebarId: 'aws',
-          //     },
-          //     // ... more items
-          //   ],
-          // },
-          // {
-          //   type: 'dropdown',
-          //   label: 'Civo',
-          //   position: 'left',
-          //   items: [
-          //     {
-          //       type: 'docSidebar',
-          //       label: 'GitHub',
-          //       sidebarId: 'aws', // AWS-GITHUB
-          //     },
-          //     {
-          //       type: 'docSidebar',
-          //       label: 'GitLab', // AWS-Gitlab
-          //       sidebarId: 'aws',
-          //     },
-          //     // ... more items
-          //   ],
-          // },
         ],
       },
       footer: {
