@@ -1,8 +1,8 @@
 ---
 hide_title: true
 hide_table_of_contents: false
+display_sidebar: civo
 sidebar_label: Install
-sidebar_position: 2
 # custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
 description: the installation process for kubefirst cli
 keywords:
@@ -14,11 +14,11 @@ last_update:
 ---
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import styles from "./styles.module.css";
+import styles from "@site/docs/stylesheets/tabs.module.css";
 const urlParams = new URLSearchParams(window.location.search);
 const gitProvider = urlParams.get("git-provider");  
 import ReactDom from 'react-dom'
-import CIVO_LOGO_URL from "@site/docs/constants.js"
+import * as config from "@site/docs/constants.js"
 
 
 <div
@@ -29,7 +29,7 @@ import CIVO_LOGO_URL from "@site/docs/constants.js"
   }}
 >
   <div>
-    <img src={CIVO_LOGO_URL} height="50" width="120" />
+    <img src={config.CIVO_LOGO_URL} height="50" width="120" />
   </div>
 </div>
 
