@@ -12,7 +12,37 @@ last_update:
   date: 6/3/2023
   author: Jared Edwards
 ---
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import styles from "./styles.module.css";
+const urlParams = new URLSearchParams(window.location.search);
+const gitProvider = urlParams.get("git-provider");  
+import ReactDom from 'react-dom'
+import CIVO_LOGO_URL from "@site/docs/constants.js"
 
-import DocHeader from '@site/src/components/Header/DocHeader.js';
+<div
+  style={{
+    display: "flex",
+    justifyContent: "flex-end",
+    alignItems: "center",
+  }}
+>
+  <div>
+    <img src={CIVO_LOGO_URL} height="50" width="120" />
+  </div>
+</div>
 
-<DocHeader imgURL="https://www.civo.com/assets/public/brand-assets/civo-logo-colour-60cc1622dedf346f7afde1fff760523f731b0aac106a5465af98ff4073114b74.svg" />
+import GitHubOverview from '@site/docs/civo/partials/github/_overview.mdx'
+import GitLabOverview from '@site/docs/civo/partials/gitlab/_overview.mdx'
+
+<Tabs groupId="git_provider" queryString>
+    <TabItem value="github" label="GitHub" attributes={{className: styles.github}}>
+      <div class="video-wrapper">
+        <iframe width="784" height="441" src="https://www.youtube.com/embed/KEUOaNMUqOM" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <GitHubOverview />
+    </TabItem>
+    <TabItem value="gitlab" label="GitLab" attributes={{className: styles.gitlab}}> 
+      <GitLabOverview />
+    </TabItem>
+</Tabs>
