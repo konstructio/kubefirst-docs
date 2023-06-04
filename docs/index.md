@@ -1,5 +1,5 @@
 ---
-slug: /
+id: platform
 ---
 # kubefirst Platforms
 
