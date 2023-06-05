@@ -1,0 +1,162 @@
+---
+slug: /
+---
+# kubefirst Platforms
+
+## What is kubefirst?
+
+kubefirst is a free, fully automated, and instantly operational open source platform that includes some of the most popular open source tools available in the Kubernetes space, all working together in a click.
+
+We support local, AWS, and Civo clouds, with additional clouds in beta. By running our installer in your cloud, you'll get a GitOps cloud management and application delivery ecosystem complete with automated Terraform workflows, Vault secrets management, GitLab or GitHub integrations with Argo, and a demo application that demonstrates how it all pieces together.
+
+![kubefirst Architecture](img/common/kubefirst/architecture-light.png#light-mode)![kubefirst Architecture](img/common/kubefirst/architecture-dark.png#dark-mode)
+
+---
+
+# Step 1: Install kubefirst
+
+There are a few ways to install kubefirst, whether you have a cluster already or don't.
+
+<!-- TODO: 2.1 - how should we document the chart version, arm/amd, atlas, etc -->
+
+<!--tabs-->
+
+# I need an initial cluster
+
+No cluster? No problem! Let us create your bootstrap cluster for you as well.
+
+```
+brew install kubefirst/tools/kubefirst
+
+kubefirst launch up
+```
+
+Then connect to the provisioning tool at 
+[https://console.kubefirst.dev](https://console.kubefirst.dev )
+
+# Helm
+
+This will install our platform installer UI to your existing cluster so you can 
+create your new management cluster in your favorite cloud provider using your 
+favorite git provider.
+
+```
+helm repo add kubefirst https://charts.kubefirst.com
+helm repo update
+
+helm install kubefirst --create-namespace --version 0.0.11 kubefirst/kubefirst
+
+k port-forward svc/kubefirst-console 8080:8080
+```
+
+# Helm (ARM / M1 Mac / M2 Mac)
+
+This will install our platform installer UI to your existing cluster so you can 
+create your new management cluster in your favorite cloud provider using your 
+favorite git provider.
+
+This example shows a couple additional helm values settings that enable mongo to
+run on the ARM architecture.
+
+```
+helm repo add kubefirst https://charts.kubefirst.com
+helm repo update
+
+helm install kubefirst --create-namespace \
+--version 0.0.11 \
+--set=mongodb.image.repository=arm64v8/mongo \
+--set=mongodb.image.tag=latest \
+--set=mongodb.persistence.mountPath=/data/db \
+--set=mongodb.extraEnvVarsSecret=kubefirst-initial-secrets \
+kubefirst/kubefirst
+
+k port-forward svc/kubefirst-console 8080:8080
+```
+
+<!--/tabs-->
+
+---
+
+## Step 2: Create your new platform
+
+Enter your cloud provider details of where to place the cluster and your git provider details of where to place the gitops repo that will power your new platform.
+
+![kubefirst console installer image](./img/console/installer.png)
+
+---
+
+<!-- TODO: 2.1 update images in these columns -->
+## Step 3: Explore your new platform
+
+<div className="row">
+    <div className="col col--4 margin-bottom--lg">
+        <div className="card">
+            <div className="card__image">
+            <img
+               src={require("/static/img/local_github.jpg").default}
+               alt="Local k3d"
+               title="Local k3d" />
+            </div>
+            <div className="card__body">
+            <h3>kubefirst Local (k3d)</h3>
+            <p>
+               The <strong>fastest</strong> way to explore the kubefirst platform!
+            </p>
+            <p>
+               With kubefirst k3d, you can explore some of the best parts of the kubefirst platform running for free on a local k3d cluster in 5 minutes - without any cloud costs or domain prerequisites.
+            </p>
+            </div>
+            <div className="card__footer">
+                <form>
+                    <button className="button button--secondary button--block" formAction="kubefirst/local/github/install">Kubefirst on k3d</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+        <div className="card">
+            <div className="card__image">
+            <img
+               src={require("/static/img/civo_github.jpg").default}
+               alt="Civo Cloud"
+               title="Civo Cloud" />
+            </div>
+            <div className="card__body">
+            <h3>Civo Cloud</h3>
+            <p>
+               The perfect cloud environment when Kubernetes will be the center of attention.
+            </p>
+            <p>A <strong>simple cloud footprint</strong> with a powerful open source cloud native tool set for identity and infrastructure management, application delivery, and secrets management. Cloud native infrastructure with incredibly fast provisioning times.
+            </p>
+            </div>
+            <div className="card__footer">
+                <form>
+                    <button className="button button--secondary button--block" formAction="kubefirst/civo/github/install">View install instructions</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+        <div className="card">
+            <div className="card__image">
+            <img
+               src={require("/static/img/aws_gitlab.jpg").default}
+               alt="AWS Cloud"
+               title="AWS Cloud" />
+            </div>
+            <div className="card__body">
+            <h3>AWS Cloud</h3>
+            <p>
+               Our AWS cloud platform can accommodate all the <strong>needs of your enterprise</strong>. All you need is a domain in addition to a hosted zone, and within 35 minutes of running a single command, you'll have a secure EKS infrastructure management and application delivery platform.
+            </p>
+            </div>
+            <div className="card__footer">
+                <form>
+                    <button className="button button--secondary button--block" formAction="kubefirst/aws/gitlab/install">View install instructions</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+To learn more about kubefirst check out our [overview](kubefirst/overview.md).
