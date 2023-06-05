@@ -27,4 +27,4 @@ Onboard users with [GitHub](github/user-creation.md) or [GitLab](gitlab/user-cre
 
 ## Deliver `metaphor` to your new Development, Staging, and Production Environments
 
-Build and deliver a microservice using our example [metaphor application](../../explore/metaphor.md). Making any changes to the main branch of your new `metaphor` repository will build and deliver your application to your new cluster.
+Build and deliver a microservice using our example [metaphor application](@site/docs/common/metaphor.mdx). Making any changes to the main branch of your new `metaphor` repository will build and deliver your application to your new cluster.

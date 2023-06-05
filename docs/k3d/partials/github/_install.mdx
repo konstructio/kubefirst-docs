@@ -37,7 +37,7 @@ kubefirst k3d create
 
 Details about your execution will be logged to your `~/.k1/logs` directory. More information on `kubefirst k3d`, including optional flags, can be discovered by running `kubefirst k3d help`.
 
-We are able to create an ephemeral GitHub token that expires after 8 hours using a process that will prompt your browser to request access to your account. If you need a quick environment, this is a frictionless approach. However, if you need this environment for longer than 8 hours, which is probably the case, please follow our [GitHub Token Guide](../../../explore/github-token.md) and export a more permanent token to your terminal by using the following command:
+We are able to create an ephemeral GitHub token that expires after 8 hours using a process that will prompt your browser to request access to your account. If you need a quick environment, this is a frictionless approach. However, if you need this environment for longer than 8 hours, which is probably the case, please follow our [GitHub Token Guide](@site/docs/aws/advanced/git-auth.mdx) and export a more permanent token to your terminal by using the following command:
 
 ```shell
 export GITHUB_TOKEN=ghp_xxxxxxxx

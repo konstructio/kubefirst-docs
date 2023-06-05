@@ -16,7 +16,7 @@ The `gitops` repository houses all of our IAC and all our GitOps configurations.
 
 ### metaphor
 
-`metaphor` is a suite of demo microservice applications to demonstrate how an application can be integrated into the kubefirst platform following best practices. It is described in more details [here](../../../explore/metaphor.md).
+`metaphor` is a suite of demo microservice applications to demonstrate how an application can be integrated into the kubefirst platform following best practices. It is described in more details [here](@site/docs/common/metaphor.mdx).
 
 ## GitLab Repository Management
 

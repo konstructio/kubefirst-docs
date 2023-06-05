@@ -28,7 +28,7 @@ The kubefirst CLI runs on your localhost and will create an GitLab or GitHub Kub
 - kubefirst will create a new `gitops` and `metaphor` repository on your GitLab or GitHub account.
 - All of the infrastructure as code (IAC) will be in your `gitops` repository in the `/terraform` directory. IAC workflows are fully automated with Terraform Atlantis by opening a merge or pull request against the `gitops` repository.
 - All of the applications running in your Kubernetes cluster are registered in the `gitops` repository in the root `/registry` directory.
-- The [metaphor](../explore/metaphor.md) repositories only needs an update to the main branch to deliver the example application to your new development, staging, and production environments. It will hook into your new HashiCorp Vault for secrets, demonstrate automated certs, automated DNS, and GitOps application delivery.
+- The [metaphor](@site/docs/common/metaphor.mdx) repositories only needs an update to the main branch to deliver the example application to your new development, staging, and production environments. It will hook into your new HashiCorp Vault for secrets, demonstrate automated certs, automated DNS, and GitOps application delivery.
 - Our CI/CD is powered by Argo CD, Argo Workflows, GitLab or GitHub, and HashiCorp Vault.
 
 ### Platforms Details
