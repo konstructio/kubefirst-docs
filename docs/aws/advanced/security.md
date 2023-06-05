@@ -16,7 +16,6 @@ import * as config from "@site/docs/constants.js"
   </div>
 </div>
 
-
 ## Installation Account
 
 kubefirst runs against your public cloud provider and leverages your personal cloud credentials in order to conduct the provisioning of the kubefirst platform. We do not embed your credentials into the platform in any way, they are only used during the installation process.
