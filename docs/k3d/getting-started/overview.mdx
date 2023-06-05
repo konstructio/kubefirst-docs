@@ -29,13 +29,31 @@ import GitHubOverview from '@site/docs/k3d/partials/github/_overview.mdx'
 import GitLabOverview from '@site/docs/k3d/partials/gitlab/_overview.mdx'
 
 <Tabs groupId="git_provider" queryString>
-    <TabItem value="github" label="GitHub" attributes={{className: styles.github}}>
+    <TabItem 
+      attributes={{className: styles.github}}
+      value="github" 
+      label={
+        <div className="git-tab">
+          <img src="https://assets.kubefirst.com/console/github.svg" />
+          <span>GitHub</span>
+        </div>
+      }
+    >
       <div class="video-wrapper">
         <iframe width="784" height="441" src="https://www.youtube.com/embed/KEUOaNMUqOM" frameborder="0" allowfullscreen></iframe>
       </div>
       <GitHubOverview />
     </TabItem>
-    <TabItem value="gitlab" label="GitLab" attributes={{className: styles.gitlab}}> 
+    <TabItem 
+      value="gitlab"
+      attributes={{className: styles.gitlab}}
+      label={
+        <div className="git-tab">
+          <img src="https://assets.kubefirst.com/console/gitlab.svg" />
+          <span>GitLab</span>
+        </div>
+      }
+    >
       <GitLabOverview />
     </TabItem>
 </Tabs>
