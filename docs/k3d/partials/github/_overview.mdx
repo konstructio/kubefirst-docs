@@ -1,7 +1,3 @@
----
-title: Overview
----
-
 `kubefirst k3d create` provisions a local [k3d](https://k3d.io) Kubernetes cluster to host your cloud native environment locally.
 
 Your k3d cluster will include:
@@ -23,8 +19,8 @@ These apps are all managed by Argo CD and the applications configurations are in
 
 ## Atlantis Example / User Creation Walkthrough
 
-Onboard users with [GitHub](github/user-creation.md) or [GitLab](gitlab/user-creation.md) by doing a pull/mnerge request with Terraform changes to your `gitops` repository and applying the change using Atlantis.
+Onboard users with [GitHub](../explore/user-creation) or [GitLab](../explore/user-creation?git_provider=gitlab) by doing a pull/mnerge request with Terraform changes to your `gitops` repository and applying the change using Atlantis.
 
 ## Deliver `metaphor` to your new Development, Staging, and Production Environments
 
-Build and deliver a microservice using our example [metaphor application](@site/docs/common/metaphor.mdx). Making any changes to the main branch of your new `metaphor` repository will build and deliver your application to your new cluster.
+Build and deliver a microservice using our example [metaphor application](../explore/metaphor). Making any changes to the main branch of your new `metaphor` repository will build and deliver your application to your new cluster.

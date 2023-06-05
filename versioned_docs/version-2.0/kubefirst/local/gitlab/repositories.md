@@ -6,7 +6,7 @@ title: Repositories
 
 The `kubefirst k3d create` command will create a `gitops` and `metaphor` repository in your personal GitLab account as shown here.
 
-![GitLab repositories](../../../img/common/gitlab/repositories.png)
+![GitLab repositories](@site/docs/img/common/gitlab/repositories.png)
 
 ## Repositories
 
@@ -41,4 +41,4 @@ GitLab's Terraform provider provides [more configuration options](https://regist
 
 To make infrastructure and configuration changes with Terraform, simply open a merge request in the `gitops` repository. Your merge request will automatically provide plans, state locks, and applies, and even comment in the merge request itself. You'll have a simple, peer reviewable, auditable changelog of all infrastructure and configuration changes.
 
-![Atlantis Example on GitLab](../../../img/common/github/atlantis.png)
+![Atlantis Example on GitLab](@site/docs/img/common/github/atlantis.png)

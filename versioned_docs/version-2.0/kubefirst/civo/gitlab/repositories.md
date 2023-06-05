@@ -6,7 +6,7 @@ title: Repositories
 
 When you install the civo version of kubefirst, 2 new repositories will be added to your GitLab project as shown here.
 
-![GitLab repositories](../../../img/common/gitlab/repositories.png)
+![GitLab repositories](@site/docs/img/common/gitlab/repositories.png)
 
 ## Repository Summary
 
@@ -38,4 +38,4 @@ module "your_repo_name" {
 
 To make infrastructure and configuration changes with Terraform, simply open a pull request against any of the Terraform directory folders in the `gitops` repository. Your pull request will automatically provide plans, state locks, and applies, and even comment in the merge request itself. You'll have a simple, peer reviewable, auditable changelog of all infrastructure and configuration changes.
 
-![Atlantis GitLab](../../../img/common/gitlab/atlantis.png)
+![Atlantis GitLab](@site/docs/img/common/gitlab/atlantis.png)

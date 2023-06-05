@@ -6,7 +6,7 @@ title: Install
 
 `kubefirst` is the name of our CLI that installs the platform of the same name to your local or cloud environment.
 
-![kubefirst k3d with GitLab Cluster Diagram](../../../img/local/gitlab/installation-diagram-light.png#light-mode)![kubefirst k3d with GitLab Cluster Diagram](../../../img/local/gitlab/installation-diagram-dark.png#dark-mode)
+![kubefirst k3d with GitLab Cluster Diagram](@site/docs/img/local/gitlab/installation-diagram-light.png#light-mode)![kubefirst k3d with GitLab Cluster Diagram](@site/docs/img/local/gitlab/installation-diagram-dark.png#dark-mode)
 
 ## Prerequisites
 
@@ -64,11 +64,11 @@ After the ~5 minute installation, your browser will open a new browser tab at co
 
 ## Console UI Screen
 
-![kubefirst console screen](../../../img/common/gitlab/console.png)
+![kubefirst console screen](@site/docs/img/common/gitlab/console.png)
 
 ## Example of terminal output following cluster creation
 
-![terminal handoff](../../../img/local/gitlab/handoff-screen.png)
+![terminal handoff](@site/docs/img/local/gitlab/handoff-screen.png)
 
 ## Root credentials
 
@@ -78,7 +78,7 @@ To obtain your 3 initial passwords, run
 kubefirst k3d root-credentials
 ```
 
-![terminal handoff](../../../img/common/kubefirst/root-credentials.png)
+![terminal handoff](@site/docs/img/common/kubefirst/root-credentials.png)
 
 :::note the `kubefirst k3d root-credentials` command was introduced in 2.0.1
 

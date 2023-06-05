@@ -6,7 +6,7 @@ title: Repositories
 
 When you install the AWS GitHub version of kubefirst, 2 new repositories will be added to your organization's GitHub account as shown here.
 
-![GitHub repositories](../../../img/common/github/repositories.png)
+![GitHub repositories](@site/docs/img/common/github/repositories.png)
 
 ## Repository Summary
 
@@ -47,4 +47,4 @@ That was just GitHub. Take a look at all the Terraform providers that are availa
 
 To make infrastructure and configuration changes with Terraform, simply open a pull request against any of the Terraform directory folders in the `gitops` repository. Your pull request will automatically provide plans, state locks, and applies, and even comment in the merge request itself. You'll have a simple, peer reviewable, auditable changelog of all infrastructure and configuration changes.
 
-![Atlantis GitHub](../../../img/common/github/atlantis.png)
+![Atlantis GitHub](@site/docs/img/common/github/atlantis.png)

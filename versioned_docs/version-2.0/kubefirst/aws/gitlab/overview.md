@@ -4,7 +4,7 @@ title: Overview
 
 ### Installed Applications
 
-![GitOps Assets](../../../img/kubefirst/github/gitops-assets.png)
+![GitOps Assets](@site/docs/img/kubefirst/github/gitops-assets.png)
 
 For details on the installed platform components see our [overview page](../../overview.md#platforms-details).
 
@@ -12,9 +12,9 @@ For details on the installed platform components see our [overview page](../../o
 
 Once you run the `kubefirst` command at the end of the installation will open a new browser tab with the Console UI at `http://localhost:9094` to provide you a dashboard to navigate through the different services that were provisioned.
 
-![console UI](../../../img/common/gitlab/console.png)
+![console UI](@site/docs/img/common/gitlab/console.png)
 
-![terminal handoff](../../../img/kubefirst/getting-started/cluster-create-result.png)
+![terminal handoff](@site/docs/img/kubefirst/getting-started/cluster-create-result.png)
 
 These are **not your personal credentials**. These are administrator credentials that can be used if you ever need to authenticate and administer your tools if your OIDC provider ever become unavailable. Please protect these secrets and store them in a safe place.
 
@@ -42,7 +42,7 @@ To watch this pipeline occur, make any change to the `main` branch of the `metap
 
 You can visit the metaphor development, staging, and production apps in your browser to see the versions change as your releases complete and Argo CD syncs the apps. The metaphor URLs can be found in your `gitops` and metaphor repository `README.md` files.
 
-![Metaphor Frontend](../../../img/kubefirst/metaphor/metaphor-frontend.png)
+![Metaphor Frontend](@site/docs/img/kubefirst/metaphor/metaphor-frontend.png)
 
 ### Learning the Ropes
 
