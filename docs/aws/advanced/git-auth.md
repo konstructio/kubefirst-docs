@@ -2,6 +2,7 @@
 title: Git Authentication
 id: gitAuth
 ---
+
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import styles from "@site/docs/stylesheets/tabs.module.css";
@@ -23,12 +24,29 @@ import * as config from "@site/docs/constants.js"
   </div>
 </div>
 
-
 <Tabs groupId="git_provider" queryString>
-    <TabItem value="github" label="GitHub" attributes={{className: styles.github}}>
+    <TabItem 
+      attributes={{className: styles.github}}
+      value="github" 
+      label={
+        <div className="git-tab">
+          <img src="https://assets.kubefirst.com/console/github.svg" />
+          <span>GitHub</span>
+        </div>
+      }
+    >
       <GitHubTokens />
     </TabItem>
-    <TabItem value="gitlab" label="GitLab" attributes={{className: styles.gitlab}}> 
+    <TabItem 
+      value="gitlab"
+      attributes={{className: styles.gitlab}}
+      label={
+        <div className="git-tab">
+          <img src="https://assets.kubefirst.com/console/gitlab.svg" />
+          <span>GitLab</span>
+        </div>
+      }
+    > 
       <GitLabTokens />
     </TabItem>
 </Tabs>

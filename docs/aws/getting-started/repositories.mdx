@@ -30,10 +30,28 @@ import GitHubRepositories from '@site/docs/aws/partials/github/_repositories.mdx
 import GitLabRepositories from '@site/docs/aws/partials/gitlab/_repositories.mdx'
 
 <Tabs groupId="git_provider" queryString>
-    <TabItem value="github" label="GitHub" attributes={{className: styles.github}}>
+    <TabItem 
+      attributes={{className: styles.github}}
+      value="github" 
+      label={
+        <div className="git-tab">
+          <img src="https://assets.kubefirst.com/console/github.svg" />
+          <span>GitHub</span>
+        </div>
+      }
+    >
       <GitHubRepositories />
     </TabItem>
-    <TabItem value="gitlab" label="GitLab" attributes={{className: styles.gitlab}}> 
+    <TabItem 
+      value="gitlab"
+      attributes={{className: styles.gitlab}}
+      label={
+        <div className="git-tab">
+          <img src="https://assets.kubefirst.com/console/gitlab.svg" />
+          <span>GitLab</span>
+        </div>
+      }
+    >
       <GitLabRepositories />
     </TabItem>
 </Tabs>
