@@ -23,12 +23,11 @@ import * as config from "@site/docs/constants.js"
   </div>
 </div>
 
-
 <Tabs groupId="git_provider" queryString>
     <TabItem value="github" label="GitHub" attributes={{className: styles.github}}>
       <GitHubTokens />
     </TabItem>
-    <TabItem value="gitlab" label="GitLab" attributes={{className: styles.gitlab}}> 
+    <TabItem value="gitlab" label="GitLab" attributes={{className: styles.gitlab}}>
       <GitLabTokens />
     </TabItem>
 </Tabs>
