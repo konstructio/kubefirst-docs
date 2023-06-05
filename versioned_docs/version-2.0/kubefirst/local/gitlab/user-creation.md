@@ -58,7 +58,7 @@ Now, create a merge request. This will kick off the Atlantis workflow. Within a 
 
 New plans can be requested on demand by commenting `atlantis plan` on your merge request.
 
-![Atlantis comments example](../../../img/common/gitlab/atlantis-comments.png)
+![Atlantis comments example](@site/docs/img/common/gitlab/atlantis-comments.png)
 
 To apply these changes, you or someone in the organization can submit a comment on that merge request with the following text: `atlantis apply`. Doing so will instruct Atlantis to apply the plan. It will report back with the results within a minute or so.
 
@@ -66,11 +66,11 @@ To apply these changes, you or someone in the organization can submit a comment 
 
 Any new users you have created through this process will have their temporary initial passwords stored in your local [HashiCorp Vault](https://argocd.kubefirst.dev/applications/vault) cluster. You can also access Vault using the information provided to you in the terminal: you will find your users' individual initial passwords in the Vault secret store `/secrets/users/<username>`.
 
-![vault token login](../../../img/kubefirst/local/vault-token-login.png)
+![vault token login](@site/docs/img/kubefirst/local/vault-token-login.png)
 
 Once you've provided them their initial password, they can update it throughout the platform by modifying their user password entity in Vault. Anyone can change their own password, and admins can reset anyone's password. These rules, just like everything else on kubefirst, can be configured in your new `gitops` repository.
 
-![default user creation](../../../img/kubefirst/local/default-user-creation.png)
+![default user creation](@site/docs/img/kubefirst/local/default-user-creation.png)
 
 The existence of a new user with your specified parameters demonstrates that you have successfully updated your users using Atlantis!
 

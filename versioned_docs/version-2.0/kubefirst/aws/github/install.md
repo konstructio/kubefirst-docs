@@ -8,7 +8,7 @@ title: Install
 
 It installs a fully automated platform of open source cloud native tools with a simple `init` and `create` command.
 
-![kubefirst AWS with GitHub Cluster Diagram](../../../img/aws/github/installation-diagram-light.png#light-mode)![kubefirst AWS with GitHub Cluster Diagram](../../../img/aws/github/installation-diagram-dark.png#dark-mode)
+![kubefirst AWS with GitHub Cluster Diagram](@site/docs/img/aws/github/installation-diagram-light.png#light-mode)![kubefirst AWS with GitHub Cluster Diagram](@site/docs/img/aws/github/installation-diagram-dark.png#dark-mode)
 
 ### Prerequisites
 
@@ -50,7 +50,7 @@ kubefirst aws create \
 
 ## Example of terminal output following cluster creation
 
-![terminal handoff](../../../img/aws/github/handoff-screen.png)
+![terminal handoff](@site/docs/img/aws/github/handoff-screen.png)
 
 ## Root credentials
 
@@ -60,7 +60,7 @@ To obtain your 3 initial passwords, run
 kubefirst aws root-credentials
 ```
 
-![terminal handoff](../../../img/common/kubefirst/root-credentials.png)
+![terminal handoff](@site/docs/img/common/kubefirst/root-credentials.png)
 
 :::note the `kubefirst aws root-credentials` command was introduced in 2.0.1
 

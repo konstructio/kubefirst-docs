@@ -8,7 +8,7 @@ title: Overview
 
 ### Installed Applications
 
-![GitOps Assets](../../../img/kubefirst/github/gitops-assets.png)
+![GitOps Assets](@site/docs/img/kubefirst/github/gitops-assets.png)
 
 For details on the installed platform components see our [overview page](../../overview.md#platforms-details).
 
@@ -17,9 +17,9 @@ For details on the installed platform components see our [overview page](../../o
 Once the `kubefirst aws create` command has completed provisioning, it will open a new browser tab with the Console UI at
 `http://localhost:9094` to provide you a dashboard to navigate through the different services that were provisioned.
 
-![console UI](../../../img/common/github/console.png)
+![console UI](@site/docs/img/common/github/console.png)
 
-![terminal handoff](../../../img/kubefirst/getting-started/cluster-create-result.png)
+![terminal handoff](@site/docs/img/kubefirst/getting-started/cluster-create-result.png)
 
 These are **not your personal credentials**. These are administrator credentials that can be used if you ever need to authenticate and administer your tools if your OIDC provider ever becomes unavailable. Please protect these secrets and store them in a safe place.
 
