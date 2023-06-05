@@ -8,7 +8,7 @@ title: Install
 
 It installs a fully automated platform of open source cloud native tools with a simple `init` and `create` command.
 
-![kubefirst AWS with GitHub Cluster Diagram](../../../img/aws/github/installation-diagram-light.png#light-mode)![kubefirst AWS with GitHub Cluster Diagram](../../../img/aws/github/installation-diagram-dark.png#dark-mode)
+![kubefirst AWS with GitHub Cluster Diagram](@site/docs/img/aws/github/installation-diagram-light.png#light-mode)![kubefirst AWS with GitHub Cluster Diagram](@site/docs/img/aws/github/installation-diagram-dark.png#dark-mode)
 
 ### Prerequisites
 
@@ -34,7 +34,7 @@ Your new `kbot` account will need to be associated with a GitHub organization.
 
 #### GitHub ephemeral authorization during install
 
-If you don't export a [GITHUB_TOKEN](../../../explore/github-token.md) to your shell, the kubefirst CLI can generate an ephemeral token that last 8 hours.
+If you don't export a [GITHUB_TOKEN](@site/docs/aws/advanced/git-auth.mdx) to your shell, the kubefirst CLI can generate an ephemeral token that last 8 hours.
 
 ### Step 2 - Create your platform
 
@@ -50,7 +50,7 @@ kubefirst aws create \
 
 ## Example of terminal output following cluster creation
 
-![terminal handoff](../../../img/aws/github/handoff-screen.png)
+![terminal handoff](@site/docs/img/aws/github/handoff-screen.png)
 
 ## Root credentials
 
@@ -60,7 +60,7 @@ To obtain your 3 initial passwords, run
 kubefirst aws root-credentials
 ```
 
-![terminal handoff](../../../img/common/kubefirst/root-credentials.png)
+![terminal handoff](@site/docs/img/common/kubefirst/root-credentials.png)
 
 :::note the `kubefirst aws root-credentials` command was introduced in 2.0.1
 

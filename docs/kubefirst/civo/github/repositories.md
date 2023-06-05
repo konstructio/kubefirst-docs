@@ -6,7 +6,7 @@ title: Repositories
 
 When you deploy a cluster on Civo using kubefirst, new repositories will be added to your organization's GitHub account.
 
-![GitHub repositories](../../../img/common/github/repositories.png)
+![GitHub repositories](@site/docs/img/common/github/repositories.png)
 
 ## Repositories
 
@@ -16,7 +16,7 @@ The `gitops` repository houses all of our IAC and all your GitOps configurations
 
 ### metaphor
 
-`metaphor` is a suite of demo microservice applications to demonstrate how an application can be integrated into the kubefirst platform following best practices. It is described in more details [here](../../../explore/metaphor.md).
+`metaphor` is a suite of demo microservice applications to demonstrate how an application can be integrated into the kubefirst platform following best practices. It is described in more details [here](@site/docs/common/metaphor.mdx).
 
 ## Repositories Management
 
@@ -38,4 +38,4 @@ module "your_repo_name" {
 
 To make infrastructure and configuration changes with Terraform, simply open a pull request against any of the Terraform directory folders in the `gitops` repository. Your pull request will automatically provide plans, state locks, and applies, and even comment in the merge request itself. You'll have a simple, peer reviewable, auditable changelog of all infrastructure and configuration changes.
 
-![Atlantis GitHub](../../../img/common/github/atlantis.png)
+![Atlantis GitHub](@site/docs/img/common/github/atlantis.png)

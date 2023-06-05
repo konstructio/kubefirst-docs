@@ -6,7 +6,7 @@ title: Install
 
 `kubefirst` is our command line tool that installs a fully automated platform of open source cloud native tools to your Civo cloud with a simple `kubefirst civo create` command.
 
-![kubefirst Civo with GitHub Cluster Diagram](../../../img/civo/github/installation-diagram-light.png#light-mode)![kubefirst Civo with GitHub Cluster Diagram](../../../img/civo/github/installation-diagram-dark.png#dark-mode)
+![kubefirst Civo with GitHub Cluster Diagram](@site/docs/img/civo/github/installation-diagram-light.png#light-mode)![kubefirst Civo with GitHub Cluster Diagram](@site/docs/img/civo/github/installation-diagram-dark.png#dark-mode)
 
 ## Prerequisites
 
@@ -18,7 +18,7 @@ title: Install
 
 - A GitHub [organisation](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch).
 - A new GitHub [account](https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account) for your `kbot` automation user.
-- A GitHub [personal access token](../../../explore/github-token.md) for your `kbot` account.
+- A GitHub [personal access token](@site/docs/aws/advanced/git-auth.mdx) for your `kbot` account.
 
 ### Civo Prerequisites
 
@@ -50,7 +50,7 @@ If your deployment is not successful, errors and troubleshooting information wil
 
 ## Example of terminal output following cluster creation
 
-![terminal handoff](../../../img/civo/github/handoff-screen.png)
+![terminal handoff](@site/docs/img/civo/github/handoff-screen.png)
 
 ## Root credentials
 
@@ -60,7 +60,7 @@ To obtain your 3 initial passwords, run
 kubefirst civo root-credentials
 ```
 
-![terminal handoff](../../../img/common/kubefirst/root-credentials.png)
+![terminal handoff](@site/docs/img/common/kubefirst/root-credentials.png)
 
 :::note the `kubefirst civo root-credentials` command was introduced in 2.0.1
 
