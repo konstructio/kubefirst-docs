@@ -1,5 +1,7 @@
 name: Syntax Validation
-on: [push, workflow_dispatch]
+on:
+  push
+  workflow_dispatch
 
 jobs:
   syntax-check:
