@@ -1,83 +1,77 @@
----
-title: Install
----
+## AWS Platform Installation using GitLab
 
-# Civo Platform Installation
+**kubefirst** is the name of our command line tool that installs the kubefirst platform and provides some platform conveniences.
 
-`kubefirst` is our command line tool that installs a fully automated platform of open source cloud native tools to your Civo cloud with a simple `kubefirst civo create` command.
+It installs a fully automated platform of open source cloud native tools with a simple `init` and `create` command.
 
-![kubefirst Civo with GitHub Cluster Diagram](@site/docs/img/civo/github/installation-diagram-light.png#light-mode)![kubefirst Civo with GitHub Cluster Diagram](@site/docs/img/civo/github/installation-diagram-dark.png#dark-mode)
+![kubefirst Cluster](../../../img/aws/gitlab/installation-diagram-dark.png#dark-mode)![kubefirst Cluster](../../../img/aws/gitlab/installation-diagram-light.png#light-mode)
 
-## Prerequisites
+### Prerequisites
 
-### Local Prerequisites
+- [Install](../../../kubefirst/overview.md#install-the-kubefirst-cli) the kubefirst CLI.
 
-[Install](../../overview.md#install-the-kubefirst-cli) the kubefirst CLI.
+#### GitLab
 
-### GitHub Prerequisites
+- Create or use an existing [GitLab account](https://gitlab.com).
+- Create a [GitLab group](https://docs.gitlab.com/ee/user/group/) developer permissions.
 
-- A GitHub [organisation](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch).
-- A new GitHub [account](https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account) for your `kbot` automation user.
-- A GitHub [personal access token](@site/docs/aws/advanced/git-auth.mdx) for your `kbot` account.
+> GitLab SaaS offering has limitations that require us to use groups contrary to GitHub which can be use without an organization.
 
-### Civo Prerequisites
+#### AWS
 
-For kubefirst to be able to provision your Civo cloud resources:
+1. Create an AWS account with billing enabled.
+2. Establish a public hosted zone with DNS routing established([docs](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/AboutHZWorkingWith.html)).
+3. Connect with [Administrator Access](https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/AdministratorAccessserviceLevelSummary) IAM credentials to your AWS account ([docs](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys)).
+4. Our Homebrew package will automatically install the [AWS IAM Authenticator](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html) dependency. If you use another installation method, you will need to install this utility.
 
-- A [Civo account](https://dashboard.civo.com/signup) in which you are an account owner.
-- A publicly routable [DNS](https://www.civo.com/learn/configure-dns#adding-a-domain-name).
-- A [Civo token](https://dashboard.civo.com/security).
+### Step 1 - Create your kbot user and a personal access token
 
-## Create your new kubefirst cluster
+The kubefirst cli will automatically create one admin user for you named `kbot`. After the installation, you will temporarily use that `kbot` account to onboard yourself and the rest your team to the platform. From that point forward, the `kbot` should only be used for automated activities, and you should use your own personal account.
 
-Adjust the following command with your GitHub and Civo tokens in addition to the appropriate values for your new platform.
+The `kbot` user needs to be associated with a GitLab user account that can be used as your organization's bot account. Log out of GitLab and create a new GitLab account to represent this new `kbot` account. Because this account will be used for automation, it's a good to choose a username that generically represents your company or project name. You can also have fun with it and give your bot a fun name - the point is that this is not an account for your long term personal use, it's for the kubefirst platform system to use.
+
+Your new `kbot` account will need to be associated with a GitLab organization.
+
+- If you don't already have one that you want to use, while logged into GitLab with your new `kbot` account, establish a new [GitLab organization](https://docs.gitlab.com/ee/topics/set_up_organization.html).
+- If you do already have a GitLab org that you want to add kubefirst to, you'll need to add your new kubefirst bot as an owner to the existing organization now.
+
+### Step 2 - Create your platform
 
 ```shell
-export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxx
-export CIVO_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-kubefirst civo create \
+kubefirst aws create \
   --alerts-email yourdistro@your-company.io \
-  --github-org your-github-org \
+  --git-provider gitlab \
+  --gitlab-group your-gitlab-group \
   --domain-name your-domain.io \
   --cluster-name kubefirst
 ```
 
-The kubefirst cli will produce a directory of utilities, a state file, and some staged platform content that can now be found in the `~/.kubefirst` and `~/.k1` folders on your local machine.
-
-After the ~10 minute installation, your browser will launch a new tab to the [kubefirst Console](https://github.com/kubefirst/console), which will help you navigate your new suite of tools running in your new Civo cluster.
-
-If your deployment is not successful, errors and troubleshooting information will be stored in a local log file specified during the installation run.
-
 ## Example of terminal output following cluster creation
 
-![terminal handoff](@site/docs/img/civo/github/handoff-screen.png)
+![terminal handoff](../../../img/aws/gitlab/handoff-screen.png)
 
 ## Root credentials
 
 To obtain your 3 initial passwords, run
 
 ```bash
-kubefirst civo root-credentials
+kubefirst aws root-credentials
 ```
 
-![terminal handoff](@site/docs/img/common/kubefirst/root-credentials.png)
+![terminal handoff](../../../img/common/kubefirst/root-credentials.png)
 
-:::note the `kubefirst civo root-credentials` command was introduced in 2.0.1
+:::note the `kubefirst aws root-credentials` command was introduced in 2.0.1
 
 ## Connecting to Kubernetes
 
-To connect to your new Kubernetes cluster, run
+Replace `kubefirst` in the command below with your cluster's name if you specified one
 
 ```bash
-export KUBECONFIG=~/.k1/kubeconfig
+aws eks update-kubeconfig --name kubefirst
 ```
 
-To view all cluster pods, run
+To view all cluster pods run
 
 ```bash
 kubectl get pods -A
 ```
-
-### Installed Applications
-
-To see what is installed by kubefirst, check the [overview page](../../overview.md#platforms-details).
