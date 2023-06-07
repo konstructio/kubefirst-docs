@@ -1,0 +1,59 @@
+There are a few ways to install kubefirst, whether you have a cluster already or don't.
+
+<!-- TODO: 2.1 - update chart version, arm/amd, atlas, etc -->
+
+<!--tabs-->
+
+# I don't have any kubernetes anywhere yet
+
+No cluster? No problem! Let us create your bootstrap cluster for you as well. We'll install our provisioning tool into it to create your permanent infrastructure.
+
+```
+brew install kubefirst/tools/kubefirst
+
+kubefirst launch up
+```
+
+Then connect to the provisioning tool at 
+[https://console.kubefirst.dev](https://console.kubefirst.dev )
+
+# Helm
+
+This will install our platform installer UI to your existing cluster so you can 
+create your new management cluster in your favorite cloud provider using your 
+favorite git provider.
+
+```
+helm repo add kubefirst https://charts.kubefirst.com
+helm repo update
+
+helm install kubefirst --create-namespace --version 0.0.11 kubefirst/kubefirst
+
+k port-forward svc/kubefirst-console 8080:8080
+```
+
+# Helm (ARM / M1 Mac / M2 Mac)
+
+This will install our platform installer UI to your existing cluster so you can 
+create your new management cluster in your favorite cloud provider using your 
+favorite git provider.
+
+This example shows a couple additional helm values settings that enable mongo to
+run on the ARM architecture.
+
+```
+helm repo add kubefirst https://charts.kubefirst.com
+helm repo update
+
+helm install kubefirst --create-namespace \
+--version 0.0.11 \
+--set=mongodb.image.repository=arm64v8/mongo \
+--set=mongodb.image.tag=latest \
+--set=mongodb.persistence.mountPath=/data/db \
+--set=mongodb.extraEnvVarsSecret=kubefirst-initial-secrets \
+kubefirst/kubefirst
+
+k port-forward svc/kubefirst-console 8080:8080
+```
+
+<!--/tabs-->
