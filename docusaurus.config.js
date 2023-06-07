@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Kubefirst',
+  title: 'Kubefirst Docs',
   tagline: 'Instant Kubernetes Platforms',
   favicon: 'img/favicon.ico',
 
@@ -31,6 +31,13 @@ const config = {
       'classic',
       ({
         docs: {
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: 'next',
+              path: 'next',
+            },
+          },
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [require('remark-docusaurus-tabs')],
@@ -43,7 +50,7 @@ const config = {
     ],
   ],
 
-  themes: ['docusaurus-theme-search-typesense'],
+  themes: ['docusaurus-theme-search-typesense', '@saucelabs/theme-github-codeblock'],
 
   plugins: [
     [
@@ -64,15 +71,40 @@ const config = {
         logo: {
           alt: 'Kubefirst website',
           src: 'img/logo.svg',
-          href: 'https://kubefirst.io/',
+          href: 'http://localhost:3000/next',
+          // href: 'https://docs.kubefirst.io/',
         },
         items: [
           {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'aws',
+            label: 'AWS',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'civo',
+            label: 'Civo',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'k3d',
+            label: 'K3D (local)',
+          },
+          {
             type: 'docsVersionDropdown',
+            position: 'right',
           },
           {
             href: 'https://github.com/kubefirst/kubefirst',
             label: 'GitHub',
+            position: 'right',
+          },
+          {
+            href: 'https:/kubefirst.io',
+            label: 'kubefirst.io',
             position: 'right',
           },
         ],

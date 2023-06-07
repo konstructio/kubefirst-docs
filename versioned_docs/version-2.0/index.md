@@ -7,7 +7,7 @@ slug: /
 
 kubefirst is a fully automated and operational open source platform that includes some of the most popular open source tools available in the Kubernetes space, all working together from a single command.
 
-We support local, AWS, and Civo clouds. By running our cli commands against your empty environment, you'll get a GitOps cloud management and application delivery ecosystem complete with automated Terraform workflows, Vault secrets management, GitLab or GitHub integrations with Argo, and demo applications that demonstrate how it all pieces together.
+We support local, AWS, and Civo clouds. By running our CLI commands against your empty environment, you'll get a GitOps cloud management and application delivery ecosystem complete with automated Terraform workflows, Vault secrets management, GitLab or GitHub integrations with Argo, and demo applications that demonstrate how it all pieces together.
 
 ![kubefirst Architecture](img/common/kubefirst/architecture-light.png#light-mode)![kubefirst Architecture](img/common/kubefirst/architecture-dark.png#dark-mode)
 
@@ -73,11 +73,11 @@ Choose one of the available options below
             <div className="card__image">
             <img
                src={require("/static/img/civo_github.jpg").default}
-               alt="CIVO Cloud with GitHub"
-               title="CIVO Cloud with GitHub" />
+               alt="Civo Cloud with GitHub"
+               title="Civo Cloud with GitHub" />
             </div>
             <div className="card__body">
-            <h3>🆕 kubefirst on CIVO Cloud (GitHub)</h3>
+            <h3>🆕 kubefirst on Civo Cloud (GitHub)</h3>
             <p>
                The perfect cloud environment when Kubernetes will be the center of attention.
             </p>
@@ -96,11 +96,11 @@ Choose one of the available options below
             <div className="card__image">
             <img
                src={require("/static/img/civo_gitlab.jpg").default}
-               alt="CIVO Cloud with GitLab"
-               title="CIVO Cloud with GitLab" />
+               alt="Civo Cloud with GitLab"
+               title="Civo Cloud with GitLab" />
             </div>
             <div className="card__body">
-            <h3>🆕 Kubefirst on CIVO Cloud (GitLab)</h3>
+            <h3>🆕 kubefirst on Civo Cloud (GitLab)</h3>
             <p>
                The perfect cloud environment when Kubernetes will be the center of attention.
             </p>

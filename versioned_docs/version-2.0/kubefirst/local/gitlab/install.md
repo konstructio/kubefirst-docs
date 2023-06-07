@@ -6,11 +6,11 @@ title: Install
 
 `kubefirst` is the name of our CLI that installs the platform of the same name to your local or cloud environment.
 
-![Kubefirst k3d with GitLab Cluster Diagram](../../../img/local/gitlab/installation-diagram-light.png#light-mode)![Kubefirst k3d with GitLab Cluster Diagram](../../../img/local/gitlab/installation-diagram-dark.png#dark-mode)
+![kubefirst k3d with GitLab Cluster Diagram](../../../img/local/gitlab/installation-diagram-light.png#light-mode)![kubefirst k3d with GitLab Cluster Diagram](../../../img/local/gitlab/installation-diagram-dark.png#dark-mode)
 
 ## Prerequisites
 
-- [Install](../../overview.md#how-to-install-kubefirst-cli) the kubefirst CLI.
+- [Install](../../overview.md#install-the-kubefirst-cli) the kubefirst CLI.
 - [Install](https://docs.docker.com/get-docker/) Docker Desktop.
 
 ### GitLab
@@ -84,7 +84,7 @@ kubefirst k3d root-credentials
 
 ## Connecting to Kubernetes
 
-You will be automatically connected to your new kubernetes cluster. To view all cluster pods, run
+You will be automatically connected to your new Kubernetes cluster. To view all cluster pods, run
 
 ```bash
 kubectl get pods -A

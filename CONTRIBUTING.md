@@ -1,4 +1,4 @@
-# Contributing to the Kubefirst documentation
+# Contributing to the kubefirst documentation
 
 Firstly, we want to thank you for investing your valuable time to contribute to kubefirst!
 
@@ -13,12 +13,13 @@ _For contribution to the kubefirst CLI, please refer yourself to the [CONTRIBUTI
   - [Markdown](#markdown)
   - [Search Index](#search-index)
   - [Testing](#testing)
+  - [Update docs accross versions](#update-docs-accross-versions)
   - [Versioning](#versioning)
 - [Help](#help)
 
 ## Ways to Contribute
 
-At Kubefirst, we believe that every contribution is valuable, not just the code one.
+At kubefirst, we believe that every contribution is valuable, not just the code one.
 
 Whether you want to add more details to a specific section or a page, or that you want to fix a typo in the text or in a code example, you are more than welcome to can create a pull request.
 
@@ -34,7 +35,7 @@ We are using [Docusaurus](https://github.com/facebook/docusaurus) as our documen
 
 ### Commits
 
-We subscribe to the [Conventional Commits specification](https://www.conventionalcommits.org). It can be a bit difficult to choose the right commit message prefix since this repository is for documentation, and not an application per se. Here are the guidelines for the documentation specific ones:
+We subscribe to the [Conventional Commits specification](https://www.conventionalcommits.org). It can be a bit difficult to choose the right commit message prefix since this repository is for documentation, and not an application. Here are the guidelines for the documentation specific ones:
 
 - `docs`: when adding new information to the docs (ex.: creating a new page, adding a section to an existing one).
 - `fix`: when fixing the documentation (ex.: correcting a typo, rectifying untrue content).
@@ -146,6 +147,18 @@ To run our documentation locally, simply run `npm start`.
 
 > If you modify the CSS, the changes aren't picked up by the development server like when you modify the documentation content. You need to restart the server with npm.
 
+### Update docs accross versions
+
+Sometimes changes in `v.next` are also valid for previous versions, which is often the case when refactoring a section, or adding missing information to a page. You can either copy the change content manually, or use the ZSH tools we created easily for that. First, you need to stage the file(s) you modified or created. Once it's done, run this command from the documentation folder in your terminal:
+
+```shell
+zsh tools/duplicator.zsh
+```
+
+You'll be presented with a menu giving you the opportunity to select the files you want to copy, and also the possibility to select to which version you want to do it. Once the selections are done, the script will copy or overwrite existing files with the one you modified, and will stage them. You only need to create a new branch for the PR, and [commit](#commits) the changes.
+
+> Note that it is copying the entire file, so it will overwrite the content to the targeted version. We may support updating only changes content in the future.
+
 ### Versioning
 
 Docusaurus manages [documentation versions](https://docusaurus.io/docs/versioning), which we started to use since the v2.0.0 release. It means that every time we release a new version (minor or major only) of kubefirst, we need to freeze the `next` documentation, meaning the documentation updated in the `docs` directory, into a versioned one inside the `versioned_docs\version-X.X` folder. For now, this process is manual, and can be done using the following commands (replace X.X by the new release version):
@@ -165,4 +178,4 @@ It will create a duplication of the `docs` folder inside the newly created `vers
 
 ## Help
 
-If you need help in your Kubefirst journey as a contributor, please join our [Slack Community](http://kubefirst.io/slack). We have the `#contributors` channel where you can ask any questions or get help with anything contribution-related. For support as a user, please ask in the `#helping-hands` channel, or directly to @fharper (Fred in Slack), our Developer Advocate.
+If you need help in your kubefirst journey as a contributor, please join our [Slack Community](http://kubefirst.io/slack). We have the `#contributors` channel where you can ask any questions or get help with anything contribution-related. For support as a user, please ask in the `#helping-hands` channel, or directly to @fharper (Fred in Slack), our Developer Advocate.

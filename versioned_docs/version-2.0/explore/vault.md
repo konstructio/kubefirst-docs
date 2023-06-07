@@ -8,7 +8,7 @@ title: Vault
 
 ![Vault section of the handoff screen](../img/vault/handoff-screen.png)
 
-Your first login to Vault will be with the root token which has full administrative permissions. As mentioned in the handoff screen (the purple screen at the end of the installation), it is sotred in a secret named `vault-unseal-secret`, which is in the `vault` namespace of your newly deployed cluster. To read the value, use [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) (which is already in the `~/.k1/` tools folder), and run the following command:
+Your first login to Vault will be with the root token which has full administrative permissions. As mentioned in the handoff screen (the purple screen at the end of the installation), it is sorted in a secret named `vault-unseal-secret`, which is in the `vault` namespace of your newly deployed cluster. To read the value, use [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) (which is already in the `~/.k1/` tools folder), and run the following command:
 
 ```shell
 ~/.k1/tools/kubectl -n vault get secrets/vault-unseal-secret --template='{{index .data "root-token"}}' | base64 -d
@@ -24,11 +24,11 @@ While logged in with the root token, navigate to the secret at `Users -> kbot`. 
 
 When logging in with users instead of tokens, select method `Username` as the login method on the login screen. Enter `kbot` as the username, and paste the password you collected in the Password field and log in.
 
-![HashiCorp Vault Signin Page](../img/kubefirst/vault/vault-userpass.png)
+![HashiCorp Vault Sign in Page](../img/kubefirst/vault/vault-userpass.png)
 
 This is the login experience that your team will use when authenticating with Vault. Initially, there will only be a singular `kbot` user created that represents the kubefirst bot account. You can pull request additional admins and developers from your team onto the platform, and they will all log in using the Username method.
 
-Once a user is logged into Vault with Username auth, they will be automatically provided single-sign-on access to Argo Workflows, Argo CD, console, and GitLab applications.
+Once a user is logged into Vault with Username auth, they will be automatically provided single sign-on (SSO) access to Argo Workflows, Argo CD, and the [kubefirst Console application](https://github.com/kubefirst/console/).
 
 ### Kubernetes authentication
 
@@ -50,7 +50,7 @@ Here you can see we have two secrets stored at named `SECRET_ONE` and `SECRET_TW
 
 ### Creating Kubernetes Secrets From Vault Secrets
 
-If you look in your new metaphor repository in GitLab or GitHub, you'll find a helm template file at path `metaphor/charts/metaphor/templates/external-secrets.yaml`
+If you look in your new metaphor repository in GitLab or GitHub, you'll find a Helm template file at path `metaphor/charts/metaphor/templates/external-secrets.yaml`
 
 ```yaml
 apiVersion: "external-secrets.io/v1alpha1"
@@ -64,7 +64,7 @@ spec:
     name: {{ template "metaphor.fullname" . }}
   secretStoreRef:
     kind: ClusterSecretStore
-    name: vault-secrets-backend
+    name: vault-kv-secret
   refreshInterval: "10s"
   data:
     - remoteRef:
@@ -77,9 +77,9 @@ spec:
       secretKey: SECRET_TWO
 ```
 
-This is going to be a very common file type for you on the kubefirst platform. This Kubernetes resource deploys with metaphor, connecting to the `vault-secrets-backend` cluster secret store, and pulls secrets from the path specified in the values.yaml property `vaultSecretPath`. You can either pull all secrets from Vault into the Kubernetes secret, or as this secret demonstrates, you can also specify exactly which specific key/value pairs to pull when creating the secret.
+This is going to be a very common file type for you on the kubefirst platform. This Kubernetes resource deploys with metaphor, connecting to the `vault-kv-secret` cluster secret store, and pulls secrets from the path specified in the values.yaml property `vaultSecretPath`. You can either pull all secrets from Vault into the Kubernetes secret, or as this secret demonstrates, you can also specify exactly which specific key/value pairs to pull when creating the secret.
 
-The result will be a native Kubernetes secret, which can be used by your application. Since the path is driven by helm values.yaml values, the source for these secrets can be different in your different environments. For example, when you go to your gitops repository and look at `gitops/components/staging/metaphor/values.yaml` you'll see on the last line that we're pulling the staging secrets from the staging path in Vault.
+The result will be a native Kubernetes secret, which can be used by your application. Since the path is driven by Helm `values.yaml` values, the source for these secrets can be different in your different environments. For example, when you go to your `gitops` repository and look at `gitops/components/staging/metaphor/values.yaml` you'll see on the last line that we're pulling the staging secrets from the staging path in Vault.
 
 ```yaml
 metaphor:
@@ -121,7 +121,7 @@ metaphor-staging                   Opaque                                2      
 metaphor-tls                       kubernetes.io/tls                     2      12h
 ```
 
-#### 2. Get the yaml of the one named `metaphor-staging`
+#### 2. Get the YAML of the one named `metaphor-staging`
 
 ```shell
 kubectl -n staging get secret metaphor-staging -oyaml
@@ -135,7 +135,7 @@ kind: Secret
 metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"external-secrets.io/v1alpha1","kind":"ExternalSecret","metadata":{"annotations":{},"labels":{"argocd.argoproj.io/instance":"metaphor-staging","chart":"metaphor-0.1.0-rc.e54452a0"},"name":"metaphor-staging","namespace":"staging"},"spec":{"data":[{"remoteRef":{"key":"staging/metaphor","property":"SECRET_ONE"},"secretKey":"SECRET_ONE"},{"remoteRef":{"key":"staging/metaphor","property":"SECRET_TWO"},"secretKey":"SECRET_TWO"}],"refreshInterval":"10s","secretStoreRef":{"kind":"ClusterSecretStore","name":"vault-secrets-backend"},"target":{"name":"metaphor-staging"}}}
+      {"apiVersion":"external-secrets.io/v1alpha1","kind":"ExternalSecret","metadata":{"annotations":{},"labels":{"argocd.argoproj.io/instance":"metaphor-staging","chart":"metaphor-0.1.0-rc.e54452a0"},"name":"metaphor-staging","namespace":"staging"},"spec":{"data":[{"remoteRef":{"key":"staging/metaphor","property":"SECRET_ONE"},"secretKey":"SECRET_ONE"},{"remoteRef":{"key":"staging/metaphor","property":"SECRET_TWO"},"secretKey":"SECRET_TWO"}],"refreshInterval":"10s","secretStoreRef":{"kind":"ClusterSecretStore","name":"vault-kv-secret"},"target":{"name":"metaphor-staging"}}}
     reconcile.external-secrets.io/data-hash: fdc2f634a31c8e93dd8d47e940aa7939
   creationTimestamp: "2022-10-18T04:21:57Z"
   labels:
@@ -170,7 +170,7 @@ Now that you have native Kubernetes secrets available, you can use them however 
 ![Metaphor Secrets on GitLab](../img/kubefirst/vault/metaphor-secret-use-in-deployment.png)
 
 > Note: There are a ton of other ways secrets can be leveraged in your app, like
-[using secrets as files on pods](https://kubernetes.io/docs/concepts/configuration/secret/), or [storing your dockerhub login](https://kubernetes.io/docs/concepts/configuration/secret/#docker-config-secrets).
+[using secrets as files on pods](https://kubernetes.io/docs/concepts/configuration/secret/), or [storing your Docker Hub login](https://kubernetes.io/docs/concepts/configuration/secret/#docker-config-secrets).
 
 ## Tips
 
@@ -179,20 +179,20 @@ Now that you have native Kubernetes secrets available, you can use them however 
 Simple, if you are the owner of the user.
 
 - Log with the user on Vault: `https://vault.$yourdomain.com/ui/vault/auth?with=userpass`
-- Go to "Access" tab
-- Select "Auth Methods" (left side)
-- Select "userpass" (right side)
+- Go to `Access` tab
+- Select `Auth Methods` (left side)
+- Select `userpass` (right side)
 - Select your-user (right side)
 - Click Edit user (right side)
 - Fill new password (right side)
-- Click "Save" (right side)
+- Click `Save` (right side)
 
-![HashiCorp Vault Signin](../img/kubefirst/vault/kubefirst-1-11-vault-update-password.gif)
+![HashiCorp Vault Sign in](../img/kubefirst/vault/kubefirst-1-11-vault-update-password.gif)
 
 ### Who can change users password?
 
 - Yourself logged with your user/password
-- Somone with the Vault root token
+- Someone with the Vault root token
 
 Vault Policies references:
 
