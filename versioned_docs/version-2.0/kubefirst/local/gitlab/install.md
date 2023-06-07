@@ -6,7 +6,7 @@ title: Install
 
 `kubefirst` is the name of our CLI that installs the platform of the same name to your local or cloud environment.
 
-![kubefirst k3d with GitLab Cluster Diagram](@site/docs/img/local/gitlab/installation-diagram-light.png#light-mode)![kubefirst k3d with GitLab Cluster Diagram](@site/docs/img/local/gitlab/installation-diagram-dark.png#dark-mode)
+![kubefirst k3d with GitLab Cluster Diagram](../../../img/local/gitlab/installation-diagram-light.png#light-mode)![kubefirst k3d with GitLab Cluster Diagram](../../../img/local/gitlab/installation-diagram-dark.png#dark-mode)
 
 ## Prerequisites
 
@@ -46,7 +46,7 @@ kubefirst k3d create \
 
 Details about your execution will be logged to your `~/.k1/logs` directory. More information on `kubefirst k3d`, including optional flags, can be discovered by running `kubefirst k3d help`.
 
-We are able to create an ephemeral GitLab token that expires after 8 hours using a process that will prompt your browser to request access to your account. If you need a quick environment, this is a frictionless approach. However, if you need this environment for longer than 8 hours, which is probably the case, please follow our [GitHub Token Guide](@site/docs/aws/advanced/git-auth.mdx) and export a more permanent token to your terminal by using the following command:
+We are able to create an ephemeral GitLab token that expires after 8 hours using a process that will prompt your browser to request access to your account. If you need a quick environment, this is a frictionless approach. However, if you need this environment for longer than 8 hours, which is probably the case, please follow our [GitHub Token Guide](../../../explore/gitlab-token.md) and export a more permanent token to your terminal by using the following command:
 
 ```shell
 export GITLAB_TOKEN=gl_xxxxxxxx
@@ -64,11 +64,11 @@ After the ~5 minute installation, your browser will open a new browser tab at co
 
 ## Console UI Screen
 
-![kubefirst console screen](@site/docs/img/common/gitlab/console.png)
+![kubefirst console screen](../../../img/common/gitlab/console.png)
 
 ## Example of terminal output following cluster creation
 
-![terminal handoff](@site/docs/img/local/gitlab/handoff-screen.png)
+![terminal handoff](../../../img/local/gitlab/handoff-screen.png)
 
 ## Root credentials
 
@@ -78,7 +78,7 @@ To obtain your 3 initial passwords, run
 kubefirst k3d root-credentials
 ```
 
-![terminal handoff](@site/docs/img/common/kubefirst/root-credentials.png)
+![terminal handoff](../../../img/common/kubefirst/root-credentials.png)
 
 :::note the `kubefirst k3d root-credentials` command was introduced in 2.0.1
 
