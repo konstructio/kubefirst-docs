@@ -31,6 +31,13 @@ const config = {
       'classic',
       ({
         docs: {
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: 'next',
+              path: 'next',
+            },
+          },
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [require('remark-docusaurus-tabs')],
@@ -68,38 +75,38 @@ const config = {
           // href: 'https://docs.kubefirst.io/',
         },
         items: [
-            {
-              type: 'docSidebar',
-              position: 'left',
-              sidebarId: 'aws',
-              label: 'AWS',
-            },
-            {
-              type: 'docSidebar',
-              position: 'left',
-              sidebarId: 'civo',
-              label: 'Civo',
-            },
-            {
-              type: 'docSidebar',
-              position: 'left',
-              sidebarId: 'k3d',
-              label: 'K3D (local)',
-            },
-            {
-              type: 'docsVersionDropdown',
-              position: 'right',
-            },
-            {
-              href: 'https://github.com/kubefirst/kubefirst',
-              label: 'GitHub',
-              position: 'right',
-            },
-            {
-              href: 'https:/kubefirst.io',
-              label: 'kubefirst.io',
-              position: 'right',
-            },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'aws',
+            label: 'AWS',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'civo',
+            label: 'Civo',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'k3d',
+            label: 'K3D (local)',
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+          },
+          {
+            href: 'https://github.com/kubefirst/kubefirst',
+            label: 'GitHub',
+            position: 'right',
+          },
+          {
+            href: 'https:/kubefirst.io',
+            label: 'kubefirst.io',
+            position: 'right',
+          },
         ],
       },
       footer: {
