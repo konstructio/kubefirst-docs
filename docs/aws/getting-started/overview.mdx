@@ -29,7 +29,7 @@ import * as config from "@site/docs/constants.js"
 import GitHubOverview from '@site/docs/aws/partials/github/_overview.mdx'
 import GitLabOverview from '@site/docs/aws/partials/gitlab/_overview.mdx'
 
-<Tabs groupId="git_provider" queryString>
+<Tabs groupId="git_provider" defaultValue="github" queryString>
     <TabItem 
       attributes={{className: styles.github}}
       value="github"
@@ -40,9 +40,6 @@ import GitLabOverview from '@site/docs/aws/partials/gitlab/_overview.mdx'
         </div>
       }
     >
-      <div class="video-wrapper">
-        <iframe width="784" height="441" src="https://www.youtube.com/embed/KEUOaNMUqOM" frameborder="0" allowfullscreen></iframe>
-      </div>
       <GitHubOverview />
     </TabItem>
     <TabItem 
