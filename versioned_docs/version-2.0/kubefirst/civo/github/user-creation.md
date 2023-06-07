@@ -43,7 +43,7 @@ git push --set-upstream origin new-user
 
 Create a pull request. This will kick off the Atlantis workflow. Within a minute or so of submitting the pull request, a comment will appear on the pull request that shows the Terraform plan with the changes it will be making to your infrastructure.
 
-![Atlantis Plan Comment Example](@site/docs/img/common/github/atlantis-comments.png)
+![Atlantis Plan Comment Example](../../../img/common/github/atlantis-comments.png)
 
 To apply these changes, you or someone in the organization can submit a comment on that pull request with the following comment text:
 
@@ -57,10 +57,10 @@ Atlantis will always run plans automatically for you when a pull request is open
 
 Any new users you have created through this process will have their temporary initial passwords stored in your Vault cluster. You can access Vault using the root login credentials provided to you during your kubefirst installation. Only the root Vault token can access these secrets. You will find your users' initial passwords in the Vault secret store `/secrets/users/<username>`.
 
-![vault token login](@site/docs/img/kubefirst/local/vault-token-login.png)
+![vault token login](../../../img/kubefirst/local/vault-token-login.png)
 
 Once you've provided them their initial password, they can update their own password throughout the platform by updating their user password entity in Vault. Anyone can change their own password, and Admins can reset anyone's password. These rules, just like everything else on kubefirst, can be configured in your new `gitops` repository.
 
-![default user creation](@site/docs/img/kubefirst/local/default-user-creation.png)
+![default user creation](../../../img/kubefirst/local/default-user-creation.png)
 
 The admins and developers that you add through IaC will automatically propagate to all tools due to the Vault OIDC provider that's preconfigured throughout the kubefirst platform tools.
