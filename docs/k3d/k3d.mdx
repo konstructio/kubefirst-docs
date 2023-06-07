@@ -3,8 +3,10 @@ hide_title: true
 sidebar_label: Overview
 sidebar_position: 1
 # custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
+description: an overview of the kubefirst platform
 image: "https://docs.kubefirst.io/img/logo.svg"
 ---
+
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import styles from "@site/docs/stylesheets/tabs.module.css";
@@ -28,6 +30,25 @@ import * as config from "@site/docs/constants.js"
 import GitHubOverview from '@site/docs/k3d/partials/github/_overview.mdx'
 import GitLabOverview from '@site/docs/k3d/partials/gitlab/_overview.mdx'
 
+
+
+# Overview
+
+The k3d provisioning process will:
+- create a gitops git repository from our gitops-template and store it in your git provider
+- create a k3d cluster on your localhost
+- install argocd bootstrapped against your gitops repo so your repo powers the platform
+- install all the platform apps using gitops (gitops repo `/registry` folder)
+- apply terraform to configure Vault (gitops repo `/terraform/vault` folder)
+- bind a webhook to ngrok in cluster so you can automate terraform executions through atlantis
+- integrate argo workflows with your git provider
+- install argo workflow automation to build containers, publish charts, and provide gitops delivery pipelines
+- install a sample app git repository that uses this automation to demonstrate app delivery (metaphor repo)
+
+![kubefirst k3d with GitHub Cluster Diagram](../img/local/github/installation-diagram-light.png#light-mode)![kubefirst k3d with GitHub Cluster Diagram](../img/local/github/installation-diagram-dark.png#dark-mode)
+
+# Applications
+
 <Tabs groupId="git_provider" defaultValue="github" queryString>
     <TabItem 
       attributes={{className: styles.github}}
@@ -39,9 +60,6 @@ import GitLabOverview from '@site/docs/k3d/partials/gitlab/_overview.mdx'
         </div>
       }
     >
-      <div class="video-wrapper">
-        <iframe width="784" height="441" src="https://www.youtube.com/embed/KEUOaNMUqOM" frameborder="0" allowfullscreen></iframe>
-      </div>
       <GitHubOverview />
     </TabItem>
     <TabItem 
