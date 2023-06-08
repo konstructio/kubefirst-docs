@@ -1,62 +1,37 @@
-## Platform User Onboarding
+# GitHub Repositories
 
-In this tutorial we will show how to add users to your platform through [Atlantis](https://www.runatlantis.io/), which will allow a preview of how changes made will be expressed through Terraform before branches are merged into your repository.
+When you deploy a cluster on Civo using kubefirst, new repositories will be added to your organization's GitHub account.
 
-Navigate to the `gitops` repository in your GitHub org, clone the contents, and create a new branch:
+![GitHub repositories](../../../img/common/github/repositories.png)
 
-```shell
-cd gitops
-git checkout -b new-user
-```
+## Repositories
 
-The folder `civo-github/terraform/users/admins` contains two separate files that represent admin users: `admin-one.tf` (commented-out), and the kbot user in the `kbot.tf` file. Here's the module from `admin-one.tf`:
+### gitops
+
+The `gitops` repository houses all of our IAC and all your GitOps configurations. The infrastructure created by kubefirst was produced by some combination of Terraform and Argo CD. You modify the infrastructure or add new applications to your cluster by creating a pull request to your new `gitops` repository.
+
+### metaphor
+
+`metaphor` is a suite of demo microservice applications to demonstrate how an application can be integrated into the kubefirst platform following best practices. It is described in more details [here](../../../common/metaphor.mdx).
+
+## Repositories Management
+
+These GitHub repositories are being managed in Terraform. As you need additional GitHub repositories, just add a new section of Terraform code to `civo-github/terraform/github/repos.tf`:
 
 ```terraform
-module "admin_one" {
-  source = "./modules/user/github"
+module "your_repo_name" {
+  source = "./modules/repository"
 
-  acl_policies            = ["admin"]
-  email                   = "your.admin@your-company.io"
-  first_name              = "Admin"
-  github_username         = "admin-one-github-username"
-  last_name               = "One"
-  team_id                 = data.github_team.admins.id
-  username                = "aone"
-  user_disabled           = false
-  userpass_accessor       = data.vault_auth_backend.userpass.accessor
+  repo_name          = "your_repo_name"
+  archive_on_destroy = false
+  auto_init          = false # set to false if importing an existing repository
+  team_developers_id = github_team.developers.id
+  team_admins_id     = github_team.admins.id
 }
 ```
 
-Uncomment and edit this code to replace the values for the `email`, `first_name`, `github_username`, `last_name`, and `username` before pushing to your branch.
+## Making Terraform Changes
 
-Note: If you are doing using this walkthrough simply to test Atlantis, you do not need to update these fields to be accurate.
+To make infrastructure and configuration changes with Terraform, simply open a pull request against any of the Terraform directory folders in the `gitops` repository. Your pull request will automatically provide plans, state locks, and applies, and even comment in the merge request itself. You'll have a simple, peer reviewable, auditable changelog of all infrastructure and configuration changes.
 
-```shell
-git add .
-git commit -m feat: add new user
-git push --set-upstream origin new-user
-```
-
-Create a pull request. This will kick off the Atlantis workflow. Within a minute or so of submitting the pull request, a comment will appear on the pull request that shows the Terraform plan with the changes it will be making to your infrastructure.
-
-![Atlantis Plan Comment Example](../../../img/common/github/atlantis-comments.png)
-
-To apply these changes, you or someone in the organization can submit a comment on that pull request with the following comment text:
-
-`atlantis apply`
-
-Doing so will instruct Atlantis to apply the plan. It will report back with the results of the apply within a minute or so.
-
-NOTE: Atlantis merges your pull request automatically once an apply is successfully executed. Don't merge Terraform pull requests yourself.
-
-Atlantis will always run plans automatically for you when a pull request is opened that changes files mapped in `atlantis.yaml`.
-
-Any new users you have created through this process will have their temporary initial passwords stored in your Vault cluster. You can access Vault using the root login credentials provided to you during your kubefirst installation. Only the root Vault token can access these secrets. You will find your users' initial passwords in the Vault secret store `/secrets/users/<username>`.
-
-![vault token login](../../../img/kubefirst/local/vault-token-login.png)
-
-Once you've provided them their initial password, they can update their own password throughout the platform by updating their user password entity in Vault. Anyone can change their own password, and Admins can reset anyone's password. These rules, just like everything else on kubefirst, can be configured in your new `gitops` repository.
-
-![default user creation](../../../img/kubefirst/local/default-user-creation.png)
-
-The admins and developers that you add through IaC will automatically propagate to all tools due to the Vault OIDC provider that's preconfigured throughout the kubefirst platform tools.
+![Atlantis GitHub](../../../img/common/github/atlantis.png)
