@@ -78,6 +78,12 @@ const config = {
           {
             type: 'docSidebar',
             position: 'left',
+            sidebarId: 'k3d',
+            label: 'K3D (local)',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
             sidebarId: 'aws',
             label: 'AWS',
           },
@@ -86,12 +92,6 @@ const config = {
             position: 'left',
             sidebarId: 'civo',
             label: 'Civo',
-          },
-          {
-            type: 'docSidebar',
-            position: 'left',
-            sidebarId: 'k3d',
-            label: 'K3D (local)',
           },
           {
             type: 'docsVersionDropdown',
