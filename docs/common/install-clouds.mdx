@@ -69,9 +69,38 @@ Then connect to the provisioning tool at
 The kubefirst.dev domain is only available after `kubefirst launch up` and resolves to the host machine.
 
 :::
+
+# CLI GitHub
+
+```shell
+export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxx
+
+kubefirst aws create \
+  --alerts-email yourdistro@your-company.io \
+  --domain-name your-company.io \
+  --cluster-name kubefirst-mgmt \
+  --github-org your-github-organization-name
+```
+
+# CLI GitLab
+
+```shell
+export GITLAB_TOKEN=glpat-xxxxxxxxxxxxxxx
+
+kubefirst aws create \
+  --alerts-email yourdistro@your-company.io \
+  --git-provider gitlab \
+  --gitlab-group your-gitlab-group \
+  --domain-name your-domain.io \
+  --cluster-name kubefirst
+```
+
 <!--/tabs-->
 
-## Step 2: Install your first management cluster
+## Step 2: Install your kubefirst management cluster
+
+:::note: if you installed via CLI GitHub/GitLab you can skip this step
+:::
 
 Provide details about your preferred git provider, cloud provider, access, and cluster details and let kubefirst do the rest.
 
