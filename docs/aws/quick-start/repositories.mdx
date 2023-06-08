@@ -1,9 +1,9 @@
 ---
 hide_title: true
-sidebar_label: Overview
-sidebar_position: 1
+sidebar_label: Repositories
+sidebar_position: 2
 # custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
-description: an overview of the kubefirst platform on aws elastic kubernetes service (EKS)
+description: the git repositories created by the kubefirst platform
 image: "https://docs.kubefirst.io/img/logo.svg"
 ---
 import Tabs from "@theme/Tabs";
@@ -26,13 +26,13 @@ import * as config from "@site/docs/constants.js"
   </div>
 </div>
 
-import GitHubOverview from '@site/docs/aws/partials/github/_overview.mdx'
-import GitLabOverview from '@site/docs/aws/partials/gitlab/_overview.mdx'
+import GitHubRepositories from '@site/docs/aws/partials/github/_repositories.mdx'
+import GitLabRepositories from '@site/docs/aws/partials/gitlab/_repositories.mdx'
 
 <Tabs groupId="git_provider" defaultValue="github" queryString>
     <TabItem 
       attributes={{className: styles.github}}
-      value="github"
+      value="github" 
       label={
         <div className="git-tab">
           <img src="https://assets.kubefirst.com/console/github.svg" />
@@ -40,18 +40,18 @@ import GitLabOverview from '@site/docs/aws/partials/gitlab/_overview.mdx'
         </div>
       }
     >
-      <GitHubOverview />
+      <GitHubRepositories />
     </TabItem>
     <TabItem 
-      attributes={{className: styles.gitlab}}
       value="gitlab"
+      attributes={{className: styles.gitlab}}
       label={
         <div className="git-tab">
           <img src="https://assets.kubefirst.com/console/gitlab.svg" />
           <span>GitLab</span>
         </div>
       }
-    > 
-      <GitLabOverview />
+    >
+      <GitLabRepositories />
     </TabItem>
 </Tabs>
