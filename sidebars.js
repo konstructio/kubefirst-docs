@@ -40,7 +40,7 @@ const sidebars = {
     'aws/credits'
   ],
   civo: [
-    'civo/civo',
+    'civo/overview',
     {
       'Quick Start': [
         {
