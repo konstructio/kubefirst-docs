@@ -66,6 +66,7 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
+      metadata: [{name: 'keywords', content: 'kubernetes, gitops, ci, cd, argocd, aws, civo, k3d'}],
       navbar: {
         title: 'Kubefirst',
         logo: {

@@ -1,3 +1,11 @@
+---
+hide_title: true
+sidebar_label: Console UI
+sidebar_position: 1
+# custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
+image: "https://docs.kubefirst.io/img/logo.svg"
+---
+
 There are a few ways to install kubefirst, whether you have a cluster already or don't.
 
 <!-- TODO: 2.1 - update chart version, arm/amd, atlas, etc -->
@@ -64,43 +72,13 @@ Then connect to the provisioning tool at
 [https://console.kubefirst.dev](https://console.kubefirst.dev )
 
 :::note
-
 The kubefirst.dev domain is only available after `kubefirst launch up` and resolves to the host machine.
-
 :::
-
-# CLI GitHub
-
-```shell
-export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxx
-
-kubefirst aws create \
-  --alerts-email yourdistro@your-company.io \
-  --domain-name your-company.io \
-  --cluster-name kubefirst-mgmt \
-  --github-org your-github-organization-name
-```
-
-# CLI GitLab
-
-```shell
-export GITLAB_TOKEN=glpat-xxxxxxxxxxxxxxx
-
-kubefirst aws create \
-  --alerts-email yourdistro@your-company.io \
-  --git-provider gitlab \
-  --gitlab-group your-gitlab-group \
-  --domain-name your-domain.io \
-  --cluster-name kubefirst
-```
 
 <!--/tabs-->
 
 ## Step 2: Install your kubefirst management cluster
 
-:::note: if you installed via CLI GitHub/GitLab you can skip this step
-:::
-
 Provide details about your preferred git provider, cloud provider, access, and cluster details and let kubefirst do the rest.
 
-![kubefirst user interface showing cloud and git options](../img/console/installer.png)
+![kubefirst user interface showing cloud and git options](../../../img/console/installer.png)

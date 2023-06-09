@@ -1,9 +1,8 @@
 ---
 hide_title: true
-sidebar_label: Install
+sidebar_label: Console UI
 sidebar_position: 1
 # custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
-description: the git repositories created by the kubefirst platform
 image: "https://docs.kubefirst.io/img/logo.svg"
 ---
 
@@ -27,7 +26,7 @@ favorite git provider.
 helm repo add kubefirst https://charts.kubefirst.com
 helm repo update
 
-helm install kubefirst --create-namespace --version 0.0.11 kubefirst/kubefirst
+helm install kubefirst --create-namespace kubefirst/kubefirst
 
 k port-forward svc/kubefirst-console 8080:8080
 ```
@@ -48,7 +47,6 @@ helm repo add kubefirst https://charts.kubefirst.com
 helm repo update
 
 helm install kubefirst --create-namespace \
---version 0.0.11 \
 --set=mongodb.image.repository=arm64v8/mongo \
 --set=mongodb.image.tag=latest \
 --set=mongodb.persistence.mountPath=/data/db \
@@ -74,43 +72,13 @@ Then connect to the provisioning tool at
 [https://console.kubefirst.dev](https://console.kubefirst.dev )
 
 :::note
-
 The kubefirst.dev domain is only available after `kubefirst launch up` and resolves to the host machine.
-
 :::
-
-# CLI GitHub
-
-```shell
-export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxx
-
-kubefirst civo create \
-  --alerts-email yourdistro@your-company.io \
-  --domain-name your-company.io \
-  --cluster-name kubefirst-mgmt \
-  --github-org your-github-organization-name
-```
-
-# CLI GitLab
-
-```shell
-export GITLAB_TOKEN=glpat-xxxxxxxxxxxxxxx
-
-kubefirst civo create \
-  --alerts-email yourdistro@your-company.io \
-  --git-provider gitlab \
-  --gitlab-group your-gitlab-group \
-  --domain-name your-domain.io \
-  --cluster-name kubefirst
-```
 
 <!--/tabs-->
 
 ## Step 2: Install your kubefirst management cluster
 
-:::note: if you installed via CLI GitHub/GitLab you can skip this step
-:::
-
 Provide details about your preferred git provider, cloud provider, access, and cluster details and let kubefirst do the rest.
 
-![kubefirst user interface showing cloud and git options](../../img/console/installer.png)
+![kubefirst user interface showing cloud and git options](../../../img/console/installer.png)
