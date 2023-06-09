@@ -13,7 +13,8 @@ body:
       options:
         - Missing Information
         - Wrong Information
-        - Unclear Documentation
+        - Unclear Information
+        - Something's not working
     validations:
       required: true
   - type: input
@@ -22,6 +23,12 @@ body:
       label: What page is concerned?
       description: If needed, URL to the page with missing or unclear information
       placeholder: https://docs.kubefirst.io/
+  - type: input
+    id: version
+    attributes:
+      label: What version of the docs?
+      description: The documentation version in the top right combobox.
+      placeholder: ALL, Next, 2.0, 2.1, ...
   - type: textarea
     id: issue
     attributes:
