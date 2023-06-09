@@ -43,7 +43,7 @@ You will also need to [install](https://developer.hashicorp.com/terraform/tutori
 Once you have the `kubeconfig` file for your cluster, retrieve the Vault token:
 
 ```bash
-kubectl get secret -n vault vault-unseal-secret -ojson | jq '.data' | jq 'root-token'
+kubectl -n vault get secrets/vault-unseal-secret --template='{{index .data "root-token"}}' | base64 -d
 ```
 
 This assumes you've exported the environment variable `KUBECONFIG=/path/to/my/kubeconfig` - if not, you can add `--kubeconfig /path/to/my/kubeconfig` just after `kubectl`.
