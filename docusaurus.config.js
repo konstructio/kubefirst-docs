@@ -71,8 +71,7 @@ const config = {
         logo: {
           alt: 'Kubefirst website',
           src: 'img/logo.svg',
-          href: 'http://localhost:3000/next',
-          // href: 'https://docs.kubefirst.io/',
+          href: 'https://docs.kubefirst.io/',
         },
         items: [
           {
