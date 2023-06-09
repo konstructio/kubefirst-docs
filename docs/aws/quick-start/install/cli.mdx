@@ -36,7 +36,7 @@ export const TabLabel = ({ imgSrc, label }) => (
     value="github"
     label={<TabLabel imgSrc={config.GITHUB_LOGO_URL} label="GitHub" />}
   >
-  <GitHubPrerequisites />
+  <CommonGitHubPrerequisites />
 
   <CommonCloudPrerequisites />
 
@@ -55,7 +55,7 @@ export const TabLabel = ({ imgSrc, label }) => (
     attributes={{ className: styles.gitlab }}
     label={<TabLabel imgSrc={config.GITLAB_LOGO_URL} label="GitLab" />}
   >
-  <GitLabPrerequisites />
+  <CommonGitLabPrerequisites />
 
   <CommonCloudPrerequisites />
 
