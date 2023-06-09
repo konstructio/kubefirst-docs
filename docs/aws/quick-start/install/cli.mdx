@@ -13,11 +13,10 @@ import GitHubClusterCreateCmd from "@site/docs/aws/partials/github/_cluster-crea
 import GitLabClusterCreateCmd from "@site/docs/aws/partials/gitlab/_cluster-create.mdx";
 
 import CommonCloudPrerequisites from "@site/docs/aws/partials/common/_prerequisites.mdx";
-import CommonClusterConnectivity from "@site/docs/civo/partials/common/_cluster-connectivity.mdx";
+import CommonClusterConnectivity from "@site/docs/aws/partials/common/_cluster-connectivity.mdx";
 import CommonGitHubPrerequisites from "@site/docs/common/partials/github/_prerequisites.mdx";
 import CommonGitLabPrerequisites from "@site/docs/common/partials/gitlab/_prerequisites.mdx";
-import CommonInstalledApplications from "@site/docs/civo/partials/common/_installed-applications.mdx";
-import CommonRootCredentialsCmd from "@site/docs/civo/partials/common/_root-credentials-cmd.mdx";
+import AWSRootCredentialsCmd from "@site/docs/aws/partials/common/_root-credentials-cmd.mdx";
 import CommonTerminalOutput from "@site/docs/common/partials/common/_terminal-output.mdx";
 
 import * as config from "@site/docs/constants.js"
@@ -44,11 +43,10 @@ export const TabLabel = ({ imgSrc, label }) => (
 
   <CommonTerminalOutput />
   
-  <CommonRootCredentialsCmd />
+  <AWSRootCredentialsCmd />
 
   <CommonClusterConnectivity />
 
-  <CommonInstalledApplications />
   </TabItem>
   <TabItem
     value="gitlab"
@@ -63,7 +61,7 @@ export const TabLabel = ({ imgSrc, label }) => (
 
   <CommonTerminalOutput />
 
-  <CommonRootCredentialsCmd />
+  <AWSRootCredentialsCmd />
 
   <CommonClusterConnectivity />
 
