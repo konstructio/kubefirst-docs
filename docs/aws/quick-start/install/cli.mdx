@@ -9,16 +9,16 @@ image: "https://docs.kubefirst.io/img/logo.svg"
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-import GitHubPrerequisites from "@site/docs/common/partials/github/_prerequisites.mdx";
-import GitHubClusterCreateCmd from "@site/docs/civo/partials/github/_cluster-create.mdx";
+import GitHubClusterCreateCmd from "@site/docs/aws/partials/github/_cluster-create.mdx";
+import GitLabClusterCreateCmd from "@site/docs/aws/partials/gitlab/_cluster-create.mdx";
 
-import GitLabPrerequisites from "@site/docs/common/partials/gitlab/_prerequisites.mdx";
-import GitLabClusterCreateCmd from "@site/docs/civo/partials/gitlab/_cluster-create.mdx";
-
-import CommonCloudPrerequisites from "@site/docs/civo/partials/common/_prerequisites.mdx";
+import CommonCloudPrerequisites from "@site/docs/aws/partials/common/_prerequisites.mdx";
 import CommonClusterConnectivity from "@site/docs/civo/partials/common/_cluster-connectivity.mdx";
+import CommonGitHubPrerequisites from "@site/docs/common/partials/github/_prerequisites.mdx";
+import CommonGitLabPrerequisites from "@site/docs/common/partials/gitlab/_prerequisites.mdx";
 import CommonInstalledApplications from "@site/docs/civo/partials/common/_installed-applications.mdx";
 import CommonRootCredentialsCmd from "@site/docs/civo/partials/common/_root-credentials-cmd.mdx";
+import CommonTerminalOutput from "@site/docs/common/partials/common/_terminal-output.mdx";
 
 import * as config from "@site/docs/constants.js"
 import styles from "@site/docs/stylesheets/tabs.module.css";
@@ -42,6 +42,8 @@ export const TabLabel = ({ imgSrc, label }) => (
 
   <GitHubClusterCreateCmd />
 
+  <CommonTerminalOutput />
+  
   <CommonRootCredentialsCmd />
 
   <CommonClusterConnectivity />
@@ -58,6 +60,8 @@ export const TabLabel = ({ imgSrc, label }) => (
   <CommonCloudPrerequisites />
 
   <GitLabClusterCreateCmd />
+
+  <CommonTerminalOutput />
 
   <CommonRootCredentialsCmd />
 

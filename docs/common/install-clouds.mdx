@@ -18,7 +18,7 @@ favorite git provider.
 helm repo add kubefirst https://charts.kubefirst.com
 helm repo update
 
-helm install kubefirst --create-namespace --version 0.0.11 kubefirst/kubefirst
+helm install kubefirst --create-namespace kubefirst/kubefirst
 
 k port-forward svc/kubefirst-console 8080:8080
 ```
@@ -39,7 +39,6 @@ helm repo add kubefirst https://charts.kubefirst.com
 helm repo update
 
 helm install kubefirst --create-namespace \
---version 0.0.11 \
 --set=mongodb.image.repository=arm64v8/mongo \
 --set=mongodb.image.tag=latest \
 --set=mongodb.persistence.mountPath=/data/db \
