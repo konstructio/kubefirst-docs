@@ -104,7 +104,7 @@ const config = {
           },
           {
             href: 'https:/kubefirst.io',
-            label: 'kubefirst.io',
+            label: 'Website',
             position: 'right',
           },
         ],
