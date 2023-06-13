@@ -3,7 +3,7 @@ hide_title: true
 sidebar_label: Overview
 sidebar_position: 1
 # custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
-description: an overview of kubefirst on a civo kubernetes cluster
+description: an overview of kubefirst on a gcp kubernetes cluster
 image: "https://docs.kubefirst.io/img/logo.svg"
 ---
 import Tabs from "@theme/Tabs";
@@ -12,17 +12,17 @@ import styles from "@site/docs/stylesheets/tabs.module.css";
 import ReactDom from 'react-dom'
 import * as config from "@site/docs/constants.js"
 
-import GitHubOverview from '@site/docs/civo/partials/github/_overview.mdx'
-import GitLabOverview from '@site/docs/civo/partials/gitlab/_overview.mdx'
+import GitHubOverview from '@site/docs/gcp/partials/github/_overview.mdx'
+import GitLabOverview from '@site/docs/gcp/partials/gitlab/_overview.mdx'
 import CloudBanner from '@site/src/components/CloudBanner/CloudBanner.jsx'
 
-<CloudBanner cloudImgUrl={config.CIVO_LOGO_URL} />
+<CloudBanner cloudImgUrl={config.gcp_LOGO_URL} />
 
 # Overview
 
-The Civo provisioning process will:
+The gcp provisioning process will:
 - create a gitops git repository from our gitops-template and store it in your git provider
-- create a kubernetes cluster in the Civo cloud
+- create a kubernetes cluster in the gcp cloud
 - install argocd bootstrapped against your gitops repo so your repo powers the platform
 - install all the platform apps using gitops (gitops repo `/registry` folder)
 - apply terraform to configure Vault (gitops repo `/terraform/vault` folder)
@@ -31,7 +31,7 @@ The Civo provisioning process will:
 - install argo workflow [cluster workflow templates](https://argoproj.github.io/argo-workflows/cluster-workflow-templates/#cluster-workflow-templates) to build containers, publish charts, and provide gitops delivery pipelines
 - install a sample app git repository that uses this automation to demonstrate app delivery (metaphor repo)
 
-![kubefirst Civo with GitLab Cluster Diagram](../img/civo/gitlab/installation-diagram-light.png#light-mode)![kubefirst Civo with GitLab Cluster Diagram](../img/civo/gitlab/installation-diagram-dark.png#dark-mode)
+![kubefirst gcp with GitLab Cluster Diagram](../img/gcp/gitlab/installation-diagram-light.png#light-mode)![kubefirst gcp with GitLab Cluster Diagram](../img/gcp/gitlab/installation-diagram-dark.png#dark-mode)
 
 # Applications
 

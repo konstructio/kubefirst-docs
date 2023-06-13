@@ -1,6 +1,6 @@
 # GitLab Repositories
 
-When you install the Civo version of kubefirst, 2 new repositories will be added to your GitLab project as shown here.
+When you install the gcp version of kubefirst, 2 new repositories will be added to your GitLab project as shown here.
 
 ![GitLab repositories](../../../img/common/gitlab/repositories.png)
 
@@ -16,7 +16,7 @@ The GitOps repo houses all of our IAC and all our GitOps configurations. All of 
 
 ## GitLab Repository Management
 
-These GitLab projects (repositories) are being managed in Terraform. As you need additional GitLab projects, just add a new section of Terraform code to `civo-gitlab/terraform/gitlab/projects.tf`:
+These GitLab projects (repositories) are being managed in Terraform. As you need additional GitLab projects, just add a new section of Terraform code to `gcp-gitlab/terraform/gitlab/projects.tf`:
 
 ```terraform
 module "your_repo_name" {
