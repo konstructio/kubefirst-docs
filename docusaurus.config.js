@@ -31,13 +31,13 @@ const config = {
       'classic',
       ({
         docs: {
-          // lastVersion: 'current',
-          // versions: {
-          //   current: {
-          //     label: 'next',
-          //     path: 'next',
-          //   },
-          // },
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: 'next',
+              path: 'next',
+            },
+          },
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [require('remark-docusaurus-tabs')],
@@ -92,6 +92,12 @@ const config = {
             position: 'left',
             sidebarId: 'civo',
             label: 'Civo',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'gcp',
+            label: 'GCP',
           },
           {
             type: 'docsVersionDropdown',
