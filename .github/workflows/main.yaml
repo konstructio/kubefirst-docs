@@ -6,7 +6,7 @@ env:
 on:
   push:
     branches:
-      - k8s-hosted
+      - main
 jobs:
   publish:
     runs-on: self-hosted
