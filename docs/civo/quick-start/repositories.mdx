@@ -11,7 +11,8 @@ import TabItem from "@theme/TabItem";
 import styles from "@site/docs/stylesheets/tabs.module.css";
 import ReactDom from 'react-dom'
 import * as config from "@site/docs/constants.js"
-
+import GitHubRepositories from '@site/docs/civo/partials/github/_repositories.mdx'
+import GitLabRepositories from '@site/docs/civo/partials/gitlab/_repositories.mdx'
 
 <div
   style={{
@@ -24,9 +25,6 @@ import * as config from "@site/docs/constants.js"
     <img src={config.CIVO_LOGO_URL} height="50" width="120" />
   </div>
 </div>
-
-import GitHubRepositories from '@site/docs/civo/partials/github/_repositories.mdx'
-import GitLabRepositories from '@site/docs/civo/partials/gitlab/_repositories.mdx'
 
 <Tabs groupId="git_provider" defaultValue="github" queryString>
     <TabItem 
