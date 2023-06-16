@@ -12,7 +12,7 @@ const config = {
 
   // Set the production url of your site here
   url: 'https://docs.kubefirst.io',
-  baseUrl: process.env.BASEURL || "/",
+  baseUrl: process.env.BASEURL || '/',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -25,19 +25,18 @@ const config = {
     locales: ['en'],
   },
 
-
   presets: [
     [
       'classic',
-      ({
+      {
         docs: {
-          // lastVersion: 'current',
-          // versions: {
-          //   current: {
-          //     label: 'next',
-          //     path: 'next',
-          //   },
-          // },
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: 'next',
+              path: 'next',
+            },
+          },
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [require('remark-docusaurus-tabs')],
@@ -45,18 +44,21 @@ const config = {
         blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
-        }
-      }),
+        },
+      },
     ],
   ],
 
-  themes: ['docusaurus-theme-search-typesense', '@saucelabs/theme-github-codeblock'],
+  themes: [
+    'docusaurus-theme-search-typesense',
+    '@saucelabs/theme-github-codeblock',
+  ],
 
   plugins: [
     [
       '@docusaurus/plugin-google-gtag',
       {
-        trackingID: 'GTM-KZLF3TJ'
+        trackingID: 'GTM-KZLF3TJ',
       },
     ],
     [
@@ -65,15 +67,24 @@ const config = {
         redirects: [
           {
             to: '/k3d/quick-start/install',
-            from: ['/kubefirst/local/github/install', '/kubefirst/local/gitlab/install'],
+            from: [
+              '/kubefirst/local/github/install',
+              '/kubefirst/local/gitlab/install',
+            ],
           },
           {
             to: '/aws/quick-start/install/cli',
-            from: ['/kubefirst/aws/github/install', '/kubefirst/aws/gitlab/install'],
+            from: [
+              '/kubefirst/aws/github/install',
+              '/kubefirst/aws/gitlab/install',
+            ],
           },
           {
             to: '/civo/quick-start/install/cli',
-            from: ['/kubefirst/civo/github/install', '/kubefirst/civo/gitlab/install'],
+            from: [
+              '/kubefirst/civo/github/install',
+              '/kubefirst/civo/gitlab/install',
+            ],
           },
           {
             to: '/k3d/overview',
@@ -89,7 +100,12 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
-      metadata: [{name: 'keywords', content: 'kubernetes, gitops, ci, cd, argocd, aws, civo, k3d'}],
+      metadata: [
+        {
+          name: 'keywords',
+          content: 'kubernetes, gitops, ci, cd, argocd, aws, civo, k3d',
+        },
+      ],
       navbar: {
         title: 'Kubefirst',
         logo: {
@@ -115,6 +131,12 @@ const config = {
             position: 'left',
             sidebarId: 'civo',
             label: 'Civo',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'vultr',
+            label: 'Vultr',
           },
           {
             type: 'docsVersionDropdown',
@@ -181,9 +203,8 @@ const config = {
           apiKey: 'AeeRpiguwfTpmcKHGbBkTmUCkjoPg8nh',
         },
         contextualSearch: true,
-      }
+      },
     }),
-
 };
 
 module.exports = config;
