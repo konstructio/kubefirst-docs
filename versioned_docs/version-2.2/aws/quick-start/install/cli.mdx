@@ -1,0 +1,69 @@
+---
+hide_title: true
+sidebar_label: CLI
+sidebar_position: 2
+# custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
+image: "https://docs.kubefirst.io/img/logo.svg"
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import GitHubClusterCreateCmd from "@site/docs/aws/partials/github/_cluster-create.mdx";
+import GitLabClusterCreateCmd from "@site/docs/aws/partials/gitlab/_cluster-create.mdx";
+
+import CommonCloudPrerequisites from "@site/docs/aws/partials/common/_prerequisites.mdx";
+import CommonClusterConnectivity from "@site/docs/aws/partials/common/_cluster-connectivity.mdx";
+import CommonGitHubPrerequisites from "@site/docs/common/partials/github/_prerequisites.mdx";
+import CommonGitLabPrerequisites from "@site/docs/common/partials/gitlab/_prerequisites.mdx";
+import AWSRootCredentialsCmd from "@site/docs/aws/partials/common/_root-credentials-cmd.mdx";
+import CommonTerminalOutput from "@site/docs/common/partials/common/_terminal-output.mdx";
+
+import * as config from "@site/docs/constants.js"
+import styles from "@site/docs/stylesheets/tabs.module.css";
+
+export const TabLabel = ({ imgSrc, label }) => (
+  <div className="git-tab">
+    <img src={imgSrc} />
+    <span>{label}</span>
+  </div>
+);
+
+<Tabs groupId="git_provider" defaultValue="github" queryString>
+  <TabItem
+    attributes={{ className: styles.github }}
+    value="github"
+    label={<TabLabel imgSrc={config.GITHUB_LOGO_URL} label="GitHub" />}
+  >
+  <CommonGitHubPrerequisites />
+
+  <CommonCloudPrerequisites />
+
+  <GitHubClusterCreateCmd />
+
+  <CommonTerminalOutput />
+  
+  <AWSRootCredentialsCmd />
+
+  <CommonClusterConnectivity />
+
+  </TabItem>
+  <TabItem
+    value="gitlab"
+    attributes={{ className: styles.gitlab }}
+    label={<TabLabel imgSrc={config.GITLAB_LOGO_URL} label="GitLab" />}
+  >
+  <CommonGitLabPrerequisites />
+
+  <CommonCloudPrerequisites />
+
+  <GitLabClusterCreateCmd />
+
+  <CommonTerminalOutput />
+
+  <AWSRootCredentialsCmd />
+
+  <CommonClusterConnectivity />
+
+  </TabItem>
+</Tabs>
