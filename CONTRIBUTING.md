@@ -167,9 +167,10 @@ Docusaurus manages [documentation versions](https://docusaurus.io/docs/versionin
 git checkout -b vX.X
 npm run docusaurus docs:version X.X
 git add versioned_docs/version-X.X
+git add versions.json
+git add versioned_sidebars/version-X.X-sidebars.json
 git commit -m "docs: create vX.X documentation"
-git push -u origin && gh pr create --assignee @me \
-  --title "$(git log --format=%s -n 1)" --body "$(git log --format=%b -n 1)"
+gh pr create
 ```
 
 It will create a duplication of the `docs` folder inside the newly created `version-X.X` folder located into `versioned_docs`. From this point forward, the new changes need to be done in the `docs` folder, which is now the documentation for the next release.
