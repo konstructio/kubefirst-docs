@@ -61,3 +61,34 @@ If Docker is running, and working properly (run `docker run hello-world` in your
 ```shell
 export DOCKER_HOST="unix://$HOME/.docker/run/docker.sock"
 ```
+
+### Using Rancher Desktop instead of Docker Desktop 
+
+Firstly, you need to disable traefik in your rancher-desktop because our installation uses traefik and port forwarding. Between the conflicts and the double routing, its just easier to disable traefik on rancher desktop. 
+
+#### MacOS (Apple Silicon)
+
+* note this is experimental at the time this is written. It works, but all of the features it uses are considered beta or exprimental by rancher desktop. *
+
+For Apple Silicon macs you need to enable a few features in rancher desktop before this will work. 
+
+```zsh
+rdctl set --container-engine.name docker \
+    --kubernetes.options.traefik=false \
+    --experimental.virtual-machine.type vz \
+    --experimental.virtual-machine.use-rosetta=true \
+    --experimental.virtual-machine.mount.type virtiofs \
+    --experimental.virtual-machine.socket-vmnet=true
+```
+
+*NerdCTL and Lima have not yet been tested*
+
+If you have any issues, reach out to us on slack in kubfirst.slack.com.
+
+#### MacOS (Intel)
+
+Not yet tested.
+
+#### WSL
+
+Rancher Desktop is not yet supported but docker desktop is. There are limitations within docker desktop and how it manages volumes which prevent us from supporting it at this moment.  

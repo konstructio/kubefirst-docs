@@ -47,6 +47,14 @@ mkcert -install
 
 This is not an optional step: the cluster creation will fail if you don't install the mkcert CA in your trusted store.
 
+## Working without SSH 
+
+If you need your kubefirst installation to avoid using ssh whenver possible, you can bypass ssh and kubefirst will configure itself, argo, github actions, argocd, and your entire gitops workflow to utilize https instead of ssh at all times. 
+
+Provide the flag `--git-protocol https` when building your k3d cluster and kubefirst will take care of the rest.
+
+If you ever need to change this, you will need to rebuild the cluser or manually update the templates in your gitops repo.
+
 ## Create your new local cluster
 
 To create a new kubefirst cluster locally, run
