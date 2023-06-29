@@ -1,0 +1,55 @@
+---
+hide_title: true
+sidebar_label: Install
+sidebar_position: 2
+# custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
+image: "https://docs.kubefirst.io/img/logo.svg"
+---
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import styles from "@site/docs/stylesheets/tabs.module.css";
+import ReactDom from 'react-dom'
+import * as config from "@site/docs/constants.js"
+
+
+<div
+  style={{
+    display: "flex",
+    justifyContent: "flex-end",
+    alignItems: "center",
+  }}
+>
+  <div>
+    <img src={config.K3D_LOGO_URL} height="50" width="120" />
+  </div>
+</div>
+
+import GitHubInstall from '@site/docs/k3d/partials/github/_install.mdx'
+import GitLabInstall from '@site/docs/k3d/partials/gitlab/_install.mdx'
+
+<Tabs groupId="git_provider" defaultValue="github" queryString>
+    <TabItem 
+      attributes={{className: styles.github}}
+      value="github" 
+      label={
+        <div className="git-tab">
+          <img src="https://assets.kubefirst.com/console/github.svg" />
+          <span>GitHub</span>
+        </div>
+      }
+    >
+      <GitHubInstall />
+    </TabItem>
+    <TabItem 
+      value="gitlab"
+      attributes={{className: styles.gitlab}}
+      label={
+        <div className="git-tab">
+          <img src="https://assets.kubefirst.com/console/gitlab.svg" />
+          <span>GitLab</span>
+        </div>
+      }
+    >
+      <GitLabInstall />
+    </TabItem>
+</Tabs>
