@@ -14,6 +14,7 @@ import * as config from "@site/docs/constants.js"
 
 import GitHubOverview from '@site/docs/civo/partials/github/_overview.mdx'
 import GitLabOverview from '@site/docs/civo/partials/gitlab/_overview.mdx'
+import CloudBanner from '@site/src/components/CloudBanner/CloudBanner.jsx'
 
 <div
   style={{
@@ -30,15 +31,15 @@ import GitLabOverview from '@site/docs/civo/partials/gitlab/_overview.mdx'
 
 # Overview
 
-The civo provisioning process will:
+The Civo provisioning process will:
 - create a gitops git repository from our gitops-template and store it in your git provider
-- create a k3d cluster on your localhost
+- create a kubernetes cluster in the Civo cloud
 - install argocd bootstrapped against your gitops repo so your repo powers the platform
 - install all the platform apps using gitops (gitops repo `/registry` folder)
 - apply terraform to configure Vault (gitops repo `/terraform/vault` folder)
 - bind a webhook to ngrok in cluster so you can automate terraform executions through atlantis
 - integrate argo workflows with your git provider
-- install argo workflow automation to build containers, publish charts, and provide gitops delivery pipelines
+- install argo workflow [cluster workflow templates](https://argoproj.github.io/argo-workflows/cluster-workflow-templates/#cluster-workflow-templates) to build containers, publish charts, and provide gitops delivery pipelines
 - install a sample app git repository that uses this automation to demonstrate app delivery (metaphor repo)
 
 ![kubefirst Civo with GitLab Cluster Diagram](../img/civo/gitlab/installation-diagram-light.png#light-mode)![kubefirst Civo with GitLab Cluster Diagram](../img/civo/gitlab/installation-diagram-dark.png#dark-mode)

@@ -18,9 +18,9 @@ favorite git provider.
 helm repo add kubefirst https://charts.kubefirst.com
 helm repo update
 
-helm install kubefirst --create-namespace --version 0.0.11 kubefirst/kubefirst
+helm install kubefirst --namespace kubefirst --create-namespace  kubefirst/kubefirst
 
-k port-forward svc/kubefirst-console 8080:8080
+kubectl port-forward svc/kubefirst-console 8080:8080
 ```
 
 Then connect to the provisioning tool at [http://localhost:8080](http://localhost:8080)
@@ -38,15 +38,14 @@ run on the ARM architecture.
 helm repo add kubefirst https://charts.kubefirst.com
 helm repo update
 
-helm install kubefirst --create-namespace \
---version 0.0.11 \
+helm install kubefirst --namespace kubefirst --create-namespace \
 --set=mongodb.image.repository=arm64v8/mongo \
 --set=mongodb.image.tag=latest \
 --set=mongodb.persistence.mountPath=/data/db \
 --set=mongodb.extraEnvVarsSecret=kubefirst-initial-secrets \
 kubefirst/kubefirst
 
-k port-forward svc/kubefirst-console 8080:8080
+kubectl port-forward svc/kubefirst-console 8080:8080
 ```
 
 Then connect to the provisioning tool at [http://localhost:8080](http://localhost:8080)

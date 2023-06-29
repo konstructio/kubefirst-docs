@@ -59,6 +59,29 @@ const config = {
         trackingID: 'GTM-KZLF3TJ'
       },
     ],
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            to: '/k3d/quick-start/install',
+            from: ['/kubefirst/local/github/install', '/kubefirst/local/gitlab/install'],
+          },
+          {
+            to: '/aws/quick-start/install/cli',
+            from: ['/kubefirst/aws/github/install', '/kubefirst/aws/gitlab/install'],
+          },
+          {
+            to: '/civo/quick-start/install/cli',
+            from: ['/kubefirst/civo/github/install', '/kubefirst/civo/gitlab/install'],
+          },
+          {
+            to: '/k3d/overview',
+            from: '/kubefirst/local',
+          },
+        ],
+      },
+    ],
   ],
 
   themeConfig:
@@ -66,6 +89,7 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
+      metadata: [{name: 'keywords', content: 'kubernetes, gitops, ci, cd, argocd, aws, civo, k3d'}],
       navbar: {
         title: 'Kubefirst',
         logo: {
