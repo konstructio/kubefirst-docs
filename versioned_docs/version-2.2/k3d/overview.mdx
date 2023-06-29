@@ -1,0 +1,76 @@
+---
+hide_title: true
+sidebar_label: Overview
+sidebar_position: 1
+# custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
+description: an overview of the kubefirst platform
+image: "https://docs.kubefirst.io/img/logo.svg"
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import styles from "@site/docs/stylesheets/tabs.module.css";
+import ReactDom from 'react-dom'
+import * as config from "@site/docs/constants.js"
+
+<div
+  style={{
+    display: "flex",
+    justifyContent: "flex-end",
+    alignItems: "center",
+  }}
+>
+  <div>
+    <img src={config.K3D_LOGO_URL} height="50" width="120" />
+  </div>
+</div>
+
+import GitHubOverview from '@site/docs/k3d/partials/github/_overview.mdx'
+import GitLabOverview from '@site/docs/k3d/partials/gitlab/_overview.mdx'
+
+
+
+# Overview
+
+The k3d provisioning process will:
+- create a multinode k3d kubernetes cluster on your localhost
+<!-- details below this line apply everywhere -->
+- create a gitops git repository from our gitops-template, customized for you, and store it in your git provider
+- install argocd and register it with your gitops repo so that your main branch powers the platform
+- install all the platform apps using argocd gitops preconfigured sync waves (gitops repo `/registry` folder)
+- apply terraform to configure Vault (gitops repo `/terraform/vault` folder)
+- bind a webhook to atlantis to automate terraform executions
+- integrate argo workflows with your git provider
+- install argo workflow automation to build containers, publish charts, and provide gitops delivery pipelines
+- install a sample app git repository that uses this automation to demonstrate gitops app delivery and promotion (metaphor repo)
+
+![kubefirst k3d with GitHub Cluster Diagram](../img/local/github/installation-diagram-light.png#light-mode)![kubefirst k3d with GitHub Cluster Diagram](../img/local/github/installation-diagram-dark.png#dark-mode)
+
+# Applications
+
+<Tabs groupId="git_provider" defaultValue="github" queryString>
+    <TabItem 
+      attributes={{className: styles.github}}
+      value="github" 
+      label={
+        <div className="git-tab">
+          <img src="https://assets.kubefirst.com/console/github.svg" />
+          <span>GitHub</span>
+        </div>
+      }
+    >
+      <GitHubOverview />
+    </TabItem>
+    <TabItem 
+      value="gitlab"
+      attributes={{className: styles.gitlab}}
+      label={
+        <div className="git-tab">
+          <img src="https://assets.kubefirst.com/console/gitlab.svg" />
+          <span>GitLab</span>
+        </div>
+      }
+    >
+      <GitLabOverview />
+    </TabItem>
+</Tabs>
