@@ -40,7 +40,7 @@ jobs:
           echo "commit sha ${GITHUB_SHA}"
           argo version --short
           argo submit .argo/publish.yaml \
-            --generate-name="${GITHUB_REPOSITORY_NAME_PART}-publish-${GITHUB_SHA_SHORT}-{GITHUB.RUN_ATTEMPT}-" \
+            --generate-name="${GITHUB_REPOSITORY_NAME_PART}-publish-${GITHUB_SHA_SHORT}-${GITHUB.RUN_ATTEMPT}-" \
             -p appName="${GITHUB_REPOSITORY_NAME_PART}" \
             -p branch="${GITHUB_REF_NAME}" \
             -p containerRegistryURL="${CONTAINER_REGISTRY_URL}/${GITHUB_REPOSITORY_NAME_PART}:${GITHUB_SHA_SHORT}" \
@@ -79,7 +79,7 @@ jobs:
           echo "commit sha $GITHUB_SHA"
           argo version --short
           argo submit .argo/deploy.yaml \
-            --generate-name="${GITHUB_REPOSITORY_NAME_PART}-development-${GITHUB_SHA_SHORT}-{GITHUB.RUN_ATTEMPT}-" \
+            --generate-name="${GITHUB_REPOSITORY_NAME_PART}-development-${GITHUB_SHA_SHORT}-${GITHUB.RUN_ATTEMPT}-" \
             -p appName="${GITHUB_REPOSITORY_NAME_PART}" \
             -p branch="${GITHUB_REF_NAME}" \
             -p clusterName="mgmt-20-kubefirst-com" \
@@ -119,7 +119,7 @@ jobs:
           echo "commit sha $GITHUB_SHA"
           argo version --short
           argo submit .argo/deploy.yaml \
-            --generate-name="${GITHUB_REPOSITORY_NAME_PART}-staging-${GITHUB_SHA_SHORT}-{GITHUB.RUN_ATTEMPT}-" \
+            --generate-name="${GITHUB_REPOSITORY_NAME_PART}-staging-${GITHUB_SHA_SHORT}-${GITHUB.RUN_ATTEMPT}-" \
             -p appName="${GITHUB_REPOSITORY_NAME_PART}" \
             -p branch="${GITHUB_REF_NAME}" \
             -p clusterName="mgmt-20-kubefirst-com" \
@@ -160,7 +160,7 @@ jobs:
           echo "commit sha $GITHUB_SHA"
           argo version --short
           argo submit .argo/release.yaml \
-            --generate-name="${GITHUB_REPOSITORY_NAME_PART}-release-${GITHUB_SHA_SHORT}-{GITHUB.RUN_ATTEMPT}-" \
+            --generate-name="${GITHUB_REPOSITORY_NAME_PART}-release-${GITHUB_SHA_SHORT}-${GITHUB.RUN_ATTEMPT}-" \
             -p appName="${GITHUB_REPOSITORY_NAME_PART}" \
             -p branch="${GITHUB_REF_NAME}" \
             -p clusterName="mgmt-20-kubefirst-com" \
