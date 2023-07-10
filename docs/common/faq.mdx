@@ -62,17 +62,17 @@ If Docker is running, and working properly (run `docker run hello-world` in your
 export DOCKER_HOST="unix://$HOME/.docker/run/docker.sock"
 ```
 
-### Using Rancher Desktop instead of Docker Desktop 
+### Using Rancher Desktop instead of Docker Desktop
 
-Firstly, you need to disable traefik in your rancher-desktop because our installation uses traefik and port forwarding. Between the conflicts and the double routing, its just easier to disable traefik on rancher desktop. 
+Firstly, you need to disable Traefik in your Rancher Desktop because our installation uses Traefik and port forwarding. Between the conflicts and the double routing, it's just easier to disable Traefik on Rancher Desktop.
 
-#### MacOS (Apple Silicon)
+#### macOS (Apple Silicon)
 
-* note this is experimental at the time this is written. It works, but all of the features it uses are considered beta or exprimental by rancher desktop. *
+> This is experimental. It works, but all of the features it uses are considered beta or exprimental by Rancher Desktop.
 
-For Apple Silicon macs you need to enable a few features in rancher desktop before this will work. 
+For Apple Silicon macs you need to enable a few features in Rancher Desktop before this will work. Run the following command in your terminalL
 
-```zsh
+```shell
 rdctl set --container-engine.name docker \
     --kubernetes.options.traefik=false \
     --experimental.virtual-machine.type vz \
@@ -81,14 +81,20 @@ rdctl set --container-engine.name docker \
     --experimental.virtual-machine.socket-vmnet=true
 ```
 
-*NerdCTL and Lima have not yet been tested*
-
 If you have any issues, reach out to us on slack in kubfirst.slack.com.
 
-#### MacOS (Intel)
+#### macOS (Intel)
 
 Not yet tested.
 
-#### WSL
+#### Windows Subsystem for Linux (WSL) on Windows
 
-Rancher Desktop is not yet supported but docker desktop is. There are limitations within docker desktop and how it manages volumes which prevent us from supporting it at this moment.  
+Rancher Desktop is not yet supported but Docker Desktop is with [WSL on Windows](https://learn.microsoft.com/en-us/windows/wsl/install). There are limitations within Docker Desktop and how it manages volumes which prevent us from supporting it at this moment.
+
+### Using nerdctl instead of Docker Desktop
+
+We didn't try kubefirst k3d cluster creation with [nerdctl](https://github.com/containerd/nerdctl) yet. If you are using it, let us know how it's working or if you need any help.
+
+### Using Lima instead of Docker Desktop
+
+We didn't try kubefirst k3d cluster creation with [Lima](https://github.com/lima-vm/lima) yet. If you are using it, let us know how it's working or if you need any help.
