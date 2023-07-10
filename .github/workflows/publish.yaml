@@ -1,4 +1,4 @@
-name: release
+name: Release new docs
 env:
   ARGO_NAMESPACE: argo
   ARGO_VERSION: v3.4.1
