@@ -19,6 +19,7 @@ spec:
                   value: '{{workflow.parameters.branch}}'
                 - name: gitUrlNoProtocol
                   value: '{{workflow.parameters.gitUrlNoProtocol}}'
+
         - - name: get-initial-chart-version
             templateRef:
               name: cwft-helm
@@ -33,70 +34,7 @@ spec:
                   value: '{{workflow.parameters.appName}}'
                 - name: chartDir
                   value: 'charts/{{workflow.parameters.appName}}'
-        - - name: set-chart-versions
-            templateRef:
-              name: cwft-helm
-              template: set-chart-versions
-              clusterScope: true
-            arguments:
-              artifacts:
-                - name: repo-source
-                  from: '{{steps.checkout.outputs.artifacts.repo-source}}'
-              parameters:
-                - name: appName
-                  value: '{{workflow.parameters.appName}}'
-                - name: chartDir
-                  value: 'charts/{{workflow.parameters.appName}}'
-                - name: chartVersion
-                  value: '{{steps.get-initial-chart-version.outputs.result}}'
-                - name: shortSha
-                  value: '{{workflow.parameters.shortSha}}'
-        - - name: publish-helm-chart
-            templateRef:
-              name: cwft-helm
-              template: publish-chart
-              clusterScope: true
-            arguments:
-              artifacts:
-                - name: repo-source
-                  from: '{{steps.set-chart-versions.outputs.artifacts.repo-source}}'
-              parameters:
-                - name: appName
-                  value: '{{workflow.parameters.appName}}'
-                - name: chartDir
-                  value: 'charts/{{workflow.parameters.appName}}'
-        - - name: set-environment-version
-            templateRef:
-              name: cwft-helm
-              template: set-environment-version
-              clusterScope: true
-            arguments:
-              artifacts:
-                - name: repo-source
-                  from: '{{steps.checkout.outputs.artifacts.repo-source}}'
-              parameters:
-                - name: fullChartPath
-                  value: 'registry/{{workflow.parameters.clusterName}}/components/{{workflow.parameters.environment}}/{{workflow.parameters.appName}}/Chart.yaml'
-                - name: chartVersion
-                  value: '{{steps.get-initial-chart-version.outputs.result}}'
-                - name: environment
-                  value: '{{workflow.parameters.environment}}'
-        - - name: commit-production
-            templateRef:
-              name: cwft-git
-              template: pull-commit-push
-              clusterScope: true
-            arguments:
-              artifacts:
-                - name: repo-source
-                  from: '{{steps.set-environment-version.outputs.artifacts.repo-source}}'
-              parameters:
-                - name: repoName
-                  value: 'gitops'
-                - name: gitUrlNoProtocol
-                  value: '{{workflow.parameters.gitUrlNoProtocol}}'
-                - name: commitMessage
-                  value: 'setting {{workflow.parameters.appName}} {{workflow.parameters.environment}} to chart version {{steps.get-initial-chart-version.outputs.result}}'
+
         - - name: increment-chart-minor
             templateRef:
               name: cwft-helm
@@ -113,20 +51,22 @@ spec:
                   value: 'charts/{{workflow.parameters.appName}}'
                 - name: chartVersion
                   value: '{{steps.get-initial-chart-version.outputs.result}}'
-        - - name: get-published-chart-version
+
+        - - name: publish-helm-chart
             templateRef:
               name: cwft-helm
-              template: get-chart-version
+              template: publish-chart
               clusterScope: true
             arguments:
               artifacts:
                 - name: repo-source
-                  from: '{{steps.increment-chart-minor.outputs.artifacts.repo-source}}'
+                  from: '{{steps.set-chart-versions.outputs.artifacts.repo-source}}'
               parameters:
                 - name: appName
                   value: '{{workflow.parameters.appName}}'
                 - name: chartDir
                   value: 'charts/{{workflow.parameters.appName}}'
+
         - - name: commit-chart-increment
             templateRef:
               name: cwft-git
