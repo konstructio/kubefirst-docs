@@ -49,7 +49,7 @@ jobs:
             --wait --log
 
   development:
-    needs: publish
+    needs: chart
     runs-on: self-hosted
     steps:
 
