@@ -47,10 +47,10 @@ spec:
                   value: '{{workflow.parameters.appName}}'
                 - name: chartDir
                   value: 'charts/{{workflow.parameters.appName}}'
+                - name: chartVersion
+                  value: '{{steps.get-initial-chart-version.outputs.result}}'
                 - name: shortSha
                   value: '{{workflow.parameters.shortSha}}'
-                - name: chartVersion
-                  value: '{{steps.get-initial-chart-version.outputs.result}}-rc.{{workflow.parameters.shortSha}}'
         - - name: publish-helm-chart
             templateRef:
               name: cwft-helm
@@ -96,7 +96,7 @@ spec:
                 - name: gitUrlNoProtocol
                   value: '{{workflow.parameters.gitUrlNoProtocol}}'
                 - name: commitMessage
-                  value: 'setting {{workflow.parameters.appName}} {{workflow.parameters.environment}} to chart version {{steps.set-chart-versions.parameters.chartVersion}}'
+                  value: 'setting {{workflow.parameters.appName}} {{workflow.parameters.environment}} to chart version {{steps.get-initial-chart-version.outputs.result}}'
         - - name: increment-chart-minor
             templateRef:
               name: cwft-helm
@@ -112,7 +112,7 @@ spec:
                 - name: chartDir
                   value: 'charts/{{workflow.parameters.appName}}'
                 - name: chartVersion
-                  value: '{{steps.set-chart-versions.parameters.chartVersion}}'
+                  value: '{{steps.get-initial-chart-version.outputs.result}}'
         - - name: get-published-chart-version
             templateRef:
               name: cwft-helm
