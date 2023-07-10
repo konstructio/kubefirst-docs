@@ -47,6 +47,8 @@ spec:
                   value: '{{workflow.parameters.appName}}'
                 - name: chartDir
                   value: 'charts/{{workflow.parameters.appName}}'
+                - name: shortSha
+                  value: '{{workflow.parameters.shortSha}}'
                 - name: chartVersion
                   value: '{{steps.get-initial-chart-version.outputs.result}}-rc.{{workflow.parameters.shortSha}}'
         - - name: publish-helm-chart
