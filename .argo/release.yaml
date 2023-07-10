@@ -48,9 +48,7 @@ spec:
                 - name: chartDir
                   value: 'charts/{{workflow.parameters.appName}}'
                 - name: chartVersion
-                  value: '{{steps.get-initial-chart-version.outputs.result}}'
-                - name: shortSha
-                  value: '{{workflow.parameters.shortSha}}'
+                  value: '{{steps.get-initial-chart-version.outputs.result}}-rc.{{workflow.parameters.shortSha}}'
         - - name: publish-helm-chart
             templateRef:
               name: cwft-helm
@@ -78,7 +76,7 @@ spec:
                 - name: fullChartPath
                   value: 'registry/{{workflow.parameters.clusterName}}/components/{{workflow.parameters.environment}}/{{workflow.parameters.appName}}/Chart.yaml'
                 - name: chartVersion
-                  value: '{{steps.get-initial-chart-version.outputs.result}}-rc.{{workflow.parameters.shortSha}}'
+                  value: '{{steps.get-initial-chart-version.outputs.result}}'
                 - name: environment
                   value: '{{workflow.parameters.environment}}'
         - - name: commit-production
@@ -96,7 +94,7 @@ spec:
                 - name: gitUrlNoProtocol
                   value: '{{workflow.parameters.gitUrlNoProtocol}}'
                 - name: commitMessage
-                  value: 'setting {{workflow.parameters.appName}} {{workflow.parameters.environment}} to chart version {{steps.get-initial-chart-version.outputs.result}}'
+                  value: 'setting {{workflow.parameters.appName}} {{workflow.parameters.environment}} to chart version {{steps.set-chart-versions.parameters.chartVersion}}'
         - - name: increment-chart-minor
             templateRef:
               name: cwft-helm
@@ -112,7 +110,7 @@ spec:
                 - name: chartDir
                   value: 'charts/{{workflow.parameters.appName}}'
                 - name: chartVersion
-                  value: '{{steps.get-initial-chart-version.outputs.result}}'
+                  value: '{{steps.set-chart-versions.parameters.chartVersion}}'
         - - name: get-published-chart-version
             templateRef:
               name: cwft-helm
