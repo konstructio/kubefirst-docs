@@ -10,15 +10,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  chart:
-    runs-on: self-hosted
-    steps:
-
   release:
-    needs: staging
     runs-on: self-hosted
     steps:
-
       - name: Setup Runner for Argo
         run: |
           cd $HOME
