@@ -89,12 +89,12 @@ Not yet tested.
 
 #### Windows Subsystem for Linux (WSL) on Windows
 
-Rancher Desktop is not yet supported but Docker Desktop is with [WSL on Windows](https://learn.microsoft.com/en-us/windows/wsl/install). There are limitations within Docker Desktop and how it manages volumes which prevent us from supporting it at this moment.
+Rancher Desktop is not yet supported but Docker Desktop is with [WSL on Windows](https://learn.microsoft.com/en-us/windows/wsl/install). There are limitations within Rancher Desktop and how it manages volumes which prevent us from supporting it at this moment.
 
-### Using nerdctl instead of Docker Desktop
+### Using nerdctl instead of Docker...
 
-We didn't try kubefirst k3d cluster creation with [nerdctl](https://github.com/containerd/nerdctl) yet. If you are using it, let us know how it's working or if you need any help.
+Creation via [nerdctl](https://github.com/containerd/nerdctl), isn't supported yet. K3d doesn't fully support it probably because it doesn't have an api that is publically exposed like the docker deamon. We need k3d to support nerdctl and containerd on wsl before we can add support in kubefirst.
 
 ### Using Lima instead of Docker Desktop
 
-We didn't try kubefirst k3d cluster creation with [Lima](https://github.com/lima-vm/lima) yet. If you are using it, let us know how it's working or if you need any help.
+We didn't try kubefirst k3d cluster creation with [Lima](https://github.com/lima-vm/lima) yet. If you are using it, let us know how it's working and if you think its something we can support with the existing codebase. 
