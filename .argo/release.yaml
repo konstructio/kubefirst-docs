@@ -22,6 +22,21 @@ spec:
                 - name: gitUrlNoProtocol
                   value: '{{workflow.parameters.gitUrlNoProtocol}}'
 
+        - - name: publish-helm-chart
+            templateRef:
+              name: cwft-helm
+              template: publish-chart
+              clusterScope: true
+            arguments:
+              artifacts:
+                - name: repo-source
+                  from: '{{steps.checkout.outputs.artifacts.repo-source}}'
+              parameters:
+                - name: appName
+                  value: '{{workflow.parameters.appName}}'
+                - name: chartDir
+                  value: 'charts/{{workflow.parameters.appName}}'
+
         - - name: checkout
             templateRef:
               name: cwft-git
@@ -76,22 +91,7 @@ spec:
             arguments:
               artifacts:
                 - name: repo-source
-                  from: '{{steps.checkout.outputs.artifacts.repo-source}}'
-              parameters:
-                - name: appName
-                  value: '{{workflow.parameters.appName}}'
-                - name: chartDir
-                  value: 'charts/{{workflow.parameters.appName}}'
-
-        - - name: publish-helm-chart
-            templateRef:
-              name: cwft-helm
-              template: publish-chart
-              clusterScope: true
-            arguments:
-              artifacts:
-                - name: repo-source
-                  from: '{{steps.checkout.outputs.artifacts.repo-source}}'
+                  from: '{{steps.increment-chart-minor.outputs.artifacts.repo-source}}'
               parameters:
                 - name: appName
                   value: '{{workflow.parameters.appName}}'
