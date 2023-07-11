@@ -68,23 +68,6 @@ spec:
                 - name: chartVersion
                   value: '{{steps.get-initial-chart-version.outputs.result}}'
 
-        - - name: set-environment-version
-            templateRef:
-              name: cwft-helm
-              template: set-environment-version
-              clusterScope: true
-            arguments:
-              artifacts:
-                - name: repo-source
-                  from: '{{steps.checkout.outputs.artifacts.repo-source}}'
-              parameters:
-                - name: fullChartPath
-                  value: 'registry/{{workflow.parameters.clusterName}}/components/{{workflow.parameters.environment}}/{{workflow.parameters.appName}}/Chart.yaml'
-                - name: chartVersion
-                  value: '{{steps.increment-chart-minor.outputs.result}}'
-                - name: environment
-                  value: '{{workflow.parameters.environment}}'
-
         - - name: publish-helm-chart
             templateRef:
               name: cwft-helm
