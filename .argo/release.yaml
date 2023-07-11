@@ -122,7 +122,7 @@ spec:
                 - name: environment
                   value: '{{workflow.parameters.environment}}'
 
-        - - name: commit to production
+        - - name: commit-to-production
             templateRef:
               name: cwft-git
               template: pull-commit-push
