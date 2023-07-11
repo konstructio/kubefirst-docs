@@ -6,6 +6,22 @@ spec:
   templates:
     - name: main
       steps:
+        - - name: publish-container
+            templateRef:
+              name: cwft-kaniko
+              template: build-push
+              clusterScope: true
+            arguments:
+              parameters:
+                - name: appName
+                  value: '{{workflow.parameters.appName}}'
+                - name: branch
+                  value: '{{workflow.parameters.branch}}'
+                - name: containerRegistryURL
+                  value: '{{workflow.parameters.containerRegistryURL}}'
+                - name: gitUrlNoProtocol
+                  value: '{{workflow.parameters.gitUrlNoProtocol}}'
+
         - - name: checkout
             templateRef:
               name: cwft-git
@@ -51,6 +67,23 @@ spec:
                   value: 'charts/{{workflow.parameters.appName}}'
                 - name: chartVersion
                   value: '{{steps.get-initial-chart-version.outputs.result}}'
+
+        - - name: set-environment-version
+            templateRef:
+              name: cwft-helm
+              template: set-environment-version
+              clusterScope: true
+            arguments:
+              artifacts:
+                - name: repo-source
+                  from: '{{steps.checkout.outputs.artifacts.repo-source}}'
+              parameters:
+                - name: fullChartPath
+                  value: 'registry/{{workflow.parameters.clusterName}}/components/{{workflow.parameters.environment}}/{{workflow.parameters.appName}}/Chart.yaml'
+                - name: chartVersion
+                  value: '{{steps.increment-chart-minor.outputs.result}}'
+                - name: environment
+                  value: '{{workflow.parameters.environment}}'
 
         - - name: publish-helm-chart
             templateRef:
