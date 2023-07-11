@@ -68,6 +68,21 @@ spec:
                 - name: chartVersion
                   value: '{{steps.get-initial-chart-version.outputs.result}}'
 
+        - - name: get-updated-chart-version
+            templateRef:
+              name: cwft-helm
+              template: get-chart-version
+              clusterScope: true
+            arguments:
+              artifacts:
+                - name: repo-source
+                  from: '{{steps.checkout.outputs.artifacts.repo-source}}'
+              parameters:
+                - name: appName
+                  value: '{{workflow.parameters.appName}}'
+                - name: chartDir
+                  value: 'charts/{{workflow.parameters.appName}}'
+
         - - name: publish-helm-chart
             templateRef:
               name: cwft-helm
@@ -103,7 +118,7 @@ spec:
                   # github skip ci rule: https://docs.github.com/en/actions/managing-workflow-runs/skipping-workflow-runs
                   # gitlab skip ci rule: https://devops.stackexchange.com/questions/6809/is-there-a-ci-skip-option-in-gitlab-ci
                   # in case, the rule is disbaled or don't work this step will create a circular trigger of builds and bumps of version.
-                  value: "[skip ci] [CI SKIP] setting {{workflow.parameters.appName}} {{workflow.parameters.environment}} to chart version {{steps.increment-chart-minor.outputs.result}}\n\nskip-checks:true"
+                  value: "[skip ci] [CI SKIP] setting {{workflow.parameters.appName}} {{workflow.parameters.environment}} to chart version {{steps.get-updated-chart-version.outputs.result}}\n\nskip-checks:true"
 
         - - name: set-environment-version
             templateRef:
@@ -118,7 +133,7 @@ spec:
                 - name: fullChartPath
                   value: 'registry/{{workflow.parameters.clusterName}}/components/{{workflow.parameters.environment}}/{{workflow.parameters.appName}}/Chart.yaml'
                 - name: chartVersion
-                  value: '{{steps.increment-chart-minor.outputs.result}}'
+                  value: '{{steps.get-updated-chart-version.outputs.result}}'
                 - name: environment
                   value: '{{workflow.parameters.environment}}'
 
@@ -137,4 +152,4 @@ spec:
                 - name: gitUrlNoProtocol
                   value: '{{workflow.parameters.gitUrlNoProtocol}}'
                 - name: commitMessage
-                  value: 'setting {{workflow.parameters.appName}} {{workflow.parameters.environment}} to chart version {{steps.increment-chart-minor.outputs.result}}'
+                  value: 'setting {{workflow.parameters.appName}} {{workflow.parameters.environment}} to chart version {{steps.get-updated-chart-version.outputs.result}}'
