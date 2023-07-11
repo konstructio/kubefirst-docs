@@ -49,3 +49,4 @@ jobs:
             -p containerRegistryURL="${CONTAINER_REGISTRY_URL}/${GITHUB_REPOSITORY_NAME_PART}:${GITHUB_SHA_SHORT}" \
             -p shortSha="${GITHUB_SHA_SHORT}" \
             --wait --log
+
