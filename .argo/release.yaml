@@ -110,7 +110,7 @@ spec:
             arguments:
               artifacts:
                 - name: repo-source
-                  from: '{{steps.increment-chart-minor.outputs.artifacts.repo-source}}'
+                  from: '{{steps.set-chart-versions.outputs.artifacts.repo-source}}'
               parameters:
                 - name: appName
                   value: '{{workflow.parameters.appName}}'
@@ -125,7 +125,7 @@ spec:
             arguments:
               artifacts:
                 - name: repo-source
-                  from: '{{steps.increment-chart-minor.outputs.artifacts.repo-source}}'
+                  from: '{{steps.set-chart-versions.outputs.artifacts.repo-source}}'
               parameters:
                 - name: repoName
                   value: '{{workflow.parameters.appName}}'
@@ -147,7 +147,7 @@ spec:
             arguments:
               artifacts:
                 - name: repo-source
-                  from: '{{steps.increment-chart-minor.outputs.artifacts.repo-source}}'
+                  from: '{{steps.set-chart-versions.outputs.artifacts.repo-source}}'
               parameters:
                 - name: fullChartPath
                   value: 'registry/{{workflow.parameters.clusterName}}/components/{{workflow.parameters.environment}}/{{workflow.parameters.appName}}/Chart.yaml'
