@@ -132,12 +132,7 @@ spec:
                 - name: gitUrlNoProtocol
                   value: '{{workflow.parameters.gitUrlNoProtocol}}'
                 - name: commitMessage
-                  # Please, be careful updating this message, it must comply with:
-                  # github skip ci rule: https://github.blog/changelog/2021-02-08-github-actions-skip-pull-request-and-push-workflows-with-skip-ci/
-                  # github skip ci rule: https://docs.github.com/en/actions/managing-workflow-runs/skipping-workflow-runs
-                  # gitlab skip ci rule: https://devops.stackexchange.com/questions/6809/is-there-a-ci-skip-option-in-gitlab-ci
-                  # in case, the rule is disbaled or don't work this step will create a circular trigger of builds and bumps of version.
-                  value: "setting {{workflow.parameters.appName}} {{workflow.parameters.environment}} to chart version {{steps.get-updated-chart-version.outputs.result}} [skip ci]"
+                  value: "setting {{workflow.parameters.appName}} {{workflow.parameters.environment}} to chart version {{steps.get-updated-chart-version.outputs.result}} [skip ci] [CI SKIP]"
 
         - - name: set-environment-version
             templateRef:
@@ -171,4 +166,4 @@ spec:
                 - name: gitUrlNoProtocol
                   value: '{{workflow.parameters.gitUrlNoProtocol}}'
                 - name: commitMessage
-                  value: 'setting {{workflow.parameters.appName}} {{workflow.parameters.environment}} to chart version {{steps.get-updated-chart-version.outputs.result}}'
+                  value: 'setting {{workflow.parameters.appName}} {{workflow.parameters.environment}} to chart version {{steps.get-updated-chart-version.outputs.result}} [skip ci] [CI SKIP]'
