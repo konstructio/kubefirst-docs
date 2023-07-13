@@ -30,13 +30,6 @@ const config = {
       'classic',
       {
         docs: {
-          lastVersion: 'current',
-          versions: {
-            current: {
-              label: 'next',
-              path: 'next',
-            },
-          },
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [require('remark-docusaurus-tabs')],
