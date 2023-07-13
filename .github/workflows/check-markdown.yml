@@ -1,5 +1,6 @@
 name: Markdown Syntax Validation
-on: push
+
+on: [push, workflow_dispatch]
 
 jobs:
   markdown-check:
@@ -15,3 +16,4 @@ jobs:
             globs: |
               .markdownlint.json
               **.md
+              **.mdx

@@ -4,20 +4,20 @@ To destroy your kubefirst cluster, complete the following steps.
 
 You will need to [install](http://localhost:3000/overview.md#install-the-kubefirst-cli) the `kubefirst` CLI if it is not already installed.
 
-Before continuing, use the command-line tool for the chosen cloud provider to get the `kubeconfig` for your cluster:
+Before continuing, use the command-line tool for the chosen cloud provider to get the `kubeconfig` for your cluster (replace `<my-cluster>` with your cluster name):
 
 <!--tabs-->
 
 # AWS
 
 ```shell
-aws eks update-kubeconfig --name my-cluster --region us-east-1
+aws eks update-kubeconfig --name <my-cluster> --region us-east-1
 ```
 
 # Civo
 
 ```shell
-civo kubernetes config my-cluster
+civo kubernetes config <my-cluster> > ~/.kube/config
 ```
 
 <!--/tabs-->

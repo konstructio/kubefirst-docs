@@ -61,3 +61,40 @@ If Docker is running, and working properly (run `docker run hello-world` in your
 ```shell
 export DOCKER_HOST="unix://$HOME/.docker/run/docker.sock"
 ```
+
+### Using Rancher Desktop Instead of Docker Desktop
+
+Firstly, you need to disable Traefik in your Rancher Desktop because our installation uses Traefik and port forwarding. Between the conflicts and the double routing, it's just easier to disable Traefik on Rancher Desktop.
+
+#### macOS (Apple Silicon)
+
+> This is experimental. It works, but all of the features it uses are considered beta or exprimental by Rancher Desktop.
+
+For Apple Silicon macOS, you need to enable a few features in Rancher Desktop before this works. Run the following command in your terminal:
+
+```shell
+rdctl set --container-engine.name docker \
+    --kubernetes.options.traefik=false \
+    --experimental.virtual-machine.type vz \
+    --experimental.virtual-machine.use-rosetta=true \
+    --experimental.virtual-machine.mount.type virtiofs \
+    --experimental.virtual-machine.socket-vmnet=true
+```
+
+If you have any issues, reach out to us on our [Slack community](https://kubefirst.io/slack).
+
+#### macOS (Intel)
+
+Not yet tested.
+
+#### Windows Subsystem for Linux (WSL) on Windows
+
+Rancher Desktop is not yet supported but Docker Desktop is with [WSL on Windows](https://learn.microsoft.com/en-us/windows/wsl/install). There are limitations within Rancher Desktop and how it manages volumes which prevent us from supporting it at this moment.
+
+### Using nerdctl Instead of Docker
+
+Creation via [nerdctl](https://github.com/containerd/nerdctl) isn't supported yet. k3d doesn't fully support it probably because it doesn't have an API that is publicly exposed like the docker deamon. We need k3d to support nerdctl and containerd on WSL before we can add support in kubefirst.
+
+### Using Lima Instead of Docker Desktop
+
+We didn't try kubefirst k3d cluster creation with [Lima](https://github.com/lima-vm/lima) yet. If you are using it, let us know how it's working, and if you think it's something we can support with the existing codebase.
