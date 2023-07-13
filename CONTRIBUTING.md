@@ -2,7 +2,7 @@
 
 Firstly, we want to thank you for investing your valuable time to contribute to kubefirst!
 
-Note we have a [code of conduct](CODE_OF_CONDUCT.md) which needs to be followed in all your interactions with the project to keep our community healthy.
+Note we have a [code of conduct](CODE_OF_CONDUCT) which needs to be followed in all your interactions with the project to keep our community healthy.
 
 _For contribution to the kubefirst CLI, please refer yourself to the [CONTRIBUTING.md](https://github.com/kubefirst/kubefirst/blob/main/CONTRIBUTING.md) from the [kubefirst repository](https://github.com/kubefirst/kubefirst)._
 
