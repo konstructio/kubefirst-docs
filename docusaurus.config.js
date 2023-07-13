@@ -96,7 +96,7 @@ const config = {
       metadata: [
         {
           name: 'keywords',
-          content: 'kubernetes, gitops, ci, cd, argocd, aws, civo, k3d',
+          content: 'kubernetes, gitops, ci, cd, argocd, aws, civo, k3d, vultr'
         },
       ],
       navbar: {
