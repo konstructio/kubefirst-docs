@@ -11,7 +11,6 @@ on:
 
 jobs:
   release:
-    permissions: write-all
     runs-on: self-hosted
     steps:
       - name: Setup Runner for Argo
