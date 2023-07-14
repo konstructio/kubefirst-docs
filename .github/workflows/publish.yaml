@@ -38,7 +38,7 @@ jobs:
       - name: Temporarily disable docs branch protections
         uses: benjefferies/branch-protection-bot@master
         with:
-          access_token: ${{ secrets.GITHUB_TOKEN }}
+          access_token: ${{ secrets.PERMISSIONS_TOKEN }}
           branch: ${{ github.event.repository.default_branch }}
 
       # todo need to look repositoryGitURL, this needs to be overrideable from here and respected on the template side for both repositories
@@ -61,5 +61,5 @@ jobs:
         uses: benjefferies/branch-protection-bot@master
         if: always()  # Force to always run this step to ensure the protection is always turned back on no matetr if previous step fail
         with:
-          access_token: ${{ secrets.GITHUB_TOKEN }}
+          access_token: ${{ secrets.PERMISSIONS_TOKEN }}
           branch: ${{ github.event.repository.default_branch }}
