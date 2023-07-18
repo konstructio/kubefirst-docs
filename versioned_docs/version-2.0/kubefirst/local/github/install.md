@@ -65,7 +65,7 @@ After the ~5 minute installation, your browser will open a new browser tab at co
 
 To obtain your 3 initial passwords, run
 
-```bash
+```shell
 kubefirst k3d root-credentials
 ```
 
@@ -77,6 +77,6 @@ kubefirst k3d root-credentials
 
 You will be automatically connected to your new Kubernetes cluster. To view all cluster pods, run
 
-```bash
+```shell
 kubectl get pods -A
 ```
