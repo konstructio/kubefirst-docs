@@ -1,3 +1,4 @@
+---
 name: Release new docs
 env:
   ARGO_NAMESPACE: argo
@@ -7,6 +8,9 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - '.github/**'
+      - '.tools/**'
   workflow_dispatch:
 
 jobs:
