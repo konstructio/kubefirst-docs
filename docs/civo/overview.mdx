@@ -6,12 +6,12 @@ sidebar_position: 1
 description: an overview of kubefirst on a civo kubernetes cluster
 image: "https://docs.kubefirst.io/img/logo.svg"
 ---
+
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import styles from "@site/docs/stylesheets/tabs.module.css";
 import ReactDom from 'react-dom'
 import * as config from "@site/docs/constants.js"
-
 import GitHubOverview from '@site/docs/civo/partials/github/_overview.mdx'
 import GitLabOverview from '@site/docs/civo/partials/gitlab/_overview.mdx'
 import CloudBanner from '@site/src/components/CloudBanner/CloudBanner.jsx'
@@ -29,7 +29,6 @@ import CommonProvisionProcess from "@site/docs/common/partials/common/_provision
   </div>
 </div>
 
-
 # Overview
 
 The Civo provisioning process will:
@@ -40,9 +39,9 @@ The Civo provisioning process will:
 # Applications
 
 <Tabs groupId="git_provider" defaultValue="github" queryString>
-    <TabItem 
+    <TabItem
       attributes={{className: styles.github}}
-      value="github" 
+      value="github"
       label={
         <div className="git-tab">
           <img src="https://assets.kubefirst.com/console/github.svg" />
@@ -52,7 +51,7 @@ The Civo provisioning process will:
     >
       <GitHubOverview />
     </TabItem>
-    <TabItem 
+    <TabItem
       value="gitlab"
       attributes={{className: styles.gitlab}}
       label={

@@ -13,6 +13,8 @@ import styles from "@site/docs/stylesheets/tabs.module.css";
 import ReactDom from 'react-dom'
 import * as config from "@site/docs/constants.js"
 import CommonProvisionProcess from "@site/docs/common/partials/common/_provision-process.mdx";
+import GitHubOverview from '@site/docs/k3d/partials/github/_overview.mdx'
+import GitLabOverview from '@site/docs/k3d/partials/gitlab/_overview.mdx'
 
 <div
   style={{
@@ -26,11 +28,6 @@ import CommonProvisionProcess from "@site/docs/common/partials/common/_provision
   </div>
 </div>
 
-import GitHubOverview from '@site/docs/k3d/partials/github/_overview.mdx'
-import GitLabOverview from '@site/docs/k3d/partials/gitlab/_overview.mdx'
-
-
-
 # Overview
 
 The k3d provisioning process will:
@@ -41,9 +38,9 @@ The k3d provisioning process will:
 # Applications
 
 <Tabs groupId="git_provider" defaultValue="github" queryString>
-    <TabItem 
+    <TabItem
       attributes={{className: styles.github}}
-      value="github" 
+      value="github"
       label={
         <div className="git-tab">
           <img src="https://assets.kubefirst.com/console/github.svg" />
@@ -53,7 +50,7 @@ The k3d provisioning process will:
     >
       <GitHubOverview />
     </TabItem>
-    <TabItem 
+    <TabItem
       value="gitlab"
       attributes={{className: styles.gitlab}}
       label={
