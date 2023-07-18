@@ -47,9 +47,9 @@ mkcert -install
 
 This is not an optional step: the cluster creation will fail if you don't install the mkcert CA in your trusted store.
 
-## Working without SSH 
+## Working without SSH
 
-If you need your kubefirst installation to avoid using ssh whenver possible, you can bypass ssh and kubefirst will configure itself, argo, github actions, argocd, and your entire gitops workflow to utilize https instead of ssh at all times. 
+If you need your kubefirst installation to avoid using ssh whenver possible, you can bypass ssh and kubefirst will configure itself, argo, github actions, argocd, and your entire gitops workflow to utilize https instead of ssh at all times.
 
 Provide the flag `--git-protocol https` when building your k3d cluster and kubefirst will take care of the rest.
 
@@ -96,7 +96,7 @@ After the ~5 minute installation, your browser will open a new browser tab at co
 
 To obtain your 3 initial passwords, run
 
-```bash
+```shell
 kubefirst k3d root-credentials
 ```
 
@@ -106,6 +106,6 @@ kubefirst k3d root-credentials
 
 You will be automatically connected to your new Kubernetes cluster. To view all cluster pods, run
 
-```bash
+```shell
 kubectl get pods -A
 ```
