@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Validate Links Markdown ${{ matrix.file-extension }} files
-        if: success() || failure()
+        if: always()
         uses: gaurav-nelson/github-action-markdown-link-check@v1
         with:
           config-file: '.markdownlinkcheck.json'
