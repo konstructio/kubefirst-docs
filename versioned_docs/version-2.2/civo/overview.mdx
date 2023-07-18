@@ -6,6 +6,7 @@ sidebar_position: 1
 description: an overview of kubefirst on a civo kubernetes cluster
 image: "https://docs.kubefirst.io/img/logo.svg"
 ---
+
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import styles from "@site/docs/stylesheets/tabs.module.css";
@@ -28,10 +29,10 @@ import CloudBanner from '@site/src/components/CloudBanner/CloudBanner.jsx'
   </div>
 </div>
 
-
 # Overview
 
 The Civo provisioning process will:
+
 - create a gitops git repository from our gitops-template and store it in your git provider
 - create a kubernetes cluster in the Civo cloud
 - install argocd bootstrapped against your gitops repo so your repo powers the platform
@@ -47,9 +48,9 @@ The Civo provisioning process will:
 # Applications
 
 <Tabs groupId="git_provider" defaultValue="github" queryString>
-    <TabItem 
+    <TabItem
       attributes={{className: styles.github}}
-      value="github" 
+      value="github"
       label={
         <div className="git-tab">
           <img src="https://assets.kubefirst.com/console/github.svg" />
@@ -59,7 +60,7 @@ The Civo provisioning process will:
     >
       <GitHubOverview />
     </TabItem>
-    <TabItem 
+    <TabItem
       value="gitlab"
       attributes={{className: styles.gitlab}}
       label={
