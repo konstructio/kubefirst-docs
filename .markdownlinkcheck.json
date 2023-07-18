@@ -41,6 +41,12 @@
 		},
 		{
 			"pattern": "https://.*kubefirst.dev*"
+		},
+		{
+			"pattern": "http://localhost*"
+		},
+		{
+			"pattern": "https://gitlab.com*"
 		}
 	],
 	"replacementPatterns": [
