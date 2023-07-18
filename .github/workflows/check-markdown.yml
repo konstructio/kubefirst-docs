@@ -1,9 +1,23 @@
+---
 name: Markdown Syntax Validation
 
 on: [push, workflow_dispatch]
 
 jobs:
   markdown-check:
+    strategy:
+      matrix:
+        configs: [
+          {
+            files: "**.md",
+            config: "md.markdownlint.json"
+          },
+          {
+            files: "**.mdx",
+            config: "mdx.markdownlint.json"
+          }
+        ]
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout this repository
@@ -12,8 +26,7 @@ jobs:
       - name: Validate Markdown
         uses: DavidAnson/markdownlint-cli2-action@v9.0.0
         with:
-            command: config
-            globs: |
-              .markdownlint.json
-              **.md
-              **.mdx
+          command: config
+          globs: |
+            ${{ matrix.configs.config }}
+            ${{ matrix.configs.files }}
