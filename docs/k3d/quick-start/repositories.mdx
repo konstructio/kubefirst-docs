@@ -5,13 +5,14 @@ sidebar_position: 3
 # custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
 image: "https://docs.kubefirst.io/img/logo.svg"
 ---
----
+
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import styles from "@site/docs/stylesheets/tabs.module.css";
 import ReactDom from 'react-dom'
 import * as config from "@site/docs/constants.js"
-
+import GitHubRepositories from '@site/docs/k3d/partials/github/_repositories.mdx'
+import GitLabRepositories from '@site/docs/k3d/partials/gitlab/_repositories.mdx'
 
 <div
   style={{
@@ -25,13 +26,10 @@ import * as config from "@site/docs/constants.js"
   </div>
 </div>
 
-import GitHubRepositories from '@site/docs/k3d/partials/github/_repositories.mdx'
-import GitLabRepositories from '@site/docs/k3d/partials/gitlab/_repositories.mdx'
-
 <Tabs groupId="git_provider" defaultValue="github" queryString>
-    <TabItem 
+    <TabItem
       attributes={{className: styles.github}}
-      value="github" 
+      value="github"
       label={
         <div className="git-tab">
           <img src="https://assets.kubefirst.com/console/github.svg" />
@@ -41,7 +39,7 @@ import GitLabRepositories from '@site/docs/k3d/partials/gitlab/_repositories.mdx
     >
       <GitHubRepositories />
     </TabItem>
-    <TabItem 
+    <TabItem
       value="gitlab"
       attributes={{className: styles.gitlab}}
       label={
