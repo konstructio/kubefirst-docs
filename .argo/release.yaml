@@ -132,7 +132,7 @@ spec:
                 - name: gitUrlNoProtocol
                   value: '{{workflow.parameters.gitUrlNoProtocol}}'
                 - name: commitMessage
-                  value: "setting {{workflow.parameters.appName}} {{workflow.parameters.environment}} to chart version {{steps.get-updated-chart-version.outputs.result}} [skip ci] [CI SKIP]"
+                  value: "setting {{workflow.parameters.appName}} {{workflow.parameters.environment}} to chart version {{steps.get-updated-chart-version.outputs.result}}"
 
         - - name: set-environment-version
             templateRef:
@@ -166,4 +166,4 @@ spec:
                 - name: gitUrlNoProtocol
                   value: '{{workflow.parameters.gitUrlNoProtocol}}'
                 - name: commitMessage
-                  value: 'setting {{workflow.parameters.appName}} {{workflow.parameters.environment}} to chart version {{steps.get-updated-chart-version.outputs.result}} [skip ci] [CI SKIP]'
+                  value: 'setting {{workflow.parameters.appName}} {{workflow.parameters.environment}} to chart version {{steps.get-updated-chart-version.outputs.result}}'
