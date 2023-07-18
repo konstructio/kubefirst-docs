@@ -1,0 +1,9 @@
+- <span>{props.firstitem}</span>
+- Create a `gitops` git repository from our [gitops-template](https://github.com/kubefirst/gitops-template) and store it in your selected git provider.
+- Install Argo CD bootstrapped against your `gitops` repository so your repository powers the platform.
+- Install all the platform apps using GitOps (gitops repository `/registry` folder).
+- Apply Terraform to configure Vault (gitops repository `/terraform/vault` folder).
+- Bind a webhook to ngrok in cluster so you can automate Terraform executions through Atlantis.
+- Integrate Argo Workflows with your git provider.
+- Install Argo Workflows [cluster workflow templates](https://argoproj.github.io/argo-workflows/cluster-workflow-templates/#cluster-workflow-templates) to build containers, publish charts, and provide GitOps delivery pipelines.
+- Install a sample application git repository that uses this automation to demonstrate app delivery ([metaphor](https://github.com/kubefirst/metaphor-template)).
