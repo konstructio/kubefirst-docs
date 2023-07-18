@@ -9,10 +9,12 @@ jobs:
       matrix:
         configs: [
           {
+            which: ".md",
             files: "**.md",
             config: "md.markdownlint.json"
           },
           {
+            which: ".mdx",
             files: "**.mdx",
             config: "mdx.markdownlint.json"
           }
@@ -23,7 +25,7 @@ jobs:
       - name: Checkout this repository
         uses: actions/checkout@main
 
-      - name: Validate Markdown
+      - name: Validate Markdown (${{ matrix.configs.which }})
         uses: DavidAnson/markdownlint-cli2-action@v9.0.0
         with:
           command: config
