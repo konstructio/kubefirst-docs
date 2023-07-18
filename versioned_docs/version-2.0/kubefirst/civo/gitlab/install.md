@@ -57,7 +57,7 @@ If your deployment is not successful, errors and troubleshooting information wil
 
 To obtain your 3 initial passwords, run
 
-```bash
+```shell
 kubefirst civo root-credentials
 ```
 
@@ -69,13 +69,13 @@ kubefirst civo root-credentials
 
 To connect to your new Kubernetes cluster, run
 
-```bash
+```shell
 export KUBECONFIG=~/.k1/kubeconfig
 ```
 
 To view all cluster pods, run
 
-```bash
+```shell
 kubectl get pods -A
 ```
 

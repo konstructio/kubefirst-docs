@@ -56,7 +56,7 @@ kubefirst aws create \
 
 To obtain your 3 initial passwords, run
 
-```bash
+```shell
 kubefirst aws root-credentials
 ```
 
@@ -68,12 +68,12 @@ kubefirst aws root-credentials
 
 Replace `kubefirst` in the command below with your cluster's name if you specified one
 
-```bash
+```shell
 aws eks update-kubeconfig --name kubefirst
 ```
 
 To view all cluster pods run
 
-```bash
+```shell
 kubectl get pods -A
 ```
