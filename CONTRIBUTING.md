@@ -87,7 +87,7 @@ We are also using MDX files, which bring some advantages, and maintenance compli
 
 #### Advantages
 
-We can now use React syntax to simplify repetition of sections: as one example, check [/docs/civo/overview.mdx](/docs/civo/overview.mdx) where we use `<CommonProvisionProcess firstitem="Create a Kubernetes cluster in the Civo cloud."/>` in the file to display the common provision process which is nearly the same for each cloud. To be able to use this component, we imported the file with the line of code `import CommonProvisionProcess from "@site/docs/common/partials/common/_provision-process.mdx";'` at the top. You can also send pass objects, see them as variables, to customize the imported component. In this case, each provision process is the same except the first item, which is specific to the cloud selected.
+We can now use React syntax to simplify repetition of sections: as one example, check [docs/civo/overview.mdx](./docs/civo/overview.mdx) where we use `<CommonProvisionProcess firstitem="Create a Kubernetes cluster in the Civo cloud."/>` in the file to display the common provision process which is nearly the same for each cloud. To be able to use this component, we imported the file with the line of code `import CommonProvisionProcess from "@site/docs/common/partials/common/_provision-process.mdx";'` at the top. You can also send pass objects, see them as variables, to customize the imported component. In this case, each provision process is the same except the first item, which is specific to the cloud selected.
 
 It is important that partial filenames start with an underscore like `_provision-process.mdx`, so Docusaurus does not generate a separate documentation page for them.
 
@@ -105,7 +105,7 @@ HTML style comments `<!-- this is a comment -->` in MDX v1 were replaced by `{/*
 
 ###### Component props variables
 
-In MDX v1, JSX and Markdown don't interoperate well: it has been fixed in MDX v2. It means that if you pass a variable as you saw in the `CommonProvisionProcess` example shown above, if you use `{props.firstitem}` in the imported `.mdx` file, it will be treated as text. The fix is to enclose the variable between HTML tags so it's treated as JSX. It could be as sample as putting it between span `<span>{props.firstitem}</span>` like we did in [docs/common/partials/common/_provision-process.mdx](docs/common/partials/common/_provision-process.mdx).
+In MDX v1, JSX and Markdown don't interoperate well: it has been fixed in MDX v2. It means that if you pass a variable as you saw in the `CommonProvisionProcess` example shown above, if you use `{props.firstitem}` in the imported `.mdx` file, it will be treated as text. The fix is to enclose the variable between HTML tags so it's treated as JSX. It could be as sample as putting it between span `<span>{props.firstitem}</span>` like we did in [docs/common/partials/common/_provision-process.mdx](./docs/common/partials/common/_provision-process.mdx).
 
 #### Special Syntax
 
