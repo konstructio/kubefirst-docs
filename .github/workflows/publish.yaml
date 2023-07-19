@@ -6,8 +6,6 @@ env:
   ARGO_VERSION: v3.4.1
   CONTAINER_REGISTRY_URL: 'public.ecr.aws/kubefirst'
 
-concurrency: ci-release-docs
-
 on:
   push:
     branches:
@@ -22,12 +20,16 @@ jobs:
     if: ${{ github.actor != 'kube1st' }}
     runs-on: self-hosted
     steps:
+
+      - name: Wait for other releases processes to finish
+        uses: ahmadnassri/action-workflow-queue@v1.1.4
+
       - name: Setup Runner for Argo
         run: |
-          cd $HOME
+          cd "$HOME"
           echo "Install argo"
           # Download the binary
-          curl -sLO https://github.com/argoproj/argo-workflows/releases/download/${ARGO_VERSION}/argo-linux-amd64.gz
+          curl -sLO "https://github.com/argoproj/argo-workflows/releases/download/${ARGO_VERSION}/argo-linux-amd64.gz"
           # Unzip
           gunzip argo-linux-amd64.gz
           # Make binary executable
