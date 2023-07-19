@@ -1,0 +1,62 @@
+---
+hide_title: true
+sidebar_label: Overview
+sidebar_position: 1
+# custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
+description: an overview of kubefirst on a Google Cloud kubernetes cluster
+image: "https://docs.kubefirst.io/img/logo.svg"
+
+---
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import styles from "@site/docs/stylesheets/tabs.module.css";
+import ReactDom from 'react-dom'
+import * as config from "@site/docs/constants.js"
+import GitHubOverview from '@site/docs/gcp/partials/github/_overview.mdx'
+import GitLabOverview from '@site/docs/gcp/partials/gitlab/_overview.mdx'
+import CloudBanner from '@site/src/components/CloudBanner/CloudBanner.jsx'
+import CommonProvisionProcess from "@site/docs/common/partials/common/_provision-process.mdx";
+
+<CloudBanner cloudImgUrl={config.gcp_LOGO_URL} />
+
+# Overview
+
+:::caution
+
+Google Cloud is in beta. Use at your own risks.
+
+:::
+
+The Google Cloud provisioning process will:
+<CommonProvisionProcess firstitem="Create a Kubernetes cluster in Google Cloud."/>
+
+![kubefirst Google Cloud with GitLab Cluster Diagram](../img/gcp/gitlab/installation-diagram-light.png#light-mode)![kubefirst Google Cloud with GitLab Cluster Diagram](../img/gcp/gitlab/installation-diagram-dark.png#dark-mode)
+
+# Applications
+
+<Tabs groupId="git_provider" defaultValue="github" queryString>
+    <TabItem
+      attributes={{className: styles.github}}
+      value="github"
+      label={
+        <div className="git-tab">
+          <img src="https://assets.kubefirst.com/console/github.svg" />
+          <span>GitHub</span>
+        </div>
+      }
+    >
+      <GitHubOverview />
+    </TabItem>
+    <TabItem
+      value="gitlab"
+      attributes={{className: styles.gitlab}}
+      label={
+        <div className="git-tab">
+          <img src="https://assets.kubefirst.com/console/gitlab.svg" />
+          <span>GitLab</span>
+        </div>
+      }
+    >
+      <GitLabOverview />
+    </TabItem>
+</Tabs>
