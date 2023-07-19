@@ -13,7 +13,7 @@ _For contribution to the kubefirst CLI, please refer yourself to the [CONTRIBUTI
   - [Markdown](#markdown)
   - [Search Index](#search-index)
   - [Testing](#testing)
-  - [Update docs accross versions](#update-docs-accross-versions)
+  - [Update docs across versions](#update-docs-across-versions)
   - [Versioning](#versioning)
 - [Help](#help)
 
@@ -81,6 +81,32 @@ We also enforce some styling to prevent ambiguity, and ensure consistency for:
 - MD049: underscores for italic text.
 - MD050: asterisks for bold text.
 
+### Markdown React
+
+We are also using MDX files, which bring some advantages, and maintenance complications.
+
+#### Advantages
+
+We can now use React syntax to simplify repetition of sections: as one example, check [docs/civo/overview.mdx](./docs/civo/overview.mdx) where we use `<CommonProvisionProcess firstitem="Create a Kubernetes cluster in the Civo cloud."/>` in the file to display the common provision process which is nearly the same for each cloud. To be able to use this component, we imported the file with the line of code `import CommonProvisionProcess from "@site/docs/common/partials/common/_provision-process.mdx";'` at the top. You can also send pass objects, see them as variables, to customize the imported component. In this case, each provision process is the same except the first item, which is specific to the cloud selected.
+
+It is important that partial filenames start with an underscore like `_provision-process.mdx`, so Docusaurus does not generate a separate documentation page for them.
+
+#### Complications
+
+The minimizing of content duplication is making the content easier to maintain, and at the same time, way more complicated with all the import statements, and non-basic Markdown code. It means managing a lot more files, and often editing more than one file for a specific section or a specific rendered page of the documentation.
+
+##### MDX v1 vs v2 support
+
+MDX v2 will be supported in Docusaurus v3, which is not available yet, so this brings other complications.
+
+###### React Comments
+
+HTML style comments `<!-- this is a comment -->` in MDX v1 were replaced by `{/* this is a comment */}` in MDX v2. Since GitHub is using syntax highlight from MDX v2, the latest display well in GitHub, but isn't supported yet in Docusaurus as its using MDX v1. It means that the HTML comments will be displayed as if the code was removed if you check the file diff in the GitHub web interface. Until Docusaurus v2 is released, the fix is simple: instead of commenting directly in the `.mdx`` files for issues or todos, please create GitHub issues for what need to be done. Even when Docusaurus will support MDX v2 like GitHub, it's best practice not to comment directly tasks or todos in the file, but to create GitHub issues anyway.
+
+###### Component props variables
+
+In MDX v1, JSX and Markdown don't interoperate well: it has been fixed in MDX v2. It means that if you pass a variable as you saw in the `CommonProvisionProcess` example shown above, if you use `{props.firstitem}` in the imported `.mdx` file, it will be treated as text. The fix is to enclose the variable between HTML tags so it's treated as JSX. It could be as sample as putting it between span `<span>{props.firstitem}</span>` like we did in [docs/common/partials/common/_provision-process.mdx](./docs/common/partials/common/_provision-process.mdx).
+
 #### Special Syntax
 
 If you want to create tabs, it will possible, thanks to the [remark-docusaurus-tabs plugin](https://github.com/mccleanp/remark-docusaurus-tabs). You can do it by using the following syntax:
@@ -147,7 +173,7 @@ To run our documentation locally, simply run `npm start`.
 
 > If you modify the CSS, the changes aren't picked up by the development server like when you modify the documentation content. You need to restart the server with npm.
 
-### Update docs accross versions
+### Update docs across versions
 
 Sometimes changes in `v.next` are also valid for previous versions, which is often the case when refactoring a section, or adding missing information to a page. You can either copy the change content manually, or use the ZSH tools we created easily for that. First, you need to stage the file(s) you modified or created. Once it's done, run this command from the documentation folder in your terminal:
 

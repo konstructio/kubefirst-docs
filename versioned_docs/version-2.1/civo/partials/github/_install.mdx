@@ -32,7 +32,7 @@ kubefirst civo create \
   --cluster-name kubefirst
 ```
 
-The kubefirst cli will produce a directory of utilities, a state file, and some staged platform content that can now be found in the `~/.kubefirst` and `~/.k1` folders on your local machine.
+The kubefirst CLI will produce a directory of utilities, a state file, and some staged platform content that can now be found in the `~/.kubefirst` and `~/.k1` folders on your local machine.
 
 After the ~10 minute installation, your browser will launch a new tab to the [kubefirst Console](https://github.com/kubefirst/console), which will help you navigate your new suite of tools running in your new Civo cluster.
 
@@ -50,7 +50,7 @@ If your deployment is not successful, errors and troubleshooting information wil
 
 To obtain your 3 initial passwords, run
 
-```bash
+```shell
 kubefirst civo root-credentials
 ```
 
@@ -60,13 +60,13 @@ kubefirst civo root-credentials
 
 To connect to your new Kubernetes cluster, run
 
-```bash
+```shell
 export KUBECONFIG=~/.k1/kubeconfig
 ```
 
 To view all cluster pods, run
 
-```bash
+```shell
 kubectl get pods -A
 ```
 

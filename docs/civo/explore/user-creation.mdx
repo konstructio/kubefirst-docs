@@ -5,14 +5,13 @@ sidebar_position: 5
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import styles from "@site/docs/stylesheets/tabs.module.css";
-
 import GitHubUserCreation from '@site/docs/civo/partials/github/_user-creation.mdx'
 import GitLabUserCreation from '@site/docs/civo/partials/gitlab/_user-creation.mdx'
 
 <Tabs groupId="git_provider" defaultValue="github" queryString>
-    <TabItem 
+    <TabItem
       attributes={{className: styles.github}}
-      value="github" 
+      value="github"
       label={
         <div className="git-tab">
           <img src="https://assets.kubefirst.com/console/github.svg" />
@@ -22,7 +21,7 @@ import GitLabUserCreation from '@site/docs/civo/partials/gitlab/_user-creation.m
     >
       <GitHubUserCreation />
     </TabItem>
-    <TabItem 
+    <TabItem
       value="gitlab"
       attributes={{className: styles.gitlab}}
       label={

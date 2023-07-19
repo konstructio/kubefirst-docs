@@ -2,7 +2,7 @@ name: Check signed commits
 on: pull_request
 
 jobs:
-  build:
+  signed-commits-check:
     name: Validate if commits in PR are signed 
     runs-on: ubuntu-latest
     steps:
