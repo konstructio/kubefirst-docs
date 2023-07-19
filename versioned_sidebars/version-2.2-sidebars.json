@@ -79,5 +79,8 @@
   ],
   "vultr": [
     "vultr/upgrade"
+  ],
+  "gcp": [
+    "gcp/upgrade"
   ]
 }
