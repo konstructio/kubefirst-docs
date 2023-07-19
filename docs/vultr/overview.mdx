@@ -12,10 +12,10 @@ import TabItem from '@theme/TabItem';
 import styles from '@site/docs/stylesheets/tabs.module.css';
 import ReactDom from 'react-dom';
 import * as config from '@site/docs/constants.js';
-
 import GitHubOverview from '@site/docs/vultr/partials/github/_overview.mdx';
 import GitLabOverview from '@site/docs/vultr/partials/gitlab/_overview.mdx';
 import CloudBanner from '@site/src/components/CloudBanner/CloudBanner.jsx';
+import CommonProvisionProcess from "@site/docs/common/partials/common/_provision-process.mdx";
 
 <div
   style={{
@@ -38,16 +38,7 @@ Vultr is in beta. It is quite stable, but use at your own risks.
 :::
 
 The Vultr provisioning process will:
-
-- Create a `gitops` git repository from our [gitops-template](https://github.com/kubefirst/gitops-template) and store it in your selected git provider.
-- Create a Kubernetes cluster in the Vultr cloud.
-- Install Argo CD bootstrapped against your `gitops` repository so your repository powers the platform.
-- Install all the platform apps using GitOps (gitops repository `/registry` folder).
-- Apply Terraform to configure Vault (gitops repository `/terraform/vault` folder).
-- Bind a webhook to ngrok in cluster so you can automate Terraform executions through Atlantis.
-- Integrate Argo Workflows with your git provider.
-- Install Argo Workflows [cluster workflow templates](https://argoproj.github.io/argo-workflows/cluster-workflow-templates/#cluster-workflow-templates) to build containers, publish charts, and provide GitOps delivery pipelines.
-- Install a sample application that uses this automation to demonstrate app delivery ([metaphor](https://github.com/kubefirst/gitops-template/tree/main/metaphor)).
+<CommonProvisionProcess firstitem="Create a Kubernetes cluster in the Vultr cloud."/>
 
 ![kubefirst Vultr with GitLab Cluster Diagram](../img/vultr/gitlab/installation-diagram-light.png#light-mode)![kubefirst Vultr with GitLab Cluster Diagram](../img/vultr/gitlab/installation-diagram-dark.png#dark-mode)
 
