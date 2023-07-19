@@ -135,7 +135,7 @@ const config = {
             type: 'docSidebar',
             position: 'left',
             sidebarId: 'gcp',
-            label: 'GCP',
+            label: 'Google Cloud',
           },
           {
             type: 'docsVersionDropdown',

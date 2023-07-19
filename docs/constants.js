@@ -10,3 +10,5 @@ export const GITLAB_LOGO_URL =
   'https://assets.kubefirst.com/console/gitlab.svg';
 export const VULTR_LOGO_URL =
   'https://cf-assets.www.cloudflare.com/slt3lc6tev37/1ATBPX4YOBbCRkybT4zS2e/f4f5f0900b57c61e65960efb3d11c64f/Vultr_logo_high_res.png';
+export const GCP_LOGO_URL =
+  'https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg';

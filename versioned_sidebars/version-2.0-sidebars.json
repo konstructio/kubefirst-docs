@@ -198,5 +198,8 @@
   ],
   "vultr": [
     "kubefirst/vultr/upgrade"
+  ],
+  "gcp": [
+    "gcp/upgrade"
   ]
 }
