@@ -1,3 +1,4 @@
+---
 name: Markdown Links Validation
 
 on: [push, workflow_dispatch]
@@ -20,4 +21,4 @@ jobs:
         with:
           config-file: '.markdownlinkcheck.json'
           use-quiet-mode: 'yes'
-          file-extension:  ${{ matrix.file-extension }}
+          file-extension: ${{ matrix.file-extension }}
