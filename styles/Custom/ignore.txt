@@ -22,6 +22,7 @@ eks
 # F
 
 # G
+gcp
 github
 gitlab
 gitops

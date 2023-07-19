@@ -132,6 +132,12 @@ const config = {
             label: 'Vultr',
           },
           {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'gcp',
+            label: 'Google Cloud',
+          },
+          {
             type: 'docsVersionDropdown',
             position: 'right',
           },
