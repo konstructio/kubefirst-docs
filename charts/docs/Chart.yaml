@@ -1,6 +1,6 @@
 apiVersion: v2
-appVersion: efbed83
+appVersion: 6efa2ad
 description: Kubefirst documentation Helm chart
 name: docs
 type: application
-version: 0.47.0
+version: 0.48.0
