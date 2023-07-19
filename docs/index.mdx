@@ -75,12 +75,30 @@ We support local, AWS, and Civo clouds, with additional clouds in beta. By runni
             <p>
                The perfect cloud environment when Kubernetes will be the center of attention.
             </p>
-            <p>A <strong>simple cloud footprint</strong> with a powerful open source cloud native tool set for identity and infrastructure management, application delivery, and secrets management. Cloud native infrastructure with incredibly fast provisioning times.
-            </p>
+            <p>A <strong>simple cloud footprint</strong> with a powerful open source cloud native tool set for identity and infrastructure management, application delivery, and secrets management. Cloud native infrastructure with incredibly fast provisioning times.</p>
             </div>
             <div className="card__footer">
                 <form>
                     <button className="button button--secondary button--block" formAction="civo/overview/">View install instructions</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+        <div className="card">
+            <div className="card__image">
+            <img
+               src={require("/static/img/vultr_header.png").default}
+               alt="Vultr Cloud"
+               title="Vultr Cloud" />
+            </div>
+            <div className="card__body">
+            <h3>Vultr Cloud</h3>
+            <p>A cloud hosting provider that offers high-performance SSD-based cloud servers, block storage, object storage, and dedicated servers in multiple locations worldwide.</p>
+            </div>
+            <div className="card__footer">
+                <form>
+                    <button className="button button--secondary button--block" formAction="vultr/overview/">View install instructions</button>
                 </form>
             </div>
         </div>

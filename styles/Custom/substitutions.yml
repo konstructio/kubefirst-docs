@@ -34,11 +34,13 @@ swap:
   '(?<=^| )git[L|l]ab(?=$| |\.)': GitLab
   # Starting or with a space before, and ending with a dot or space (so not working used in a path, caused of MDX)
   '(?<=^| )gitops(?=$| |\.)': GitOps for the term or put gitops as inline code for the repository
+  google: Google
   helm: Helm
   https: HTTPS
   iam: IAM
   Kubefirst: kubefirst
   kubernetes: Kubernetes
+  mongo: MongoDB
   oidc: OIDC
   repo: repository
   SSH: SSH
@@ -47,3 +49,4 @@ swap:
   ui: UI
   url: URL
   vpc: VPC
+  vultr: Vultr

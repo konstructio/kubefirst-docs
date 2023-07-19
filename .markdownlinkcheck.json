@@ -47,6 +47,9 @@
 		},
 		{
 			"pattern": "https://gitlab.com*"
+		},
+		{
+			"pattern": "https://.*vultr.com*"
 		}
 	],
 	"replacementPatterns": [
