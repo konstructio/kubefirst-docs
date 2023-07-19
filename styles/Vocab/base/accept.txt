@@ -79,6 +79,8 @@ Typesense
 uncomment
 
 # V
+vale
+Vultr
 
 # W
 walkthrough
