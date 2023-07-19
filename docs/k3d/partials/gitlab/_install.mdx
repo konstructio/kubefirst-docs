@@ -49,11 +49,11 @@ This is not an optional step: the cluster creation will fail if you don't instal
 
 ## Working without SSH
 
-If you need your kubefirst installation to avoid using ssh whenver possible, you can bypass ssh and kubefirst will configure itself, argo, github actions, argocd, and your entire gitops workflow to utilize https instead of ssh at all times.
+If you need your kubefirst installation to avoid using SSH whenever possible, you can bypass SSH and kubefirst will configure itself, GitHub Actions, Argo CD, and your entire GitOps workflow to utilize HTTPS instead of SSH at all times.
 
 Provide the flag `--git-protocol https` when building your k3d cluster and kubefirst will take care of the rest.
 
-If you ever need to change this, you will need to rebuild the cluser or manually update the templates in your gitops repo.
+If you ever need to change this, you will need to rebuild the cluster or manually update the templates in your `gitops` repository.
 
 ## Create your new local cluster
 
