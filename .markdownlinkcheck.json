@@ -49,7 +49,7 @@
 			"pattern": "https://gitlab.com*"
 		},
 		{
-			"pattern": "https://www.vultr.com*"
+			"pattern": "https://*.vultr.com*"
 		}
 	],
 	"replacementPatterns": [
