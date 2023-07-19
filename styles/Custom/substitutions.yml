@@ -24,6 +24,8 @@ swap:
   ecr: ECR
   eks: EKS
   docker: Docker
+  gcp: Google Cloud
+  gcp cloud: Google Cloud
   # Starting or with a space before, and ending with a dot or space (so not working used in a path, caused of MDX)
   '[G|g]ithub': GitHub
   # Starting or with a space before, and ending with a dot or space (so not working used in a path, caused of MDX)

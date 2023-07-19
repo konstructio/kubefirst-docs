@@ -111,7 +111,7 @@ In MDX v1, JSX and Markdown don't interoperate well: it has been fixed in MDX v2
 
 ##### Admonitions
 
-You can also use special Docusaurus Markdown syntax called admonitions, which let you display beautiful notes, informations, warnings, and others.
+You can also use special Docusaurus Markdown syntax called admonitions, which let you display beautiful notes, information, warnings, and others.
 
 ```markdown
 :::note
