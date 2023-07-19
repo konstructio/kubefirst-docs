@@ -1,5 +1,5 @@
 name: Check Commit Messages
-on: push
+on: [push, workflow_dispatch]
 
 jobs:
   commitlint:
