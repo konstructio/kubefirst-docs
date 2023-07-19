@@ -32,15 +32,15 @@ import GitLabOverview from '@site/docs/aws/partials/gitlab/_overview.mdx'
 
 The aws provisioning process will:
 
-- create a vpc, subnets, iam, and eks cluster in your specified aws account
-- create a gitops git repository from our gitops-template, customized for you, and store it in your git provider
-- install argocd and register it with your gitops repo so that your main branch powers the platform
-- install all the platform apps using argocd gitops preconfigured sync waves (gitops repo `/registry` folder)
-- apply terraform to configure Vault (gitops repo `/terraform/vault` folder)
-- bind a webhook to atlantis to automate terraform executions
-- integrate argo workflows with your git provider
-- install argo workflow automation to build containers, publish charts, and provide gitops delivery pipelines
-- install a sample app git repository that uses this automation to demonstrate gitops app delivery and promotion (metaphor repo)
+- Create a VPC, subnets, IAM, and EKS cluster in your specified AWS account.
+- Create a `gitops` git repository from our [gitops-template](https://github.com/kubefirst/gitops-template), customized for you, and store it in your git provider.
+- Install Argo CD and register it with your `gitops` repository so that your main branch powers the platform.
+- Install all the platform apps using Argo CD GitOps preconfigured sync waves (`gitops` repository `/registry` folder).
+- Apply Terraform to configure Vault (`gitops` repository `/terraform/vault` folder).
+- Bind a webhook to Atlantis to automate Terraform executions.
+- Integrate Argo Workflows with your git provider.
+- Install Argo Workflows automation to build containers, publish charts, and provide GitOps delivery pipelines.
+- Install a sample app git repository that uses this automation to demonstrate GitOps app delivery and promotion ([metaphor](https://github.com/kubefirst/metaphor-template) repository).
 
 ![kubefirst AWS with GitHub Cluster Diagram](../img/aws/github/installation-diagram-light.png#light-mode)![kubefirst AWS with GitHub Cluster Diagram](../img/aws/github/installation-diagram-dark.png#dark-mode)
 

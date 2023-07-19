@@ -13,7 +13,7 @@ _For contribution to the kubefirst CLI, please refer yourself to the [CONTRIBUTI
   - [Markdown](#markdown)
   - [Search Index](#search-index)
   - [Testing](#testing)
-  - [Update docs accross versions](#update-docs-accross-versions)
+  - [Update docs across versions](#update-docs-across-versions)
   - [Versioning](#versioning)
 - [Help](#help)
 
@@ -173,7 +173,7 @@ To run our documentation locally, simply run `npm start`.
 
 > If you modify the CSS, the changes aren't picked up by the development server like when you modify the documentation content. You need to restart the server with npm.
 
-### Update docs accross versions
+### Update docs across versions
 
 Sometimes changes in `v.next` are also valid for previous versions, which is often the case when refactoring a section, or adding missing information to a page. You can either copy the change content manually, or use the ZSH tools we created easily for that. First, you need to stage the file(s) you modified or created. Once it's done, run this command from the documentation folder in your terminal:
 
