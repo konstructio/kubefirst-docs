@@ -109,6 +109,48 @@ In MDX v1, JSX and Markdown don't interoperate well: it has been fixed in MDX v2
 
 #### Special Syntax
 
+##### Admonitions
+
+You can also use special Docusaurus Markdown syntax called admonitions, which let you display beautiful notes, informations, warnings, and others.
+
+```markdown
+:::note
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::tip
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::info
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::caution
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::danger
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+```
+
+which generate
+
+![Admunitions examples](img/admonitions.png)
+
+##### Tabs
+
 If you want to create tabs, it will possible, thanks to the [remark-docusaurus-tabs plugin](https://github.com/mccleanp/remark-docusaurus-tabs). You can do it by using the following syntax:
 
 ```markdown

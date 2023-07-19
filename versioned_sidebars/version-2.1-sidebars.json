@@ -74,5 +74,8 @@
     "k3d/deprovision",
     "k3d/faq",
     "k3d/credits"
+  ],
+  "vultr": [
+    "vultr/upgrade"
   ]
 }
