@@ -3,4 +3,4 @@ appVersion: 50000f7
 description: Kubefirst documentation Helm chart
 name: docs
 type: application
-version: 0.36.0
+version: 0.37.0
