@@ -1,3 +1,4 @@
+---
 name: Optimize the Images
 on:
   push:
@@ -8,6 +9,7 @@ on:
       - "**.jpe?g"
       - "**.svg"
       - "**.gif"
+  workflow_dispatch:
 
 jobs:
   optimize-images:
