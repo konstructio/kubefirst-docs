@@ -16,7 +16,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  release:
+  publish:
     if: ${{ github.actor != 'kube1st' }}
     runs-on: self-hosted
     steps:

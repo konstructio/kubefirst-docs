@@ -1,3 +1,4 @@
+---
 name: Syntax Validation
 on: [push, workflow_dispatch]
 
@@ -6,11 +7,11 @@ jobs:
     name: vale
     runs-on: ubuntu-latest
     steps:
-        - name: Checkout this repository
-          uses: actions/checkout@main
+      - name: Checkout this repository
+        uses: actions/checkout@main
 
-        - name: Validate the syntax
-          uses: errata-ai/vale-action@reviewdog
-          with:
-            fail_on_error: true
-            vale_flags: "--config=.vale.ini"
+      - name: Validate the syntax
+        uses: errata-ai/vale-action@reviewdog
+        with:
+          fail_on_error: true
+          vale_flags: "--config=.vale.ini"

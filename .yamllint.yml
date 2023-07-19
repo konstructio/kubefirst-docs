@@ -1,0 +1,10 @@
+---
+extends: default
+
+rules:
+  line-length: disable
+  truthy:
+    check-keys: false
+
+ignore: |
+  charts/*
