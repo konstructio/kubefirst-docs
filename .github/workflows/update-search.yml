@@ -1,0 +1,22 @@
+---
+name: Update the docs search index
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-search-index:
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repository
+        uses: actions/checkout@main
+
+      - name: Run the crawler
+        uses: celsiusnarhwal/typesense-scraper@v2
+        with:
+          api-key: ${{ secrets.TYPESENSE_ADMIN_KEY }}
+          host: typesense.mgmt.kubefirst.com
+          port: 443
+          protocol: https
+          config: typesense.docsearch.config.json
