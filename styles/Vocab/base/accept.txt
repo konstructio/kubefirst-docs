@@ -6,9 +6,9 @@ automation
 # B
 
 # C
-Civo
-CLI
+CLI'
 ClusterIssuer
+containerd
 CPU
 CWFT
 
@@ -28,6 +28,7 @@ Docusaurus
 hotfix
 
 # I
+interoperate
 
 # J
 
@@ -41,9 +42,11 @@ kubectl
 # M
 markdownlint
 mkcert
+multinode
 
 # N
 namespace
+nerdctl
 npm
 ngrok
 Nginx
@@ -62,9 +65,11 @@ routable
 
 # S
 statestore
+subnet
 
 # T
 teardown
+todo
 toolset
 Traefik
 truststore

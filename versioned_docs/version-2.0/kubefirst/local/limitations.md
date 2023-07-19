@@ -18,8 +18,8 @@ Allocated CPU: 5 Cores
 
 ## Known issues
 
-- Disk: During the provisioning of the local environment, the kubefirst cli bootstrap a k3d cluster which starts downloading all docker images simultaneously. So you can experience some issues related to disk performance.
-- Network bandwidth: As described above, the network bandwidth could be throttled due to downloading all docker images simultaneously.
+- Disk: During the provisioning of the local environment, the kubefirst CLI bootstrap a k3d cluster which starts downloading all Docker images simultaneously. So you can experience some issues related to disk performance.
+- Network bandwidth: As described above, the network bandwidth could be throttled due to downloading all Docker images simultaneously.
 
 ## Problematic use cases
 

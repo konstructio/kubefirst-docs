@@ -1,6 +1,6 @@
 # GitOps Catalog
 
-After your kubefirst cluster has been provisioned, you can optionally leverage the Kubefirst GitOps Catalog.
+After your kubefirst cluster has been provisioned, you can optionally leverage the kubefirst GitOps Catalog.
 
 The GitOps Catalog is a curated collection of Kubernetes applications that can be deployed directly to your kubefirst cluster(s).
 
@@ -26,13 +26,13 @@ From here, you can click **Install** on any of the available services to deploy 
 
 ## How this works
 
-When you opt to install any of the available services from the GitOps Catalog, the kubefirst API formats and commits a set of files to your gitops repository.
+When you opt to install any of the available services from the GitOps Catalog, the kubefirst API formats and commits a set of files to your `gitops` repository.
 
 Then, Argo CD is asked to refresh the upstream registry to synchronize the newly deployed application.
 
-Since the deployment of these applications is done directly in your gitops repository, you have full ownership to then customize these applications by adjusting their content within your gitops repository.
+Since the deployment of these applications is done directly in your `gitops` repository, you have full ownership to then customize these applications by adjusting their content within your `gitops` repository.
 
-For example - consider the following sample deployment of Kuberntes Dashboard:
+For example - consider the following sample deployment of Kubernetes Dashboard:
 
 ```yaml
 ---
@@ -80,4 +80,4 @@ metadata:
   namespace: default
 ```
 
-If you'd like to change any of the helm chart values, change the helm chart version, or add any additional resources, you simply edit this file and Argo CD will detect the changes from your upstream gitops repository and synchronize.
+If you'd like to change any of the Helm chart values, change the Helm chart version, or add any additional resources, you simply edit this file and Argo CD will detect the changes from your upstream `gitops` repository and synchronize.

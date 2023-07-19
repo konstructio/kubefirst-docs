@@ -10,6 +10,6 @@ On local versions of the kubefirst platform, we leverage [mkcert](https://github
 
 To trust mkcerts in your browser, run
 
-```bash
+```shell
 mkcert -install
 ```

@@ -1,16 +1,25 @@
+---
 name: Release new docs
+
 env:
   ARGO_NAMESPACE: argo
   ARGO_VERSION: v3.4.1
   CONTAINER_REGISTRY_URL: 'public.ecr.aws/kubefirst'
+
+concurrency: ci-release-docs
+
 on:
   push:
     branches:
       - main
+    paths-ignore:
+      - '.github/**'
+      - '.tools/**'
   workflow_dispatch:
 
 jobs:
   release:
+    if: ${{ github.actor != 'kube1st' }}
     runs-on: self-hosted
     steps:
       - name: Setup Runner for Argo
@@ -38,7 +47,7 @@ jobs:
       - name: Temporarily disable docs branch protections
         uses: benjefferies/branch-protection-bot@master
         with:
-          access_token: ${{ secrets.ACCESS_TOKEN }}
+          access_token: ${{ secrets.DOCS_PERMISSIONS_TOKEN }}
           branch: ${{ github.event.repository.default_branch }}
 
       # todo need to look repositoryGitURL, this needs to be overrideable from here and respected on the template side for both repositories
@@ -61,5 +70,5 @@ jobs:
         uses: benjefferies/branch-protection-bot@master
         if: always()  # Force to always run this step to ensure the protection is always turned back on no matetr if previous step fail
         with:
-          access_token: ${{ secrets.ACCESS_TOKEN }}
+          access_token: ${{ secrets.DOCS_PERMISSIONS_TOKEN }}
           branch: ${{ github.event.repository.default_branch }}
