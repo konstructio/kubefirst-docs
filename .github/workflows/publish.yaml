@@ -19,6 +19,7 @@ on:
 
 jobs:
   release:
+    if: ${{ github.actor != 'kube1st' }}
     runs-on: self-hosted
     steps:
       - name: Setup Runner for Argo
