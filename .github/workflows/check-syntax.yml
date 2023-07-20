@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout this repository
-        uses: actions/checkout@main
+        uses: actions/checkout@v3.5.3
 
       - name: Validate the syntax
         uses: errata-ai/vale-action@reviewdog
