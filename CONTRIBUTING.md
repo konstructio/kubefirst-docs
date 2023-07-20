@@ -181,33 +181,7 @@ Docusaurus is using Prism for code block syntax highlighting. Here's a list of [
 
 ### Search Index
 
-We use [Typesense](https://github.com/typesense/typesense) as the search engine for our documentation. The index should be updated automatically when we deploy a new version using GitHub Actions, but it's not possible right now. The technology we use to serve the docs doesn't manage the trailing slashes, and 404 well, which makes the [Typesense DocSearch scraper](https://github.com/typesense/typesense-docsearch-scraper) loop infinitely on content. So until we have a proper documentation deployment in place, we have to update the search index manually. To do so, you will need [npm](https://github.com/npm/cli), and [Docker](https://www.docker.com) installed.
-
-The first step is to build the documentation:
-
-```shell
-npm run build
-```
-
-After that, deploy the content of the `build` folder to a hosting service on it's own domain or subdomain. After that, open the [typesense.docsearch.config.json](https://github.com/kubefirst/docs/blob/main/typesense.docsearch.config.json) file. You need to replace the domain `docs.kubefirst.io` with your own inside the `start_urls`, and the `sitemap_urls` JSON properties. This is gonna work even if your domain isn't `docs.kubefirst.io` as the search index is built using the relative path of the indexed content.
-
-As a final step, you need to create a `.env` file with the following content. Replace the `TYPESENSE_API_KEY` value with a kubefirst Typesense API key with writing access:
-
-```dotenv
-TYPESENSE_API_KEY=<API_KEY>
-TYPESENSE_HOST=typesense.mgmt.kubefirst.com
-TYPESENSE_PORT=443
-TYPESENSE_PROTOCOL=https
-```
-
-You are now ready to run the scraper:
-
-```shell
-docker run -it --env-file=.env -e "CONFIG=$(cat typesense.docsearch.config.json | jq -r tostring)" \
-  typesense/docsearch-scraper:0.5.0
-```
-
-If everything goes right, you'll see a bunch of output, and the process should end with the line `Nb hits: 935` (the number of hits will probably differ as we update the content).
+We use [Typesense](https://github.com/typesense/typesense) as the search engine for our documentation. The index should be updated automatically when we deploy a new version, but it's implemented right now. To update it, run the [update-search.yml](.github/workflows/update-search.yml) GitHub Action.
 
 ### Testing
 
