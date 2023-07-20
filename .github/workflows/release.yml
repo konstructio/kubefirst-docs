@@ -1,5 +1,5 @@
 ---
-name: Create a new version of the docs
+name: Create a new docs version
 
 on:
   workflow_dispatch:
