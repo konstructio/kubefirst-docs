@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout this repository
-        uses: actions/checkout@main
+        uses: actions/checkout@v5.0.2
 
       - name: Run the crawler
-        uses: celsiusnarhwal/typesense-scraper@v2
+        uses: celsiusnarhwal/typesense-scraper@v2.0.1
         with:
           api-key: ${{ secrets.TYPESENSE_ADMIN_KEY }}
           host: typesense.mgmt.kubefirst.com

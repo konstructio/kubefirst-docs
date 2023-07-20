@@ -17,14 +17,14 @@ jobs:
 
     steps:
       - name: Checkout the docs repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.5.3
 
       - name: Optimize images
         id: optimize-images
         uses: Doist/optimize-images-action@v2
 
-      - name: Commit the images
-        uses: peter-evans/create-pull-request@v3
+      - name: Create a PR with the new images
+        uses: peter-evans/create-pull-request@v5.0.2
         with:
           commit-message: "chore: optimize images with lossless compression"
           delete-branch: true

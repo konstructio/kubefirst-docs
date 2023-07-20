@@ -40,14 +40,14 @@ jobs:
           argo version --short
 
       - name: Check out repository code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.5.3
 
       - name: Inject slug/short variables
-        uses: rlespinasse/github-slug-action@v4
+        uses: rlespinasse/github-slug-action@v4.4.1
 
       # No matter how we try ski ci options from GitHub it doesn't work
       - name: Temporarily disable docs branch protections
-        uses: benjefferies/branch-protection-bot@master
+        uses: benjefferies/branch-protection-bot@1.0.9
         with:
           access_token: ${{ secrets.DOCS_PERMISSIONS_TOKEN }}
           branch: ${{ github.event.repository.default_branch }}
@@ -69,7 +69,7 @@ jobs:
             --wait --log
 
       - name: Enable back docs branch protection
-        uses: benjefferies/branch-protection-bot@master
+        uses: benjefferies/branch-protection-bot@1.0.9
         if: always()  # Force to always run this step to ensure the protection is always turned back on no matetr if previous step fail
         with:
           access_token: ${{ secrets.DOCS_PERMISSIONS_TOKEN }}
