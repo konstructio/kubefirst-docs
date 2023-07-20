@@ -54,6 +54,10 @@
 	],
 	"replacementPatterns": [
 		{
+			"pattern": "{require(\"(*)\").default}",
+			"replacement": "*"
+		},
+		{
 		  "pattern": "^/img/*",
 		  "replacement": "/static/img/*"
 		}

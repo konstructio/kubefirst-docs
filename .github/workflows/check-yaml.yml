@@ -8,10 +8,10 @@ jobs:
     steps:
 
       - name: Checkout this repository
-        uses: actions/checkout@master
+        uses: actions/checkout@v3.5.3
 
       - name: Lint YAML files
-        uses: karancode/yamllint-github-action@master
+        uses: karancode/yamllint-github-action@v2.1.1
         with:
           yamllint_config_datapath: .yamllint.yml
         env:
