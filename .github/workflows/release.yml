@@ -1,0 +1,63 @@
+---
+name: Create a new version of the docs
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        type: string
+        description: "What version (ex.: 2.2)?"
+
+jobs:
+  release-docs:
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repository
+        uses: actions/checkout@v3.5.3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3.7.0
+        with:
+          node-version: v19.6.0
+
+      - name: Cache Node.js modules
+        id: cache-npm
+        uses: actions/cache@v3.3.1
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+
+      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        name: Install Dependencies
+        run: npm ci
+
+      - name: Create the new docs
+        run: |
+          npm run docusaurus docs:version "${{ github.event.inputs.version }}"
+
+      - name: Import the kube1st GPG key
+        id: import-gpg
+        uses: crazy-max/ghaction-import-gpg@v5.3.0
+        with:
+          git_committer_name: 'kube1st'
+          git_committer_email: ${{ secrets.GPG_EMAIL }}
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+          git-user-signingkey: true
+          git-commit-gpgsign: true
+
+      - name: Create a PR for the new version
+        uses: peter-evans/create-pull-request@v5.0.2
+        with:
+          commit-message: "docs: create v${{ github.event.inputs.version }} documentation"
+          reviewers: fharper
+          body: ${{ steps.optimize-images.outputs.summary }}
+          token: ${{ secrets.DOCS_PERMISSIONS_TOKEN }}
+        env:
+          GIT_AUTHOR_NAME: ${{ steps.import-gpg.outputs.name }}
+          GIT_AUTHOR_EMAIL: ${{ steps.import-gpg.outputs.email }}
+          GIT_COMMITTER_NAME: ${{ steps.import-gpg.outputs.name }}
+          GIT_COMMITTER_EMAIL: ${{ steps.import-gpg.outputs.email }}
