@@ -17,7 +17,7 @@ jobs:
 
       - name: Validate Links Markdown ${{ matrix.file-extension }} files
         if: always()
-        uses: gaurav-nelson/github-action-markdown-link-check@v1.0.15
+        uses: gaurav-nelson/github-action-markdown-link-check@1.0.15
         with:
           config-file: '.markdownlinkcheck.json'
           use-quiet-mode: 'yes'
