@@ -1,0 +1,19 @@
+---
+title: User Creation
+sidebar_position: 5
+---
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import styles from "@site/docs/stylesheets/tabs.module.css";
+
+import GitHubUserCreation from '@site/docs/civo/partials/github/_user-creation.mdx'
+import GitLabUserCreation from '@site/docs/civo/partials/gitlab/_user-creation.mdx'
+
+<Tabs groupId="git_provider" defaultValue="github" queryString>
+    <TabItem value="github" label="GitHub" attributes={{className: styles.github}}>
+      <GitHubUserCreation />
+    </TabItem>
+    <TabItem value="gitlab" label="GitLab" attributes={{className: styles.gitlab}}>
+      <GitLabUserCreation />
+    </TabItem>
+</Tabs>
