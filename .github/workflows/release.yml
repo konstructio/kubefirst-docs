@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Validate the version number
-        run: echo "${{ github.event.inputs.version }}" | grep -E "^[0-9].[0-9].?[0-9]?$"; if [ $? -ne 0 ]; then exit 1; fi
+        run: echo "${{ github.event.inputs.version }}" | grep -E "^[0-9].[0-9].?[0-9]?$"; if [ $? -ne 0 ]; then echo \"version number should respect semver\"; exit 1; fi
 
       - name: Checkout this repository
         uses: actions/checkout@v3.5.3
