@@ -65,4 +65,4 @@ jobs:
           committer: "kube1st <${{ secrets.GPG_EMAIL }}>"
           branch: "release/v${{ github.event.inputs.version }}"
           commit-message: "docs: create v${{ github.event.inputs.version }} documentation"
-          reviewers: fharper
+          #reviewers: fharper
