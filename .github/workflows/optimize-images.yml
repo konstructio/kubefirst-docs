@@ -42,4 +42,3 @@ jobs:
           branch: "release/v${{ github.event.inputs.version }}"
           title: "chore: optimize new images with lossless compression\n\n${{ steps.optimize-images.outputs.summary }}"
           commit-message: "docs: create v${{ github.event.inputs.version }} documentation"
-
