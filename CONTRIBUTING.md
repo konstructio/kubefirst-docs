@@ -203,21 +203,7 @@ You'll be presented with a menu giving you the opportunity to select the files y
 
 ### Versioning
 
-Docusaurus manages [documentation versions](https://docusaurus.io/docs/versioning), which we started to use since the v2.0.0 release. It means that every time we release a new version (minor or major only) of kubefirst, we need to freeze the `next` documentation, meaning the documentation updated in the `docs` directory, into a versioned one inside the `versioned_docs\version-X.X` folder. For now, this process is manual, and can be done using the following commands (replace X.X by the new release version):
-
-```shell
-git checkout -b vX.X
-npm run docusaurus docs:version X.X
-git add versioned_docs/version-X.X
-git add versions.json
-git add versioned_sidebars/version-X.X-sidebars.json
-git commit -m "docs: create vX.X documentation"
-gh pr create
-```
-
-It will create a duplication of the `docs` folder inside the newly created `version-X.X` folder located into `versioned_docs`. From this point forward, the new changes need to be done in the `docs` folder, which is now the documentation for the next release.
-
-> In the case of documentation modifications that are not only valuable for the next release (i.e.: typo in a sentence, clarification of a section, or missing information from a feature that precedes the latest release), you should apply the same changes in the `version-X.X` folder that you did in the `docs` one. Note that we decided to update only `next` and the latest docs release (last minor or major release) in that situation, even if it applies to multiple previous versions.
+Docusaurus manages [documentation versions](https://docusaurus.io/docs/versioning), which we started to use since the v2.0.0 release. It means that every time we release a new version (minor or major only) of kubefirst, we need to freeze the `next` documentation, meaning the documentation updated in the `docs` directory, into a versioned one inside the `versioned_docs\version-X.X` folder. To generate a new version, run the [Create a new docs version](https://github.com/kubefirst/docs/actions/workflows/release.yml) GitHub Actions workflow, and enter the desired version number. It will create a pull request with the new version for you.
 
 ## Help
 
