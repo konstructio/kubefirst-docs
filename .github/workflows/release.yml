@@ -17,7 +17,7 @@ jobs:
       - name: Validate the version number
         run: |
           echo "${{ github.event.inputs.version }}" | grep -E "^[0-9].[0-9].?[0-9]?$"
-          if [ $? -ne 0 ]; then echo "::error:: Version number should respect semver" && exit 1; fi
+          if [ $? -ne 0 ]; then echo "::error:: Version number should respect semver" >> $GITHUB_OUTPUT && exit 1; fi
 
       - name: Checkout this repository
         uses: actions/checkout@v3.5.3
@@ -25,7 +25,7 @@ jobs:
       - name: Check if docs version already exist
         run: |
           ls versioned_sidebars | grep "version-2.2-sidebars.json" ;
-          if [ $? -eq 0 ]; then echo "::error::Version already exist" && exit 1; fi
+          if [ $? -eq 0 ]; then echo "::error:: Version already exist" >> $GITHUB_OUTPUT && exit 1; fi
 
       - name: Setup Node.js
         uses: actions/setup-node@v3.7.0
