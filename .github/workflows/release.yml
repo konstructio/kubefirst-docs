@@ -56,8 +56,4 @@ jobs:
           reviewers: fharper
           body: ${{ steps.optimize-images.outputs.summary }}
           token: ${{ secrets.DOCS_PERMISSIONS_TOKEN }}
-        env:
-          GIT_AUTHOR_NAME: ${{ steps.import-gpg.outputs.name }}
-          GIT_AUTHOR_EMAIL: ${{ steps.import-gpg.outputs.email }}
-          GIT_COMMITTER_NAME: ${{ steps.import-gpg.outputs.name }}
-          GIT_COMMITTER_EMAIL: ${{ steps.import-gpg.outputs.email }}
+          committer: kube1st <${{ secrets.GPG_EMAIL }}>
