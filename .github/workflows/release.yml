@@ -1,0 +1,70 @@
+---
+name: Create a new docs version
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        type: string
+        description: "What version (ex.: 2.2)?"
+        required: true
+
+jobs:
+  release-docs:
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate the version number
+        run: |
+          echo "${{ github.event.inputs.version }}" | grep -E "^[0-9].[0-9].?[0-9]?$" || (echo "::error::Version number should respect semver" && exit 1)
+
+      - name: Checkout this repository
+        uses: actions/checkout@v3.5.3
+
+      - name: Check if docs version already exist
+        run: |
+          ls versioned_sidebars/version-${{ github.event.inputs.version }}-sidebars.json && echo "::error::Version already exist" && exit 1 || exit 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3.7.0
+        with:
+          node-version: v19.6.0
+          cache: npm
+
+      - name: Cache Node.js packages
+        id: cache-npm
+        uses: actions/cache@v3.3.1
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+
+      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        name: Install Dependencies
+        run: npm ci
+
+      - name: Create the new docs
+        run: |
+          npm run docusaurus docs:version "${{ github.event.inputs.version }}"
+
+      - name: Import the kube1st GPG key
+        id: import-gpg
+        uses: crazy-max/ghaction-import-gpg@v5.3.0
+        with:
+          git_committer_name: "kube1st"
+          git_committer_email: "${{ secrets.GPG_EMAIL }}"
+          gpg_private_key: "${{ secrets.GPG_PRIVATE_KEY }}"
+          passphrase: "${{ secrets.GPG_PASSPHRASE }}"
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+
+      - name: Create a PR for the new version
+        uses: peter-evans/create-pull-request@v5.0.2
+        with:
+          token: ${{ secrets.DOCS_PERMISSIONS_TOKEN }}
+          committer: "kube1st <${{ secrets.GPG_EMAIL }}>"
+          branch: "release/v${{ github.event.inputs.version }}"
+          title: "docs: create v${{ github.event.inputs.version }} documentation"
+          body: ""
+          commit-message: "docs: create v${{ github.event.inputs.version }} documentation"
