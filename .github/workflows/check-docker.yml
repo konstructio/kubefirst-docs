@@ -1,0 +1,15 @@
+---
+name: Dockerfile Validation
+on: [push, workflow_dispatch]
+
+jobs:
+  docker-check:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout this repository
+        uses: actions/checkout@v3.5.3
+
+      # hadolint/hadolint-action is causing issue with act: https://github.com/hadolint/hadolint/issues/823
+      - name: Validate Dockerfile
+        run: docker run -v "$(pwd)":"/files" hadolint/hadolint:v2.12.0 hadolint /files/Dockerfile
