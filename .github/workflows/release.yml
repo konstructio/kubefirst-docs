@@ -68,4 +68,3 @@ jobs:
           title: "docs: create v${{ github.event.inputs.version }} documentation"
           body: ""
           commit-message: "docs: create v${{ github.event.inputs.version }} documentation"
-          # reviewers: fharper
