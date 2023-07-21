@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Validate the version number
         run: |
-          echo "${{ github.event.inputs.version }}" | grep -E "^[0-9].[0-9].?[0-9]?$" || echo "::error:: Version number should respect semver" && exit 1
+          echo "${{ github.event.inputs.version }}" | grep -E "^[0-9].[0-9].?[0-9]?$" || echo "::error::Version number should respect semver" && exit 1
 
       - name: Checkout this repository
         uses: actions/checkout@v3.5.3
