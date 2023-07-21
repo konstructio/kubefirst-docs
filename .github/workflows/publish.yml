@@ -1,5 +1,5 @@
 ---
-name: Release new docs
+name: Publish docs on prod
 
 env:
   ARGO_NAMESPACE: argo
