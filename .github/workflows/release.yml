@@ -20,6 +20,9 @@ jobs:
       - name: Checkout this repository
         uses: actions/checkout@v3.5.3
 
+      - name: Validate the version number
+        run: ls versioned_sidebars | grep "version-2.2-sidebars.json" ; if [ $? -eq 0 ]; then echo "::error version already exist" && exit 1; fi
+
       - name: Setup Node.js
         uses: actions/setup-node@v3.7.0
         with:
