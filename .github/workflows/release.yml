@@ -64,5 +64,7 @@ jobs:
           token: ${{ secrets.DOCS_PERMISSIONS_TOKEN }}
           committer: "kube1st <${{ secrets.GPG_EMAIL }}>"
           branch: "release/v${{ github.event.inputs.version }}"
+          title: "docs: create v${{ github.event.inputs.version }} documentation"
+          body: ""
           commit-message: "docs: create v${{ github.event.inputs.version }} documentation"
-          #reviewers: fharper
+          # reviewers: fharper
