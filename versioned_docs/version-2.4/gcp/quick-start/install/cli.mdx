@@ -1,0 +1,65 @@
+---
+hide_title: true
+sidebar_label: CLI
+sidebar_position: 2
+# custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
+image: "https://docs.kubefirst.io/img/logo.svg"
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import GitHubPrerequisites from "@site/docs/common/partials/github/_prerequisites.mdx";
+import GitHubClusterCreateCmd from "@site/docs/gcp/partials/github/_cluster-create.mdx";
+
+import GitLabPrerequisites from "@site/docs/common/partials/gitlab/_prerequisites.mdx";
+import GitLabClusterCreateCmd from "@site/docs/gcp/partials/gitlab/_cluster-create.mdx";
+
+import CommonCloudPrerequisites from "@site/docs/gcp/partials/common/_prerequisites.mdx";
+import CommonClusterConnectivity from "@site/docs/gcp/partials/common/_cluster-connectivity.mdx";
+import CommonRootCredentialsCmd from "@site/docs/gcp/partials/common/_root-credentials-cmd.mdx";
+
+import * as config from "@site/docs/constants.js"
+import styles from "@site/docs/stylesheets/tabs.module.css";
+
+export const TabLabel = ({ imgSrc, label }) => (
+  <div className="git-tab">
+    <img src={imgSrc} />
+    <span>{label}</span>
+  </div>
+);
+
+<Tabs groupId="git_provider" defaultValue="github" queryString>
+  <TabItem
+    attributes={{ className: styles.github }}
+    value="github"
+    label={<TabLabel imgSrc={config.GITHUB_LOGO_URL} label="GitHub" />}
+  >
+  <GitHubPrerequisites />
+
+  <CommonCloudPrerequisites />
+
+  <GitHubClusterCreateCmd />
+
+  <CommonRootCredentialsCmd />
+
+  <CommonClusterConnectivity />
+
+  </TabItem>
+  <TabItem
+    value="gitlab"
+    attributes={{ className: styles.gitlab }}
+    label={<TabLabel imgSrc={config.GITLAB_LOGO_URL} label="GitLab" />}
+  >
+  <GitLabPrerequisites />
+
+  <CommonCloudPrerequisites />
+
+  <GitLabClusterCreateCmd />
+
+  <CommonRootCredentialsCmd />
+
+  <CommonClusterConnectivity />
+
+  </TabItem>
+</Tabs>

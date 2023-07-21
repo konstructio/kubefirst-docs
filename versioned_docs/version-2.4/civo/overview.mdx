@@ -1,0 +1,66 @@
+---
+hide_title: true
+sidebar_label: Overview
+sidebar_position: 1
+# custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
+description: an overview of kubefirst on a civo kubernetes cluster
+image: "https://docs.kubefirst.io/img/logo.svg"
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import styles from "@site/docs/stylesheets/tabs.module.css";
+import ReactDom from 'react-dom'
+import * as config from "@site/docs/constants.js"
+import GitHubOverview from '@site/docs/civo/partials/github/_overview.mdx'
+import GitLabOverview from '@site/docs/civo/partials/gitlab/_overview.mdx'
+import CloudBanner from '@site/src/components/CloudBanner/CloudBanner.jsx'
+import CommonProvisionProcess from "@site/docs/common/partials/common/_provision-process.mdx";
+
+<div
+  style={{
+    display: "flex",
+    justifyContent: "flex-end",
+    alignItems: "center",
+  }}
+>
+  <div>
+    <img src={config.CIVO_LOGO_URL} height="50" width="120" />
+  </div>
+</div>
+
+# Overview
+
+The Civo provisioning process will:
+<CommonProvisionProcess firstitem="Create a Kubernetes cluster in the Civo cloud."/>
+
+![kubefirst Civo with GitLab Cluster Diagram](../img/civo/gitlab/installation-diagram-light.png#light-mode)![kubefirst Civo with GitLab Cluster Diagram](../img/civo/gitlab/installation-diagram-dark.png#dark-mode)
+
+# Applications
+
+<Tabs groupId="git_provider" defaultValue="github" queryString>
+    <TabItem
+      attributes={{className: styles.github}}
+      value="github"
+      label={
+        <div className="git-tab">
+          <img src="https://assets.kubefirst.com/console/github.svg" />
+          <span>GitHub</span>
+        </div>
+      }
+    >
+      <GitHubOverview />
+    </TabItem>
+    <TabItem
+      value="gitlab"
+      attributes={{className: styles.gitlab}}
+      label={
+        <div className="git-tab">
+          <img src="https://assets.kubefirst.com/console/gitlab.svg" />
+          <span>GitLab</span>
+        </div>
+      }
+    >
+      <GitLabOverview />
+    </TabItem>
+</Tabs>
