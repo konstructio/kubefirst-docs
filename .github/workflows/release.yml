@@ -23,7 +23,7 @@ jobs:
 
       - name: Check if docs version already exist
         run: |
-          ls versioned_sidebars | grep "version-${{ github.event.inputs.version }}-sidebars.json"; if [ $? -eq 0 ]; then echo "::error::Version already exist" && exit 1; fi
+          ls versioned_sidebars | grep "version-${{ github.event.inputs.version }}-sidebars.json" && echo "::error::Version already exist" && exit 1
 
       - name: Setup Node.js
         uses: actions/setup-node@v3.7.0
