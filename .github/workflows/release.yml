@@ -44,7 +44,7 @@ jobs:
         with:
           git_committer_name: 'kube1st'
           git_committer_email: ${{ secrets.GPG_EMAIL }}
-          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.GPG_PASSPHRASE }}
           git-user-signingkey: true
           git-commit-gpgsign: true
