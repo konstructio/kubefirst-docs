@@ -7,6 +7,7 @@ on:
       version:
         type: string
         description: "What version (ex.: 2.2)?"
+        required: true
 
 jobs:
   release-docs:
