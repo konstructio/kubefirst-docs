@@ -16,14 +16,14 @@ jobs:
     steps:
       - name: Validate the version number
         run: |
-          echo "${{ github.event.inputs.version }}" | grep -E "^[0-9].[0-9].?[0-9]?$" || (echo "::error::Version number should respect semver")
+          echo "${{ github.event.inputs.version }}" | grep -E "^[0-9].[0-9].?[0-9]?$" || (echo "::error::Version number should respect semver" && exit 1)
 
       - name: Checkout this repository
         uses: actions/checkout@v3.5.3
 
       - name: Check if docs version already exist
         run: |
-          ls versioned_sidebars/version-${{ github.event.inputs.version }}-sidebars.json && echo "::error::Version already exist" || exit 0
+          ls versioned_sidebars/version-${{ github.event.inputs.version }}-sidebars.json && echo "::error::Version already exist" && exit 1 || exit 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v3.7.0
