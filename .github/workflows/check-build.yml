@@ -1,0 +1,36 @@
+---
+name: Check Docusaurus Build
+on: push
+
+jobs:
+  check-build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout the code
+        uses: actions/checkout@v3.5.3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3.7.0
+        with:
+          node-version: v19.6.0
+          cache: npm
+
+      - name: Cache Node.js packages
+        id: cache-npm
+        uses: actions/cache@v3.3.1
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+
+      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        name: Install Dependencies
+        run: npm ci
+
+      - name: Build Docusaurus
+        run: npm run build 2> >(tee build.error)
+
+      - name: Check if build has warnings
+        run: cat build.error | grep "\[WARNING\]" && echo "::error::Fix the warnings" && exit 1  || exit 0
