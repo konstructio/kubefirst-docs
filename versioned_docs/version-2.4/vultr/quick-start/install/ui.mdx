@@ -1,0 +1,76 @@
+---
+hide_title: true
+sidebar_label: Console UI
+sidebar_position: 1
+# custom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md
+image: "https://docs.kubefirst.io/img/logo.svg"
+---
+
+There are a few ways to install kubefirst, whether you have a cluster already or don't.
+
+# Install kubefirst
+
+## Step 1: Install kubefirst console
+
+<!--tabs-->
+
+# Helm
+
+This will install our platform installer tools to your existing cluster so you can create your new management cluster in your favorite cloud provider using your favorite git provider.
+
+```shell
+helm repo add kubefirst https://charts.kubefirst.com
+helm repo update
+
+helm install kubefirst --create-namespace kubefirst/kubefirst
+
+k port-forward svc/kubefirst-console 8080:8080
+```
+
+Then connect to the provisioning tool at [http://localhost:8080](http://localhost:8080)
+
+# Helm (ARM / M1 Mac / M2 Mac)
+
+This will install our platform installer UI to your existing cluster so you can create your new management cluster in your favorite cloud provider using your favorite git provider.
+
+This example shows a couple additional Helm values settings that enable MongoDB to run on the ARM architecture.
+
+```shell
+helm repo add kubefirst https://charts.kubefirst.com
+helm repo update
+
+helm install kubefirst --create-namespace \
+--set=mongodb.image.repository=arm64v8/mongo \
+--set=mongodb.image.tag=latest \
+--set=mongodb.persistence.mountPath=/data/db \
+--set=mongodb.extraEnvVarsSecret=kubefirst-initial-secrets \
+kubefirst/kubefirst
+
+k port-forward svc/kubefirst-console 8080:8080
+```
+
+Then connect to the provisioning tool at [http://localhost:8080](http://localhost:8080)
+
+# No Kubernetes yet?
+
+**No cluster? No problem!** Let us create your bootstrap cluster for you as well. We'll install our provisioning tool into it to create your permanent infrastructure.
+
+```shell
+brew install kubefirst/tools/kubefirst
+
+kubefirst launch up
+```
+
+Then connect to the provisioning tool at [https://console.kubefirst.dev](https://console.kubefirst.dev )
+
+:::note
+The kubefirst.dev domain is only available after `kubefirst launch up` and resolves to the host machine.
+:::
+
+<!--/tabs-->
+
+## Step 2: Install your kubefirst management cluster
+
+Provide details about your preferred git provider, cloud provider, access, and cluster details and let kubefirst do the rest.
+
+![kubefirst user interface showing cloud and git options](../../../img/console/installer.png)
