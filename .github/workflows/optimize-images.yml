@@ -41,4 +41,5 @@ jobs:
           committer: "kube1st <${{ secrets.GPG_EMAIL }}>"
           branch: "release/v${{ github.event.inputs.version }}"
           title: "chore: optimize new images with lossless compression"
+          body: ""
           commit-message: "docs: create v${{ github.event.inputs.version }} documentation\n\n${{ steps.optimize-images.outputs.summary }}"
