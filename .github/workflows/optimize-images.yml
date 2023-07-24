@@ -23,9 +23,23 @@ jobs:
         id: optimize-images
         uses: Doist/optimize-images-action@v2
 
-      - name: Create a PR with the new images
+      - name: Import the kube1st GPG key
+        id: import-gpg
+        uses: crazy-max/ghaction-import-gpg@v5.3.0
+        with:
+          git_committer_name: "kube1st"
+          git_committer_email: "${{ secrets.GPG_EMAIL }}"
+          gpg_private_key: "${{ secrets.GPG_PRIVATE_KEY }}"
+          passphrase: "${{ secrets.GPG_PASSPHRASE }}"
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+
+      - name: Create a PR for the new version
         uses: peter-evans/create-pull-request@v5.0.2
         with:
-          commit-message: "chore: optimize images with lossless compression"
-          delete-branch: true
-          body: ${{ steps.optimize-images.outputs.summary }}
+          token: ${{ secrets.DOCS_PERMISSIONS_TOKEN }}
+          committer: "kube1st <${{ secrets.GPG_EMAIL }}>"
+          branch: "optimize/images"
+          title: "chore: optimize new images with lossless compression"
+          body: ""
+          commit-message: "docs: create v${{ github.event.inputs.version }} documentation\n\n${{ steps.optimize-images.outputs.summary }}"
