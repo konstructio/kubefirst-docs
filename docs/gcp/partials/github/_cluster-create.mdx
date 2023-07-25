@@ -1,3 +1,5 @@
+import CloudflareDNS from "@site/docs/common/partials/common/_cloudflare-dns.mdx";
+
 ## Create your new kubefirst cluster
 
 Adjust the following command with your GitHub and Google Cloud tokens in addition to the appropriate values for your new platform.
@@ -12,6 +14,8 @@ kubefirst beta gcp create \
   --domain-name your-domain.io \
   --cluster-name kubefirst
 ```
+
+<CloudflareDNS />
 
 The kubefirst CLI will produce a directory of utilities, a state file, and some staged platform content that can now be found in the `~/.kubefirst` and `~/.k1` folders on your local machine.
 
