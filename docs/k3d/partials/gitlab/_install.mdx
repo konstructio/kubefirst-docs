@@ -1,3 +1,5 @@
+import CommonRootCredentialsCmd from "../../../common/partials/common/_root-credentials-cmd.mdx";
+
 # Local Platform Installation with GitLab
 
 `kubefirst` is the name of our CLI that installs the platform of the same name to your local or cloud environment.
@@ -92,15 +94,7 @@ After the ~5 minute installation, your browser will open a new browser tab at co
 
 ![terminal handoff](../../../img/local/gitlab/handoff-screen.png)
 
-## Root credentials
-
-To obtain your 3 initial passwords, run
-
-```shell
-kubefirst k3d root-credentials
-```
-
-![terminal handoff](../../../img/common/kubefirst/root-credentials.png)
+<CommonRootCredentialsCmd />
 
 ## Connecting to Kubernetes
 
