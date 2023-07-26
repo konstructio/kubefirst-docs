@@ -9,9 +9,11 @@ image: "https://docs.kubefirst.io/img/logo.svg"
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import styles from "@site/docs/stylesheets/tabs.module.css";
+import styles from "../../stylesheets/tabs.module.css";
 import ReactDom from 'react-dom'
-import * as config from "@site/docs/constants.js"
+import * as config from "../../constants.js"
+import GitHubInstall from '../partials/github/_install.mdx'
+import GitLabInstall from '../partials/gitlab/_install.mdx'
 
 <div
   style={{
@@ -24,9 +26,6 @@ import * as config from "@site/docs/constants.js"
     <img src={config.AWS_LOGO_URL} height="50" width="120" />
   </div>
 </div>
-
-import GitHubInstall from '@site/docs/aws/partials/github/_install.mdx'
-import GitLabInstall from '@site/docs/aws/partials/gitlab/_install.mdx'
 
 <Tabs groupId="git_provider" defaultValue="github" queryString>
     <TabItem
