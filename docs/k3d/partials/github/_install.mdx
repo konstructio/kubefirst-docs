@@ -1,3 +1,6 @@
+import GitHubHandoffScreen from "../../../img/local/github/handoff-screen.png";
+import CommonTerminalOutput from "../../../common/partials/common/_terminal-output.mdx";
+
 # Local Platform Installation
 
 `kubefirst` is the name of our CLI that installs the platform of the same name to your local or cloud environment.
@@ -68,21 +71,15 @@ export GITHUB_TOKEN=ghp_xxxxxxxx
 
 When Docker is provided 5 GB of memory and 5 CPUs, the local kubefirst platform will provision in about 6 minutes and deprovision in about 1 minute.
 
+<CommonTerminalOutput cloud="k3d"  minutes="7" handoffScreen={GitHubHandoffScreen} />
+
 ### Installed Applications
 
 To see what is installed by kubefirst, check the [overview page](../../overview.mdx).
 
-## After installation
-
-After the ~5 minute installation, your browser will open a new browser tab at completion with the Console UI at [https://kubefirst.kubefirst.dev](https://kubefirst.kubefirst.dev) to provide you an easy way to navigate through the different services that were provisioned.
-
 ## Console UI Screen
 
 ![kubefirst console screen](../../../img/common/github/console.png)
-
-## Example of terminal output following cluster creation
-
-![terminal handoff](../../../img/local/github/handoff-screen.png)
 
 ## Root credentials
 

@@ -8,19 +8,18 @@ image: "https://docs.kubefirst.io/img/logo.svg"
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-
 import GitHubClusterCreateCmd from "../../partials/github/_cluster-create.mdx";
 import GitLabClusterCreateCmd from "../../partials/gitlab/_cluster-create.mdx";
-
 import CommonCloudPrerequisites from "../../partials/common/_prerequisites.mdx";
 import CommonClusterConnectivity from "../../partials/common/_cluster-connectivity.mdx";
 import CommonGitHubPrerequisites from "../../../common/partials/github/_prerequisites.mdx";
 import CommonGitLabPrerequisites from "../../../common/partials/gitlab/_prerequisites.mdx";
 import AWSRootCredentialsCmd from "../../partials/common/_root-credentials-cmd.mdx";
 import CommonTerminalOutput from "../../../common/partials/common/_terminal-output.mdx";
-
 import * as config from "../../../constants.js"
 import styles from "../../../stylesheets/tabs.module.css";
+import GitHubHandoffScreen from "../../../img/aws/github/handoff-screen.png";
+import GitLabHandoffScreen from "../../../img/aws/gitlab/handoff-screen.png";
 
 export const TabLabel = ({ imgSrc, label }) => (
   <div className="git-tab">
@@ -41,7 +40,7 @@ export const TabLabel = ({ imgSrc, label }) => (
 
   <GitHubClusterCreateCmd />
 
-  <CommonTerminalOutput />
+  <CommonTerminalOutput cloud="AWS"  minutes="25" handoffScreen={GitHubHandoffScreen} />
 
   <AWSRootCredentialsCmd />
 
@@ -59,7 +58,7 @@ export const TabLabel = ({ imgSrc, label }) => (
 
   <GitLabClusterCreateCmd />
 
-  <CommonTerminalOutput />
+  <CommonTerminalOutput cloud="AWS"  minutes="25" handoffScreen={GitLabHandoffScreen} />
 
   <AWSRootCredentialsCmd />
 
