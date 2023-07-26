@@ -1,4 +1,5 @@
 import GitLabHandoffScreen from "../../../img/k3d/gitlab/handoff-screen.png";
+import CommonRootCredentialsCmd from "../../../common/partials/common/_root-credentials-cmd.mdx";
 import CommonTerminalOutput from "../../../common/partials/common/_terminal-output.mdx";
 
 # Local Platform Installation with GitLab
@@ -89,15 +90,7 @@ To see what is installed by kubefirst, check the [overview page](../../overview.
 
 ![kubefirst console screen](../../../img/common/gitlab/console.png)
 
-## Root credentials
-
-To obtain your 3 initial passwords, run
-
-```shell
-kubefirst k3d root-credentials
-```
-
-![terminal handoff](../../../img/common/kubefirst/root-credentials.png)
+<CommonRootCredentialsCmd />
 
 ## Connecting to Kubernetes
 
