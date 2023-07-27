@@ -82,5 +82,8 @@
   ],
   "gcp": [
     "gcp/upgrade"
+  ],
+  "do": [
+    "do/upgrade"
   ]
 }
