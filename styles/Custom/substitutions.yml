@@ -24,6 +24,8 @@ swap:
   cronjob: CronJob
   ecr: ECR
   eks: EKS
+  'digital[o|O]cean': DigitalOcean
+  '[d|D]igitalocean': DigitalOcean
   docker: Docker
   gcp: Google Cloud
   gcp cloud: Google Cloud

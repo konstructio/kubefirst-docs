@@ -128,14 +128,20 @@ const config = {
           {
             type: 'docSidebar',
             position: 'left',
-            sidebarId: 'vultr',
-            label: 'Vultr',
+            sidebarId: 'do',
+            label: 'DigitalOcean',
           },
           {
             type: 'docSidebar',
             position: 'left',
             sidebarId: 'gcp',
             label: 'Google Cloud',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'vultr',
+            label: 'Vultr',
           },
           {
             type: 'docsVersionDropdown',
