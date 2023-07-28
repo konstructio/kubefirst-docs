@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout this repository
-        uses: actions/checkout@v5.0.2
+        uses: actions/checkout@3.5.3
 
       - name: Run the crawler
         uses: celsiusnarhwal/typesense-scraper@v2.0.1
