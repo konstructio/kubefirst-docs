@@ -46,11 +46,11 @@ We support local, AWS, and Civo clouds, with additional clouds in beta. By runni
             <div className="card__image">
             <img
                src={require("/static/img/aws_header.png").default}
-               alt="AWS Cloud"
-               title="AWS Cloud" />
+               alt="AWS"
+               title="AWS" />
             </div>
             <div className="card__body">
-            <h3>AWS Cloud</h3>
+            <h3>AWS</h3>
             <p>
                Our AWS cloud platform can accommodate all the <strong>needs of your enterprise</strong>. All you need is a domain in addition to a hosted zone, and within 35 minutes of running a single command, you'll have a secure EKS infrastructure management and application delivery platform.
             </p>
@@ -67,11 +67,11 @@ We support local, AWS, and Civo clouds, with additional clouds in beta. By runni
             <div className="card__image">
             <img
                src={require("/static/img/civo_header.jpg").default}
-               alt="Civo Cloud"
-               title="Civo Cloud" />
+               alt="Civo"
+               title="Civo" />
             </div>
             <div className="card__body">
-            <h3>Civo Cloud</h3>
+            <h3>Civo</h3>
             <p>
                The perfect cloud environment when Kubernetes will be the center of attention.
             </p>
@@ -88,17 +88,17 @@ We support local, AWS, and Civo clouds, with additional clouds in beta. By runni
         <div className="card">
             <div className="card__image">
             <img
-               src={require("/static/img/vultr_header.png").default}
-               alt="Vultr Cloud"
-               title="Vultr Cloud" />
+               src={require("/static/img/do_header.png").default}
+               alt="DigitalOcean"
+               title="DigitalOcean" />
             </div>
             <div className="card__body">
-            <h3>Vultr Cloud</h3>
-            <p>A cloud hosting provider that offers high-performance SSD-based cloud servers, block storage, object storage, and dedicated servers in multiple locations worldwide.</p>
+            <h3>DigitalOcean</h3>
+            <p>Whatever your vision—a SaaS app, a website, an eCommerce store—build it here using DigitalOcean's simple, cost-effective cloud hosting services.</p>
             </div>
             <div className="card__footer">
                 <form>
-                    <button className="button button--secondary button--block" formAction="vultr/overview/">View install instructions</button>
+                    <button className="button button--secondary button--block" formAction="do/overview/">View install instructions</button>
                 </form>
             </div>
         </div>
@@ -118,6 +118,25 @@ We support local, AWS, and Civo clouds, with additional clouds in beta. By runni
             <div className="card__footer">
                 <form>
                     <button className="button button--secondary button--block" formAction="gcp/overview/">View install instructions</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+        <div className="card">
+            <div className="card__image">
+            <img
+               src={require("/static/img/vultr_header.png").default}
+               alt="Vultr Cloud"
+               title="Vultr Cloud" />
+            </div>
+            <div className="card__body">
+            <h3>Vultr</h3>
+            <p>A cloud hosting provider that offers high-performance SSD-based cloud servers, block storage, object storage, and dedicated servers in multiple locations worldwide.</p>
+            </div>
+            <div className="card__footer">
+                <form>
+                    <button className="button button--secondary button--block" formAction="vultr/overview/">View install instructions</button>
                 </form>
             </div>
         </div>
