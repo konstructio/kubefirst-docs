@@ -38,7 +38,7 @@ export CIVO_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 kubefirst civo create \
   --alerts-email yourdistro@your-company.io \
   --git-provider gitlab \
-  --gitlab-group your-gitlab-group \
+  --gitlab-group your-fully-qualified-gitlab-group/or-sub-group  \
   --domain-name your-domain.io \
   --cluster-name kubefirst
 ```
