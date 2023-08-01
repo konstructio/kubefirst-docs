@@ -8,10 +8,6 @@ If you are not sure about the steps to take to fix the problem you encounter, jo
 
 If you think there is a bug, you can also open an [issue](https://github.com/kubefirst/kubefirst/issues) describing the problems you are having.
 
-### How do I tear my cluster down?
-
-You can easily take your cluster down, by using the [destroy command](./deprovision.mdx).
-
 ### I'm experiencing timeouts when kubefirst deploys Argo CD or HashiCorp Vault through the Helm installations
 
 You may need a more stable connection / higher download speed. Check with your internet provider or use an online speed test to confirm you have at least 100mbps download speed, or else you may experience timeouts.
@@ -35,3 +31,7 @@ Once it's done, you can delete the GitHub assets we created by logging into your
 gh repo delete <GITHUB_USERNAME>/metaphor --confirm
 gh repo delete <GITHUB_USERNAME>/gitops --confirm
 ```
+
+### What is the wait.yaml file in each application components folder?
+
+We've had issues with Argo CD and its sync waves not orchestrating correctly (it's a known bug, here's [one example](https://github.com/argoproj/argo-cd/issues/12376)), so we've added the `wait.yml` file as a secondary measure to help with the reliability of the platform provisioning. We may revisit how this is functioning, and remove those files on our platform orchestration evolution.
