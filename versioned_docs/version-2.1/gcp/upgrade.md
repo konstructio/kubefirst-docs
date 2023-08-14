@@ -2,4 +2,4 @@
 title: Google Cloud
 ---
 
-Google Cloud support was added in kubefirst 2.1.2, please upgrade your client to 2.1.2 or later to use this cloud provider.
+Google Cloud support was added as beta in kubefirst v2.1.2, but the [documentation is only starting v2.3](https://docs.kubefirst.io/next/gcp/overview).
