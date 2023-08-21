@@ -36,6 +36,7 @@ iam
 # J
 
 # K
+kubeconfig
 kubefirst
 kubernetes
 
