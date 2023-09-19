@@ -29,7 +29,7 @@ Run the command `kubefirst <platform> root-credentials` where `<platform>` is on
 If you still cannot complete the installation due to remaining artifacts after completing a `kubefirst k3d destroy`, you may have to do a manual teardown. Firstly, you need to delete the k3d cluster with the following command:
 
 ```shell
-$HOME/.k1/tools/k3d cluster delete kubefirst
+~/.k1/<your-cluster-name>/tools/k3d cluster delete kubefirst
 kubefirst reset
 ```
 
