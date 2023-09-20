@@ -1,8 +1,74 @@
+# Deprovision
+
 To destroy your kubefirst cluster, complete the following steps.
 
 ## Prerequisites
 
-You will need to [install](http://localhost:3000/overview.md#install-the-kubefirst-cli) the `kubefirst` CLI if it is not already installed.
+### kubefirst CLI
+
+If you are coming from a cloud marketplace, and didn't use the kubefirst CLI, you will need to install it first.
+
+```shell
+brew install kubefirst/tools/kubefirst
+```
+
+More information in the [installation steps from our documentation](https://docs.kubefirst.io/next/aws/quick-start/install/cli#local-prerequisites).
+
+### Kubernetes CLI
+
+If not already done, you will need `kubectl` to retrieve some information from your cluster.
+
+```shell
+brew install kubectl
+```
+
+More information in the [Kubernetes documentation](https://kubernetes.io/docs/tasks/tools/#kubectl).
+
+### Clouds CLIs
+
+If the command-line tool for the chosen cloud provider is not installed, consult the following documentation for installation steps:
+
+<!--tabs-->
+
+#### AWS
+
+```shell
+brew install awscli
+```
+
+More information in the [AWS documentation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+
+#### Civo
+
+```shell
+brew tap civo/tools
+brew install civo
+```
+
+More information in the [Civo documentation](https://www.civo.com/docs/overview/civo-cli).
+
+#### Vultr
+
+```shell
+brew tap vultr/vultr-cli
+brew install vultr-cli
+```
+
+More information in the [Vultr documentation](https://github.com/vultr/vultr-cli).
+
+<!--/tabs-->
+
+### Terraform CLI
+
+To complete the deprovisioning process, you also need to install the Terraform CLI.
+
+```shell
+brew install terraform
+```
+
+More information in the [Terraform documentation](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli).
+
+### Obtain the kubeconfig
 
 Before continuing, use the command-line tool for the chosen cloud provider to get the `kubeconfig` for your cluster (replace `<my-cluster>` with your cluster name):
 
@@ -11,7 +77,7 @@ Before continuing, use the command-line tool for the chosen cloud provider to ge
 # AWS
 
 ```shell
-aws eks update-kubeconfig --name <my-cluster> --region us-east-1
+aws eks update-kubeconfig --name <my-cluster> --region <my-cluster-region>
 ```
 
 # Civo
@@ -28,27 +94,7 @@ vultr-cli kubernetes config my-cluster-id
 
 <!--/tabs-->
 
-If the command-line tool for the chosen cloud provider is not installed, consult the following documentation for install steps:
-
-<!--tabs-->
-
-# AWS
-
-<https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html>
-
-# Civo
-
-<https://www.civo.com/docs/overview/civo-cli>
-
-# Vultr
-
-<https://github.com/vultr/vultr-cli>
-
-<!--/tabs-->
-
-You will also need to [install](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) `terraform`.
-
-## Steps
+## Steps for Deprovisioning
 
 Once you have the `kubeconfig` file for your cluster, retrieve the Vault token:
 
