@@ -55,6 +55,15 @@ brew install doctl
 
 More information in the [DigitalOcean documentation](https://docs.digitalocean.com/reference/doctl/).
 
+#### Google Cloud
+
+```shell
+brew install google-cloud-sdk
+gcloud components install gke-gcloud-auth-plugin
+```
+
+More information in the [Google Cloud documentation](https://cloud.google.com/sdk).
+
 #### Vultr
 
 ```shell
@@ -98,6 +107,12 @@ civo kubernetes config <my-cluster> > ~/.kube/config
 
 ```shell
 doctl kubernetes cluster kubeconfig save <my-cluster>
+```
+
+# Google Cloud
+
+```shell
+gcloud container clusters get-credentials <my-cluster> --region=<my-cluster-region>
 ```
 
 # Vultr
@@ -160,7 +175,7 @@ Within the `terraform` directory, there are several subdirectories that contain 
 To deprovision the cloud provider resources, switch to the cloud provider subdirectory - for example:
 
 ```shell
-cd civo
+cd <cloud-folder>
 ```
 
 You can then use standard `terraform` commands:
