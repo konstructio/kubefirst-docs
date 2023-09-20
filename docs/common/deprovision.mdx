@@ -47,6 +47,14 @@ brew install civo
 
 More information in the [Civo documentation](https://www.civo.com/docs/overview/civo-cli).
 
+#### DigitalOcean
+
+```shell
+brew install doctl
+```
+
+More information in the [DigitalOcean documentation](https://docs.digitalocean.com/reference/doctl/).
+
 #### Google Cloud
 
 ```shell
@@ -93,6 +101,12 @@ aws eks update-kubeconfig --name <my-cluster> --region <my-cluster-region>
 
 ```shell
 civo kubernetes config <my-cluster> > ~/.kube/config
+```
+
+# DigitalOcean
+
+```shell
+doctl kubernetes cluster kubeconfig save <my-cluster>
 ```
 
 # Google Cloud
