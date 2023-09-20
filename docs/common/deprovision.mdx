@@ -47,6 +47,15 @@ brew install civo
 
 More information in the [Civo documentation](https://www.civo.com/docs/overview/civo-cli).
 
+#### Google Cloud
+
+```shell
+brew install google-cloud-sdk
+gcloud components install gke-gcloud-auth-plugin
+```
+
+More information in the [Google Cloud documentation](https://cloud.google.com/sdk).
+
 #### Vultr
 
 ```shell
@@ -84,6 +93,12 @@ aws eks update-kubeconfig --name <my-cluster> --region <my-cluster-region>
 
 ```shell
 civo kubernetes config <my-cluster> > ~/.kube/config
+```
+
+# Google Cloud
+
+```shell
+gcloud container clusters get-credentials <my-cluster> --region=<my-cluster-region>
 ```
 
 # Vultr
@@ -154,7 +169,7 @@ Within the `terraform` directory, there are several subdirectories that contain 
 To deprovision the cloud provider resources, switch to the cloud provider subdirectory - for example:
 
 ```shell
-cd civo
+cd <cloud-folder>
 ```
 
 You can then use standard `terraform` commands:
