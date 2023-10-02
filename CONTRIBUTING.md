@@ -50,6 +50,8 @@ Here's the non content related ones:
 
 As of now, we don't see usage for the `perf` & `test` prefixes.
 
+Lastly, your commits need to be signed so they can be verified. GitHub has [great documentation on how to do that](https://docs.github.com/en/authentication/managing-commit-signature-verification). If you do not sign your commit, you'll get additional information by the GitHub Action in your pull request.
+
 ### Images
 
 All images will be automatically optimized with a lossless compression level to ensure the best possible experience, while minimizing the image size for slower or expensive internet connection.
