@@ -1,9 +1,9 @@
 # Support
 
-## Issues
+## Documentation
 
-If you are having an issue with kubefirst, we highly suggest that you share the problem with us on our Slack Community (read the next section for more information). If you are certain it's a bug with our platform, you can create an [issue](https://github.com/kubefirst/kubefirst/issues/new/choose). We'll get back to you as soon as possible.
+If something isn't clear, not working or you don't find the information you are looking for, please let us know in the #helping-hands channel of our [Slack community](https://kubefirst.io/slack). We are striving to always provide the best documentation there is, and it's only possible with your help.
 
-## Questions
+## kubefirst
 
-If you have a question about how to use Kubefirst, please join our [Slack community](https://kubefirst.io/slack), and ask your question in the `#helping-hands` channel. If you prefer to ask in private, you can send a direct message to our Principal Developer Advocate, Frédéric Harper, `@Fred` on Slack.
+For any issues with kubefirst, please refer yourself to the [SUPPORT.md from the kubefirst repository](https://github.com/kubefirst/kubefirst/blob/main/SUPPORT.MD).
