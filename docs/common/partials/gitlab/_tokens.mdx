@@ -13,3 +13,7 @@ kubefirst uses the following scopes to provision the kubefirst platform:
 There are different ways to create a GitLab token. The easiest way is to start the kubefirst installer, and follow the screen instructions. It will guide you to issue a token with the list of scope described above.
 
 There are other ways to create a GitLab token. You can login into your GitLab account and issue a Personal Access Token following the list of scopes above. With the manually generated token, you can provide it via environment variable: `export GITLAB_TOKEN`.
+
+:::tip
+If you never connected to GitLab using SSH before, be sure to add it to the known host using the command `ssh-keyscan gitlab.com >> ~/.ssh/known_hosts` to ensure you won't get a `ssh: handshake failed: knownhosts: key is unknown` error.
+:::
