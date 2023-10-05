@@ -35,3 +35,13 @@ gh repo delete <GITHUB_USERNAME>/gitops --confirm
 ### What is the wait.yaml file in each application components folder?
 
 We've had issues with Argo CD and its sync waves not orchestrating correctly (it's a known bug, here's [one example](https://github.com/argoproj/argo-cd/issues/12376)), so we've added the `wait.yml` file as a secondary measure to help with the reliability of the platform provisioning. We may revisit how this is functioning, and remove those files on our platform orchestration evolution.
+
+### Can I install kubefirst on an existing cluster?
+
+It is not possible for now to install kubefirst (as in, the management cluster) on an existing cluster. Since our tool install multiple applications to give you that production-grade management cluster, it would be quite risky to do so in a cluster with existing installations that could overlap or interfere with our, or your platform. In addition to that, since a kubefirst cluster is based on the GitOps principles, the systems in place could be removed from the cluster if they are not defined in the source of truth, the `gitops` repository.
+
+One way of _using_ an existing cluster is to go through the process of creating a new management one with kubefirst, and manually creating the proper YAML files in the `gitops` repository to recreate the same application architecture you already had. It's a manual process that could be tedious depending on the size, and complexity of the system you already have in place. Let us know if you need help or have any questions about it.
+
+:::info
+You can use Helm to install the console application on an existing cluster, which we agree, can be confusing. This will give you access to the console application, which will let you *create a new cluster* using the UI installation process, but it won't install any other tools inside the cluster you used with Helm.
+:::
