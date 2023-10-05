@@ -10,18 +10,6 @@ import GitHubTokens from '../common/partials/github/_tokens.mdx'
 import GitLabTokens from '../common/partials/gitlab/_tokens.mdx'
 import * as config from "../constants.js"
 
-<div
-  style={{
-    display: "flex",
-    justifyContent: "flex-end",
-    alignItems: "center",
-  }}
->
-  <div>
-    <img src={config.AWS_LOGO_URL} height="50" width="120" />
-  </div>
-</div>
-
 <Tabs groupId="git_provider" defaultValue="github" queryString>
     <TabItem
       attributes={{className: styles.github}}
