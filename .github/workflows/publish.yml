@@ -22,7 +22,7 @@ jobs:
     steps:
 
       - name: Wait for other releases processes to finish
-        uses: ahmadnassri/action-workflow-queue@v1.1.4
+        uses: ahmadnassri/action-workflow-queue@v1.1.5
 
       - name: Setup Runner for Argo
         run: |
@@ -40,7 +40,7 @@ jobs:
           argo version --short
 
       - name: Check out repository code
-        uses: actions/checkout@v3.5.3
+        uses: actions/checkout@v4.1.0
 
       - name: Inject slug/short variables
         uses: rlespinasse/github-slug-action@v4.4.1
@@ -51,6 +51,7 @@ jobs:
         with:
           access_token: ${{ secrets.DOCS_PERMISSIONS_TOKEN }}
           branch: ${{ github.event.repository.default_branch }}
+          enforce_admins: false
 
       # todo need to look repositoryGitURL, this needs to be overrideable from here and respected on the template side for both repositories
       - name: Deploy docs on production
@@ -70,7 +71,8 @@ jobs:
 
       - name: Enable back docs branch protection
         uses: benjefferies/branch-protection-bot@1.0.9
-        if: always()  # Force to always run this step to ensure the protection is always turned back on no matetr if previous step fail
+        if: always()  # Force to always run this step to ensure the protection is always turned back on no matter if previous step fail
         with:
           access_token: ${{ secrets.DOCS_PERMISSIONS_TOKEN }}
           branch: ${{ github.event.repository.default_branch }}
+          enforce_admins: true
