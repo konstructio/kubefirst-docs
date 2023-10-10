@@ -8,17 +8,17 @@ jobs:
     steps:
 
       - name: Checkout the code
-        uses: actions/checkout@v3.5.3
+        uses: actions/checkout@v4.1.0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3.7.0
+        uses: actions/setup-node@v3.8.1
         with:
-          node-version: v19.6.0
+          node-version: v18.18.0
           cache: npm
 
       - name: Cache Node.js packages
         id: cache-npm
-        uses: actions/cache@v3.3.1
+        uses: actions/cache@v3.3.2
         env:
           cache-name: cache-node-modules
         with:
