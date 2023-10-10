@@ -45,3 +45,13 @@ One way of _using_ an existing cluster is to go through the process of creating 
 :::info
 You can use Helm to install the console application on an existing cluster, which we agree, can be confusing. This will give you access to the console application, which will let you **create a new cluster** using the UI installation process, but it won't install any other tools inside the cluster you used with Helm.
 :::
+
+### Do you plan to support...
+
+kubefirst is an opinionated platform: we install, and configure the tools we think you need to have a production-ready Kubernetes cluster. We also try to keep the initial tooling at a minimum. Everything else that could be useful for your endeavor can either be installed using the [GitOps Catalog](gitops-catalog), or manually added by you using your new `gitops` repository. If the applications you want isn't in the Catalog, let us know by [creating an issue](https://github.com/kubefirst/gitops-catalog/issues/new) (or in our [Slack community](https://kubefirst.io/slack)), and we'll add it.
+
+With that said, here's a list of requests we got from our users, with some details on the plans to add the technology, or not. Even if the status of the application you would like in kubefirst is `not planned`, kindly let us know. We are always listening to our community, so if a technology request is popular, we will review our plans to decide if we change our plans.
+
+#### k0s
+
+Since we support k3d, we have no plan to support [k0s](https://github.com/k0sproject/k0s) since, as far as we know, the capabilities, especially for our usage, are the same.
