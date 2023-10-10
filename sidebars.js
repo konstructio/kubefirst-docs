@@ -139,6 +139,7 @@ const sidebars = {
         },
       ],
     },
+    'k3d/gitops-catalog',
     'k3d/deprovision',
     'k3d/faq',
     'k3d/credits',
