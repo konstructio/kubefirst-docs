@@ -1,53 +1,10 @@
 ---
 title: Repositories
 sidebar_position: 3
-description: the installation process for kubefirst cli
+description: the git repositories created by the kubefirst platform
 image: "https://docs.kubefirst.io/img/logo.svg"
 ---
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import styles from "../../stylesheets/tabs.module.css";
-import ReactDom from 'react-dom'
-import * as config from "../../constants.js"
-import GitHubRepositories from '../partials/github/_repositories.mdx'
-import GitLabRepositories from '../partials/gitlab/_repositories.mdx'
+import REPOSITORES from "../../common/repositories.mdx"
 
-<div
-  style={{
-    display: "flex",
-    justifyContent: "flex-end",
-    alignItems: "center",
-  }}
->
-  <div>
-    <img src={config.GCP_LOGO_URL} height="50" width="120" />
-  </div>
-</div>
-
-<Tabs groupId="git_provider" defaultValue="github" queryString>
-    <TabItem
-      attributes={{className: styles.github}}
-      value="github"
-      label={
-        <div className="git-tab">
-          <img src="https://assets.kubefirst.com/console/github.svg" />
-          <span>GitHub</span>
-        </div>
-      }
-    >
-      <GitHubRepositories />
-    </TabItem>
-    <TabItem
-      value="gitlab"
-      attributes={{className: styles.gitlab}}
-      label={
-        <div className="git-tab">
-          <img src="https://assets.kubefirst.com/console/gitlab.svg" />
-          <span>GitLab</span>
-        </div>
-      }
-    >
-      <GitLabRepositories />
-    </TabItem>
-</Tabs>
+<REPOSITORES />
