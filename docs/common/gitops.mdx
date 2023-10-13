@@ -69,3 +69,7 @@ git push --tags
 Now you can use the `--gitops-template-url` flag pointing to your new repository when creating a new Kubernetes cluster.
 
 When the kubefirst CLI checks out the `gitops-template-url` flag for the repository URL, it will default to checking out the git tag that matches the CLI's version. For example a v2.0.0 CLI would check out the `gitops-template-url` at the tag `v2.0.0`. This is not always the desired effect, as you may be forking in order to introduce some new changes to the `gitops-template` repository structure. In order to checkout the `main` branch of your forked `gitops-template` repository instead of the version tag, you need to also include the `--gitops-template-branch main` flag with your `create` command.
+
+You can also find the equivalent of these flags in the `Advanced Options` section of the `Cluster details` step if you are using the UI installer.
+
+![](../img/console/console-advanced-options.png)
