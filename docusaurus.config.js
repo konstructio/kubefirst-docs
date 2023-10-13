@@ -152,7 +152,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https:/kubefirst.io',
+            href: 'https://kubefirst.io',
             label: 'Website',
             position: 'right',
           },
