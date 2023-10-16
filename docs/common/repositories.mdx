@@ -1,0 +1,39 @@
+---
+title: Repositories
+sidebar_position: 2
+description: the git repositories created by the kubefirst platform
+image: "https://docs.kubefirst.io/img/logo.svg"
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import styles from "../stylesheets/tabs.module.css";
+import GitHubRepositories from './partials/github/_repositories.mdx'
+import GitLabRepositories from './partials/gitlab/_repositories.mdx'
+
+<Tabs groupId="git_provider" defaultValue="github" queryString>
+    <TabItem
+      attributes={{className: styles.github}}
+      value="github"
+      label={
+        <div className="git-tab">
+          <img src="https://assets.kubefirst.com/console/github.svg" />
+          <span>GitHub</span>
+        </div>
+      }
+    >
+      <GitHubRepositories />
+    </TabItem>
+    <TabItem
+      value="gitlab"
+      attributes={{className: styles.gitlab}}
+      label={
+        <div className="git-tab">
+          <img src="https://assets.kubefirst.com/console/gitlab.svg" />
+          <span>GitLab</span>
+        </div>
+      }
+    >
+      <GitLabRepositories />
+    </TabItem>
+</Tabs>

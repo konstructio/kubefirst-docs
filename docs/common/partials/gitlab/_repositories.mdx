@@ -1,5 +1,3 @@
-# GitLab Repositories
-
 In the GitOps nature, we rely on repositories to have a single source of truth when it comes to project updates. kubefirst makes heavy use of the GitOps approach to automate the development and maintenance of applications. In that regard, during the installation process, kubefirst will create a few GitLab repositories as described below.
 
 ## Repositories
@@ -9,6 +7,10 @@ In the GitOps nature, we rely on repositories to have a single source of truth w
 ### `gitops`
 
 The `gitops` repository houses all of our IAC and all of our GitOps configurations. All of the infrastructure that you receive with kubefirst was produced by Terraform and all of your applications are delivered with Argo CD. You will add to this `gitops` repository as your business needs require additional infrastructure or applications.
+
+:::caution
+The repository doesn't have any branch protection by default. We highly suggest that you add some on the `main` branch.
+:::
 
 ### metaphor
 
