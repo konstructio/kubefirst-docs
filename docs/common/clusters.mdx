@@ -3,13 +3,13 @@ to create their own opinionated workload clusters in a way that takes advantage 
 physical clusters, which will be created in your cloud account, as well as virtual clusters, which are also isolated kubernetes
 clusters, but which run inside your management cluster.
 
-![kubefirst Cluster Provisioning](../img/kubefirst/getting-started/cluster-creation.gif)
+![cluster creation in kubefirst user interface](../img/kubefirst/getting-started/cluster-creation.gif)
 
 ## GitOps-Oriented Workload Clusters
 
 By default, a new kubefirst will provide you with 2 template-driven directories that will drive how your workload clusters are created.
 
-![kubefirst Cluster Provisioning](../img/kubefirst/getting-started/cluster-template.png)
+![cluster template directories in gitops repository](../img/kubefirst/getting-started/cluster-template.png)
 
 Each cluster that you create from these templates through our management interface will orchestrate the following:
 
@@ -17,11 +17,11 @@ Each cluster that you create from these templates through our management interfa
 - a new app-of-apps for your cluster will be added to your `registry/clusters` directory in your `gitops` repo and bound to your manangement cluster's orchestration in `registry/clusters/<management-cluster>/components/clusters`
 - an optional environment binding so a new cluster can establish a space for a new environment in your gitops repository
 
-![kubefirst Cluster Provisioning](../img/kubefirst/getting-started/cluster-binding.png)
+![cluster binding in management clusters directory](../img/kubefirst/getting-started/cluster-binding.png)
 
 ## Cluster Provisioning Orchestration
 
-![kubefirst Cluster Provisioning](../img/kubefirst/getting-started/cluster-argocd.png)
+![production workload cluster app-of-apps in Argo CD](../img/kubefirst/getting-started/cluster-argocd.png)
 
 If you inspect your templates for cluster and vcluster, you'll find them to be very similar. They will both create new kubernetes clusters with the following components preloaded:
 
