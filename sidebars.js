@@ -26,6 +26,7 @@ const sidebars = {
           ],
         },
         'aws/quick-start/repositories',
+        'aws/quick-start/cluster-management',
       ],
       Explore: [
         {
@@ -58,6 +59,7 @@ const sidebars = {
           ],
         },
         'do/quick-start/repositories',
+        'do/quick-start/cluster-management',
       ],
       Explore: [
         {
@@ -84,6 +86,7 @@ const sidebars = {
           ],
         },
         'civo/quick-start/repositories',
+        'civo/quick-start/cluster-management',
       ],
       Explore: [
         {
@@ -110,6 +113,7 @@ const sidebars = {
         ],
       },
       'gcp/quick-start/repositories',
+      'gcp/quick-start/cluster-management',
       ],
       'Explore': [
         {
@@ -157,6 +161,7 @@ const sidebars = {
           ],
         },
         'vultr/quick-start/repositories',
+        'vultr/quick-start/cluster-management',
       ],
       Explore: [
         {
