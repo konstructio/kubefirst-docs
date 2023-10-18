@@ -24,6 +24,7 @@ Each cluster that you create from these templates through our management interfa
 ![kubefirst Cluster Provisioning](../img/kubefirst/getting-started/cluster-argocd.png)
 
 If you inspect your templates for cluster and vcluster, you'll find them to be very similar. They will both create new kubernetes clusters with the following components preloaded:
+
 - infrastructure (virtual): vcluster kubernetes cluster that will run in a namespace in your management cluster, with an additional bootstrap app to configure the cluster with crossplane-managed terraform
 - infrastructure (physical): crossplane-managed terraform that creates a kubernetes cluster tailored to your cloud and configures the cluster
 - ingress-nginx ingress controller
