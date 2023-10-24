@@ -1,0 +1,71 @@
+---
+hide_title: true
+sidebar_label: Overview
+sidebar_position: 1
+description: an overview of kubefirst on a DigitalOcean kubernetes cluster
+image: 'https://docs.kubefirst.io/img/logo.svg'
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import styles from '../stylesheets/tabs.module.css';
+import ReactDom from 'react-dom';
+import * as config from '../constants.js';
+import GitHubOverview from '../do/partials/github/_overview.mdx';
+import GitLabOverview from '../do/partials/gitlab/_overview.mdx';
+import CloudBanner from '@site/src/components/CloudBanner/CloudBanner.jsx';
+import CommonProvisionProcess from "../common/partials/common/_provision-process.mdx";
+
+<div
+  style={{
+    display: 'flex',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  }}
+>
+  <div>
+    <img src={config.DO_LOGO_URL} height="50" width="120" />
+  </div>
+</div>
+
+# Overview
+
+:::caution
+
+DigitalOcean is in beta. It is quite stable, but use at your own risks.
+
+:::
+
+The DigitalOcean provisioning process will:
+<CommonProvisionProcess firstitem="Create a Kubernetes cluster in the DigitalOcean cloud."/>
+
+![kubefirst DigitalOcean with GitLab Cluster Diagram](../img/do/gitlab/installation-diagram-light.png#light-mode)![kubefirst DigitalOcean with GitLab Cluster Diagram](../img/do/gitlab/installation-diagram-dark.png#dark-mode)
+
+# Applications
+
+<Tabs groupId="git_provider" defaultValue="github" queryString>
+  <TabItem
+    attributes={{ className: styles.github }}
+    value="github"
+    label={
+      <div className="git-tab">
+        <img src="https://assets.kubefirst.com/console/github.svg" />
+        <span>GitHub</span>
+      </div>
+    }
+  >
+    <GitHubOverview />
+  </TabItem>
+  <TabItem
+    value="gitlab"
+    attributes={{ className: styles.gitlab }}
+    label={
+      <div className="git-tab">
+        <img src="https://assets.kubefirst.com/console/gitlab.svg" />
+        <span>GitLab</span>
+      </div>
+    }
+  >
+    <GitLabOverview />
+  </TabItem>
+</Tabs>

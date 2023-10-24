@@ -1,0 +1,62 @@
+## General
+
+### I ran into an issue, what should I do?
+
+If an error occurs, try to run the command again: there is a `~/.kubefirst` file on your localhost that keeps track of your execution state. If it still doesn't work, check the log file which was created in the `~/.k1/logs` folder.
+
+If you are not sure about the steps to take to fix the problem you encounter, join our [Slack community](https://kubefirst.io/slack), and ask for help in the `#helping-hands` channel. We'll gladly work through it with you.
+
+If you think there is a bug, you can also open an [issue](https://github.com/kubefirst/kubefirst/issues) describing the problems you are having.
+
+### I'm experiencing timeouts when kubefirst deploys Argo CD or HashiCorp Vault through the Helm installations
+
+You may need a more stable connection / higher download speed. Check with your internet provider or use an online speed test to confirm you have at least 100mbps download speed, or else you may experience timeouts.
+
+### Where can I find the services passwords?
+
+Run the command `kubefirst <platform> root-credentials` where `<platform>` is one of `k3d`, `aws`, `civo`
+
+### I'm stuck with artifacts after a failed local installation and can't continue
+
+If you still cannot complete the installation due to remaining artifacts after completing a `kubefirst k3d destroy`, you may have to do a manual teardown. Firstly, you need to delete the k3d cluster with the following command:
+
+```shell
+~/.k1/<your-cluster-name>/tools/k3d cluster delete kubefirst
+kubefirst reset
+```
+
+Once it's done, you can delete the GitHub assets we created by logging into your account and removing the `gitops`, and `metaphor` repositories. You can also use the GitHub CLI to do that1:
+
+```shell
+gh repo delete <GITHUB_USERNAME>/metaphor --confirm
+gh repo delete <GITHUB_USERNAME>/gitops --confirm
+```
+
+### What is the wait.yaml file in each application components folder?
+
+We've had issues with Argo CD and its sync waves not orchestrating correctly (it's a known bug, here's [one example](https://github.com/argoproj/argo-cd/issues/12376)), so we've added the `wait.yml` file as a secondary measure to help with the reliability of the platform provisioning. We may revisit how this is functioning, and remove those files on our platform orchestration evolution.
+
+### Can I install kubefirst on an existing cluster?
+
+It is not possible for now to install kubefirst (as in, the management cluster) on an existing cluster. Since our tool install multiple applications to give you that production-grade management cluster, it would be quite risky to do so in a cluster with existing installations that could overlap or interfere with our, or your platform. In addition to that, since a kubefirst cluster is based on the GitOps principles, the systems in place could be removed from the cluster if they are not defined in the source of truth, the `gitops` repository.
+
+One way of _using_ an existing cluster is to go through the process of creating a new management one with kubefirst, and manually creating the proper YAML files in the `gitops` repository to recreate the same application architecture you already had. It's a manual process that could be tedious depending on the size, and complexity of the system you already have in place. Let us know if you need help or have any questions about it.
+
+:::info
+You can use Helm to install the console application on an existing cluster, which we agree, can be confusing. This will give you access to the console application, which will let you **create a new cluster** using the UI installation process, but it won't install any other tools inside the cluster you used with Helm.
+:::
+
+### Does kubefirst add any cloud resources overhead?
+
+kubefirst adds virtually no overhead when it comes to cloud resources compared to creating a Kubernetes cluster manually and adding all the tools we install, and configure for you.
+
+<!-- markdownlint-disable MD026 -->
+### Do you plan to support...
+
+kubefirst is an opinionated platform: we install, and configure the tools we think you need to have a production-ready Kubernetes cluster. We also try to keep the initial tooling at a minimum. Everything else that could be useful for your endeavor can either be installed using the [GitOps Catalog](gitops-catalog), or manually added by you using your new `gitops` repository. If the applications you want isn't in the Catalog, let us know by [creating an issue](https://github.com/kubefirst/gitops-catalog/issues/new) (or in our [Slack community](https://kubefirst.io/slack)), and we'll add it.
+
+With that said, here's a list of requests we got from our users, with some details on the plans to add the technology, or not. Even if the status of the application you would like in kubefirst is `not planned`, kindly let us know. We are always listening to our community, so if a technology request is popular, we will review our plans to decide if we change our plans.
+
+#### k0s
+
+Since we support k3d, we have no plan to support [k0s](https://github.com/k0sproject/k0s) since, as far as we know, the capabilities, especially for our usage, are the same.

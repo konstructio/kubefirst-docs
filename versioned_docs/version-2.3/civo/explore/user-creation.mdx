@@ -1,0 +1,36 @@
+---
+title: User Creation
+sidebar_position: 5
+---
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import styles from "../../stylesheets/tabs.module.css";
+import GitHubUserCreation from '../partials/github/_user-creation.mdx'
+import GitLabUserCreation from '../partials/gitlab/_user-creation.mdx'
+
+<Tabs groupId="git_provider" defaultValue="github" queryString>
+    <TabItem
+      attributes={{className: styles.github}}
+      value="github"
+      label={
+        <div className="git-tab">
+          <img src="https://assets.kubefirst.com/console/github.svg" />
+          <span>GitHub</span>
+        </div>
+      }
+    >
+      <GitHubUserCreation />
+    </TabItem>
+    <TabItem
+      value="gitlab"
+      attributes={{className: styles.gitlab}}
+      label={
+        <div className="git-tab">
+          <img src="https://assets.kubefirst.com/console/gitlab.svg" />
+          <span>GitLab</span>
+        </div>
+      }
+    >
+      <GitLabUserCreation />
+    </TabItem>
+</Tabs>
