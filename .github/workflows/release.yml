@@ -26,9 +26,9 @@ jobs:
           ls versioned_sidebars/version-${{ github.event.inputs.version }}-sidebars.json && echo "::error::Version already exist" && exit 1 || exit 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3.7.0
+        uses: actions/setup-node@v4.0.0
         with:
-          node-version: v19.6.0
+          node-version: v18.18.0
           cache: npm
 
       - name: Cache Node.js packages
