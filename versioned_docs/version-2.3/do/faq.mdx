@@ -1,0 +1,16 @@
+---
+hide_title: true
+sidebar_label: FAQ
+description: frequently asked quesitons about the kubefirst platform
+image: "https://docs.kubefirst.io/img/logo.svg"
+---
+
+import FAQ from "../common/faq.mdx"
+
+<FAQ />
+
+## DigitalOcean
+
+### I got an AWS error, but I'm creating a cluster on DigitalOcean. What is this?
+
+The error can be misleading, but it makes sense as smaller cloud providers, including DigitalOcean, built their storage offering to be S3 compatible, which means that the Terraform provider used for them is also the AWS one. As for the error itself, there's a chance it's because your `DO_SPACES_KEY` and/or `DO_SPACES_SECRET` environment variable were not set, or you key isn't valid anymore.
