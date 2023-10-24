@@ -1,0 +1,69 @@
+---
+hide_title: true
+sidebar_label: CLI
+sidebar_position: 2
+image: 'https://docs.kubefirst.io/img/logo.svg'
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import GitHubPrerequisites from '../../../common/partials/github/_prerequisites.mdx';
+import GitHubClusterCreateCmd from '../../partials/github/_cluster-create.mdx';
+import GitLabPrerequisites from '../../../common/partials/gitlab/_prerequisites.mdx';
+import GitLabClusterCreateCmd from '../../partials/gitlab/_cluster-create.mdx';
+import CommonCloudPrerequisites from '../../partials/common/_prerequisites.mdx';
+import CommonClusterConnectivity from '../../partials/common/_cluster-connectivity.mdx';
+import CommonRootCredentialsCmd from '../../../common/partials/common/_root-credentials-cmd.mdx';
+import CommonTerminalOutput from "../../../common/partials/common/_terminal-output.mdx";
+import * as config from '../../../constants.js';
+import styles from '../../../stylesheets/tabs.module.css';
+import GitHubHandoffScreen from "../../../img/do/github/handoff-screen.png";
+import GitLabHandoffScreen from "../../../img/do/gitlab/handoff-screen.png";
+
+export const TabLabel = ({ imgSrc, label }) => (
+  <div className="git-tab">
+    <img src={imgSrc} />
+    <span>{label}</span>
+  </div>
+);
+
+# Install kubefirst from the CLI
+
+<Tabs groupId="git_provider" defaultValue="github" queryString>
+  <TabItem
+    attributes={{ className: styles.github }}
+    value="github"
+    label={<TabLabel imgSrc={config.GITHUB_LOGO_URL} label="GitHub" />}
+  >
+  <GitHubPrerequisites />
+
+  <CommonCloudPrerequisites />
+
+  <GitHubClusterCreateCmd />
+
+  <CommonTerminalOutput cloud="DigitalOcean"  minutes="10" handoffScreen={GitHubHandoffScreen} />
+
+  <CommonRootCredentialsCmd />
+
+  <CommonClusterConnectivity />
+
+  </TabItem>
+  <TabItem
+    value="gitlab"
+    attributes={{ className: styles.gitlab }}
+    label={<TabLabel imgSrc={config.GITLAB_LOGO_URL} label="GitLab" />}
+  >
+  <GitLabPrerequisites />
+
+  <CommonCloudPrerequisites />
+
+  <GitLabClusterCreateCmd />
+
+  <CommonTerminalOutput cloud="DigitalOcean"  minutes="10" handoffScreen={GitLabHandoffScreen} />
+
+  <CommonRootCredentialsCmd />
+
+  <CommonClusterConnectivity />
+
+  </TabItem>
+</Tabs>
