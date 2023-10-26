@@ -47,6 +47,14 @@ then
 fi
 
 #
+# Clear last terminal line
+#
+function clearLastLine {
+    tput cuu 1 >&2
+    tput el >&2
+}
+
+#
 # Welcome the user
 #
 gum style --foreground 212 --border-foreground 212 --border double --align center --width 100 --margin "1 2" --padding "2 4" 'THE DUPLICATOR' '' 'With great power comes great responsibility, use carefully!'
@@ -73,6 +81,7 @@ done
 
 gum format -- "Unselect files you don't want to updates:"
 local selectedFiles=("${(@f)$(eval $command || echo "ESC")}")
+clearLastLine
 
 # Check if user escaped
 if [[ "$selectedFiles" == "ESC" ]]
@@ -88,6 +97,7 @@ local versionsNames=$(echo $versions | sed 's/versioned_docs\/version-//g')
 
 gum format -- "Select the version(s) you want to update also:"
 local selectedVersions=("${(@f)$(echo $versionsNames | gum choose --no-limit --unselected-prefix "[ ] " --cursor-prefix "[ ] " --selected-prefix "[✓] "  || echo "ESC")}")
+clearLastLine
 
 # Check if user escaped
 if [[ "$selectedVersions" == "ESC" ]]
@@ -98,18 +108,21 @@ fi
 #
 # Copy & stage the files to all the selected docs version
 #
-for file in $selectedFiles;
-do
-    for version in $selectedVersions;
+if [[ ! -z $selectedVersions ]] ; then
+    for file in $selectedFiles;
     do
-        local newfile=${file//docs/versioned_docs\/version-$version}
-        cp $file $newfile
-        git add $newfile
+        for version in $selectedVersions;
+        do
+            local newfile=${file//docs/versioned_docs\/version-$version}
+            cp $file $newfile
+            git add $newfile
+        done
     done
-done
 
-#
-# Show result
-#
-gum format -- "Copy is done!"
-git status
+    # Show result
+    gum format -- "Copy is done!"
+    echo
+    git status
+else
+    gum format -- "No versions selected!"
+fi
