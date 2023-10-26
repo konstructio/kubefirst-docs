@@ -214,3 +214,9 @@ cd ../../..
 rm -rf gitops
 rm .env
 ```
+
+Lastly, you need to ensure that the cluster 0, the one that was created on Docker to create your cluster on public cloud, either by using the CLI, or the UI installation, is destroyed by running:
+
+```shell
+kubefirst <cloud>  destroy
+```
