@@ -141,7 +141,6 @@ kubefirst terraform set-env \
   --vault-url https://vault.<your-domain> \
   --output-file .env
 source .env
-rm .env
 ```
 
 This will collect the required variables from the necessary secret path and output them to a file referenced by the `--output-file` flag. The second command will set environment variables with its content.
@@ -208,4 +207,10 @@ terraform destroy
 
 Once you've destroyed `terraform` resources for the cloud and git providers, the only resource left to clean up is the state storage objects that kubefirst created on your behalf. If you'd like to remove these, this can be achieved by using the cloud console or the command-line utility for your chosen cloud provider.
 
-You can now delete the `gitops` repository you cloned on your computer.
+You can now delete the `gitops` repository you cloned on your computer, and the `.env` file:
+
+```shell
+cd ../../..
+rm -rf gitops
+rm .env
+```
