@@ -1,9 +1,10 @@
 - <span>{props.firstitem}</span>
-- Create a `gitops` git repository from our [gitops-template](https://github.com/kubefirst/gitops-template) and store it in your selected git provider.
-- Install Argo CD bootstrapped against your `gitops` repository so your repository powers the platform.
-- Install all the platform apps using GitOps (gitops repository `/registry` folder).
-- Apply Terraform to configure Vault (gitops repository `/terraform/vault` folder).
-- Bind a webhook to ngrok in cluster so you can automate Terraform executions through Atlantis.
-- Integrate Argo Workflows with your git provider.
-- Install Argo Workflows [cluster workflow templates](https://argoproj.github.io/argo-workflows/cluster-workflow-templates/#cluster-workflow-templates) to build containers, publish charts, and provide GitOps delivery pipelines.
-- Install a sample application that uses this automation to demonstrate app delivery ([metaphor](https://github.com/kubefirst/gitops-template/tree/main/metaphor)).
+- Create three virtual workload clusters for each default environment (development, staging & production).
+- Create a `gitops` Git repository from our [gitops-template](https://github.com/kubefirst/gitops-template) and store it in your selected Git provider.
+- Install Argo CD bootstrapped against your `gitops` repository so your repository powers the platform, and become your source of truth.
+- Install all the platform applications using GitOps (from the `/registry` folder in the `gitops` repository).
+- Apply Terraform to configure Vault (from the `/terraform/vault` folder in the `gitops` repository).
+- Bind a webhook to ngrok in the cluster so you can automate [Terraform executions through Atlantis](explore/terraform).
+- Integrate Argo Workflows with your selected Git provider.
+- Install Argo Workflows [cluster workflow templates](https://argoproj.github.io/argo-workflows/cluster-workflow-templates/#cluster-workflow-templates) to build containers, publish Helm charts, and provide the GitOps delivery pipelines.
+- Install [metaphor](https://github.com/kubefirst/gitops-template/tree/main/metaphor), a sample application that uses this automation to demonstrate app delivery.
