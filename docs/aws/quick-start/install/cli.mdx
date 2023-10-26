@@ -1,18 +1,19 @@
 ---
 hide_title: true
-sidebar_label: CLI
-sidebar_position: 2
+sidebar_label: CLI Installer
+sidebar_position: 3
 image: "https://docs.kubefirst.io/img/logo.svg"
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import GitHubPrerequisites from "../../../common/partials/github/_prerequisites.mdx";
 import GitHubClusterCreateCmd from "../../partials/github/_cluster-create.mdx";
+import GitLabPrerequisites from "../../../common/partials/gitlab/_prerequisites.mdx";
 import GitLabClusterCreateCmd from "../../partials/gitlab/_cluster-create.mdx";
-import CommonCloudPrerequisites from "../../partials/common/_prerequisites.mdx";
+import AwsCloudPrerequisites from "../../partials/common/_prerequisites.mdx";
+import CommonCloudPrerequisites from "../../../common/partials/common/_prerequisites.mdx";
 import CommonClusterConnectivity from "../../partials/common/_cluster-connectivity.mdx";
-import CommonGitHubPrerequisites from "../../../common/partials/github/_prerequisites.mdx";
-import CommonGitLabPrerequisites from "../../../common/partials/gitlab/_prerequisites.mdx";
 import CommonRootCredentialsCmd from "../../../common/partials/common/_root-credentials-cmd.mdx";
 import CommonTerminalOutput from "../../../common/partials/common/_terminal-output.mdx";
 import * as config from "../../../constants.js"
@@ -29,41 +30,24 @@ export const TabLabel = ({ imgSrc, label }) => (
 
 # Install kubefirst from the CLI
 
+<CommonCloudPrerequisites />
+<AwsCloudPrerequisites />
+
 <Tabs groupId="git_provider" defaultValue="github" queryString>
-  <TabItem
-    attributes={{ className: styles.github }}
-    value="github"
-    label={<TabLabel imgSrc={config.GITHUB_LOGO_URL} label="GitHub" />}
-  >
-  <CommonGitHubPrerequisites />
 
-  <CommonCloudPrerequisites />
-
-  <GitHubClusterCreateCmd />
-
-  <CommonTerminalOutput cloud="AWS"  minutes="25" handoffScreen={GitHubHandoffScreen} />
-
-  <CommonRootCredentialsCmd />
-
-  <CommonClusterConnectivity />
-
+  <TabItem attributes={{ className: styles.github }} value="github" label={<TabLabel imgSrc={config.GITHUB_LOGO_URL} label="GitHub" />}>
+    <GitHubPrerequisites />
+    <GitHubClusterCreateCmd />
+    <CommonTerminalOutput cloud="Aws"  minutes="10" handoffScreen={GitHubHandoffScreen} />
   </TabItem>
-  <TabItem
-    value="gitlab"
-    attributes={{ className: styles.gitlab }}
-    label={<TabLabel imgSrc={config.GITLAB_LOGO_URL} label="GitLab" />}
-  >
-  <CommonGitLabPrerequisites />
 
-  <CommonCloudPrerequisites />
-
-  <GitLabClusterCreateCmd />
-
-  <CommonTerminalOutput cloud="AWS"  minutes="25" handoffScreen={GitLabHandoffScreen} />
-
-  <CommonRootCredentialsCmd />
-
-  <CommonClusterConnectivity />
-
+  <TabItem value="gitlab" attributes={{ className: styles.gitlab }} label={<TabLabel imgSrc={config.GITLAB_LOGO_URL} label="GitLab" />}>
+    <GitLabPrerequisites />
+    <GitLabClusterCreateCmd />
+    <CommonTerminalOutput cloud="Aws"  minutes="10" handoffScreen={GitLabHandoffScreen} />
   </TabItem>
+
 </Tabs>
+
+<CommonRootCredentialsCmd />
+<CommonClusterConnectivity />

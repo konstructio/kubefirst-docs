@@ -1,22 +1,23 @@
 ---
 hide_title: true
-sidebar_label: CLI
-sidebar_position: 2
-image: 'https://docs.kubefirst.io/img/logo.svg'
+sidebar_label: CLI Installer
+sidebar_position: 3
+image: "https://docs.kubefirst.io/img/logo.svg"
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import GitHubPrerequisites from '../../../common/partials/github/_prerequisites.mdx';
-import GitHubClusterCreateCmd from '../../partials/github/_cluster-create.mdx';
-import GitLabPrerequisites from '../../../common/partials/gitlab/_prerequisites.mdx';
-import GitLabClusterCreateCmd from '../../partials/gitlab/_cluster-create.mdx';
-import CommonCloudPrerequisites from '../../partials/common/_prerequisites.mdx';
-import CommonClusterConnectivity from '../../partials/common/_cluster-connectivity.mdx';
-import CommonRootCredentialsCmd from '../../../common/partials/common/_root-credentials-cmd.mdx';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import GitHubPrerequisites from "../../../common/partials/github/_prerequisites.mdx";
+import GitHubClusterCreateCmd from "../../partials/github/_cluster-create.mdx";
+import GitLabPrerequisites from "../../../common/partials/gitlab/_prerequisites.mdx";
+import GitLabClusterCreateCmd from "../../partials/gitlab/_cluster-create.mdx";
+import VultrCloudPrerequisites from "../../partials/common/_prerequisites.mdx";
+import CommonCloudPrerequisites from "../../../common/partials/common/_prerequisites.mdx";
+import CommonClusterConnectivity from "../../partials/common/_cluster-connectivity.mdx";
+import CommonRootCredentialsCmd from "../../../common/partials/common/_root-credentials-cmd.mdx";
 import CommonTerminalOutput from "../../../common/partials/common/_terminal-output.mdx";
-import * as config from '../../../constants.js';
-import styles from '../../../stylesheets/tabs.module.css';
+import * as config from "../../../constants.js"
+import styles from "../../../stylesheets/tabs.module.css";
 import GitHubHandoffScreen from "../../../img/vultr/github/handoff-screen.png";
 import GitLabHandoffScreen from "../../../img/vultr/gitlab/handoff-screen.png";
 
@@ -29,41 +30,24 @@ export const TabLabel = ({ imgSrc, label }) => (
 
 # Install kubefirst from the CLI
 
+<CommonCloudPrerequisites />
+<VultrCloudPrerequisites />
+
 <Tabs groupId="git_provider" defaultValue="github" queryString>
-  <TabItem
-    attributes={{ className: styles.github }}
-    value="github"
-    label={<TabLabel imgSrc={config.GITHUB_LOGO_URL} label="GitHub" />}
-  >
-  <GitHubPrerequisites />
 
-  <CommonCloudPrerequisites />
-
-  <GitHubClusterCreateCmd />
-
-  <CommonTerminalOutput cloud="Vultr"  minutes="10" handoffScreen={GitHubHandoffScreen} />
-
-  <CommonRootCredentialsCmd />
-
-  <CommonClusterConnectivity />
-
+  <TabItem attributes={{ className: styles.github }} value="github" label={<TabLabel imgSrc={config.GITHUB_LOGO_URL} label="GitHub" />}>
+    <GitHubPrerequisites />
+    <GitHubClusterCreateCmd />
+    <CommonTerminalOutput cloud="Vultr"  minutes="10" handoffScreen={GitHubHandoffScreen} />
   </TabItem>
-  <TabItem
-    value="gitlab"
-    attributes={{ className: styles.gitlab }}
-    label={<TabLabel imgSrc={config.GITLAB_LOGO_URL} label="GitLab" />}
-  >
-  <GitLabPrerequisites />
 
-  <CommonCloudPrerequisites />
-
-  <GitLabClusterCreateCmd />
-
-  <CommonTerminalOutput cloud="Vultr"  minutes="10" handoffScreen={GitLabHandoffScreen} />
-
-  <CommonRootCredentialsCmd />
-
-  <CommonClusterConnectivity />
-
+  <TabItem value="gitlab" attributes={{ className: styles.gitlab }} label={<TabLabel imgSrc={config.GITLAB_LOGO_URL} label="GitLab" />}>
+    <GitLabPrerequisites />
+    <GitLabClusterCreateCmd />
+    <CommonTerminalOutput cloud="Vultr"  minutes="10" handoffScreen={GitLabHandoffScreen} />
   </TabItem>
+
 </Tabs>
+
+<CommonRootCredentialsCmd />
+<CommonClusterConnectivity />
