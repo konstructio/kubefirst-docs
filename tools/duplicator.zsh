@@ -92,11 +92,14 @@ fi
 #
 # Get versioned doc(s) target
 #
-local versions=$(ls -d versioned_docs/*)
+local versions=$(ls -r -d versioned_docs/*)
 local versionsNames=$(echo $versions | sed 's/versioned_docs\/version-//g')
 
+# Select last one by default (should refactor this better)
+local defaultVersion=$(ls -r -d versioned_docs/* | head -n 1 | sed 's/versioned_docs\/version-//g')
+
 gum format -- "Select the version(s) you want to update also:"
-local selectedVersions=("${(@f)$(echo $versionsNames | gum choose --no-limit --unselected-prefix "[ ] " --cursor-prefix "[ ] " --selected-prefix "[✓] "  || echo "ESC")}")
+local selectedVersions=("${(@f)$(echo $versionsNames | gum choose --no-limit --unselected-prefix "[ ] " --cursor-prefix "[ ] " --selected-prefix "[✓] " --selected="$defaultVersion" || echo "ESC")}")
 clearLastLine
 
 # Check if user escaped
