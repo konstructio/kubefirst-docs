@@ -50,6 +50,10 @@ You can use Helm to install the console application on an existing cluster, whic
 
 kubefirst adds virtually no overhead when it comes to cloud resources compared to creating a Kubernetes cluster manually and adding all the tools we install, and configure for you.
 
+### Can I give the gitops repository another name?
+
+It is not possible right now to have kubefirst create the GitOps repository under another name, nor to easily rename it after the creation. Unfortunately, a lot of parts of our code using the repository's name are hardcoded. We may add this option in the future.
+
 <!-- markdownlint-disable MD026 -->
 ### Do you plan to support...
 
