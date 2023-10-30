@@ -11,6 +11,7 @@ import styles from "../../stylesheets/tabs.module.css";
 import * as config from "../../constants.js"
 import GitHubInstall from '../partials/github/_install.mdx'
 import GitLabInstall from '../partials/gitlab/_install.mdx'
+import CommonCloudPrerequisites from "../../common/partials/common/_prerequisites.mdx";
 
 <div
   style={{
@@ -23,6 +24,10 @@ import GitLabInstall from '../partials/gitlab/_install.mdx'
     <img src={config.K3D_LOGO_URL} height="50" width="120" />
   </div>
 </div>
+
+# Install kubefirst from the CLI
+
+<CommonCloudPrerequisites />
 
 <Tabs groupId="git_provider" defaultValue="github" queryString>
     <TabItem
