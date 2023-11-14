@@ -34,33 +34,12 @@ asdf global kubefirst latest
 kubefirst version
 ```
 
-#### Linux (manually)
+#### Linux
 
-You can download the latest build for your architecture from the [releases page](https://github.com/kubefirst/kubefirst/releases). Alternatively, you can follow these instructions.
-
-First, you need to get the latest version of kubefirst by running this command which will set an environment variable we'll use later:
+You can download the latest build for your architecture from the [releases page](https://github.com/kubefirst/kubefirst/releases). Once done, extract it, and ensure it's executable. You may need to use `sudo` for the `tar` or `chmod`` command.
 
 ```shell
-export KUBEFIRST_VERSION=`curl https://github.com/kubefirst/kubefirst/releases/latest  -Ls -o /dev/null -w %{url_effective} | grep -oE "[^/]+$"`
-```
-
-Secondly, we need to define the architecture of your computer.
-
-```shell
-export ARCH=`/usr/bin/arch | sed -e 's/aarch64/arm64/' -e 's/x86_64/arm64/'`
-```
-
-Lastly, we build the URL for downloading the right binary for your computer architecture.
-
-```shell
-export BINARY_URL="https://github.com/kubefirst/kubefirst/releases/download/${KUBEFIRST_VERSION}/kubefirst_${KUBEFIRST_VERSION:1}_linux_${ARCH}.tar.gz"
-```
-
-Now we can download the file, extract it, and ensure it's executable. You may need to use `sudo` for the `tar` or `chmod`` command.
-
-```shell
-curl -L $BINARY_URL -o kubefirst.tar.gz && \
-tar --overwrite -xvf kubefirst.tar.gz -C /usr/local/bin/ kubefirst && \
+tar --overwrite -xvf kubefirst_<VERSION>_linux_<ARCH>.tar.gz -C /usr/local/bin/ kubefirst && \
 chmod +x /usr/local/bin/kubefirst
 ```
 
