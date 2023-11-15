@@ -19,6 +19,34 @@ mkcert -install
 
 This is not an optional step: the cluster creation will fail if you don't install the mkcert CA in your trusted store.
 
+If you are using Firefox, you have one more step: you need to install the [Network Security Services](https://firefox-source-docs.mozilla.org/security/nss/index.html) (NSS):
+
+```shell
+brew install nss
+```
+
+#### Additional steps for Windows with WSL
+
+The certificate installed on your WSL distribution won't be propagated to the local system (Windows). If you want to access your k3d installation from your main OS without certification warning, you will need to add the certificate to your Windows Trusted Root Certification Authorities store. To do so, find the location of the store by running the following command in WLS:
+
+```shell
+mkcert -CAROOT
+```
+
+Now `cd` into that directory and run:
+
+```shell
+explorer.exe .
+```
+
+It will open Explorer in the current directory. Copy the full path, which should look like `\\wsl.localhost\Ubuntu\root\.local\share\mkcert`. Open PowerShell as an administrator, `cd` to the copied path, and run the following command:
+
+```PowerShell
+certutil –addstore -enterprise –f "Root" certutil –addstore -enterprise –f "Root" .\rootCA.pem
+```
+
+Restart your browser, and you should be good to go.
+
 ## Working without SSH
 
 If you need your kubefirst installation to avoid using SSH whenever possible, you can bypass SSH and kubefirst will configure itself, GitHub Actions, Argo CD, and your entire GitOps workflow to utilize HTTPS instead of SSH at all times.
