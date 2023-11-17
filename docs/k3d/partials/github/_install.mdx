@@ -42,7 +42,7 @@ explorer.exe .
 It will open Explorer in the current directory. Copy the full path, which should look like `\\wsl.localhost\Ubuntu\root\.local\share\mkcert`. Open PowerShell as an administrator, `cd` to the copied path, and run the following command:
 
 ```PowerShell
-certutil –addstore -enterprise –f "Root" certutil –addstore -enterprise –f "Root" .\rootCA.pem
+certutil –addstore -enterprise –f "Root" .\rootCA.pem
 ```
 
 Restart your browser, and you should be good to go.
