@@ -4,7 +4,7 @@
 - Install Argo CD bootstrapped against your `gitops` repository so your repository powers the platform, and become your source of truth.
 - Install all the platform applications using GitOps (from the `/registry` folder in the `gitops` repository).
 - Apply Terraform to configure Vault (from the `/terraform/vault` folder in the `gitops` repository).
-- Bind a webhook to ngrok in the cluster so you can automate [Terraform executions through Atlantis](explore/terraform).
+- Configure the `gitops` repository to automatically run [Terraform executions through Atlantis](explore/terraform).
 - Integrate Argo Workflows with your selected Git provider.
 - Install Argo Workflows [cluster workflow templates](https://argoproj.github.io/argo-workflows/cluster-workflow-templates/#cluster-workflow-templates) to build containers, publish Helm charts, and provide the GitOps delivery pipelines.
 - Install [metaphor](https://github.com/kubefirst/gitops-template/tree/main/metaphor), a sample application that uses this automation to demonstrate app delivery.
