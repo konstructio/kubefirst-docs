@@ -20,6 +20,7 @@ import * as config from "../../../constants.js"
 import styles from "../../../stylesheets/tabs.module.css";
 import GitHubHandoffScreen from "../../../img/civo/github/handoff-screen.png";
 import GitLabHandoffScreen from "../../../img/civo/gitlab/handoff-screen.png";
+import CLI from "../../../common/partials/common/_cli.mdx";
 
 export const TabLabel = ({ imgSrc, label }) => (
   <div className="git-tab">
@@ -28,8 +29,7 @@ export const TabLabel = ({ imgSrc, label }) => (
   </div>
 );
 
-# Install kubefirst from the CLI
-
+<CLI />
 <CommonCloudPrerequisites />
 <CivoCloudPrerequisites />
 
