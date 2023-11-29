@@ -1,3 +1,18 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import InstallAwsCLI from '../aws/partials/common/_install-aws-cli.mdx'
+import InstallCivoCLI from '../civo/partials/common/_install-civo-cli.mdx'
+import InstallDoCLI from '../do/partials/common/_install-do-cli.mdx'
+import InstallGcpCLI from '../gcp/partials/common/_install-gcp-cli.mdx'
+import InstallVultrCLI from '../vultr/partials/common/_install-vultr-cli.mdx'
+
+import GetAwsKubeconfig from '../aws/partials/common/_get-kubeconfig.mdx'
+import GetCivoKubeconfig from '../civo/partials/common/_get-kubeconfig.mdx'
+import GetDoKubeconfig from '../do/partials/common/_get-kubeconfig.mdx'
+import GetGcpKubeconfig from '../gcp/partials/common/_get-kubeconfig.mdx'
+import GetVultrKubeconfig from '../vultr/partials/common/_get-kubeconfig.mdx'
+
 # Deprovision
 
 To destroy your kubefirst cluster, complete the following steps.
@@ -28,52 +43,23 @@ More information in the [Kubernetes documentation](https://kubernetes.io/docs/ta
 
 If the command-line tool for the chosen cloud provider is not installed, consult the following documentation for installation steps:
 
-<!--tabs-->
-
-#### AWS
-
-```shell
-brew install awscli
-```
-
-More information in the [AWS documentation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
-
-#### Civo
-
-```shell
-brew tap civo/tools
-brew install civo
-```
-
-More information in the [Civo documentation](https://www.civo.com/docs/overview/civo-cli).
-
-#### DigitalOcean
-
-```shell
-brew install doctl
-```
-
-More information in the [DigitalOcean documentation](https://docs.digitalocean.com/reference/doctl/).
-
-#### Google Cloud
-
-```shell
-brew install google-cloud-sdk
-gcloud components install gke-gcloud-auth-plugin
-```
-
-More information in the [Google Cloud documentation](https://cloud.google.com/sdk).
-
-#### Vultr
-
-```shell
-brew tap vultr/vultr-cli
-brew install vultr-cli
-```
-
-More information in the [Vultr documentation](https://github.com/vultr/vultr-cli).
-
-<!--/tabs-->
+<Tabs>
+    <TabItem value="aws" label="AWS">
+      <InstallAwsCLI />
+    </TabItem>
+    <TabItem value="civo" label="Civo">
+      <InstallCivoCLI />
+    </TabItem>
+    <TabItem value="do" label="DigitalOcean">
+      <InstallDoCLI />
+    </TabItem>
+    <TabItem value="gcp" label="Google Cloud">
+      <InstallGcpCLI />
+    </TabItem>
+    <TabItem value="vultr" label="Vultr">
+      <InstallVultrCLI />
+    </TabItem>
+</Tabs>
 
 ### Terraform CLI
 
@@ -89,39 +75,23 @@ More information in the [Terraform documentation](https://developer.hashicorp.co
 
 Before continuing, use the command-line tool for the chosen cloud provider to get the `kubeconfig` for your cluster (replace `<my-cluster>` with your cluster name):
 
-<!--tabs-->
-
-# AWS
-
-```shell
-aws eks update-kubeconfig --name <my-cluster> --region <my-cluster-region>
-```
-
-# Civo
-
-```shell
-civo kubernetes config <my-cluster> --save
-```
-
-# DigitalOcean
-
-```shell
-doctl kubernetes cluster kubeconfig save <my-cluster>
-```
-
-# Google Cloud
-
-```shell
-gcloud container clusters get-credentials <my-cluster> --region=<my-cluster-region>
-```
-
-# Vultr
-
-```shell
-vultr-cli kubernetes config my-cluster-id
-```
-
-<!--/tabs-->
+<Tabs>
+    <TabItem value="aws" label="AWS">
+      <GetAwsKubeconfig />
+    </TabItem>
+    <TabItem value="civo" label="Civo">
+      <GetCivoKubeconfig />
+    </TabItem>
+    <TabItem value="do" label="DigitalOcean">
+      <GetDoKubeconfig />
+    </TabItem>
+    <TabItem value="gcp" label="Google Cloud">
+      <GetGcpKubeconfig />
+    </TabItem>
+    <TabItem value="vultr" label="Vultr">
+      <GetVultrKubeconfig />
+    </TabItem>
+</Tabs>
 
 ## Steps for Deprovisioning
 

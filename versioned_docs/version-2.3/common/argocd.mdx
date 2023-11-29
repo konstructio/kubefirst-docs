@@ -1,3 +1,9 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import GitHubArgoCD from '../common/partials/github/_argocd.mdx'
+import GitLabArgoCD from '../common/partials/gitlab/_argocd.mdx'
+
 Argo CD is a GitOps continuous delivery tool for Kubernetes. We use it to manage all of our applications across our Kubernetes clusters.
 
 Argo CD is really great at providing a straightforward mechanism for you to manage Helm charts, their versions, their configuration overrides, and whether their state is in sync with what is running on your clusters.
@@ -8,17 +14,14 @@ Argo CD is really great at providing a straightforward mechanism for you to mana
 
 The configuration for all of your apps in your Kubernetes cluster can be found in your new `gitops` repository at path `/registry/<cluster-name>`.
 
-<!--tabs-->
-
-# GitHub registry applications
-
-![GitHub Applications Registry](../img/kubefirst/local/gitops-registry.png)
-
-# GitLab registry applications
-
-![GitLab Applications Registry](../img/kubefirst/gitops/registry.png)
-
-<!--/tabs-->
+<Tabs>
+    <TabItem value="github" label="GitHub registry applications">
+        <GitHubArgoCD />
+    </TabItem>
+    <TabItem value="gitlab" label="GitLab registry applications">
+        <GitLabArgoCD />
+    </TabItem>
+</Tabs>
 
 Each of these YAML files will include details regarding the application's source, destination, and Helm configuration overrides.
 
