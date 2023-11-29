@@ -1,44 +1,26 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import Homebrew from '../common/_prerequisites-homebrew.mdx'
+import Linux from '../common/_prerequisites-linux.mdx'
+import Windows from '../common/_prerequisites-windows.mdx'
+
+
 ## Prerequisites
 
 ### kubefirst
 
-<!--tabs-->
-
-#### macOS & Linux (Homebrew)
-
-If you are on macOS or Linux, and have [Homebrew](https://brew.sh) installed, you can run:
-
-```shell
-brew install kubefirst/tools/kubefirst
-```
-
-To upgrade an existing kubefirst CLI to the latest version run:
-
-```shell
-brew update
-brew upgrade kubefirst
-```
-
-#### Linux (manually)
-
-You can download the latest build for your architecture from the [releases page](https://github.com/kubefirst/kubefirst/releases). Once done, extract it, and ensure it's executable. You may need to use `sudo` for the `tar` or `chmod`` command.
-
-```shell
-tar --overwrite -xvf kubefirst_<VERSION>_linux_<ARCH>.tar.gz -C /usr/local/bin/ kubefirst && \
-chmod +x /usr/local/bin/kubefirst
-```
-
-Now you can run `kubefirst`.
-
-```shell
-kubefirst version
-```
-
-#### Windows
-
-We currenctly do not support Windows directly, but you can easily use kubefirst using [WSL](https://learn.microsoft.com/en-us/windows/wsl/about) (tested with Ubuntu). To install the lastest WSL version, please follow the [Microsoft documentation on how to install Linux on Windows](https://learn.microsoft.com/en-us/windows/wsl/install).
-
-<!--/tabs-->
+<Tabs>
+    <TabItem value="homebrew" label="macOS & Linux (Homebrew)">
+      <Homebrew />
+    </TabItem>
+    <TabItem value="linux" label="Linux (manually)">
+      <Linux />
+    </TabItem>
+    <TabItem value="windows" label="Windows">
+      <Windows />
+    </TabItem>
+</Tabs>
 
 ### Docker Desktop
 

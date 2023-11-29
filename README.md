@@ -1,8 +1,8 @@
 <!-- markdownlint-disable MD041 -->
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="img/kubefirst-light.svg" alt="Kubefirst Logo">
-    <img alt="" src="img/kubefirst.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="img/kubefirst-light.svg" alt="Kubefirst Logo"/>
+    <img alt="" src="img/kubefirst.svg"/>
   </picture>
 </p>
 

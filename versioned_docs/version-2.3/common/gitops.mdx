@@ -1,3 +1,9 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import GitHub from '../common/partials/github/_gitops.mdx'
+import GitLab from '../common/partials/gitlab/_gitops.mdx'
+
 The days of scripting `kubectl apply` and `helm install` in your operations are over. The kubefirst platform comes with all the tools you need to run a scalable GitOps platform powered by Argo CD GitOps.
 
 ![GitOps Flow](../img/gitops/gitops-diagram-light.png#light-mode)![GitOps Flow](../img/gitops/gitops-diagram-dark.png#dark-mode)
@@ -23,23 +29,14 @@ The pipelines then continue with promotion of the release through the `preprod` 
 
 Once the release is ready, the release chart is published and delivered to production, and the application chart's version will be prepared for the next release.
 
-<!--tabs-->
-
-# GitHub Integration with Argo Workflows
-
-![Argo Workflows with GitHub](../img/kubefirst/github/github-argo-workflow.png)
-
-The integration that we've established between GitHub and Argo Workflows will surface your powerful Argo Workflows engine directly in GitHub Actions, so that your developers have all of the workflow execution information available, directly associated with their commit in their application repository.
-
-# GitLab Integration with Argo Workflows
-
-![Argo Workflows Integration with GitLab](../img/kubefirst/gitops/gitlab-workflows-integration.png)
-
-The integration that we've established between GitLab and Argo Workflows will surface your powerful Argo Workflows engine directly in GitLab's native CI, so that your developers have all of the workflow execution information available directly associated with their commit in their application repository.
-
-![Argo Workflows with GitLab](../img/kubefirst/gitlab/gitlab-argo-workflow.png)
-
-<!--/tabs-->
+<Tabs>
+    <TabItem value="github" label="GitHub Integration with Argo Workflows">
+      <GitHub />
+    </TabItem>
+    <TabItem value="gitlab" label="GitLab Integration with Argo Workflows">
+      <GitLab />
+    </TabItem>
+</Tabs>
 
 ## GitOps Resources
 

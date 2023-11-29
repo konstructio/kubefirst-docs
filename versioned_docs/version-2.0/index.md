@@ -77,12 +77,9 @@ Choose one of the available options below
                title="Civo Cloud with GitHub" />
             </div>
             <div className="card__body">
-            <h3>🆕 kubefirst on Civo Cloud (GitHub)</h3>
-            <p>
-               The perfect cloud environment when Kubernetes will be the center of attention.
-            </p>
-            <p>A <strong>simple cloud footprint</strong> with a powerful open source cloud native tool set for identity and infrastructure management, application delivery, and secrets management. Cloud native infrastructure with incredibly fast provisioning times.
-            </p>
+                <h3>🆕 kubefirst on Civo Cloud (GitHub)</h3>
+                <p>The perfect cloud environment when Kubernetes will be the center of attention.</p>
+                <p>A <strong>simple cloud footprint</strong> with a powerful open source cloud native tool set for identity and infrastructure management, application delivery, and secrets management. Cloud native infrastructure with incredibly fast provisioning times.</p>
             </div>
             <div className="card__footer">
                 <form>
@@ -100,12 +97,9 @@ Choose one of the available options below
                title="Civo Cloud with GitLab" />
             </div>
             <div className="card__body">
-            <h3>🆕 kubefirst on Civo Cloud (GitLab)</h3>
-            <p>
-               The perfect cloud environment when Kubernetes will be the center of attention.
-            </p>
-            <p>A <strong>simple cloud footprint</strong> with a powerful open source cloud native tool set for identity and infrastructure management, application delivery, and secrets management. Cloud native infrastructure with incredibly fast provisioning times.
-            </p>
+                <h3>🆕 kubefirst on Civo Cloud (GitLab)</h3>
+                <p>The perfect cloud environment when Kubernetes will be the center of attention.</p>
+                <p>A <strong>simple cloud footprint</strong> with a powerful open source cloud native tool set for identity and infrastructure management, application delivery, and secrets management. Cloud native infrastructure with incredibly fast provisioning times.</p>
             </div>
             <div className="card__footer">
                 <form>
