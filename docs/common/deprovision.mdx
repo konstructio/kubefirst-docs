@@ -156,6 +156,10 @@ terraform destroy
 
 Once the last command ran successfully, the cluster including all its resources are fully destroyed.
 
+:::tip
+If the `init` command is not working, it's probably related to the `.env` file not being sourced or created properly. You can validate it was sourced correctly by running `echo $TF_VAR_kbot_ssh_private_key` which should return a value. If it's empty, ensure you sourced the file in the same terminal tab. If you close your terminal or reload your ZSH or Bash configuration files, the values will be lost. You can also validate that the file contains all necessary environment variables: `ARGO_SERVER_URL`, `TF_VAR_atlantis_repo_webhook_url`, `AWS_ACCESS_KEY_ID`, `GITHUB_TOKEN`, `TF_VAR_aws_access_key_id`, `TF_VAR_github_token`, `ATLANTIS_GH_USER`, `TF_VAR_kbot_ssh_public_key`, `VAULT_ADDR`, `ATLANTIS_GH_TOKEN`, `ATLANTIS_GH_WEBHOOK_SECRET`, `TF_VAR_atlantis_repo_webhook_secret`, `TF_VAR_b64_docker_auth`, `TF_VAR_kbot_ssh_private_key`, `TF_VAR_vault_addr`, `GITHUB_OWNER`, `TF_VAR_civo_token`, `TF_VAR_vault_token`, `VAULT_TOKEN`, `ATLANTIS_GH_HOSTNAME`, `TF_VAR_aws_secret_access_key`, `TF_VAR_cloudflare_origin_ca_api_key`, `AWS_SECRET_ACCESS_KEY`, `CIVO_TOKEN`, `TF_VAR_cloudflare_api_key`.
+:::
+
 #### Git
 
 To deprovision the git provider resources, switch to the git provider subdirectory - for example:
