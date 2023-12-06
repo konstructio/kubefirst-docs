@@ -34,7 +34,7 @@ body:
     id: issue
     attributes:
       label: What is the issue?
-      description: Give us as many details as possible about the issue with the documentation
+      description: Give us as many details as possible about the issue with the documentation. Please create one GitHub issue per problem or suggestion!
       placeholder: Tell us what can be improved!
     validations:
       required: true
