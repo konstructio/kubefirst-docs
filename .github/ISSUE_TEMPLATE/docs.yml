@@ -1,6 +1,6 @@
 ---
 name: Documentations
-description: Any suggestions related to the documentation, whether it's an issue, missing information, unclear steps or new page that should be created
+description: Any suggestions related to the documentation, whether it's an issue, missing information, unclear steps or new page that should be created. Please create one GitHub issue per problem or suggestion!
 body:
   - type: markdown
     attributes:
@@ -34,7 +34,7 @@ body:
     id: issue
     attributes:
       label: What is the issue?
-      description: Give us as many details as possible about the issue with the documentation. Please create one GitHub issue per problem or suggestion!
+      description: Give us as many details as possible about the issue with the documentation.
       placeholder: Tell us what can be improved!
     validations:
       required: true
