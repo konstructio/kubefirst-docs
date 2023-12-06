@@ -189,8 +189,16 @@ rm -rf gitops
 rm .env
 ```
 
-Lastly, you need to ensure that the cluster 0, the one that was created on Docker to create your cluster on public cloud, either by using the CLI, or the UI installation, is destroyed by running:
+### Console UI
+
+No matter is you created your new cluster, using the CLI directly (`kubefirst <cloud> create`) or by using the console UI (`kubefirst launch up`), kubefirst will have created a k3d cluster in Docker. We call it the cluster 0, which is either used to display the Console UI, or to connect to our API and create your new kubefirst cluster directly from the CLI. Since it's not needed anymore, you need to destroy it by running:
 
 ```shell
-kubefirst <cloud>  destroy
+kubefirst launch down
 ```
+
+This command will also reset any configurations files locally you can create new clusters.
+
+:::tip
+You don't have to wait till the deprovisioning to run this command: as soon as your cluster on the public cloud of your choice is created, you can get rid of cluster 0.
+:::
