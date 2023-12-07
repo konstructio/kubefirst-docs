@@ -2,5 +2,11 @@
 
 1. Create an AWS account with billing enabled.
 2. Establish a public hosted zone with DNS routing established ([docs](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/AboutHZWorkingWith.html)).
-3. Connect with [Administrator Access](https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/AdministratorAccessserviceLevelSummary) IAM credentials to your AWS account ([docs](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys)).
+3. Connect with an [Administrator Access](https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/AdministratorAccessserviceLevelSummary) IAM credentials to your AWS account ([docs](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys)). It needs to be a set of temporary security credentials [created with AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html). More [information on why, and future changes](https://github.com/kubefirst/kubefirst/issues/1942) about it.
 4. Our Homebrew package will automatically install the [AWS IAM Authenticator](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html) dependency. If you use another installation method, you will need to install this utility.
+
+:::tip
+If you are not sure how to generate the role that will be assume, you can use [this Terraform plan](https://github.com/kubefirst/kubefirst/blob/main/tools/aws-create-role.tf). Please read the comments before proceeding.
+
+If you want to easily assume the role from your terminal, you can use [this bash script](https://github.com/kubefirst/kubefirst/blob/main/tools/aws-assume-role.sh).
+:::
