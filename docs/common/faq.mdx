@@ -19,6 +19,7 @@
 - [Can I install kubefirst on an existing cluster?](#can-i-install-kubefirst-on-an-existing-cluster)
 - [Does kubefirst add any cloud resources overhead?](#does-kubefirst-add-any-cloud-resources-overhead)
 - [Can I give the gitops repository another name?](#can-i-give-the-gitops-repository-another-name)
+- [How can I unseal HashiCorp Vault?](#how-can-i-unseal-hashicorp-vault)
 - [Do you plan to support technology X?](#do-you-plan-to-support-technology-x)
 
 ### I ran into an issue, what should I do?
@@ -70,6 +71,16 @@ kubefirst adds virtually no overhead when it comes to cloud resources compared t
 ### Can I give the gitops repository another name?
 
 It is not possible right now to have kubefirst create the GitOps repository under another name, nor to easily rename it after the creation. Unfortunately, a lot of parts of our code using the repository's name are hardcoded. We may add this option in the future.
+
+### How can I unseal HashiCorp Vault?
+
+If you are using `k3d`, for security reasons, HashiCorp Vault may seal itself when you quit Docker, or manually stop the k3d cluster. You can `kubefirst k3d unseal-vault` to unseal it. In rare cases (when it lose quorum), it may seal itself also with public clouds. To retrieve the `root-unseal-key`, which you'll have to enter manually, use the following commands:
+
+```shell
+kubectl -n vault get secrets/vault-unseal-secret --template='{{index .data "root-unseal-key-1"}}' | base64 -d
+kubectl -n vault get secrets/vault-unseal-secret --template='{{index .data "root-unseal-key-2"}}' | base64 -d
+kubectl -n vault get secrets/vault-unseal-secret --template='{{index .data "root-unseal-key-3"}}' | base64 -d
+```
 
 ### Do you plan to support technology X?
 
