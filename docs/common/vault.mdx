@@ -1,10 +1,14 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import MetaphorSecretsGitHub from '../common/partials/github/_secrets.mdx'
+import MetaphorSecretsGitLab from '../common/partials/gitlab/_secrets.mdx'
+
 [Vault](https://www.vaultproject.io) is an open source secrets manager and identity provider created by HashiCorp.
 
 ## Authentification
 
 ### Token authentication
-
-![Vault section of the handoff screen](../img/vault/handoff-screen.png)
 
 Your first login to Vault will be with the root token which has full administrative permissions. As mentioned in the handoff screen (the purple screen at the end of the installation), it is sorted in a secret named `vault-unseal-secret`, which is in the `vault` namespace of your newly deployed cluster. To read the value, use [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) (which is already in the `~/.k1/` tools folder), and run the following command:
 
@@ -165,7 +169,14 @@ staging secret 1%
 
 Now that you have native Kubernetes secrets available, you can use them however you choose. Our metaphor example uses them as environment variables as shown here:
 
-![Metaphor Secrets on GitLab](../img/kubefirst/vault/metaphor-secret-use-in-deployment.png)
+<Tabs>
+    <TabItem value="github" label="GitHub">
+      <MetaphorSecretsGitHub />
+    </TabItem>
+    <TabItem value="gitlab" label="GitLab">
+      <MetaphorSecretsGitLab />
+    </TabItem>
+</Tabs>
 
 > Note: there are a ton of other ways secrets can be leveraged in your app, like
 [using secrets as files on pods](https://kubernetes.io/docs/concepts/configuration/secret/), or [storing your Docker Hub login](https://kubernetes.io/docs/concepts/configuration/secret/#docker-config-secrets).
