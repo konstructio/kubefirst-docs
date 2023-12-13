@@ -2,6 +2,10 @@ Terraform is our infrastructure as code layer and we manage our Terraform workfl
 
 ## Making Changes In Terraform
 
+Quite often, when using Terraform we apply the changes directly by using the CLI. We suggest you change your IaC practice to a more GitOps oriented way by applying Terraform changes using Atlantis.
+
+The second GitOps principles, versioned and immutable, stipulate that the desired state be stored in a way that enforces immutability, versioning and retains a complete versions’ history, mention that we should keep track of changes to our Terraform files. You can easily achieve this by adding your file to Git, and using pull requests or merges for adding modified files directly inside the `gitops` repository. In addition to versioning, it enhances collaboration, visibility, and by keeping a complete history of the changes, make it easier to rollback if problems arise. Using Atlantis also provide you with a lock mechanism which prevents possible conflicts with colleagues working on the same projects. All in all, it's a small change to our habits that bring a lot of benefits.
+
 ### Automatic Plans With Atlantis
 
 Any change request that includes a .tf file will prompt `atlantis` to wake up and run your Terraform plan. Atlantis will post the plan's result to your change request as a comment within a minute or so.
