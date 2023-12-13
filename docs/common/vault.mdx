@@ -30,7 +30,7 @@ When logging in with users instead of tokens, select method `Username` as the lo
 
 This is the login experience that your team will use when authenticating with Vault. Initially, there will only be a singular `kbot` user created that represents the kubefirst bot account. You can pull request additional admins and developers from your team onto the platform, and they will all log in using the Username method.
 
-Once a user is logged into Vault with Username auth, they will be automatically provided single sign-on (SSO) access to Argo Workflows, Argo CD, and the [kubefirst Console application](https://github.com/kubefirst/console/).
+Once a user is logged into Vault with Username auth, they will be automatically provided single sign-on (SSO) access to Argo Workflows, Argo CD, and the [kubefirst Console application](https://github.com/kubefirst/console/). Note that it won't work for Argo CD with `kbot` or any other created users for the k3d flavor of kubefirst (it's a known [bug](https://github.com/kubefirst/kubefirst/issues/1536)): you'll need to use the Argo CD admin password.
 
 ### Kubernetes authentication
 
