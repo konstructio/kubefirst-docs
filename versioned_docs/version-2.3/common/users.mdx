@@ -4,6 +4,18 @@ import styles from "../stylesheets/tabs.module.css";
 import GitHubUserCreation from '../common/partials/github/_user-creation.mdx'
 import GitLabUserCreation from '../common/partials/gitlab/_user-creation.mdx'
 
+## User Access
+
+The kubefirst platform has two types of user access: administrators and developers. As you may guess, administrators have full access, but developers have limited access. Here is a list of limitations for developers:
+
+- Argo CD
+  - delete applications
+- Vault
+  - access all secrets
+  - reset other users' passwords
+
+## Adding New Users
+
 <Tabs groupId="git_provider" defaultValue="github" queryString>
     <TabItem
       attributes={{className: styles.github}}
