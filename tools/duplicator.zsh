@@ -19,7 +19,8 @@
 # Known issues:
 #  - selection when there is only one file or one doc version doesn't seem to work properly with the space bar + checkbox, but the result is the same, just press ENTER (see https://github.com/charmbracelet/gum/issues/361)
 #  - copy the file, and not just the changed content, so if the target version have difference, it will overwrite them.
-#  - you need to stage the files first, probably will add an option to stage changes files in the future
+#  - you need to stage the files first, probably will add an option to stage changes files in the future.
+#  - renamed files works only for R100 status as it's copying the original versioned file, and not the newly renamed modified docs one.
 #
 
 #
@@ -63,6 +64,7 @@ gum style --foreground 212 --border-foreground 212 --border double --align cente
 # Get staged file(s)
 #
 local files=("${(@f)$(git diff --name-only --cached | grep '^docs/')}")
+#local files=("${(@f)$(git diff --name-status --cached | sed 's/[M|D]\t\(.*\)/\1/' | sed 's/R[0-9]*\t\(.*\)\t.*/\1/' | grep '^docs/')}")
 if [[ -z "$files" ]] ;
 then
   echo "${RED}No files staged: please staged the modified files you would like to duplicate, and run this script again."
@@ -73,6 +75,7 @@ fi
 # Get file(s) to copy
 #
 local command='git diff --name-only --cached | grep '^docs/' | gum choose --no-limit --unselected-prefix "[ ] " --cursor-prefix "[ ] " --selected-prefix "[✓] "'
+#local command="git diff --name-status --cached | sed 's/[M|D]\t\(.*\)/\1/' | sed 's/R[0-9]*\t\(.*\)\t.*/\1/' | grep '^docs/' | gum choose --no-limit --unselected-prefix \"[ ] \" --cursor-prefix \"[ ] \" --selected-prefix \"[✓] \""
 
 for file in $files;
 do
@@ -116,14 +119,36 @@ if [[ ! -z $selectedVersions ]] ; then
     do
         for version in $selectedVersions;
         do
-            local newfile=${file//docs/versioned_docs\/version-$version}
-            cp $file $newfile
-            git add $newfile
+            local versioned_file=${file//docs/versioned_docs\/version-$version}
+
+            # Get the file git status to go the proper action
+            local file_status=$(git status | grep "$file" | grep -E "modified|renamed|deleted" | sed 's/\t\(.*\):.*/\1/')
+            echo "$file $file_status"
+            if [[ "$file_status" == "modified" ]]
+            then
+                cp "$file" "$versioned_file"
+                git add "$versioned_file"
+            elif [[ "$file_status" == "renamed" ]]
+            then
+                #Need to rename the versioned file (work only if R100)
+                local renamed_files=$(git status | grep "$file" | sed 's/\trenamed:    \(.*\) -> \(.*\)/\1;\2/')
+
+                file=$(echo "$renamed_files" | cut -d ";" -f 1)
+                file=${file//docs/versioned_docs\/version-$version}
+
+                versioned_file=$(echo "$renamed_files" | cut -d ";" -f 2)
+                versioned_file=${versioned_file//docs/versioned_docs\/version-$version}
+
+                git mv "$file" "$versioned_file"
+            elif [[ "$file_status" == "deleted" ]]
+            then
+                git rm "$versioned_file"
+            fi
         done
     done
 
     # Show result
-    gum format -- "Copy is done!"
+    gum format -- "Duplication is done!"
     echo
     git status
 else
