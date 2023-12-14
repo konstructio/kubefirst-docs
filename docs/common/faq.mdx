@@ -20,6 +20,7 @@
 - [Does kubefirst add any cloud resources overhead?](#does-kubefirst-add-any-cloud-resources-overhead)
 - [Can I give the gitops repository another name?](#can-i-give-the-gitops-repository-another-name)
 - [How can I unseal HashiCorp Vault?](#how-can-i-unseal-hashicorp-vault)
+- [Terraform is returning a quota limit exceeded error](#terraform-is-returning-a-quota-limit-exceeded-error)
 - [Do you plan to support technology X?](#do-you-plan-to-support-technology-x)
 
 ### I ran into an issue, what should I do?
@@ -64,7 +65,7 @@ You can use Helm to install the console application on an existing cluster, whic
 
 ### Does kubefirst add any cloud resources overhead?
 
-kubefirst adds virtually no overhead when it comes to cloud resources compared to creating a Kubernetes cluster manually and adding all the tools we install, and configure for you.
+kubefirst adds virtually no overhead when it comes to cloud resources compared to creating a Kubernetes cluster manually and adding all the tools we install, and configure for you. You can find exactly the resources needed for public clouds by kubefirst from the Terraform files in the [gitops-template repository](https://github.com/kubefirst/gitops-template/) in the `/<cloud>-<git-provider>/terraform/<cloud>/` folder.
 
 ### Can I give the gitops repository another name?
 
@@ -79,6 +80,10 @@ kubectl -n vault get secrets/vault-unseal-secret --template='{{index .data "root
 kubectl -n vault get secrets/vault-unseal-secret --template='{{index .data "root-unseal-key-2"}}' | base64 -d
 kubectl -n vault get secrets/vault-unseal-secret --template='{{index .data "root-unseal-key-3"}}' | base64 -d
 ```
+
+### Terraform is returning a quota limit exceeded error
+
+If Terraform returns a `quota limit exceeded` error, please check that your public cloud resources quota limit settings are set above what kubefirst needs to work, and that you still have available resources. [More information](#does-kubefirst-add-any-cloud-resources-overhead) on resources used.
 
 ### Do you plan to support technology X?
 
