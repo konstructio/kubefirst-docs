@@ -24,11 +24,9 @@
 
 ### I ran into an issue, what should I do?
 
-If an error occurs, try to run the command again: there is a `~/.kubefirst` file on your localhost that keeps track of your execution state. If it still doesn't work, check the log file which was created in the `~/.k1/logs` folder.
+If an error occurs, try to run the command again if you are using the CLI. Note that it is not advised to retry by changing some of the flags you used as they may not be taken into consideration, or can cause potential issues. If you want to do so, [deprovision](./deprovision) what was created, and start with a new canvas. If you are using the UI, there is a "Retry" button you can use. In both cases, the execution state is kept, and the process will start again where it ended. If it doesn't work, check the logs provided in the `~/.k1/logs` folder for the CLI, and in the UI interface, in the "Verbose" tab.
 
-If you are not sure about the steps to take to fix the problem you encounter, join our [Slack community](https://kubefirst.io/slack), and ask for help in the `#helping-hands` channel. We'll gladly work through it with you.
-
-If you think there is a bug, you can also open an [issue](https://github.com/kubefirst/kubefirst/issues) describing the problems you are having.
+If you are not sure about the steps to take to fix the problem you encounter, join our [Slack community](https://kubefirst.io/slack), and ask for help in the `#helping-hands` channel. We'll gladly work through it with you. If you think there is a bug, you can also open an [issue](https://github.com/kubefirst/kubefirst/issues) describing the problems you are having.
 
 ### I'm experiencing timeouts when kubefirst deploys Argo CD or HashiCorp Vault through the Helm installations
 
