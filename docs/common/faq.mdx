@@ -83,7 +83,7 @@ kubectl -n vault get secrets/vault-unseal-secret --template='{{index .data "root
 
 ### Terraform is returning a quota limit exceeded error
 
-If Terraform returns a `quota limit exceeded` error, please check that your public cloud resources quota limit settings are set above what kubefirst needs to work, and that you still have available resources. [More information](#does-kubefirst-add-any-cloud-resources-overhead) on resources used.
+If Terraform returns a `quota limit exceeded` error, please check that your public cloud resources quota limit settings are set above what kubefirst needs to work, and that you still have available resources. [More information](#does-kubefirst-add-any-cloud-resources-overhead) on resources used. On Civo you can check your quota usage with the `kubefirst civo quota`, same with AWS on the command line with `kubefirst aws quota`. This command is not available yet on [DigitalOcean](https://github.com/kubefirst/kubefirst/issues/1964), [Google Cloud](https://github.com/kubefirst/kubefirst/issues/1963) or [Vultr](https://github.com/kubefirst/kubefirst/issues/1965).
 
 ### Do you plan to support technology X?
 
