@@ -21,6 +21,7 @@ import styles from "../../../stylesheets/tabs.module.css";
 import GitHubHandoffScreen from "../../../img/do/github/handoff-screen.png";
 import GitLabHandoffScreen from "../../../img/do/gitlab/handoff-screen.png";
 import CLI from "../../../common/partials/common/_cli.mdx";
+import SpaceRegion from "../../partials/common/_space-region.mdx";
 
 export const TabLabel = ({ imgSrc, label }) => (
   <div className="git-tab">
@@ -38,12 +39,14 @@ export const TabLabel = ({ imgSrc, label }) => (
   <TabItem attributes={{ className: styles.github }} value="github" label={<TabLabel imgSrc={config.GITHUB_LOGO_URL} label="GitHub" />}>
     <GitHubPrerequisites />
     <GitHubClusterCreateCmd />
+    <SpaceRegion />
     <CommonTerminalOutput cloud="Do"  minutes="10" handoffScreen={GitHubHandoffScreen} />
   </TabItem>
 
   <TabItem value="gitlab" attributes={{ className: styles.gitlab }} label={<TabLabel imgSrc={config.GITLAB_LOGO_URL} label="GitLab" />}>
     <GitLabPrerequisites />
     <GitLabClusterCreateCmd />
+    <SpaceRegion />
     <CommonTerminalOutput cloud="Do"  minutes="10" handoffScreen={GitLabHandoffScreen} />
   </TabItem>
 
