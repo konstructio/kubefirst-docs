@@ -1,6 +1,6 @@
 ---
 hide_title: true
-sidebar_label: Civo Marketplace Installer
+sidebar_label: Civo Marketplace
 sidebar_position: 1
 image: "https://docs.kubefirst.io/img/logo.svg"
 ---
@@ -11,11 +11,9 @@ You can create a temporary kubefirst installer cluster through the Civo Kubernet
 
 ## Create your installer cluster
 
-Log into your Civo account and navigate to Kubernetes
+Log into your Civo account and navigate to [Kubernetes](https://dashboard.civo.com/kubernetes).
 
-[https://dashboard.civo.com/kubernetes](https://dashboard.civo.com/kubernetes)
-
-1. Click Create New Cluster
+1. Click "Create New Cluster"
 2. Name the cluster `installer`
 3. Reduce the node count to `1`
 4. Increase the node size to `Medium`
@@ -29,9 +27,7 @@ Log into your Civo account and navigate to Kubernetes
 In your terminal, run the following commands to download and use your new cluster's kubeconfig. This example assumes you named your cluster `installer`.
 
 ```bash
-export CLUSTER_NAME=installer
-civo kubernetes config $CLUSTER_NAME > ./kubefirst-kubeconfig
-export KUBECONFIG=./kubefirst-kubeconfig
+civo kubernetes config installer --save
 kubectl --namespace kubefirst port-forward svc/kubefirst-console 8080:8080
 ```
 
@@ -41,7 +37,7 @@ Then launch the installer in your browser:
 
 ## Create your kubefirst management cluster
 
-Provide details about your preferred git provider, access, and cluster details and let kubefirst do the rest.
+Provide details about your preferred Git provider, access, and cluster details and let kubefirst do the rest.
 
 ![kubefirst user interface showing cloud and git options](../../../img/civo/marketplace/create-management.png)
 
