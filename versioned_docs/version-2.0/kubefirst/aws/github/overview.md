@@ -27,7 +27,7 @@ These are **not your personal credentials**. These are administrator credentials
 
 This step is meant to explore the onboarding process of a new user to your installation:
 
-- [Explore Atlantis & Terraform to manage users](../../../explore/terraform.md#how-can-i-use-atlantis-to-add-a-new-user-on-my-github-backed-installation)
+- [Explore Atlantis & Terraform to manage users](../../../explore/terraform.md)
 
 ## Step 3: Deliver Metaphor to Development, Staging, and Production
 
