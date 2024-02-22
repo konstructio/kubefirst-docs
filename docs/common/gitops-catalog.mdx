@@ -39,7 +39,7 @@ For example - consider the following sample deployment of Kubernetes Dashboard:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kubernetes-dashboard
+  name: management-kubernetes-dashboard
   namespace: argocd
 spec:
   project: default
@@ -48,7 +48,7 @@ spec:
     targetRevision: 6.0.0
     chart: kubernetes-dashboard
   destination:
-    server: 'https://kubernetes.default.svc'
+    name: management
     namespace: kubernetes-dashboard
   syncPolicy:
     automated:
@@ -56,28 +56,30 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-
 ---
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: k8s-dashboard-clusterrole
   annotations:
-    argocd.argoproj.io/sync-wave: '0'
+    argocd.argoproj.io/sync-wave: "0"
 subjects:
   - kind: ServiceAccount
-    name: k8s-dashboard-sa
-    namespace: default
+    name: management-kubernetes-dashboard
+    namespace: kubernetes-dashboard
 roleRef:
   kind: ClusterRole
   name: admin
   apiGroup: rbac.authorization.k8s.io
 ---
 apiVersion: v1
-kind: ServiceAccount
+kind: Secret
 metadata:
-  name: k8s-dashboard-sa
-  namespace: default
+  name: dashboard-user
+  namespace: kubernetes-dashboard
+  annotations:
+    kubernetes.io/service-account.name: management-kubernetes-dashboard
+type: kubernetes.io/service-account-token
 ```
 
-If you'd like to change any of the Helm chart values, change the Helm chart version, or add any additional resources, you simply edit this file and Argo CD will detect the changes from your upstream `gitops` repository and synchronize.
+If you'd like to change any of the Helm chart values, change the Helm chart version, or add any additional resources, you simply edit this file in the `main` branch and Argo CD will detect the changes from your upstream `gitops` repository and synchronize.
