@@ -23,10 +23,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout this repository
-        uses: actions/checkout@v4.0.0
+        uses: actions/checkout@v4.1.1
 
       - name: Validate Markdown (${{ matrix.configs.which }})
-        uses: DavidAnson/markdownlint-cli2-action@v13.0.0
+        uses: DavidAnson/markdownlint-cli2-action@v15.0.0
         with:
           config: "${{ matrix.configs.config }}"
           globs: ${{ matrix.configs.files }}
