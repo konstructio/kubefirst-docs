@@ -22,9 +22,9 @@ import GitHubHandoffScreen from "../../../img/vultr/github/handoff-screen.png";
 import GitLabHandoffScreen from "../../../img/vultr/gitlab/handoff-screen.png";
 import CLI from "../../../common/partials/common/_cli.mdx";
 
-export const TabLabel = ({ imgSrc, label }) => (
+export const TabLabel = ({ imgSrc, label, alt }) => (
   <div className="git-tab">
-    <img src={imgSrc} />
+    <img src={imgSrc} alt={alt} />
     <span>{label}</span>
   </div>
 );
@@ -35,13 +35,13 @@ export const TabLabel = ({ imgSrc, label }) => (
 
 <Tabs groupId="git_provider" defaultValue="github" queryString>
 
-  <TabItem attributes={{ className: styles.github }} value="github" label={<TabLabel imgSrc={config.GITHUB_LOGO_URL} label="GitHub" />}>
+  <TabItem attributes={{ className: styles.github }} value="github" label={<TabLabel imgSrc={config.GITHUB_LOGO_URL} label="GitHub" alt="GitHub logo" />}>
     <GitHubPrerequisites />
     <GitHubClusterCreateCmd />
     <CommonTerminalOutput cloud="Vultr"  minutes="10" handoffScreen={GitHubHandoffScreen} />
   </TabItem>
 
-  <TabItem value="gitlab" attributes={{ className: styles.gitlab }} label={<TabLabel imgSrc={config.GITLAB_LOGO_URL} label="GitLab" />}>
+  <TabItem value="gitlab" attributes={{ className: styles.gitlab }} label={<TabLabel imgSrc={config.GITLAB_LOGO_URL} label="GitLab" alt="GitLab logo" />}>
     <GitLabPrerequisites />
     <GitLabClusterCreateCmd />
     <CommonTerminalOutput cloud="Vultr"  minutes="10" handoffScreen={GitLabHandoffScreen} />
