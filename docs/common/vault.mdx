@@ -8,9 +8,11 @@ import MetaphorSecretsGitLab from '../common/partials/gitlab/_secrets.mdx'
 
 ## Authentification
 
+You will need to use Vault to log in the kubefirst management console. You can only achieve that with the `kbot` user: its password is provided in the last step of the UI installation, or you can retrieve it yourself using the instruction provided in the terminal, if you did a CLI installation. Note that you won't be able to log in the management console using Vault with the root token.
+
 ### Token authentication
 
-Your first login to Vault will be with the root token which has full administrative permissions. As mentioned in the handoff screen (the purple screen at the end of the installation), it is sorted in a secret named `vault-unseal-secret`, which is in the `vault` namespace of your newly deployed cluster. To read the value, use [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) (which is already in the `~/.k1/` tools folder), and run the following command:
+You can still log directly through Vault, using the root token which has full administrative permission, for any other purposes than connecting to the management console. As mentioned in the handoff screen (the purple screen at the end of the installation), it is sorted in a secret named `vault-unseal-secret`, which is in the `vault` namespace of your newly deployed cluster. To read the value, use [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) (which is already in the `~/.k1/` tools folder), and run the following command:
 
 ```shell
 ~/.k1/<your-cluster-name>/tools/kubectl -n vault get secrets/vault-unseal-secret --template='{{index .data "root-token"}}' | base64 -d
