@@ -21,9 +21,9 @@ import CommonTerminalOutput from "../../../common/partials/common/_terminal-outp
 import * as config from "../../../constants.js"
 import styles from "../../../stylesheets/tabs.module.css";
 
-export const TabLabel = ({ imgSrc, label }) => (
+export const TabLabel = ({ imgSrc, label, alt }) => (
   <div className="git-tab">
-    <img src={imgSrc} />
+    <img src={imgSrc} alt={alt} />
     <span>{label}</span>
   </div>
 );
