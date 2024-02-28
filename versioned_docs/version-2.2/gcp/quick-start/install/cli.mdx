@@ -20,9 +20,9 @@ import styles from "../../../stylesheets/tabs.module.css";
 import GitHubHandoffScreen from "../../../img/gcp/github/handoff-screen.png";
 import GitLabHandoffScreen from "../../../img/gcp/gitlab/handoff-screen.png";
 
-export const TabLabel = ({ imgSrc, label }) => (
+export const TabLabel = ({ imgSrc, label, alt }) => (
   <div className="git-tab">
-    <img src={imgSrc} />
+    <img src={imgSrc} alt={alt} />
     <span>{label}</span>
   </div>
 );
