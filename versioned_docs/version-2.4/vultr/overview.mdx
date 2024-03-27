@@ -1,0 +1,71 @@
+---
+hide_title: true
+sidebar_label: Overview
+sidebar_position: 1
+description: an overview of kubefirst on a Vultr kubernetes cluster
+image: 'https://docs.kubefirst.io/img/logo.svg'
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import styles from '../stylesheets/tabs.module.css';
+import ReactDom from 'react-dom';
+import * as config from '../constants.js';
+import GitHubOverview from '../vultr/partials/github/_overview.mdx';
+import GitLabOverview from '../vultr/partials/gitlab/_overview.mdx';
+import CloudBanner from '@site/src/components/CloudBanner/CloudBanner.jsx';
+import CommonProvisionProcess from "../common/partials/common/_provision-process.mdx";
+
+<div
+  style={{
+    display: 'flex',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  }}
+>
+  <div>
+    <img src={config.VULTR_LOGO_URL} height="50" width="175" alt="Vultr logo" />
+  </div>
+</div>
+
+# Overview
+
+:::caution
+
+Vultr is in beta. It is quite stable, but use at your own risks.
+
+:::
+
+The Vultr provisioning process will:
+<CommonProvisionProcess firstitem="Create a Kubernetes management cluster in the Vultr cloud."/>
+
+![kubefirst Vultr with GitLab Cluster Diagram](../img/vultr/gitlab/installation-diagram-light.png#light-mode)![kubefirst Vultr with GitLab Cluster Diagram](../img/vultr/gitlab/installation-diagram-dark.png#dark-mode)
+
+# Applications
+
+<Tabs groupId="git_provider" defaultValue="github" queryString>
+  <TabItem
+    attributes={{ className: styles.github }}
+    value="github"
+    label={
+      <div className="git-tab">
+        <img src="https://assets.kubefirst.com/console/github.svg" alt="GitHub logo" />
+        <span>GitHub</span>
+      </div>
+    }
+  >
+    <GitHubOverview />
+  </TabItem>
+  <TabItem
+    value="gitlab"
+    attributes={{ className: styles.gitlab }}
+    label={
+      <div className="git-tab">
+        <img src="https://assets.kubefirst.com/console/gitlab.svg" alt="GitLab logo" />
+        <span>GitLab</span>
+      </div>
+    }
+  >
+    <GitLabOverview />
+  </TabItem>
+</Tabs>

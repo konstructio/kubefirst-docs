@@ -1,0 +1,64 @@
+---
+hide_title: true
+sidebar_label: Overview
+sidebar_position: 1
+description: an overview of the kubefirst platform
+image: "https://docs.kubefirst.io/img/logo.svg"
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import styles from "../stylesheets/tabs.module.css";
+import ReactDom from 'react-dom'
+import * as config from "../constants.js"
+import CommonProvisionProcess from "../common/partials/common/_provision-process.mdx";
+import GitHubOverview from '../k3d/partials/github/_overview.mdx'
+import GitLabOverview from '../k3d/partials/gitlab/_overview.mdx'
+
+<div
+  style={{
+    display: "flex",
+    justifyContent: "flex-end",
+    alignItems: "center",
+  }}
+>
+  <div>
+    <img src={config.K3D_LOGO_URL} height="50" width="125" alt="k3d logo" />
+  </div>
+</div>
+
+# Overview
+
+The k3d provisioning process will:
+<CommonProvisionProcess firstitem="Create a multinode k3d Kubernetes cluster on your localhost." />
+
+![kubefirst k3d with GitHub Cluster Diagram](../img/k3d/github/installation-diagram-light.png#light-mode)![kubefirst k3d with GitHub Cluster Diagram](../img/k3d/github/installation-diagram-dark.png#dark-mode)
+
+# Applications
+
+<Tabs groupId="git_provider" defaultValue="github" queryString>
+    <TabItem
+      attributes={{className: styles.github}}
+      value="github"
+      label={
+        <div className="git-tab">
+          <img src="https://assets.kubefirst.com/console/github.svg" alt="GitHub logo" />
+          <span>GitHub</span>
+        </div>
+      }
+    >
+      <GitHubOverview />
+    </TabItem>
+    <TabItem
+      value="gitlab"
+      attributes={{className: styles.gitlab}}
+      label={
+        <div className="git-tab">
+          <img src="https://assets.kubefirst.com/console/gitlab.svg" alt="GitLab logo" />
+          <span>GitLab</span>
+        </div>
+      }
+    >
+      <GitLabOverview />
+    </TabItem>
+</Tabs>
