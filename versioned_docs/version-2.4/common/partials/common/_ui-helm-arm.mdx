@@ -1,0 +1,19 @@
+This will install our platform installer UI to your existing cluster so you can create your new management cluster in your favorite cloud provider using your favorite git provider.
+
+This example shows a couple additional Helm values settings that enable MongoDB to run on the ARM architecture.
+
+```shell
+helm repo add kubefirst https://charts.kubefirst.com
+helm repo update
+
+helm install kubefirst --namespace kubefirst --create-namespace \
+--set=mongodb.image.repository=arm64v8/mongo \
+--set=mongodb.image.tag=latest \
+--set=mongodb.persistence.mountPath=/data/db \
+--set=mongodb.extraEnvVarsSecret=kubefirst-initial-secrets \
+kubefirst/kubefirst
+
+kubectl -n kubefirst port-forward svc/kubefirst-console 8080:8080
+```
+
+Then connect to the provisioning tool at [http://localhost:8080](http://localhost:8080)

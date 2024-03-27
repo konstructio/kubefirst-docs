@@ -1,0 +1,13 @@
+### Civo Prerequisites
+
+For kubefirst to be able to provision your Civo cloud resources:
+
+- A [Civo account](https://dashboard.civo.com/signup) in which you are an account owner.
+- A publicly routable [DNS](https://www.civo.com/learn/configure-dns#adding-a-domain-name).
+- A [Civo token](https://dashboard.civo.com/security).
+
+:::info
+kubefirst is keeping low the resources needed to create your Kubernetes cluster, but if you are already using Civo, note that you may have exceeding quota issues during the creation process.
+
+Civo has a quota based on a combined allocation of instances/Kubernetes nodes, CPUs, RAM usage, and other resources. All customers start with a [basic quota level](https://www.civo.com/docs/account/quota), but you can [request quota increase](https://www.civo.com/docs/account/quota#requesting-a-quota-increase).
+:::
