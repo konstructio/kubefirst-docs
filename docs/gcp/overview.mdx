@@ -13,6 +13,7 @@ import * as config from "../constants.js"
 import GitHubOverview from '../gcp/partials/github/_overview.mdx'
 import GitLabOverview from '../gcp/partials/gitlab/_overview.mdx'
 import CommonProvisionProcess from "../common/partials/common/_provision-process.mdx";
+import KnownLimitations from "../common/known-limitations.mdx"
 
 <div
   style={{
@@ -39,7 +40,7 @@ The Google Cloud provisioning process will:
 
 ![kubefirst Google Cloud with GitLab Cluster Diagram](../img/gcp/gitlab/installation-diagram-light.png#light-mode)![kubefirst Google Cloud with GitLab Cluster Diagram](../img/gcp/gitlab/installation-diagram-dark.png#dark-mode)
 
-# Applications
+## Applications
 
 <Tabs groupId="git_provider" defaultValue="github" queryString>
     <TabItem
@@ -67,3 +68,12 @@ The Google Cloud provisioning process will:
       <GitLabOverview />
     </TabItem>
 </Tabs>
+
+## Known Limitations
+
+<KnownLimitations />
+
+### Google Cloud Specific
+
+- Google Cloud is still in beta, but should be usable in production.
+- Workload clusters are not available yet.
