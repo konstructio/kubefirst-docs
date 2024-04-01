@@ -15,6 +15,7 @@ import GitHubOverview from '../do/partials/github/_overview.mdx';
 import GitLabOverview from '../do/partials/gitlab/_overview.mdx';
 import CloudBanner from '@site/src/components/CloudBanner/CloudBanner.jsx';
 import CommonProvisionProcess from "../common/partials/common/_provision-process.mdx";
+import KnownLimitations from "../common/known-limitations.mdx"
 
 <div
   style={{
@@ -35,7 +36,7 @@ The DigitalOcean provisioning process will:
 
 ![kubefirst DigitalOcean with GitLab Cluster Diagram](../img/do/gitlab/installation-diagram-light.png#light-mode)![kubefirst DigitalOcean with GitLab Cluster Diagram](../img/do/gitlab/installation-diagram-dark.png#dark-mode)
 
-# Applications
+## Applications
 
 <Tabs groupId="git_provider" defaultValue="github" queryString>
   <TabItem
@@ -63,3 +64,7 @@ The DigitalOcean provisioning process will:
     <GitLabOverview />
   </TabItem>
 </Tabs>
+
+## Known Limitations
+
+<KnownLimitations />

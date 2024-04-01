@@ -14,6 +14,7 @@ import * as config from "../constants.js"
 import CommonProvisionProcess from "../common/partials/common/_provision-process.mdx";
 import GitHubOverview from '../k3d/partials/github/_overview.mdx'
 import GitLabOverview from '../k3d/partials/gitlab/_overview.mdx'
+import KnownLimitations from "../common/known-limitations.mdx"
 
 <div
   style={{
@@ -34,7 +35,7 @@ The k3d provisioning process will:
 
 ![kubefirst k3d with GitHub Cluster Diagram](../img/k3d/github/installation-diagram-light.png#light-mode)![kubefirst k3d with GitHub Cluster Diagram](../img/k3d/github/installation-diagram-dark.png#dark-mode)
 
-# Applications
+## Applications
 
 <Tabs groupId="git_provider" defaultValue="github" queryString>
     <TabItem
@@ -62,3 +63,12 @@ The k3d provisioning process will:
       <GitLabOverview />
     </TabItem>
 </Tabs>
+
+## Known Limitations
+
+<KnownLimitations />
+
+### k3d Specific
+
+- [OIDC & SSO isn't supported yet with k3d](https://github.com/kubefirst/docs/issues/498).
+- Workload clusters are not available yet.

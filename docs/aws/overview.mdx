@@ -12,6 +12,7 @@ import styles from "../stylesheets/tabs.module.css";
 import ReactDom from 'react-dom'
 import * as config from "../constants.js"
 import CommonProvisionProcess from "../common/partials/common/_provision-process.mdx";
+import KnownLimitations from "../common/known-limitations.mdx"
 
 <div
   style={{
@@ -35,7 +36,7 @@ The AWS provisioning process will:
 
 ![kubefirst AWS with GitHub Cluster Diagram](../img/aws/github/installation-diagram-light.png#light-mode)![kubefirst AWS with GitHub Cluster Diagram](../img/aws/github/installation-diagram-dark.png#dark-mode)
 
-# Applications
+## Applications
 
 <Tabs groupId="git_provider" defaultValue="github" queryString>
     <TabItem
@@ -63,3 +64,11 @@ The AWS provisioning process will:
       <GitLabOverview />
     </TabItem>
 </Tabs>
+
+## Known Limitations
+
+<KnownLimitations />
+
+### AWS Specific
+
+- Workload clusters are not available yet.

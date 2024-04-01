@@ -15,6 +15,7 @@ import GitHubOverview from '../vultr/partials/github/_overview.mdx';
 import GitLabOverview from '../vultr/partials/gitlab/_overview.mdx';
 import CloudBanner from '@site/src/components/CloudBanner/CloudBanner.jsx';
 import CommonProvisionProcess from "../common/partials/common/_provision-process.mdx";
+import KnownLimitations from "../common/known-limitations.mdx"
 
 <div
   style={{
@@ -41,7 +42,7 @@ The Vultr provisioning process will:
 
 ![kubefirst Vultr with GitLab Cluster Diagram](../img/vultr/gitlab/installation-diagram-light.png#light-mode)![kubefirst Vultr with GitLab Cluster Diagram](../img/vultr/gitlab/installation-diagram-dark.png#dark-mode)
 
-# Applications
+## Applications
 
 <Tabs groupId="git_provider" defaultValue="github" queryString>
   <TabItem
@@ -69,3 +70,12 @@ The Vultr provisioning process will:
     <GitLabOverview />
   </TabItem>
 </Tabs>
+
+## Known Limitations
+
+<KnownLimitations />
+
+### Vultr Specific
+
+- Vultr is still in beta, do not use in production.
+- Workload clusters are not available yet.
