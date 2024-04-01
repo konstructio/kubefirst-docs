@@ -1,0 +1,19 @@
+import CloudflareDNS from "../../../common/partials/common/_cloudflare-dns.mdx";
+
+## Create your new kubefirst cluster
+
+Adjust the following command with your GitHub and Akamai (Linode) tokens in addition to the appropriate values for your new platform.
+
+```shell
+export GITLAB_TOKEN=glpat-xxxxxxxxxxxxxxxx
+export LINODE_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+kubefirst beta akamai create \
+  --alerts-email yourdistro@your-company.io \
+  --git-provider gitlab \
+  --gitlab-group your-fully-qualified-gitlab-group/or-sub-group  \
+  --domain-name your-domain.io \
+  --cluster-name kubefirst
+```
+
+<CloudflareDNS />

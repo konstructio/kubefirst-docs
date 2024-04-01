@@ -6,12 +6,14 @@ import InstallCivoCLI from '../civo/partials/common/_install-civo-cli.mdx'
 import InstallDoCLI from '../do/partials/common/_install-do-cli.mdx'
 import InstallGcpCLI from '../gcp/partials/common/_install-gcp-cli.mdx'
 import InstallVultrCLI from '../vultr/partials/common/_install-vultr-cli.mdx'
+import InstallAkamaiCLI from '../akamai/partials/common/_install-akamai-cli.mdx'
 
 import GetAwsKubeconfig from '../aws/partials/common/_get-kubeconfig.mdx'
 import GetCivoKubeconfig from '../civo/partials/common/_get-kubeconfig.mdx'
 import GetDoKubeconfig from '../do/partials/common/_get-kubeconfig.mdx'
 import GetGcpKubeconfig from '../gcp/partials/common/_get-kubeconfig.mdx'
 import GetVultrKubeconfig from '../vultr/partials/common/_get-kubeconfig.mdx'
+import GetAkamaiKubeconfig from '../akamai/partials/common/_get-kubeconfig.mdx'
 
 # Deprovision
 
@@ -44,6 +46,9 @@ More information in the [Kubernetes documentation](https://kubernetes.io/docs/ta
 If the command-line tool for the chosen cloud provider is not installed, consult the following documentation for installation steps:
 
 <Tabs>
+    <TabItem value="akamai" label="Akamai">
+      <InstallAkamaiCLI />
+    </TabItem>
     <TabItem value="aws" label="AWS">
       <InstallAwsCLI />
     </TabItem>
@@ -76,6 +81,9 @@ More information in the [Terraform documentation](https://developer.hashicorp.co
 Before continuing, use the command-line tool for the chosen cloud provider to get the `kubeconfig` for your cluster (replace `<my-cluster>` with your cluster name):
 
 <Tabs>
+    <TabItem value="akamai" label="Akamai">
+      <GetAkamaiKubeconfig />
+    </TabItem>
     <TabItem value="aws" label="AWS">
       <GetAwsKubeconfig />
     </TabItem>
