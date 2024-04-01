@@ -121,6 +121,12 @@ const config = {
           {
             type: 'docSidebar',
             position: 'left',
+            sidebarId: 'akamai',
+            label: 'Akamai',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
             sidebarId: 'aws',
             label: 'AWS',
           },

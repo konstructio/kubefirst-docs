@@ -1,0 +1,3 @@
+### General
+
+- [Let's encrypt](https://letsencrypt.org/) is limited to 50 weekly certificates with an additional limitations of 5 per subdomains. We use Let's encrypt to automatically create certicicates for your domains. In most cases, this won't be an issue, but you may reach that limit if you create, and destroy often kubefirst clusters using the same domain during a short period. You can use the [Let's Debug Toolkit](https://tools.letsdebug.net/cert-search) to check those, but note that the result isn't always valid.

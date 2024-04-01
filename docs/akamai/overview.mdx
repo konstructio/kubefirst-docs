@@ -1,0 +1,85 @@
+---
+sidebar_label: Overview
+sidebar_position: 1
+description: an overview of kubefirst on a Akamai kubernetes cluster
+image: "https://docs.kubefirst.io/img/logo.svg"
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import styles from "../stylesheets/tabs.module.css";
+import ReactDom from 'react-dom'
+import * as config from "../constants.js"
+import GitHubOverview from '../akamai/partials/github/_overview.mdx'
+import GitLabOverview from '../akamai/partials/gitlab/_overview.mdx'
+import CloudBanner from '@site/src/components/CloudBanner/CloudBanner.jsx'
+import CommonProvisionProcess from "../common/partials/common/_provision-process.mdx";
+import KnownLimitations from "../common/known-limitations.mdx"
+
+<div
+  style={{
+    display: "flex",
+    justifyContent: "flex-end",
+    alignItems: "center",
+  }}
+>
+  <div>
+    <img src={config.AKAMAI_LOGO_URL} height="50" width="150" alt="Akamai logo" />
+  </div>
+</div>
+
+# Overview
+
+:::caution
+
+Akamai is in beta. Use at your own risks.
+
+:::
+
+:::note
+[Linode has been acquired by Akamai in 2022](https://www.akamai.com/newsroom/press-release/akamai-completes-acquisition-of-linode), but the branding is still in some cases, like for the CLI used to connect to Kubernetes on Akamai. If you see Linode written in the documention, keep in mind that it is in reality Akamai, but that we have to use the previous brand because Akamai still do.
+:::
+
+The Akamai provisioning process will:
+<CommonProvisionProcess firstitem="Create a Kubernetes management cluster in the Akamai cloud."/>
+
+![kubefirst Akamai with GitLab Cluster Diagram](../img/akamai/gitlab/installation-diagram-light.png#light-mode)![kubefirst Akamai with GitLab Cluster Diagram](../img/akamai/gitlab/installation-diagram-dark.png#dark-mode)
+
+# Applications
+
+<Tabs groupId="git_provider" defaultValue="github" queryString>
+    <TabItem
+      attributes={{className: styles.github}}
+      value="github"
+      label={
+        <div className="git-tab">
+          <img src="https://assets.kubefirst.com/console/github.svg" alt="GitHub logo" />
+          <span>GitHub</span>
+        </div>
+      }
+    >
+      <GitHubOverview />
+    </TabItem>
+    <!-- markdownlint-disable MD049 -->
+    {/*<TabItem
+      value="gitlab"
+      attributes={{className: styles.gitlab}}
+      label={
+        <div className="git-tab">
+          <img src="https://assets.kubefirst.com/console/gitlab.svg" alt="GitLab logo" />
+          <span>GitLab</span>
+        </div>
+      }
+    >
+      <GitLabOverview />
+    </TabItem>*/}
+</Tabs>
+
+## Known Limitations
+
+<KnownLimitations />
+
+### Akamai Specific
+
+- Akamai is [only available on GitHub](https://github.com/kubefirst/kubefirst/issues/2143) for now.
+- You [cannot use Akamai as the DNS provider](https://github.com/kubefirst/kubefirst/issues/2144) for now: they have a requirement with domain that needs to be attached to a VM that we need to sort out. For now, you can use Cloudflare as the DNS provider without any issues.
