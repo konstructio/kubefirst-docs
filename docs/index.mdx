@@ -8,6 +8,7 @@ import CivoHeader from './img/civo/header.svg';
 import DOHeader from './img/do/header.svg';
 import GCPHeader from './img/gcp/header.svg';
 import K3dHeader from './img/k3d/header.svg';
+import K3sHeader from './img/k3s/header.svg';
 import VultrHeader from './img/vultr/header.svg';
 
 # kubefirst Platforms
@@ -127,6 +128,22 @@ By running our installer in your cloud, you'll get a GitOps cloud management and
             <div className="card__footer">
                 <form>
                     <button className="button button--secondary button--block" formAction="gcp/overview/">View install instructions</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+        <div className="card">
+            <div className="card__image">
+                <K3sHeader />
+            </div>
+            <div className="card__body">
+            <h3>K3s</h3>
+            <p>The certified Kubernetes distribution built for IoT & Edge computing</p>
+            </div>
+            <div className="card__footer">
+                <form>
+                    <button className="button button--secondary button--block" formAction="k3s/overview/">View install instructions</button>
                 </form>
             </div>
         </div>
