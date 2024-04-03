@@ -1,0 +1,23 @@
+import CloudflareDNS from "../../../common/partials/common/_cloudflare-dns.mdx";
+
+## Create your new kubefirst cluster
+
+Adjust the following command with your GitHub token in addition to the appropriate values for your new platform.
+
+```shell
+export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxx
+
+kubefirst beta k3s create \
+    --servers-args "--disable traefik,--write-kubeconfig-mode 0644" \
+    --alerts-email yourdistro@your-company.io \
+    --domain-name your-domain.io \
+    --gitlab-group your-gitlab-group \
+    --git-provider gitlab \
+    --servers-private-ips <private-ip-1>,<private-ip-2>,<private-ip-3> \
+    --servers-public-ips <public-ip-1>,<public-ip-2>,<public-ip-3> \
+    --ssh-privatekey <ssh-key-path> \
+    --ssh-user root \
+    --cluster-name kubefirst
+```
+
+<CloudflareDNS />

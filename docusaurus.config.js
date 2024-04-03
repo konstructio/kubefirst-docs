@@ -151,6 +151,12 @@ const config = {
           {
             type: 'docSidebar',
             position: 'left',
+            sidebarId: 'k3s',
+            label: 'K3s',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
             sidebarId: 'vultr',
             label: 'Vultr',
           },
