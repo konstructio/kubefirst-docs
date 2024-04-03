@@ -2,6 +2,10 @@
 slug: /
 ---
 
+import AWSHeader from './img/aws/header.svg';
+import CivoHeader from './img/civo/header.svg';
+import K3dHeader from './img/local/header.svg';
+
 # kubefirst Platforms
 
 ## What is kubefirst?
@@ -20,10 +24,7 @@ We support local, AWS, and Civo clouds, with additional clouds in beta. By runni
     <div className="col col--4 margin-bottom--lg">
         <div className="card">
             <div className="card__image">
-            <img
-               src={require("/static/img/k3d_header.png").default}
-               alt="Local k3d"
-               title="Local k3d" />
+                <K3dHeader />
             </div>
             <div className="card__body">
             <h3>kubefirst k3d (local)</h3>
@@ -44,10 +45,7 @@ We support local, AWS, and Civo clouds, with additional clouds in beta. By runni
     <div className="col col--4 margin-bottom--lg">
         <div className="card">
             <div className="card__image">
-            <img
-               src={require("/static/img/aws_header.png").default}
-               alt="AWS Cloud"
-               title="AWS Cloud" />
+                <AWSHeader />
             </div>
             <div className="card__body">
             <h3>AWS Cloud</h3>
@@ -65,10 +63,7 @@ We support local, AWS, and Civo clouds, with additional clouds in beta. By runni
     <div className="col col--4 margin-bottom--lg">
         <div className="card">
             <div className="card__image">
-            <img
-               src={require("/static/img/civo_header.jpg").default}
-               alt="Civo Cloud"
-               title="Civo Cloud" />
+                <CivoHeader />
             </div>
             <div className="card__body">
                 <h3>Civo Cloud</h3>
