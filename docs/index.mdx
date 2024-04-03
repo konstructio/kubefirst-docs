@@ -2,7 +2,14 @@
 slug: /
 ---
 
-import CivoHeader from '/static/img/civo_header.svg';
+import AkamaiHeader from './img/akamai/header.svg';
+import AWSHeader from './img/aws/header.svg';
+import CivoHeader from './img/civo/header.svg';
+import DOHeader from './img/do/header.svg';
+import GCPHeader from './img/gcp/header.svg';
+import K3dHeader from './img/k3d/header.svg';
+import k3sHeader from './img/k3s/header.svg';
+import VultrHeader from './img/vultr/header.svg';
 
 # kubefirst Platforms
 
@@ -22,10 +29,7 @@ By running our installer in your cloud, you'll get a GitOps cloud management and
     <div className="col col--4 margin-bottom--lg">
         <div className="card">
             <div className="card__image">
-            <img
-               src={require("/static/img/k3d_header.png").default}
-               alt="Local k3d"
-               title="Local k3d" />
+                <K3dHeader />
             </div>
             <div className="card__body">
             <h3>kubefirst k3d (local)</h3>
@@ -46,10 +50,7 @@ By running our installer in your cloud, you'll get a GitOps cloud management and
     <div className="col col--4 margin-bottom--lg">
         <div className="card">
             <div className="card__image">
-            <img
-               src={require("/static/img/akamai_header.jpg").default}
-               alt="Akamai"
-               title="Akamai" />
+                <AkamaiHeader />
             </div>
             <div className="card__body">
             <h3>Akamai</h3>
@@ -65,10 +66,7 @@ By running our installer in your cloud, you'll get a GitOps cloud management and
     <div className="col col--4 margin-bottom--lg">
         <div className="card">
             <div className="card__image">
-            <img
-               src={require("/static/img/aws_header.png").default}
-               alt="AWS"
-               title="AWS" />
+                <AWSHeader />
             </div>
             <div className="card__body">
             <h3>AWS</h3>
@@ -86,7 +84,7 @@ By running our installer in your cloud, you'll get a GitOps cloud management and
     <div className="col col--4 margin-bottom--lg">
         <div className="card">
             <div className="card__image">
-            <CivoHeader />
+                <CivoHeader />
             </div>
             <div className="card__body">
             <h3>Civo</h3>
@@ -105,10 +103,7 @@ By running our installer in your cloud, you'll get a GitOps cloud management and
     <div className="col col--4 margin-bottom--lg">
         <div className="card">
             <div className="card__image">
-            <img
-               src={require("/static/img/do_header.png").default}
-               alt="DigitalOcean"
-               title="DigitalOcean" />
+                <DOHeader />
             </div>
             <div className="card__body">
             <h3>DigitalOcean</h3>
@@ -124,10 +119,7 @@ By running our installer in your cloud, you'll get a GitOps cloud management and
     <div className="col col--4 margin-bottom--lg">
         <div className="card">
             <div className="card__image">
-            <img
-               src={require("/static/img/gcp_header.png").default}
-               alt="Google Cloud"
-               title="Google Cloud" />
+                <GCPHeader />
             </div>
             <div className="card__body">
             <h3>Google Cloud (beta)</h3>
@@ -143,10 +135,7 @@ By running our installer in your cloud, you'll get a GitOps cloud management and
     <div className="col col--4 margin-bottom--lg">
         <div className="card">
             <div className="card__image">
-            <img
-               src={require("/static/img/vultr_header.png").default}
-               alt="Vultr Cloud"
-               title="Vultr Cloud" />
+                <VultrHeader />
             </div>
             <div className="card__body">
             <h3>Vultr (beta)</h3>
