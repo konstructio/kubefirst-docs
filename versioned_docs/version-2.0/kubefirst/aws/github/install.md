@@ -8,8 +8,6 @@ title: Install
 
 It installs a fully automated platform of open source cloud native tools with a simple `init` and `create` command.
 
-![kubefirst AWS with GitHub Cluster Diagram](../../../img/aws/github/installation-diagram-light.png#light-mode)![kubefirst AWS with GitHub Cluster Diagram](../../../img/aws/github/installation-diagram-dark.png#dark-mode)
-
 ### Prerequisites
 
 [Install](../../overview.md#install-the-kubefirst-cli) the kubefirst CLI.

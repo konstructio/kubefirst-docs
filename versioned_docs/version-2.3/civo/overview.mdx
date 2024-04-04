@@ -32,33 +32,20 @@ import CommonProvisionProcess from "../common/partials/common/_provision-process
 The Civo provisioning process will:
 <CommonProvisionProcess firstitem="Create a Kubernetes management cluster in the Civo cloud."/>
 
-![kubefirst Civo with GitLab Cluster Diagram](../img/civo/gitlab/installation-diagram-light.png#light-mode)![kubefirst Civo with GitLab Cluster Diagram](../img/civo/gitlab/installation-diagram-dark.png#dark-mode)
-
-# Applications
-
 <Tabs groupId="git_provider" defaultValue="github" queryString>
-    <TabItem
-      attributes={{className: styles.github}}
-      value="github"
-      label={
-        <div className="git-tab">
-          <img src="https://assets.kubefirst.com/console/github.svg" alt="GitHub logo" />
-          <span>GitHub</span>
-        </div>
-      }
-    >
-      <GitHubOverview />
-    </TabItem>
-    <TabItem
-      value="gitlab"
-      attributes={{className: styles.gitlab}}
-      label={
-        <div className="git-tab">
-          <img src="https://assets.kubefirst.com/console/gitlab.svg" alt="GitLab logo" />
-          <span>GitLab</span>
-        </div>
-      }
-    >
-      <GitLabOverview />
-    </TabItem>
+  <TabItem attributes={{ className: styles.github }} value="github" label={ <div className="git-tab"><img src="https://assets.kubefirst.com/console/github.svg" alt="GitHub logo" /><span>GitHub</span></div> }>
+
+    ![Installation Diagram](../img/civo/github/installation-diagram-light.svg#light-mode)![Installation Diagram](../img/civo/github/installation-diagram-dark.svg#dark-mode)
+
+    ## Applications
+    <GitHubOverview />
+
+  </TabItem>
+  <TabItem value="gitlab" attributes={{ className: styles.gitlab }} label={ <div className="git-tab"> <img src="https://assets.kubefirst.com/console/gitlab.svg" alt="GitLab logo" /> <span>GitLab</span></div> }>
+
+    ![Installation Diagram](../img/civo/gitlab/installation-diagram-light.svg#light-mode)![Installation Diagram](../img/civo/gitlab/installation-diagram-dark.svg#dark-mode)
+
+    ## Applications
+    <GitLabOverview />
+  </TabItem>
 </Tabs>
