@@ -10,6 +10,7 @@ export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxx
 kubefirst beta k3s create \
     --servers-args "--disable traefik,--write-kubeconfig-mode 0644" \
     --alerts-email yourdistro@your-company.io \
+    --dns-provider cloudflare \
     --domain-name your-domain.io \
     --gitlab-group your-gitlab-group \
     --git-provider gitlab \
