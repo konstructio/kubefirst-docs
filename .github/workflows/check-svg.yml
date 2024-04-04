@@ -1,0 +1,13 @@
+---
+name: Validate SVG files
+on: [push, workflow_dispatch]
+
+jobs:
+  check-svg:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: "Validate SVG files"
+        uses: "szepeviktor/svg-validator@v1.0.0"
+        with:
+          svg_path: "**/*.svg"
