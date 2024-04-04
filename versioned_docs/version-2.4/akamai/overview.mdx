@@ -43,35 +43,23 @@ Akamai is in beta. Use at your own risks. The Akamai documentation is missing pr
 The Akamai provisioning process will:
 <CommonProvisionProcess firstitem="Create a Kubernetes management cluster in the Akamai cloud."/>
 
-![kubefirst Akamai with GitLab Cluster Diagram](../img/akamai/gitlab/installation-diagram-light.png#light-mode)![kubefirst Akamai with GitLab Cluster Diagram](../img/akamai/gitlab/installation-diagram-dark.png#dark-mode)
-
-# Applications
-
 <Tabs groupId="git_provider" defaultValue="github" queryString>
-    <TabItem
-      attributes={{className: styles.github}}
-      value="github"
-      label={
-        <div className="git-tab">
-          <img src="https://assets.kubefirst.com/console/github.svg" alt="GitHub logo" />
-          <span>GitHub</span>
-        </div>
-      }
-    >
-      <GitHubOverview />
-    </TabItem>
-    {/* <TabItem
-      value="gitlab"
-      attributes={{className: styles.gitlab}}
-      label={
-        <div className="git-tab">
-          <img src="https://assets.kubefirst.com/console/gitlab.svg" alt="GitLab logo" />
-          <span>GitLab</span>
-        </div>
-      }
-    >
-      <GitLabOverview />
-    </TabItem>*/}
+  <TabItem attributes={{ className: styles.github }} value="github" label={ <div className="git-tab"><img src="https://assets.kubefirst.com/console/github.svg" alt="GitHub logo" /><span>GitHub</span></div> }>
+
+    ![Installation Diagram](../img/akamai/github/installation-diagram-light.svg#light-mode)![Installation Diagram](../img/akamai/github/installation-diagram-dark.svg#dark-mode)
+
+    ## Applications
+    <GitHubOverview />
+
+  </TabItem>
+  <!-- markdownlint-disable MD049 -->
+  {/*<TabItem value="gitlab" attributes={{ className: styles.gitlab }} label={ <div className="git-tab"> <img src="https://assets.kubefirst.com/console/gitlab.svg" alt="GitLab logo" /> <span>GitLab</span></div> }>
+
+    ![Installation Diagram](../img/akamai/gitlab/installation-diagram-light.svg#light-mode)![Installation Diagram](../img/akamai/gitlab/installation-diagram-dark.svg#dark-mode)
+
+    ## Applications
+    <GitLabOverview />
+  </TabItem> */}
 </Tabs>
 
 ## Known Limitations

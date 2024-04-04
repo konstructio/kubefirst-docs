@@ -40,33 +40,20 @@ The k3d provisioning process will:
 - Install Argo Workflows automation to build containers, publish charts, and provide GitOps delivery pipelines.
 - Install a sample app git repository that uses this automation to demonstrate GitOps app delivery and promotion ([metaphor](https://github.com/kubefirst/gitops-template/tree/main/metaphor) source code).
 
-![kubefirst k3d with GitHub Cluster Diagram](../img/local/github/installation-diagram-light.png#light-mode)![kubefirst k3d with GitHub Cluster Diagram](../img/local/github/installation-diagram-dark.png#dark-mode)
-
-# Applications
-
 <Tabs groupId="git_provider" defaultValue="github" queryString>
-    <TabItem
-      attributes={{className: styles.github}}
-      value="github"
-      label={
-        <div className="git-tab">
-          <img src="https://assets.kubefirst.com/console/github.svg" alt="GitHub logo" />
-          <span>GitHub</span>
-        </div>
-      }
-    >
-      <GitHubOverview />
-    </TabItem>
-    <TabItem
-      value="gitlab"
-      attributes={{className: styles.gitlab}}
-      label={
-        <div className="git-tab">
-          <img src="https://assets.kubefirst.com/console/gitlab.svg" alt="GitLab logo" />
-          <span>GitLab</span>
-        </div>
-      }
-    >
-      <GitLabOverview />
-    </TabItem>
+  <TabItem attributes={{ className: styles.github }} value="github" label={ <div className="git-tab"><img src="https://assets.kubefirst.com/console/github.svg" alt="GitHub logo" /><span>GitHub</span></div> }>
+
+    ![Installation Diagram](../img/local/github/installation-diagram-light.svg#light-mode)![Installation Diagram](../img/local/github/installation-diagram-dark.svg#dark-mode)
+
+    ## Applications
+    <GitHubOverview />
+
+  </TabItem>
+  <TabItem value="gitlab" attributes={{ className: styles.gitlab }} label={ <div className="git-tab"> <img src="https://assets.kubefirst.com/console/gitlab.svg" alt="GitLab logo" /> <span>GitLab</span></div> }>
+
+    ![Installation Diagram](../img/local/gitlab/installation-diagram-light.svg#light-mode)![Installation Diagram](../img/local/gitlab/installation-diagram-dark.svg#dark-mode)
+
+    ## Applications
+    <GitLabOverview />
+  </TabItem>
 </Tabs>

@@ -39,39 +39,25 @@ K3s is in beta. Use at your own risks.  The K3s documentation is missing proper 
 The K3s provisioning process will:
 <CommonProvisionProcess firstitem="Create a Kubernetes management cluster with K3s."/>
 
-![kubefirst K3s with GitLab Cluster Diagram](../img/k3s/gitlab/installation-diagram-light.png#light-mode)![kubefirst K3s with GitLab Cluster Diagram](../img/k3s/gitlab/installation-diagram-dark.png#dark-mode)
-
-# Applications
-
-<Tabs groupId="git_provider" defaultValue="gitlab" queryString>
 <!-- markdownlint-disable MD049 -->
-{/*<Tabs groupId="git_provider" defaultValue="github" queryString>
+{/*
+<Tabs groupId="git_provider" defaultValue="github" queryString>
+  <TabItem attributes={{ className: styles.github }} value="github" label={ <div className="git-tab"><img src="https://assets.kubefirst.com/console/github.svg" alt="GitHub logo" /><span>GitHub</span></div> }>
 
-     <TabItem
-      attributes={{className: styles.github}}
-      value="github"
-      label={
-        <div className="git-tab">
-          <img src="https://assets.kubefirst.com/console/github.svg" alt="GitHub logo" />
-          <span>GitHub</span>
-        </div>
-      }
-    >
-      <GitHubOverview />
-    </TabItem> */}
+    ![Installation Diagram](../img/gcp/github/installation-diagram-light.svg#light-mode)![Installation Diagram](../img/gcp/github/installation-diagram-dark.svg#dark-mode)
 
-    <TabItem
-      value="gitlab"
-      attributes={{className: styles.gitlab}}
-      label={
-        <div className="git-tab">
-          <img src="https://assets.kubefirst.com/console/gitlab.svg" alt="GitLab logo" />
-          <span>GitLab</span>
-        </div>
-      }
-    >
-      <GitLabOverview />
-    </TabItem>
+    ## Applications
+    <GitHubOverview />
+
+  </TabItem> */}
+<Tabs groupId="git_provider" defaultValue="gitlab" queryString>
+  <TabItem value="gitlab" attributes={{ className: styles.gitlab }} label={ <div className="git-tab"> <img src="https://assets.kubefirst.com/console/gitlab.svg" alt="GitLab logo" /> <span>GitLab</span></div> }>
+
+    ![Installation Diagram](../img/gcp/gitlab/installation-diagram-light.svg#light-mode)![Installation Diagram](../img/gcp/gitlab/installation-diagram-dark.svg#dark-mode)
+
+    ## Applications
+    <GitLabOverview />
+  </TabItem>
 </Tabs>
 
 ## Known Limitations
