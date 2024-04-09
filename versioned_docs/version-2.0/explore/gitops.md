@@ -21,7 +21,7 @@ The benefit of defining your desired state in a declarative way in Git is enormo
 
 ## Pipelines
 
-![GitOps CI/CD Pipelines](../img/gitops/gitops-pipelines-light.png#light-mode)![GitOps CI/CD Pipelines](../img/gitops/gitops-pipelines-dark.png#dark-mode)
+![GitOps CI/CD Pipelines](../img/gitops/gitops-pipelines-light.svg#light-mode)![GitOps CI/CD Pipelines](../img/gitops/gitops-pipelines-dark.svg#dark-mode)
 
 Our CI pipelines originate in your privately hosted git repository trigger mechanism (GitHub Actions or GitLab CI) with a workflow being submitted to Argo Workflows. The workflows will publish your container with a pre-release Helm chart.
 
