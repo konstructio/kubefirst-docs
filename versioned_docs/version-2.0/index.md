@@ -9,7 +9,7 @@ kubefirst is a fully automated and operational open source platform that include
 
 We support local, AWS, and Civo clouds. By running our CLI commands against your empty environment, you'll get a GitOps cloud management and application delivery ecosystem complete with automated Terraform workflows, Vault secrets management, GitLab or GitHub integrations with Argo, and demo applications that demonstrate how it all pieces together.
 
-![kubefirst Architecture](img/common/kubefirst/architecture-light.png#light-mode)![kubefirst Architecture](img/common/kubefirst/architecture-dark.png#dark-mode)
+![kubefirst Architecture](img/common/kubefirst/architecture-light.svg#light-mode)![kubefirst Architecture](img/common/kubefirst/architecture-dark.svg#dark-mode)
 
 ---
 
