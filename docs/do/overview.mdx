@@ -10,23 +10,15 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import styles from '../stylesheets/tabs.module.css';
 import ReactDom from 'react-dom';
-import * as config from '../constants.js';
 import GitHubOverview from '../do/partials/github/_overview.mdx';
 import GitLabOverview from '../do/partials/gitlab/_overview.mdx';
 import CloudBanner from '@site/src/components/CloudBanner/CloudBanner.jsx';
 import CommonProvisionProcess from "../common/partials/common/_provision-process.mdx";
 import KnownLimitations from "../common/known-limitations.mdx";
+import DOLogo from '../img/do/logo.svg';
 
-<div
-  style={{
-    display: 'flex',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-  }}
->
-  <div>
-    <img src={config.DO_LOGO_URL} height="100" width="100" alt="DigitalOcean logo" />
-  </div>
+<div class="cloud_logo">
+  <DOLogo width="200px" alt="DigitalOcean Logo" />
 </div>
 
 # Overview

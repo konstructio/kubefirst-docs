@@ -56,6 +56,8 @@ Lastly, your commits need to be signed so they can be verified. GitHub has [grea
 
 All images will be automatically optimized with a lossless compression level to ensure the best possible experience, while minimizing the image size for slower or expensive internet connection.
 
+All images should be added in the `img` folder under each documentation versions. No specific documentation images should be added in the `static/img` folder: this gives us the opportunity to have different versions for different kubefirst version when needed.
+
 #### Alt Text
 
 All images must have alternative text (alt text) that are representative, and descriptive of the image. It is important as we want our documentation to be accessible to everyone. Images with complex or with a lot of information, such as diagrams, should have a short description in the alt text, and have a full-fledge text explaining every part either within the documentation or as an additional page. As for "utility images", the alt text should be a description of the information or action intended by the image, and not the image or icon itself (ex.: a Twitter logo icon that links to our Twitter page should have "kubefirst Twitter account" instead of "Twitter logo" alt text).

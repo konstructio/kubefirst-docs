@@ -10,23 +10,14 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import styles from "../stylesheets/tabs.module.css";
 import ReactDom from 'react-dom';
-import * as config from "../constants.js";
 import CommonProvisionProcess from "../common/partials/common/_provision-process.mdx";
-
-<div
-  style={{
-    display: "flex",
-    justifyContent: "flex-end",
-    alignItems: "center",
-  }}
->
-  <div>
-    <img src={config.AWS_LOGO_URL} height="50" width="75" alt="AWS logo" />
-  </div>
-</div>
-
 import GitHubOverview from '../aws/partials/github/_overview.mdx';
 import GitLabOverview from '../aws/partials/gitlab/_overview.mdx';
+import AWSLogo from '../img/aws/logo.svg';
+
+<div class="cloud_logo">
+  <AWSLogo width="200px" alt="AWS Logo" />
+</div>
 
 # Overview
 

@@ -16,7 +16,6 @@ import CommonCloudPrerequisites from "../../../common/partials/common/_prerequis
 import CommonClusterConnectivity from "../../partials/common/_cluster-connectivity.mdx";
 import CommonRootCredentialsCmd from "../../../common/partials/common/_root-credentials-cmd.mdx";
 import CommonTerminalOutput from "../../../common/partials/common/_terminal-output.mdx";
-import * as config from "../../../constants.js";
 import styles from "../../../stylesheets/tabs.module.css";
 import GitHubHandoffScreen from "../../../img/k3s/github/handoff-screen.png";
 import GitLabHandoffScreen from "../../../img/k3s/gitlab/handoff-screen.png";
@@ -36,13 +35,13 @@ export const TabLabel = ({ imgSrc, label, alt }) => (
 <Tabs groupId="git_provider" defaultValue="gitlab" queryString>
   <!-- markdownlint-disable MD049 -->
   {/*<Tabs groupId="git_provider" defaultValue="github" queryString>
-  <TabItem attributes={{ className: styles.github }} value="github" label={<TabLabel imgSrc={config.GITHUB_LOGO_URL} label="GitHub" alt="GitHub logo" />}>
+  <TabItem attributes={{ className: styles.github }} value="github" label={<TabLabel src="https://assets.kubefirst.com/console/github.svg" label="GitHub" alt="GitHub logo" />}>
     <GitHubPrerequisites />
     <GitHubClusterCreateCmd />
     <CommonTerminalOutput cloud="K3s"  minutes="10" handoffScreen={GitHubHandoffScreen} />
   </TabItem>*/}
 
-  <TabItem value="gitlab" attributes={{ className: styles.gitlab }} label={<TabLabel imgSrc={config.GITLAB_LOGO_URL} label="GitLab" alt="GitLab logo" />}>
+    <TabItem attributes={{ className: styles.gitlab }} value="gitlab" label={<TabLabel src="https://assets.kubefirst.com/console/gitlab.svg" label="GitLab" alt="GitLab logo" />}>
     <GitLabPrerequisites />
     <GitLabClusterCreateCmd />
     <CommonTerminalOutput cloud="K3s"  minutes="10" handoffScreen={GitLabHandoffScreen} />

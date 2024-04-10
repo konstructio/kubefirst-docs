@@ -9,23 +9,15 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import styles from "../stylesheets/tabs.module.css";
 import ReactDom from 'react-dom';
-import * as config from "../constants.js";
 import GitHubOverview from '../akamai/partials/github/_overview.mdx';
 import GitLabOverview from '../akamai/partials/gitlab/_overview.mdx';
 import CloudBanner from '@site/src/components/CloudBanner/CloudBanner.jsx';
 import CommonProvisionProcess from "../common/partials/common/_provision-process.mdx";
 import KnownLimitations from "../common/known-limitations.mdx";
+import AkamaiLogo from '../img/akamai/logo.svg';
 
-<div
-  style={{
-    display: "flex",
-    justifyContent: "flex-end",
-    alignItems: "center",
-  }}
->
-  <div>
-    <img src={config.AKAMAI_LOGO_URL} height="50" width="150" alt="Akamai logo" />
-  </div>
+<div class="cloud_logo">
+  <AkamaiLogo width="200px" alt="Akamai Logo" />
 </div>
 
 # Overview

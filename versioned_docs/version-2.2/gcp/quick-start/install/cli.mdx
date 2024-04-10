@@ -28,11 +28,7 @@ export const TabLabel = ({ imgSrc, label, alt }) => (
 );
 
 <Tabs groupId="git_provider" defaultValue="github" queryString>
-  <TabItem
-    attributes={{ className: styles.github }}
-    value="github"
-    label={<TabLabel imgSrc={config.GITHUB_LOGO_URL} label="GitHub" />}
-  >
+  <TabItem attributes={{ className: styles.github }} value="github" label={<TabLabel src="https://assets.kubefirst.com/console/github.svg" label="GitHub" alt="GitHub logo" />}>
   <GitHubPrerequisites />
 
   <CommonCloudPrerequisites />
@@ -46,11 +42,7 @@ export const TabLabel = ({ imgSrc, label, alt }) => (
   <CommonClusterConnectivity />
 
   </TabItem>
-  <TabItem
-    value="gitlab"
-    attributes={{ className: styles.gitlab }}
-    label={<TabLabel imgSrc={config.GITLAB_LOGO_URL} label="GitLab" />}
-  >
+<TabItem attributes={{ className: styles.gitlab }} value="gitlab" label={<TabLabel src="https://assets.kubefirst.com/console/gitlab.svg" label="GitLab" alt="GitLab logo" />}>
   <GitLabPrerequisites />
 
   <CommonCloudPrerequisites />
