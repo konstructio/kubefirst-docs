@@ -41,7 +41,7 @@ export const TabLabel = ({ imgSrc, label, alt }) => (
     <CommonTerminalOutput cloud="K3s"  minutes="10" handoffScreen={GitHubHandoffScreen} />
   </TabItem>*/}
 
-  <TabItem value="gitlab" attributes={{ className: styles.gitlab }} label={<TabLabel imgSrc={config.GITLAB_LOGO_URL} label="GitLab" alt="GitLab logo" />}>
+    <TabItem attributes={{ className: styles.gitlab }} value="gitlab" label={<TabLabel src="https://assets.kubefirst.com/console/gitlab.svg" label="GitLab" alt="GitLab logo" />}>
     <GitLabPrerequisites />
     <GitLabClusterCreateCmd />
     <CommonTerminalOutput cloud="K3s"  minutes="10" handoffScreen={GitLabHandoffScreen} />
