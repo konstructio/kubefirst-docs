@@ -10,22 +10,14 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import styles from "../stylesheets/tabs.module.css";
 import ReactDom from 'react-dom'
-import * as config from "../constants.js"
 import CommonProvisionProcess from "../common/partials/common/_provision-process.mdx";
 import GitHubOverview from '../k3d/partials/github/_overview.mdx'
 import GitLabOverview from '../k3d/partials/gitlab/_overview.mdx'
 import KnownLimitations from "../common/known-limitations.mdx"
+import K3dLogo from '../img/k3d/logo.svg';
 
-<div
-  style={{
-    display: "flex",
-    justifyContent: "flex-end",
-    alignItems: "center",
-  }}
->
-  <div>
-    <img src={config.K3D_LOGO_URL} height="50" width="125" alt="k3d logo" />
-  </div>
+<div class="cloud_logo">
+  <K3dLogo width="200px" alt="k3d Logo" />
 </div>
 
 # Overview

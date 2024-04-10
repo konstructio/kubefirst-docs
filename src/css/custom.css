@@ -199,3 +199,8 @@
   display: flex;
   gap: 10px;
 }
+
+.cloud_logo {
+  display: flex;
+  justify-content: flex-end;
+}
