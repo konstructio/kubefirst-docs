@@ -9,22 +9,14 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import styles from "../stylesheets/tabs.module.css";
 import ReactDom from 'react-dom'
-import * as config from "../constants.js"
 import GitHubOverview from '../civo/partials/github/_overview.mdx'
 import GitLabOverview from '../civo/partials/gitlab/_overview.mdx'
 import CloudBanner from '@site/src/components/CloudBanner/CloudBanner.jsx'
 import CommonProvisionProcess from "../common/partials/common/_provision-process.mdx";
+import CivoLogo from '../img/civo/logo.svg';
 
-<div
-  style={{
-    display: "flex",
-    justifyContent: "flex-end",
-    alignItems: "center",
-  }}
->
-  <div>
-    <img src={config.CIVO_LOGO_URL} height="50" width="150" alt="Civo logo" />
-  </div>
+<div class="cloud_logo">
+  <CivoLogo width="200px" alt="Civo Logo" />
 </div>
 
 # Overview

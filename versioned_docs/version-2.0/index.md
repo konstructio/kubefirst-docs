@@ -22,7 +22,7 @@ Choose one of the available options below
         <div className="card">
             <div className="card__image">
             <img
-               src={require("/static/img/local_github.jpg").default}
+               src={require("./img/local/github/local_github.jpg").default}
                alt="Local k3d with GitHub"
                title="Local k3d with GitHub" />
             </div>
@@ -46,7 +46,7 @@ Choose one of the available options below
         <div className="card">
             <div className="card__image">
             <img
-               src={require("/static/img/local_gitlab.jpg").default}
+               src={require("./img/local/gitlab/local_gitlab.jpg").default}
                alt="Local k3d with GitLab"
                title="Local k3d with GitLab" />
             </div>
@@ -72,7 +72,7 @@ Choose one of the available options below
         <div className="card">
             <div className="card__image">
             <img
-               src={require("/static/img/civo_github.jpg").default}
+               src={require("./img/civo/github/civo_github.jpg").default}
                alt="Civo Cloud with GitHub"
                title="Civo Cloud with GitHub" />
             </div>
@@ -92,7 +92,7 @@ Choose one of the available options below
         <div className="card">
             <div className="card__image">
             <img
-               src={require("/static/img/civo_gitlab.jpg").default}
+               src={require("./img/civo/gitlab/civo_gitlab.jpg").default}
                alt="Civo Cloud with GitLab"
                title="Civo Cloud with GitLab" />
             </div>
@@ -114,7 +114,7 @@ Choose one of the available options below
         <div className="card">
             <div className="card__image">
             <img
-               src={require("/static/img/aws_github.jpg").default}
+               src={require("./img/aws/github/aws_github.jpg").default}
                alt="AWS Cloud with GitHub"
                title="AWS Cloud with GitHub" />
             </div>
@@ -135,7 +135,7 @@ Choose one of the available options below
         <div className="card">
             <div className="card__image">
             <img
-               src={require("/static/img/aws_gitlab.jpg").default}
+               src={require("./img/aws/gitlab/aws_gitlab.jpg").default}
                alt="AWS Cloud with GitLab"
                title="AWS Cloud with GitLab" />
             </div>

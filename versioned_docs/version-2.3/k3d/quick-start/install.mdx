@@ -8,21 +8,13 @@ image: "https://docs.kubefirst.io/img/logo.svg"
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import styles from "../../stylesheets/tabs.module.css";
-import * as config from "../../constants.js"
 import GitHubInstall from '../partials/github/_install.mdx'
 import GitLabInstall from '../partials/gitlab/_install.mdx'
 import CommonCloudPrerequisites from "../../common/partials/common/_prerequisites.mdx";
+import K3dLogo from '../../img/k3d/logo.svg';
 
-<div
-  style={{
-    display: "flex",
-    justifyContent: "flex-end",
-    alignItems: "center",
-  }}
->
-  <div>
-    <img src={config.K3D_LOGO_URL} height="50" width="120" alt="k3d logo" />
-  </div>
+<div class="cloud_logo">
+  <K3dLogo width="200px" alt="k3d Logo" />
 </div>
 
 # Install kubefirst from the CLI
