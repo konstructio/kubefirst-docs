@@ -108,7 +108,7 @@ const config = {
         title: 'Kubefirst',
         logo: {
           alt: 'Kubefirst website',
-          src: 'img/logo.svg',
+          src: 'img/kubefirst.svg',
           href: 'https://docs.kubefirst.io/',
         },
         items: [
