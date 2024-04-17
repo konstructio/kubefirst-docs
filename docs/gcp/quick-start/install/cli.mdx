@@ -34,13 +34,13 @@ export const TabLabel = ({ imgSrc, label, alt }) => (
 
 <Tabs groupId="git_provider" defaultValue="github" queryString>
 
-  <TabItem attributes={{ className: styles.github }} value="github" label={<TabLabel src="https://assets.kubefirst.com/console/github.svg" label="GitHub" alt="GitHub logo" />}>
+    <TabItem attributes={{ className: styles.github }} value="github" label={ <div className="git-tab"><img src="https://assets.kubefirst.com/console/github.svg" alt="GitHub logo" /><span>GitHub</span></div> }>
     <GitHubPrerequisites />
     <GitHubClusterCreateCmd />
     <CommonTerminalOutput cloud="Gcp"  minutes="10" handoffScreen={GitHubHandoffScreen} />
   </TabItem>
 
-    <TabItem attributes={{ className: styles.gitlab }} value="gitlab" label={<TabLabel src="https://assets.kubefirst.com/console/gitlab.svg" label="GitLab" alt="GitLab logo" />}>
+      <TabItem attributes={{ className: styles.gitlab }} value="gitlab" label={ <div className="git-tab"><img src="https://assets.kubefirst.com/console/gitlab.svg" alt="GitLab logo" /><span>GitLab</span></div> }>
     <GitLabPrerequisites />
     <GitLabClusterCreateCmd />
     <CommonTerminalOutput cloud="Gcp"  minutes="10" handoffScreen={GitLabHandoffScreen} />
