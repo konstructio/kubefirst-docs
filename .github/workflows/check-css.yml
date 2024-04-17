@@ -1,0 +1,16 @@
+---
+name: Validate CSS files
+on: [push, workflow_dispatch]
+
+jobs:
+  csslint:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout the code
+        uses: actions/checkout@v4.1.0
+
+      - name: stylelint
+        uses: actions-hub/stylelint@master
+        env:
+          PATTERN: "**/*.css"
