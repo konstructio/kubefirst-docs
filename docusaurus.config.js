@@ -217,12 +217,12 @@ const config = {
         typesenseServerConfig: {
           nodes: [
             {
-              host: 'typesense.mgmt.kubefirst.com',
+              host: 'typesense.mgmt-20.kubefirst.com',
               port: 443,
               protocol: 'https',
             },
           ],
-          apiKey: 'AeeRpiguwfTpmcKHGbBkTmUCkjoPg8nh',
+          apiKey: 'V2Eu5a3WZy61ZhVoN4ObJhnvLDgFbA7d',
         },
         contextualSearch: true,
       },
