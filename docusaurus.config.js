@@ -9,14 +9,10 @@ const config = {
   title: 'Kubefirst Docs',
   tagline: 'Instant Kubernetes Platforms',
   favicon: 'img/favicon.ico',
-
-  // Set the production url of your site here
   url: 'https://docs.kubefirst.io',
   baseUrl: process.env.BASEURL || '/',
-
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
-  trailingSlash: true,
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
