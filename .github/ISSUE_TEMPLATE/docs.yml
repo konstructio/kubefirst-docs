@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out a documentation issue! If you need help, please ask your question in our [Slack community](http://kubefirst.io/slack).
+        Thanks for taking the time to fill out a documentation issue! If you need help, please ask your question in our [Slack community](https://kubefirst.io/slack).
   - type: dropdown
     id: type
     attributes:
