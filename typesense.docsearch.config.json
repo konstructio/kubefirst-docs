@@ -1,10 +1,7 @@
 {
 	"index_name": "kubefirst",
-	"start_urls": [
-	  "https://docs.fred.dev"
-	],
 	"sitemap_urls": [
-	  "https://docs.fred.dev/sitemap.xml"
+	  "https://docs.kubefirst.io/sitemap.xml"
 	],
 	"selectors": {
 		"lvl0": "h1",
