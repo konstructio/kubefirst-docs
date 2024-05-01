@@ -11,6 +11,6 @@ jobs:
         uses: actions/checkout@v4.1.0
 
       - name: stylelint
-        uses: actions-hub/stylelint@master
+        uses: actions-hub/stylelint@v1.1.6
         env:
           PATTERN: "**/*.css"

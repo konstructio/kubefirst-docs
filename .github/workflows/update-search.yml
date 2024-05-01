@@ -16,7 +16,7 @@ jobs:
         uses: celsiusnarhwal/typesense-scraper@v2.0.1
         with:
           api-key: ${{ secrets.TYPESENSE_ADMIN_KEY }}
-          host: typesense.mgmt.kubefirst.com
+          host: typesense.mgmt-20.kubefirst.com
           port: 443
           protocol: https
           config: typesense.docsearch.config.json
