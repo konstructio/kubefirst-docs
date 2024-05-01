@@ -167,4 +167,4 @@ Docusaurus manages [documentation versions](https://docusaurus.io/docs/versionin
 
 ## Help
 
-If you need help in your kubefirst journey as a contributor, please join our [Slack Community](http://kubefirst.io/slack). We have the `#contributors` channel where you can ask any questions or get help with anything contribution-related. For support as a user, please ask in the `#helping-hands` channel, or directly to @fharper (Fred in Slack), our Developer Advocate.
+If you need help in your kubefirst journey as a contributor, please join our [Slack Community](https://kubefirst.io/slack). We have the `#contributors` channel where you can ask any questions or get help with anything contribution-related. For support as a user, please ask in the `#helping-hands` channel, or directly to @fharper (Fred in Slack), our Developer Advocate.
