@@ -50,6 +50,8 @@ Here's the non content related ones:
 
 As of now, we don't see usage for the `perf` & `test` prefixes.
 
+We suggest that you create a branch within your fork to add your changes, before creating a pull request, instead of committing them directly to your `main` branch. It will prevent misunderstanding in the GitHub UI for status like `Merge branch 'main' into main` which in that case we updated your pull request code with the latest from the kubefirst repository `main` branch. It could be interpreted as we already merged your changes to the kubefirst `main` branch while it's not the case. A best practice and simple step that can improve communication.
+
 Lastly, your commits need to be signed so they can be verified. GitHub has [great documentation on how to do that](https://docs.github.com/en/authentication/managing-commit-signature-verification). If you do not sign your commit, you'll get additional information by the GitHub Action in your pull request.
 
 ### Images
