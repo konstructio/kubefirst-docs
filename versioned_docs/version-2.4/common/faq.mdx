@@ -22,6 +22,7 @@
 - [How can I unseal HashiCorp Vault?](#how-can-i-unseal-hashicorp-vault)
 - [Terraform is returning a quota limit exceeded error](#terraform-is-returning-a-quota-limit-exceeded-error)
 - [Do you plan to support technology X?](#do-you-plan-to-support-technology-x)
+- [Any plans to move away from HashiCorp Vault & Terraform following the license changes & IBM acquisition?](#any-plans-to-move-away-from-hashicorp-vault--terraform-following-the-license-changes--ibm-acquisition)
 
 ### I ran into an issue, what should I do?
 
@@ -94,3 +95,11 @@ With that said, here's a list of requests we got from our users, with some detai
 #### k0s
 
 Since we support k3d, we have no plan to support [k0s](https://github.com/k0sproject/k0s) since, as far as we know, the capabilities, especially for our usage, are the same.
+
+### Any plans to move away from HashiCorp Vault & Terraform following the license changes & IBM acquisition?
+
+kubefirst is a commercial but free platform and is not subject to the new commercial restrictions related to the license change to [BSL](https://www.hashicorp.com/bsl) (Business Source License). The restriction is then flowing down to our users so you may be subject to the commercial element of it. As much as we would like to help, we are no legal experts, so we cannot advise you on the topic, but so far, we have seen no issues about this within our community.
+
+As for the IBM acquisition, we are closely keeping track of the situation. So far there is no indication that it will cause any problems for kubefirst. We are fans of HashiCorp Vault, and Terraform, especially with its Atlantis integration, so for now, we have no plans to replace Terraform with [OpenTofu](https://opentofu.org) or Vault with [OpenBao](https://openbao.org), nor to offer alternatives as options. kubefirst being open source, there is always a way for you to replace those yourself, but we will not be able to provide any help on that matter as it's outside of the normal usage scope.
+
+As with everything we do, we are listening to our users, so if for any reasons, the usage of HashiCorp technologies within our platform is a blocker for you, please let us know. We will keep track of the interest and issues related to this topic, and plan accordingly.
