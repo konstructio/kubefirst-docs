@@ -15,6 +15,8 @@ ENV NODE_ENV production
 
 COPY --from=builder /app/build/ .
 
+COPY default.conf /etc/nginx/conf.d/
+
 EXPOSE 80
 
 ENV PORT 80
