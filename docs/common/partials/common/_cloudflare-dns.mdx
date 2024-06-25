@@ -2,7 +2,7 @@
 
 By default kubefirst use the cloud providers to manage DNS. You also have the option to use Cloudflare.
 
-To do so, add the `dnsProvider` flag with the value `cloudflare` to your create command `—dnsProvider cloudflare`.
+To do so, add the `dns-provider` flag with the value `cloudflare` to your create command `—dns-provider cloudflare`.
 
 You also need to set the `CF_API_TOKEN` environment variable with a Cloudflare token (`export CF_API_TOKEN=xxxxxxxxx`) having the `Zone.Zone`, and `Zone.DNS` edit permission. More information on Cloudflare token creation [in their documentation](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/).
 
