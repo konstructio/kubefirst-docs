@@ -16,7 +16,7 @@ kubefirst beta k3s create \
     --git-provider gitlab \
     --servers-private-ips <private-ip-1>,<private-ip-2>,<private-ip-3> \
     --servers-public-ips <public-ip-1>,<public-ip-2>,<public-ip-3> \
-    --ssh-privatekey <ssh-key-path> \
+    --ssh-privatekey "$(cat ~/.ssh/your-ssh-key)" \
     --ssh-user root \
     --cluster-name kubefirst
 ```
