@@ -18,7 +18,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           commitAuthorName: 'kube1st'
           commitAuthorEmail: ${{ secrets.GPG_EMAIL }}
-          gpgPrivateKey: ${{ secrets.GPG_KEY }}
+          gpgPrivateKey: ${{ secrets.GPG_PRIVATE_KEY }}
           gpgPassphrase: ${{ secrets.GPG_PASSPHRASE }}
           commitTitle: "chore: update license years with {{currentYear}}"
           prTitle: "chore: update license years with {{currentYear}}"
