@@ -16,6 +16,7 @@ If you never connected to GitHub using SSH before and are creating a cluster usi
 
 kubefirst needs the following scopes or scopes groups:
 
+<!-- vale off -->
 | Scope                 | Score Permission                             | kubefirst Usage                                                                                         |
 |-----------------------|----------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | repo                  | Full access to public & private repositories | Creating 2 repositories on cluster creation & manage repositories related to your cluster with Atlantis |
@@ -28,6 +29,7 @@ kubefirst needs the following scopes or scopes groups:
 | user                  | Grants read & write access to profile info   | Retrieving the user profile to display in the console UI & let the user validate the used token         |
 | delete_repo           | Delete repositories                          | Deleting repositories managed by Infrastructure as Code with Atlantis                                   |
 | admin:ssh_signing_key | Full control of public user SSH signing keys | This is will be removed soon (see [#2180](https://github.com/kubefirst/kubefirst/issues/2180))          |
+<!-- vale on -->
 
 You can read more about the [scopes in the GitHub documentation](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/scopes-for-oauth-apps#available-scopes).
 

@@ -29,15 +29,10 @@ swap:
   docker: Docker
   gcp: Google Cloud
   gcp cloud: Google Cloud
-  # Starting or with a space before, and ending with a dot or space (so not working used in a path, caused of MDX)
   '[G|g]ithub': GitHub
-  # Starting or with a space before, and ending with a dot or space (so not working used in a path, caused of MDX)
   'git[H|h]ub': GitHub
-  # Starting or with a space before, and ending with a dot or space (so not working used in a path, caused of MDX)
-  '(?<=^| )[G|g]itlab(?=$| |\.)': GitLab
-  # Starting or with a space before, and ending with a dot or space (so not working used in a path, caused of MDX)
-  '(?<=^| )git[L|l]ab(?=$| |\.)': GitLab
-  # Starting or with a space before, and ending with a dot or space (so not working used in a path, caused of MDX)
+  '[G|g]itlab': GitLab
+  'git[L|l]ab': GitLab
   '(?<=^| )gitops(?=$| |\.)': GitOps for the term or put gitops as inline code for the repository
   google: Google
   helm: Helm
@@ -53,5 +48,6 @@ swap:
   '(?<=^| )terraform(?=$| |\.)': Terraform
   ui: UI
   url: URL
+  vault: Vault
   vpc: VPC
   vultr: Vultr

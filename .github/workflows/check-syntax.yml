@@ -1,20 +1,28 @@
 ---
-name: Syntax Validation
+name: Check spelling & grammar
 on: [push, workflow_dispatch]
 
 jobs:
-  syntax-check:
+  check-syntax:
     name: vale
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout this repository
-        uses: actions/checkout@v3.5.3
 
-      - name: Install Vale
-        run: |
-          wget https://github.com/errata-ai/vale/releases/download/v2.30.0/vale_2.30.0_Linux_64-bit.tar.gz -O vale.tar.gz
-          tar -xvzf vale.tar.gz vale
-          rm vale.tar.gz
+      - name: Checkout this repository
+        uses: actions/checkout@v4.1.7
+
+      - name: Setup Python
+        uses: actions/setup-python@v5.1.1
+        with:
+          python-version: '3.12.4'
+
+      - name: Setup Python
+        uses: ruby/setup-ruby@v1.187.0
+        with:
+          ruby-version: '3.3.4'
 
       - name: Validate the syntax
-        run: ./vale --config=.vale.ini *.md
+        uses: errata-ai/vale-action@v2.1.0
+        with:
+          fail_on_error: true
+          version: 3.6.1

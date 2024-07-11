@@ -1,16 +1,21 @@
 # A
 admunition
+Akamai
 anonymize
 auditable
+authentification
+authtoken
 automation
 
 # B
 
 # C
 CLI'
+CLIs
 ClusterIssuer
 containerd
 CPU
+Crossplane
 CWFT
 
 # D
@@ -26,6 +31,7 @@ Docusaurus
 # G
 
 # H
+hardcoded
 hotfix
 
 # I
@@ -39,6 +45,7 @@ KMS
 kubectl
 
 # L
+Linode
 
 # M
 markdownlint
@@ -57,6 +64,7 @@ onboarding
 
 # P
 preconfigure
+preloaded
 
 # Q
 
@@ -81,6 +89,7 @@ uncomment
 
 # V
 vale
+vcluster
 Vultr
 
 # W
