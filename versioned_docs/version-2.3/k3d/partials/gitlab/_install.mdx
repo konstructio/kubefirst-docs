@@ -52,21 +52,19 @@ Restart your browser, and you should be good to go.
 
 ### Local Atlantis Executions (optional)
 
-To install the k3d kubefirst platform with Atlantis wired up for automated terraform executions, you'll need to create an account with ngrok, and expose an ngrok auth token environment variable in your shell. This allows the github/gitlab servers to invoke the Atlantis webhook running in your cluster.
+To install the k3d kubefirst platform with Atlantis wired up for automated Terraform executions, you'll need to create an account with ngrok, and expose an ngrok auth token environment variable in your shell. This allows the GitHub/GitLab servers to invoke the Atlantis webhook running in your cluster.
 
-To sign up for an ngrok account in 1 click, visit
-[https://dashboard.ngrok.com/signup](https://dashboard.ngrok.com/signup)
+You can [sign up](https://dashboard.ngrok.com/signup) for an ngrok account for free.
 
-Once you've logged in, you can retrieve your ngrok auth token by visiting
-[https://dashboard.ngrok.com/get-started/your-authtoken](https://dashboard.ngrok.com/get-started/your-authtoken)
+Once you've logged in, you can [retrieve your ngrok auth token](https://dashboard.ngrok.com/get-started/your-authtoken).
 
-Make this available by running the following in your shell before you execute your `kubefirst k3d create` command, replacing the xxxxxxxxxxxxxxxxxxxxx with your actual authtoken.
+Make this available by running the following in your shell before you execute your `kubefirst k3d create` command, replacing the `xxxxxxxxxxxxxxxxxxxxx` with your actual authtoken.
 
 ```bash
 export NGROK_AUTHTOKEN=xxxxxxxxxxxxxxxxxxxxx
 ```
 
-If you skip this step the platform will still operate just fine, you just won't have automated terraform plans and applies in your pull requests.
+If you skip this step the platform will still operate just fine, you just won't have automated Terraform plans and applies in your pull requests.
 
 ## Working without SSH
 

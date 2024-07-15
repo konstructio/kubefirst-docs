@@ -61,7 +61,7 @@ To apply these changes, you or someone in the organization can submit a comment 
 
 Any new users you have created through this process will have their temporary initial passwords stored in your local [HashiCorp Vault](https://argocd.kubefirst.dev/applications/vault) cluster. You can also access Vault using the information provided to you in the terminal: you will find your users' individual initial passwords in the Vault secret store `/secrets/users/<username>`.
 
-![vault token login](../../../img/kubefirst/local/vault-token-login.png)
+![Vault token login](../../../img/kubefirst/local/vault-token-login.png)
 
 Once you've provided them their initial password, they can update it throughout the platform by modifying their user password entity in Vault. Anyone can change their own password, and admins can reset anyone's password. These rules, just like everything else on kubefirst, can be configured in your new `gitops` repository.
 

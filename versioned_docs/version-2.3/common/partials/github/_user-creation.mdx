@@ -51,7 +51,7 @@ Atlantis will always run plans automatically for you when a pull request is open
 
 Any new users you have created through this process will have their temporary initial passwords stored in your Vault cluster. You can access Vault using the root login credentials provided to you during your kubefirst installation. Only the root Vault token can access these secrets. You will find your users' initial passwords in the Vault secret store `/secrets/users/<username>`.
 
-![vault token login](../../../img/kubefirst/local/vault-token-login.png)
+![Vault token login](../../../img/kubefirst/local/vault-token-login.png)
 
 Once you've provided them their initial password, they can update their own password throughout the platform by updating their user password entity in Vault. Anyone can change their own password, and Admins can reset anyone's password. These rules, just like everything else on kubefirst, can be configured in your new `gitops` repository.
 
