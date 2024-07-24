@@ -33,20 +33,17 @@ export const TabLabel = ({ imgSrc, label, alt }) => (
 <K3sCloudPrerequisites />
 
 <Tabs groupId="git_provider" defaultValue="gitlab" queryString>
-  <!-- markdownlint-disable MD049 -->
-  {/*<Tabs groupId="git_provider" defaultValue="github" queryString>
-    <TabItem attributes={{ className: styles.github }} value="github" label={ <div className="git-tab"><img src="https://assets.kubefirst.com/console/github.svg" alt="GitHub logo" /><span>GitHub</span></div> }>
+  <TabItem attributes={{ className: styles.github }} value="github" label={ <div className="git-tab"><img src="https://assets.kubefirst.com/console/github.svg" alt="GitHub logo" /><span>GitHub</span></div> }>
     <GitHubPrerequisites />
     <GitHubClusterCreateCmd />
     <CommonTerminalOutput cloud="K3s"  minutes="10" handoffScreen={GitHubHandoffScreen} />
-  </TabItem>*/}
+  </TabItem>
 
-      <TabItem attributes={{ className: styles.gitlab }} value="gitlab" label={ <div className="git-tab"><img src="https://assets.kubefirst.com/console/gitlab.svg" alt="GitLab logo" /><span>GitLab</span></div> }>
+  <TabItem attributes={{ className: styles.gitlab }} value="gitlab" label={ <div className="git-tab"><img src="https://assets.kubefirst.com/console/gitlab.svg" alt="GitLab logo" /><span>GitLab</span></div> }>
     <GitLabPrerequisites />
     <GitLabClusterCreateCmd />
     <CommonTerminalOutput cloud="K3s"  minutes="10" handoffScreen={GitLabHandoffScreen} />
   </TabItem>
-
 </Tabs>
 
 <CommonRootCredentialsCmd cloud="k3s" />
