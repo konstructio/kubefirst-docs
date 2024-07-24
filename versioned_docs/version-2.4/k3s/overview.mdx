@@ -31,7 +31,14 @@ K3s is in beta. Use at your own risks.
 The K3s provisioning process will:
 <CommonProvisionProcess firstitem="Create a Kubernetes management cluster with K3s."/>
 
-<Tabs groupId="git_provider" defaultValue="gitlab" queryString>
+<Tabs groupId="git_provider" defaultValue="github" queryString>
+  <TabItem value="github" attributes={{ className: styles.github }} label={ <div className="git-tab"> <img src="https://assets.kubefirst.com/console/github.svg" alt="GitHub logo" /> <span>GitHub</span></div> }>
+
+    ![Installation Diagram](../img/k3s/github/installation-diagram-light.svg#light-mode)![Installation Diagram](../img/k3s/github/installation-diagram-dark.svg#dark-mode)
+
+    ## Applications
+    <GitHubOverview />
+  </TabItem>
   <TabItem value="gitlab" attributes={{ className: styles.gitlab }} label={ <div className="git-tab"> <img src="https://assets.kubefirst.com/console/gitlab.svg" alt="GitLab logo" /> <span>GitLab</span></div> }>
 
     ![Installation Diagram](../img/k3s/gitlab/installation-diagram-light.svg#light-mode)![Installation Diagram](../img/k3s/gitlab/installation-diagram-dark.svg#dark-mode)
@@ -49,4 +56,3 @@ The K3s provisioning process will:
 
 - Cloudflare is the only DNS provider implemented so far.
 - K3s [cannot be installed using the UI console](https://github.com/kubefirst/kubefirst/issues/2147): you can only use the CLI for now.
-- K3s is [only available on GitLab](https://github.com/kubefirst/kubefirst/issues/2146) for now.
