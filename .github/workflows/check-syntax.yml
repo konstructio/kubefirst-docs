@@ -11,18 +11,12 @@ jobs:
       - name: Checkout this repository
         uses: actions/checkout@v4.1.7
 
-      - name: Setup Python
-        uses: actions/setup-python@v5.1.1
-        with:
-          python-version: '3.12.4'
+      - name: Install Vale
+        run: |
+          wget https://github.com/errata-ai/vale/releases/download/v3.7.0/vale_3.7.0_Linux_64-bit.tar.gz -O vale.tar.gz
+          tar -xvzf vale.tar.gz vale
+          rm vale.tar.gz
 
-      - name: Setup Python
-        uses: ruby/setup-ruby@v1.187.0
-        with:
-          ruby-version: '3.3.4'
-
+      # Cannot run the action as reviewdog as an issue & don't fail on errors. See https://github.com/reviewdog/reviewdog/issues/1408
       - name: Validate the syntax
-        uses: errata-ai/vale-action@v2.1.0
-        with:
-          fail_on_error: true
-          version: 3.6.1
+        run: ./vale --config=.vale.ini .
