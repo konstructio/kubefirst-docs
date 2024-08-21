@@ -6,7 +6,7 @@ In the GitOps nature, we rely on repositories to have a single source of truth w
 
 ### `gitops`
 
-The `gitops` repository houses all of our IAC and all of our GitOps configurations. All of the infrastructure that you receive with kubefirst was produced by Terraform and all of your applications are delivered with Argo CD. You will add to this `gitops` repository as your business needs require additional infrastructure or applications.
+The `gitops` repository houses all of our IAC and all of our GitOps configurations. All of the infrastructure that you receive with kubefirst was produced by Terraform and all of your applications are delivered with Argo CD. You can modify, update or add anything to this `gitops` repository based on your business needs: it is now yours.
 
 :::caution
 The repository doesn't have any branch protection by default. We highly suggest that you add some on the `main` branch.
@@ -14,7 +14,7 @@ The repository doesn't have any branch protection by default. We highly suggest 
 
 ### metaphor
 
-`metaphor` is a suite of demo microservice applications to demonstrate how an application can be integrated into the kubefirst platform following best practices. It is described in more details [here](../../../common/metaphor.mdx).
+The `metaphor` repository is an example application with source code, builds, and GitOps delivery used to showcase various features, integrations, and best practices of the kubefirst platform. More details in the [Metaphor documentation page](../../../common/metaphor.mdx).
 
 ## Repositories Management
 
