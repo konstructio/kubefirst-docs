@@ -8,29 +8,21 @@ import TabItem from "@theme/TabItem";
 import styles from "../stylesheets/tabs.module.css";
 import GitHubTokens from '../common/partials/github/_tokens.mdx';
 import GitLabTokens from '../common/partials/gitlab/_tokens.mdx';
+import GitHubLogo from '../common/components/GitHubLogo.jsx'
+import GitLabLogo from '../common/components/GitLabLogo.jsx'
 
 <Tabs groupId="git_provider" defaultValue="github" queryString>
     <TabItem
       attributes={{className: styles.github}}
       value="github"
-      label={
-        <div className="git-tab">
-          <img src="https://assets.kubefirst.com/console/github.svg" alt="GitHub logo" />
-          <span>GitHub</span>
-        </div>
-      }
+      label={ <GitHubLogo /> }
     >
       <GitHubTokens />
     </TabItem>
     <TabItem
       value="gitlab"
       attributes={{className: styles.gitlab}}
-      label={
-        <div className="git-tab">
-          <img src="https://assets.kubefirst.com/console/gitlab.svg" alt="GitLab logo" />
-          <span>GitLab</span>
-        </div>
-      }
+      label={ <GitLabLogo /> }
     >
       <GitLabTokens name="GitHub" />
     </TabItem>
