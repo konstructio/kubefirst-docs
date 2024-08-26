@@ -3,4 +3,4 @@ appVersion: 31a0cb9
 description: Kubefirst documentation Helm chart
 name: kubefirst-docs
 type: application
-version: 1.143.0
+version: 1.144.0
