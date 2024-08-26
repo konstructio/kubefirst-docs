@@ -95,7 +95,7 @@ spec:
             arguments:
               artifacts:
                 - name: repo-source
-                  from: '{{steps.publish-micro-helm-chart.outputs.artifacts.repo-source}}'
+                  from: '{{steps.set-micro-chart-versions.outputs.artifacts.repo-source}}'
               parameters:
                 - name: orgName
                   value: 'konstructio'
