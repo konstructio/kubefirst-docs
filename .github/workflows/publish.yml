@@ -18,7 +18,7 @@ on:
 
 jobs:
   publish:
-    if: ${{ github.actor != 'kube1st' }}
+    if: ${{ github.actor != 'konstruct-bot' }}
     runs-on: self-hosted
     steps:
 
