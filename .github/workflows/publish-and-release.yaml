@@ -1,0 +1,45 @@
+---
+name: Publish docs on prod
+
+env:
+  ARGO_NAMESPACE: argo
+  ARGO_VERSION: v3.4.1
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '.github/**'
+      - '.tools/**'
+  workflow_dispatch:
+
+jobs:
+  publish_and_release:
+    runs-on: self-hosted
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+      - name: inject slug/short variables
+        uses: rlespinasse/github-slug-action@v4
+      - name: Deploy docs on production
+        run: |
+          echo "Install argo"
+          # Download the binary
+          curl -sLO https://github.com/argoproj/argo-workflows/releases/download/${ARGO_VERSION}/argo-linux-amd64.gz
+          # Unzip
+          gunzip argo-linux-amd64.gz
+          # Make binary executable
+          chmod +x argo-linux-amd64
+          echo "commit sha ${GITHUB_SHA}"
+          ./argo-linux-amd64 version --short
+          ./argo-linux-amd64 submit .argo/publish-and-release.yaml \
+            --generate-name="${GITHUB_REPOSITORY_NAME_PART}-publish-and-release-${GITHUB_SHA_SHORT}-" \
+            -p appName="${GITHUB_REPOSITORY_NAME_PART}" \
+            -p branch="${GITHUB_REF_NAME}" \
+            -p environment="production" \
+            -p containerRegistryURL="ghcr.io/konstructio/${GITHUB_REPOSITORY_NAME_PART}:${GITHUB_SHA_SHORT}" \
+            -p gitUrlNoProtocol="git@github.com:${GITHUB_REPOSITORY_OWNER_PART_SLUG}" \
+            -p shortSha="${GITHUB_SHA_SHORT}" \
+            -p gitopsDestinationFile="registry/environments/production/kubefirst-docs.yaml" \
+            --wait --log

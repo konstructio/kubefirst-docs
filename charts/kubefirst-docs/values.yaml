@@ -1,11 +1,11 @@
-# Default values for docs.
+# Default values for kubefirst-docs.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: 555935582951.dkr.ecr.us-east-2.amazonaws.com
+  repository: ghcr.io/konstructio/kubefirst-docs
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -17,7 +17,7 @@ serviceAccount:
   create: true
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
-  name: docs-sa
+  name: kubefirst-docs-sa
 
 podSecurityContext: {}
   # fsGroup: 2000
@@ -45,9 +45,9 @@ ingress:
       paths:
         - /
   tls:
-   - secretName: docs-tls
+   - secretName: kubefirst-docs-tls
      hosts:
-       - docs.example.com
+       - kubefirst-docs.example.com
 
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
