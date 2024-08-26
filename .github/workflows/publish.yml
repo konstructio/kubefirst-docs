@@ -20,36 +20,21 @@ jobs:
     if: ${{ github.actor != 'konstruct-bot' }}
     runs-on: self-hosted
     steps:
-
-      - name: Wait for other releases processes to finish
-        uses: ahmadnassri/action-workflow-queue@v1.1.5
-
-      - name: Setup Runner for Argo
+      - name: checkout repository
+        uses: actions/checkout@v4
+      - name: inject slug/short variables
+        uses: rlespinasse/github-slug-action@v4
+      - name: Deploy docs on production
         run: |
-          cd "$HOME"
           echo "Install argo"
           # Download the binary
-          curl -sLO "https://github.com/argoproj/argo-workflows/releases/download/${ARGO_VERSION}/argo-linux-amd64.gz"
+          curl -sLO https://github.com/argoproj/argo-workflows/releases/download/${ARGO_VERSION}/argo-linux-amd64.gz
           # Unzip
           gunzip argo-linux-amd64.gz
           # Make binary executable
           chmod +x argo-linux-amd64
-          # Move binary to path
-          sudo mv ./argo-linux-amd64 /usr/local/bin/argo
-          # Test installation
-          argo version --short
-
-      - name: Check out repository code
-        uses: actions/checkout@v4.1.0
-
-      - name: Inject slug/short variables
-        uses: rlespinasse/github-slug-action@v4.4.1
-
-      # todo need to look repositoryGitURL, this needs to be overrideable from here and respected on the template side for both repositories
-      - name: Deploy docs on production
-        run: |
-          echo "commit sha $GITHUB_SHA"
-          argo version --short
+          echo "commit sha ${GITHUB_SHA}"
+          ./argo-linux-amd64 version --short
           ./argo-linux-amd64 submit .argo/publish-and-release.yaml \
             --generate-name="${GITHUB_REPOSITORY_NAME_PART}-publish-and-release-${GITHUB_SHA_SHORT}-" \
             -p appName="${GITHUB_REPOSITORY_NAME_PART}" \
