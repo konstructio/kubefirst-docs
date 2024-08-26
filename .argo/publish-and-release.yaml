@@ -118,7 +118,7 @@ spec:
                 - name: fullChartPath
                   value: '{{workflow.parameters.gitopsDestinationFile}}'
                 - name: chartVersion
-                  value: '{{steps.get-initial-micro-chart-version.outputs.result}}-rc.{{workflow.parameters.shortSha}}'
+                  value: '{{steps.get-initial-micro-chart-version.outputs.result}}'
                 - name: environment
                   value: '{{workflow.parameters.environment}}'
 
