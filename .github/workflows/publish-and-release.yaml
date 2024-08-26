@@ -8,15 +8,14 @@ env:
 on:
   push:
     branches:
-      - ci24 # todo: hotwired, do not merge
+      - main
     paths-ignore:
-      # - '.github/**' # todo: change back?
+      - '.github/**'
       - '.tools/**'
   workflow_dispatch:
 
 jobs:
   publish_and_release:
-    if: ${{ github.actor != 'konstruct-bot' }}
     runs-on: self-hosted
     steps:
       - name: checkout repository
@@ -45,4 +44,3 @@ jobs:
             -p gitopsDestinationFile="registry/environments/production/kubefirst-docs.yaml" \
             --wait --log
 
-            
