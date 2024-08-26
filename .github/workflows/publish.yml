@@ -58,15 +58,15 @@ jobs:
         run: |
           echo "commit sha $GITHUB_SHA"
           argo version --short
-          argo submit .argo/release.yaml \
-            --generate-name="${GITHUB_REPOSITORY_NAME_PART}-release-${GITHUB_SHA_SHORT}-${GITHUB_RUN_ATTEMPT}-" \
+          ./argo-linux-amd64 submit .argo/publish-and-release.yaml \
+            --generate-name="${GITHUB_REPOSITORY_NAME_PART}-publish-and-release-${GITHUB_SHA_SHORT}-" \
             -p appName="${GITHUB_REPOSITORY_NAME_PART}" \
             -p branch="${GITHUB_REF_NAME}" \
-            -p clusterName="mgmt-20-kubefirst-com" \
             -p environment="production" \
+            -p containerRegistryURL="ghcr.io/konstructio/${GITHUB_REPOSITORY_NAME_PART}:${GITHUB_SHA_SHORT}" \
             -p gitUrlNoProtocol="git@github.com:${GITHUB_REPOSITORY_OWNER_PART_SLUG}" \
-            -p containerRegistryURL="${CONTAINER_REGISTRY_URL}/${GITHUB_REPOSITORY_NAME_PART}:${GITHUB_SHA_SHORT}" \
             -p shortSha="${GITHUB_SHA_SHORT}" \
+            -p gitopsDestinationFile="registry/environments/production/kubefirst-docs.yaml" \
             --wait --log
 
       - name: Enable back docs branch protection
