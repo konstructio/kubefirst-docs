@@ -43,4 +43,3 @@ jobs:
             -p shortSha="${GITHUB_SHA_SHORT}" \
             -p gitopsDestinationFile="registry/environments/production/kubefirst-docs.yaml" \
             --wait --log
-
