@@ -2,7 +2,7 @@
 hide_title: true
 sidebar_label: CLI Installer
 sidebar_position: 3
-image: "https://docs.kubefirst.io/img/logo.svg"
+image: "https://docs.kubefirst.io/img/kubefirst.svg"
 ---
 
 import Tabs from "@theme/Tabs";
@@ -20,6 +20,8 @@ import styles from "../../../stylesheets/tabs.module.css";
 import GitHubHandoffScreen from "../../../img/aws/github/handoff-screen.png";
 import GitLabHandoffScreen from "../../../img/aws/gitlab/handoff-screen.png";
 import CLI from "../../../common/partials/common/_cli.mdx";
+import GitHubLogo from '../../../common/components/GitHubLogo.jsx'
+import GitLabLogo from '../../../common/components/GitLabLogo.jsx'
 
 export const TabLabel = ({ imgSrc, label, alt }) => (
   <div className="git-tab">
@@ -33,19 +35,16 @@ export const TabLabel = ({ imgSrc, label, alt }) => (
 <AwsCloudPrerequisites />
 
 <Tabs groupId="git_provider" defaultValue="github" queryString>
-
-    <TabItem attributes={{ className: styles.github }} value="github" label={ <div className="git-tab"><img src="https://assets.kubefirst.com/console/github.svg" alt="GitHub logo" /><span>GitHub</span></div> }>
+  <TabItem attributes={{ className: styles.github }} value="github" label={ <GitHubLogo /> }>
     <GitHubPrerequisites />
     <GitHubClusterCreateCmd />
     <CommonTerminalOutput cloud="Aws"  minutes="10" handoffScreen={GitHubHandoffScreen} />
   </TabItem>
-
-      <TabItem attributes={{ className: styles.gitlab }} value="gitlab" label={ <div className="git-tab"><img src="https://assets.kubefirst.com/console/gitlab.svg" alt="GitLab logo" /><span>GitLab</span></div> }>
+  <TabItem attributes={{ className: styles.gitlab }} value="gitlab" label={ <GitLabLogo /> }>
     <GitLabPrerequisites />
     <GitLabClusterCreateCmd />
     <CommonTerminalOutput cloud="Aws"  minutes="10" handoffScreen={GitLabHandoffScreen} />
   </TabItem>
-
 </Tabs>
 
 <CommonRootCredentialsCmd cloud="aws" />

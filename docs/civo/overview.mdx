@@ -15,6 +15,8 @@ import CloudBanner from '@site/src/components/CloudBanner/CloudBanner.jsx';
 import CommonProvisionProcess from "../common/partials/common/_provision-process.mdx";
 import KnownLimitations from "../common/known-limitations.mdx";
 import CivoLogo from '../img/civo/logo.svg';
+import GitHubLogo from '../common/components/GitHubLogo.jsx'
+import GitLabLogo from '../common/components/GitLabLogo.jsx'
 
 <div class="cloud_logo">
   <CivoLogo width="200px" alt="Civo Logo" />
@@ -26,7 +28,7 @@ The Civo provisioning process will:
 <CommonProvisionProcess firstitem="Create a Kubernetes management cluster in the Civo cloud."/>
 
 <Tabs groupId="git_provider" defaultValue="github" queryString>
-  <TabItem attributes={{ className: styles.github }} value="github" label={ <div className="git-tab"><img src="https://assets.kubefirst.com/console/github.svg" alt="GitHub logo" /><span>GitHub</span></div> }>
+  <TabItem attributes={{ className: styles.github }} value="github" label={ <GitHubLogo /> }>
 
     ![Installation Diagram](../img/civo/github/installation-diagram-light.svg#light-mode)![Installation Diagram](../img/civo/github/installation-diagram-dark.svg#dark-mode)
 
@@ -34,7 +36,7 @@ The Civo provisioning process will:
     <GitHubOverview />
 
   </TabItem>
-  <TabItem value="gitlab" attributes={{ className: styles.gitlab }} label={ <div className="git-tab"> <img src="https://assets.kubefirst.com/console/gitlab.svg" alt="GitLab logo" /> <span>GitLab</span></div> }>
+  <TabItem value="gitlab" attributes={{ className: styles.gitlab }} label={ <GitLabLogo /> }>
 
     ![Installation Diagram](../img/civo/gitlab/installation-diagram-light.svg#light-mode)![Installation Diagram](../img/civo/gitlab/installation-diagram-dark.svg#dark-mode)
 
