@@ -152,10 +152,10 @@ spec:
             arguments:
               artifacts:
                 spec:
-                - name: chartDir
-                  value: 'charts/{{workflow.parameters.appName}}'
-                - name: chartVersion
-                  value: '{{steps.get-initial-chart-version.outputs.result}}'
+                  - name: chartDir
+                    value: 'charts/{{workflow.parameters.appName}}'
+                  - name: chartVersion
+                    value: '{{steps.get-initial-chart-version.outputs.result}}'
 
         - - name: commit-to-app-repo
             templateRef:
