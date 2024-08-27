@@ -23,7 +23,7 @@ body:
     attributes:
       label: What page is concerned?
       description: If needed, URL to the page with missing or unclear information
-      placeholder: https://docs.kubefirst.io/
+      placeholder: https://kubefirst.konstruct.io/
   - type: input
     id: version
     attributes:
