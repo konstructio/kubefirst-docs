@@ -154,6 +154,8 @@ spec:
                 - name: repo-source
                   from: '{{steps.set-environment-version.outputs.artifacts.repo-source}}'
               parameters:
+                - name: appName
+                  value: '{{workflow.parameters.appName}}'
                 - name: chartDir
                   value: 'charts/{{workflow.parameters.appName}}'
                 - name: chartVersion
