@@ -1,32 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "docs.fullname" . }}
+  name: {{ include "kubefirst-docs.fullname" . }}
   labels:
-    {{- include "docs.labels" . | nindent 4 }}
+    {{- include "kubefirst-docs.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      {{- include "docs.selectorLabels" . | nindent 6 }}
+      {{- include "kubefirst-docs.selectorLabels" . | nindent 6 }}
   revisionHistoryLimit: 1
   template:
     metadata:
       labels:
-        {{- include "docs.selectorLabels" . | nindent 8 }}
+        {{- include "kubefirst-docs.selectorLabels" . | nindent 8 }}
     spec:
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
     {{- end }}
-      serviceAccountName: {{ include "docs.serviceAccountName" . }}
+      serviceAccountName: {{ include "kubefirst-docs.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
+          image: "{{ .Values.image.repository }}:{{ (default .Chart.AppVersion .Values.image.tag) }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
