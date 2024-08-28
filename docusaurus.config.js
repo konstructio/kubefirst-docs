@@ -23,7 +23,7 @@ const config = {
       'classic',
       {
         docs: {
-          routeBasePath: '/docs',
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [require('remark-docusaurus-tabs')],
         },
@@ -97,10 +97,6 @@ const config = {
           content: 'kubernetes, gitops, ci, cd, argocd, aws, civo, k3d, vultr'
         },
       ],
-      tableOfContents: {
-        minHeadingLevel: 2,
-        maxHeadingLevel: 5,
-      },
       navbar: {
         title: 'Kubefirst',
         logo: {
