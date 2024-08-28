@@ -21,5 +21,5 @@ There are different ways to create a GitLab token. The easiest way is to start t
 There are other ways to create a GitLab token. You can login into your GitLab account and issue a Personal Access Token following the list of scopes above. With the manually generated token, you can provide it via environment variable: `export GITLAB_TOKEN`.
 
 :::tip
-If you never connected to GitLab using SSH before, be sure to add it to the known host using the command `ssh-keyscan gitlab.com >> ~/.ssh/known_hosts` to ensure you won't get a `ssh: handshake failed: knownhosts: key is unknown` error.
+If you never connected to GitLab using SSH before, be sure to add it to the known host using the command `ssh-keyscan gitlab.com >> ~/.ssh/known_hosts` to ensure you won't get a `ssh: handshake failed: knownhosts: key is unknown` error. If you get the `known_hosts file does not exist` error when running the previous command, it's because you are missing the `~/.ssh` folder, so run `mkdir ~/.ssh` and try the `ssh-keyscan` command again.
 :::
