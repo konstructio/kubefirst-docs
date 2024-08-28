@@ -10,7 +10,7 @@ const config = {
   tagline: 'Instant Kubernetes Platforms',
   favicon: 'img/favicon.ico',
   url: 'https://kubefirst.konstruct.io',
-  baseUrl: 'docs',
+  baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   i18n: {
@@ -23,7 +23,7 @@ const config = {
       'classic',
       {
         docs: {
-          routeBasePath: 'docs',
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [require('remark-docusaurus-tabs')],
         },
@@ -58,28 +58,28 @@ const config = {
       {
         redirects: [
           {
-            to: '/docs/k3d/quick-start/install',
+            to: '/k3d/quick-start/install',
             from: [
               '/kubefirst/local/github/install',
               '/kubefirst/local/gitlab/install',
             ],
           },
           {
-            to: '/docs/aws/quick-start/install/cli',
+            to: '/aws/quick-start/install/cli',
             from: [
               '/kubefirst/aws/github/install',
               '/kubefirst/aws/gitlab/install',
             ],
           },
           {
-            to: '/docs/civo/quick-start/install/cli',
+            to: '/civo/quick-start/install/cli',
             from: [
               '/kubefirst/civo/github/install',
               '/kubefirst/civo/gitlab/install',
             ],
           },
           {
-            to: '/docs/k3d/overview',
+            to: '/k3d/overview',
             from: '/kubefirst/local',
           },
         ],
