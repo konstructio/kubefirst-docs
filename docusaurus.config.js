@@ -23,7 +23,7 @@ const config = {
       'classic',
       {
         docs: {
-          routeBasePath: 'docs',
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [require('remark-docusaurus-tabs')],
         },
