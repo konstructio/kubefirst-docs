@@ -10,7 +10,7 @@ const config = {
   tagline: 'Instant Kubernetes Platforms',
   favicon: 'img/favicon.ico',
   url: 'https://kubefirst.konstruct.io',
-  baseUrl: 'docs',
+  baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   i18n: {
