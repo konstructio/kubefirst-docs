@@ -9,8 +9,8 @@ const config = {
   title: 'Kubefirst Docs',
   tagline: 'Instant Kubernetes Platforms',
   favicon: 'img/favicon.ico',
-  url: 'https://kubefirst.konstruct.io/docs',
-  baseUrl: process.env.BASEURL || '/',
+  url: 'https://kubefirst.konstruct.io',
+  baseUrl: process.env.BASEURL || '/docs',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   i18n: {
@@ -23,7 +23,7 @@ const config = {
       'classic',
       {
         docs: {
-          routeBasePath: '/',
+          routeBasePath: '/docs',
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [require('remark-docusaurus-tabs')],
         },
