@@ -9,8 +9,8 @@ const config = {
   title: 'Kubefirst Docs',
   tagline: 'Instant Kubernetes Platforms',
   favicon: 'img/favicon.ico',
-  url: 'https://docs.kubefirst.io',
-  baseUrl: process.env.BASEURL || '/',
+  url: 'https://kubefirst.konstruct.io',
+  baseUrl: process.env.BASEURL || '/docs',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   i18n: {
@@ -97,10 +97,6 @@ const config = {
           content: 'kubernetes, gitops, ci, cd, argocd, aws, civo, k3d, vultr'
         },
       ],
-      tableOfContents: {
-        minHeadingLevel: 2,
-        maxHeadingLevel: 5,
-      },
       navbar: {
         title: 'Kubefirst',
         logo: {
