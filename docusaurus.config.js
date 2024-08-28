@@ -9,7 +9,7 @@ const config = {
   title: 'Kubefirst Docs',
   tagline: 'Instant Kubernetes Platforms',
   favicon: 'img/favicon.ico',
-  url: 'https://docs.kubefirst.io',
+  url: 'https://kubefirst.konstruct.io/docs',
   baseUrl: process.env.BASEURL || '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
