@@ -23,7 +23,7 @@ const config = {
       'classic',
       {
         docs: {
-          routeBasePath: '/',
+          routeBasePath: 'docs',
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [require('remark-docusaurus-tabs')],
         },
@@ -58,28 +58,28 @@ const config = {
       {
         redirects: [
           {
-            to: '/k3d/quick-start/install',
+            to: '/docs/k3d/quick-start/install',
             from: [
               '/kubefirst/local/github/install',
               '/kubefirst/local/gitlab/install',
             ],
           },
           {
-            to: '/aws/quick-start/install/cli',
+            to: '/docs/aws/quick-start/install/cli',
             from: [
               '/kubefirst/aws/github/install',
               '/kubefirst/aws/gitlab/install',
             ],
           },
           {
-            to: '/civo/quick-start/install/cli',
+            to: '/docs/civo/quick-start/install/cli',
             from: [
               '/kubefirst/civo/github/install',
               '/kubefirst/civo/gitlab/install',
             ],
           },
           {
-            to: '/k3d/overview',
+            to: '/docs/k3d/overview',
             from: '/kubefirst/local',
           },
         ],
