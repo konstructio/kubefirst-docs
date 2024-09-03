@@ -1,0 +1,54 @@
+---
+hide_title: true
+sidebar_label: Overview
+sidebar_position: 1
+description: an overview of the kubefirst platform
+image: "https://docs.kubefirst.io/img/kubefirst.svg"
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import styles from "../stylesheets/tabs.module.css";
+import ReactDom from 'react-dom';
+import CommonProvisionProcess from "../common/partials/common/_provision-process.mdx";
+import KnownLimitations from "../common/known-limitations.mdx";
+import GitHubOverview from '../aws/partials/github/_overview.mdx';
+import GitLabOverview from '../aws/partials/gitlab/_overview.mdx';
+import AWSLogo from '../img/aws/logo.svg';
+import GitHubLogo from '../common/components/GitHubLogo.jsx'
+import GitLabLogo from '../common/components/GitLabLogo.jsx'
+
+<div class="cloud_logo">
+  <AWSLogo width="200px" alt="AWS Logo" />
+</div>
+
+# Overview
+
+The AWS provisioning process will:
+<CommonProvisionProcess firstitem="Create a Kubernetes management cluster in the AWS cloud."/>
+
+<Tabs groupId="git_provider" defaultValue="github" queryString>
+  <TabItem attributes={{ className: styles.github }} value="github" label={ <GitHubLogo /> }>
+
+    ![Installation Diagram](../img/aws/github/installation-diagram-light.svg#light-mode)![Installation Diagram](../img/aws/github/installation-diagram-dark.svg#dark-mode)
+
+    ## Applications
+    <GitHubOverview />
+
+  </TabItem>
+  <TabItem value="gitlab" attributes={{ className: styles.gitlab }} label={ <GitLabLogo /> }>
+
+    ![Installation Diagram](../img/aws/gitlab/installation-diagram-light.svg#light-mode)![Installation Diagram](../img/aws/gitlab/installation-diagram-dark.svg#dark-mode)
+
+    ## Applications
+    <GitLabOverview />
+  </TabItem>
+</Tabs>
+
+## Known Limitations
+
+<KnownLimitations />
+
+### AWS Specific
+
+- Workload clusters are not available yet.
