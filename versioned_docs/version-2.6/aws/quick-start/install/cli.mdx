@@ -1,0 +1,51 @@
+---
+hide_title: true
+sidebar_label: CLI Installer
+sidebar_position: 3
+image: "https://docs.kubefirst.io/img/kubefirst.svg"
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import GitHubPrerequisites from "../../../common/partials/github/_prerequisites.mdx";
+import GitHubClusterCreateCmd from "../../partials/github/_cluster-create.mdx";
+import GitLabPrerequisites from "../../../common/partials/gitlab/_prerequisites.mdx";
+import GitLabClusterCreateCmd from "../../partials/gitlab/_cluster-create.mdx";
+import AwsCloudPrerequisites from "../../partials/common/_prerequisites.mdx";
+import CommonCloudPrerequisites from "../../../common/partials/common/_prerequisites.mdx";
+import CommonClusterConnectivity from "../../partials/common/_cluster-connectivity.mdx";
+import CommonRootCredentialsCmd from "../../../common/partials/common/_root-credentials-cmd.mdx";
+import CommonTerminalOutput from "../../../common/partials/common/_terminal-output.mdx";
+import styles from "../../../stylesheets/tabs.module.css";
+import GitHubHandoffScreen from "../../../img/aws/github/handoff-screen.png";
+import GitLabHandoffScreen from "../../../img/aws/gitlab/handoff-screen.png";
+import CLI from "../../../common/partials/common/_cli.mdx";
+import GitHubLogo from '../../../common/components/GitHubLogo.jsx'
+import GitLabLogo from '../../../common/components/GitLabLogo.jsx'
+
+export const TabLabel = ({ imgSrc, label, alt }) => (
+  <div className="git-tab">
+    <img src={imgSrc} alt={alt} />
+    <span>{label}</span>
+  </div>
+);
+
+<CLI />
+<CommonCloudPrerequisites />
+<AwsCloudPrerequisites />
+
+<Tabs groupId="git_provider" defaultValue="github" queryString>
+  <TabItem attributes={{ className: styles.github }} value="github" label={ <GitHubLogo /> }>
+    <GitHubPrerequisites />
+    <GitHubClusterCreateCmd />
+    <CommonTerminalOutput cloud="Aws"  minutes="10" handoffScreen={GitHubHandoffScreen} />
+  </TabItem>
+  <TabItem attributes={{ className: styles.gitlab }} value="gitlab" label={ <GitLabLogo /> }>
+    <GitLabPrerequisites />
+    <GitLabClusterCreateCmd />
+    <CommonTerminalOutput cloud="Aws"  minutes="10" handoffScreen={GitLabHandoffScreen} />
+  </TabItem>
+</Tabs>
+
+<CommonRootCredentialsCmd cloud="aws" />
+<CommonClusterConnectivity />
