@@ -9,7 +9,7 @@ RUN npm install \
 
 FROM nginx:1.25.1-alpine AS runner
 
-WORKDIR /usr/share/nginx/html
+WORKDIR /usr/share/nginx/docs
 
 ENV NODE_ENV production
 
