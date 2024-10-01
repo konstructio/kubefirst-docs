@@ -1,0 +1,9 @@
+# redirect to overviews
+/docs/:name  /docs/:name/overview  permanent
+/docs/:name/ /docs/:name/overview/ permanent
+
+# redirect /docs/google/* to /docs/gcp/*
+/docs/google/:splat /docs/gcp/:splat permanent 
+
+# redirect /docs/google/* to /docs/gcp/*
+/docs/digitalocean/:splat /docs/do/:splat permanent
