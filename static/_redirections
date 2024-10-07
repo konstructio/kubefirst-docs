@@ -1,9 +1,34 @@
+# This break for files under /docs. Opting
+# to manually list all redirects to /overview for now
+# Eg. sitemap -> /docs/sitemap.xml/overview
 # redirect to overviews
-/docs/:name  /docs/:name/overview  permanent
-/docs/:name/ /docs/:name/overview/ permanent
+# /docs/:name  /docs/:name/overview  permanent
+# /docs/:name/ /docs/:name/overview/ permanent
 
-# redirect /docs/google/* to /docs/gcp/*
-/docs/google/:splat /docs/gcp/:splat permanent 
+/docs/k3d  /docs/k3d/overview  permanent
+/docs/k3d/ /docs/k3d/overview/ permanent
+
+/docs/akamai  /docs/akamai/overview  permanent
+/docs/akamai/ /docs/akamai/overview/ permanent
+
+/docs/aws  /docs/aws/overview  permanent
+/docs/aws/ /docs/aws/overview/ permanent
+
+/docs/civo  /docs/civo/overview  permanent
+/docs/civo/ /docs/civo/overview/ permanent
 
 # redirect /docs/google/* to /docs/gcp/*
 /docs/digitalocean/:splat /docs/do/:splat permanent
+/docs/do  /docs/do/overview  permanent
+/docs/do/ /docs/do/overview/ permanent
+
+# redirect /docs/google/* to /docs/gcp/*
+/docs/google/:splat /docs/gcp/:splat permanent 
+/docs/gcp  /docs/gcp/overview  permanent
+/docs/gcp/ /docs/gcp/overview/ permanent
+
+/docs/k3s  /docs/k3s/overview  permanent
+/docs/k3s/ /docs/k3s/overview/ permanent
+
+/docs/vultr  /docs/vultr/overview  permanent
+/docs/vultr/ /docs/vultr/overview/ permanent
