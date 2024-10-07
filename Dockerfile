@@ -10,7 +10,7 @@ COPY . .
 
 RUN npm run build
 
-FROM ghcr.io/patrickdappollonio/docker-http-server:v2 
+FROM ghcr.io/patrickdappollonio/docker-http-server:v2.4.0
 
 WORKDIR /html
 
@@ -18,6 +18,6 @@ COPY --from=builder /app/build/ .
 
 ENV PORT=80
 
-ENTRYPOINT ["http-server"]
+ENTRYPOINT ["/http-server"]
 
-CMD ["--pathprefix=/docs/"]
+CMD ["--pathprefix=/docs/", "--disable-directory-listing"]
