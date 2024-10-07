@@ -19,11 +19,13 @@
 
 # redirect /docs/google/* to /docs/gcp/*
 /docs/digitalocean/:splat /docs/do/:splat permanent
+/docs/digitalocean /docs/do permanent
 /docs/do  /docs/do/overview  permanent
 /docs/do/ /docs/do/overview/ permanent
 
 # redirect /docs/google/* to /docs/gcp/*
-/docs/google/:splat /docs/gcp/:splat permanent 
+/docs/google/:splat /docs/gcp/:splat permanent
+/docs/google /docs/gcp permanent
 /docs/gcp  /docs/gcp/overview  permanent
 /docs/gcp/ /docs/gcp/overview/ permanent
 
