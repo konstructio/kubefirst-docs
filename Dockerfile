@@ -20,4 +20,4 @@ ENV PORT=80
 
 ENTRYPOINT ["/http-server"]
 
-CMD ["--pathprefix=/docs/", "--disable-directory-listing", "--custom-not-found-page=404.html"]
+CMD ["--pathprefix=/docs/", "--disable-directory-listing", "--custom-404=404.html"]
