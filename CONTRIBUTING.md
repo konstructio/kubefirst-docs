@@ -23,9 +23,9 @@ At Konstruct, we believe that every contribution is valuable, not just the code 
 
 Whether you want to add more details to a specific section or a page, or that you want to fix a typo in the text or in a code example, you are more than welcome to can create a pull request.
 
-For more substantial changes, it is highly suggested that you discuss your idea with us first. You can do that by either creating an [issue](https://github.com/konstructio/kubefirst/issues/new?assignees=&labels=feature&projects=&template=features.yml), or by joining us in our [Slack community](https://konstruct.io/slack), and start a thread in the #contributors channel.
+For more substantial changes, it is highly suggested that you discuss your idea with us first. You can do that by either creating an [issue](https://github.com/konstructio/kubefirst-docs/issues/new?assignees=&labels=&projects=&template=docs.yml), or by joining us in our [Slack community](https://konstruct.io/slack), and start a thread in the #contributors channel.
 
-If you don't want to make the changes yourself, no worries, we got your back: just report the problem by creating an [issue](https://github.com/konstructio/kubefirst/issues/new?assignees=&labels=bug&projects=&template=bugs.yml) or letting us know on our [Slack Community](https://konstruct.io/slack).
+If you don't want to make the changes yourself, no worries, we got your back: just report the problem by creating an [issue](https://github.com/konstructio/kubefirst-docs/issues/new?assignees=&labels=&projects=&template=docs.yml) or letting us know on our [Slack Community](https://konstruct.io/slack).
 
 Please check if a problem or a suggestion has already been created as an [issue](https://github.com/konstructio/kubefirst-docs/issues/) before creating a new one.
 
