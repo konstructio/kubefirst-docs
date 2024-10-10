@@ -1,10 +1,10 @@
-# Contributing to the kubefirst documentation
+# Contributing to the Kubefirst documentation
 
-Firstly, we want to thank you for investing your valuable time to contribute to kubefirst!
+Firstly, we want to thank you for investing your valuable time to contribute to Kubefirst!
 
 Note we have a [code of conduct](CODE_OF_CONDUCT.md) which needs to be followed in all your interactions with the project to keep our community healthy.
 
-_For contribution to the kubefirst CLI, please refer yourself to the [CONTRIBUTING.md](https://github.com/kubefirst/kubefirst/blob/main/CONTRIBUTING.md) from the [kubefirst repository](https://github.com/kubefirst/kubefirst)._
+_For contribution to the Kubefirst CLI, please refer yourself to the [CONTRIBUTING.md](https://github.com/konstructio/kubefirst/blob/main/CONTRIBUTING.md) from the [kubefirst repository](https://github.com/konstructio/kubefirst)._
 
 - [Ways to Contribute](#ways-to-contribute)
 - [Getting Started](#getting-started)
@@ -19,15 +19,15 @@ _For contribution to the kubefirst CLI, please refer yourself to the [CONTRIBUTI
 
 ## Ways to Contribute
 
-At kubefirst, we believe that every contribution is valuable, not just the code one.
+At Konstruct, we believe that every contribution is valuable, not just the code one.
 
 Whether you want to add more details to a specific section or a page, or that you want to fix a typo in the text or in a code example, you are more than welcome to can create a pull request.
 
-For more substantial changes, it is highly suggested that you discuss your idea with us first. You can do that by either creating an [issue](https://github.com/kubefirst/kubefirst/issues/new?assignees=&labels=feature-request&template=feature_request.md&title=), or by joining us in our [Slack community](https://kubefirst.io/slack), and start a thread in the #contributors channel.
+For more substantial changes, it is highly suggested that you discuss your idea with us first. You can do that by either creating an [issue](https://github.com/konstructio/kubefirst/issues/new?assignees=&labels=feature&projects=&template=features.yml), or by joining us in our [Slack community](https://konstruct.io/slack), and start a thread in the #contributors channel.
 
-If you don't want to make the changes yourself, no worries, we got your back: just report the problem by creating an [issue](https://github.com/kubefirst/kubefirst/issues/new?assignees=&labels=feature-request&template=feature_request.md&title=) or letting us know on our [Slack Community](https://kubefirst.io/slack).
+If you don't want to make the changes yourself, no worries, we got your back: just report the problem by creating an [issue](https://github.com/konstructio/kubefirst/issues/new?assignees=&labels=bug&projects=&template=bugs.yml) or letting us know on our [Slack Community](https://konstruct.io/slack).
 
-Please check if a problem or a suggestion has already been created as an [issue](https://github.com/kubefirst/docs/issues/) before creating a new one.
+Please check if a problem or a suggestion has already been created as an [issue](https://github.com/konstructio/kubefirst-docs/issues/) before creating a new one.
 
 ## Getting Started
 
@@ -50,7 +50,7 @@ Here's the non content related ones:
 
 As of now, we don't see usage for the `perf` & `test` prefixes.
 
-We suggest that you create a branch within your fork to add your changes, before creating a pull request, instead of committing them directly to your `main` branch. It will prevent misunderstanding in the GitHub UI for status like `Merge branch 'main' into main` which in that case we updated your pull request code with the latest from the kubefirst repository `main` branch. It could be interpreted as we already merged your changes to the kubefirst `main` branch while it's not the case. A best practice and simple step that can improve communication.
+We suggest that you create a branch within your fork to add your changes, before creating a pull request, instead of committing them directly to your `main` branch. It will prevent misunderstanding in the GitHub UI for status like `Merge branch 'main' into main` which in that case we updated your pull request code with the latest from the `kubefirst` repository `main` branch. It could be interpreted as we already merged your changes to the `kubefirst` repository `main` branch while it's not the case. A best practice and simple step that can improve communication.
 
 Lastly, your commits need to be signed so they can be verified. GitHub has [great documentation on how to do that](https://docs.github.com/en/authentication/managing-commit-signature-verification). If you do not sign your commit, you'll get additional information by the GitHub Action in your pull request.
 
@@ -58,11 +58,11 @@ Lastly, your commits need to be signed so they can be verified. GitHub has [grea
 
 All images will be automatically optimized with a lossless compression level to ensure the best possible experience, while minimizing the image size for slower or expensive internet connection.
 
-All images should be added in the `img` folder under each documentation versions. No specific documentation images should be added in the `static/img` folder: this gives us the opportunity to have different versions for different kubefirst version when needed.
+All images should be added in the `img` folder under each documentation versions. No specific documentation images should be added in the `static/img` folder: this gives us the opportunity to have different versions for different Kubefirst version when needed.
 
 #### Alt Text
 
-All images must have alternative text (alt text) that are representative, and descriptive of the image. It is important as we want our documentation to be accessible to everyone. Images with complex or with a lot of information, such as diagrams, should have a short description in the alt text, and have a full-fledge text explaining every part either within the documentation or as an additional page. As for "utility images", the alt text should be a description of the information or action intended by the image, and not the image or icon itself (ex.: a Twitter logo icon that links to our Twitter page should have "kubefirst Twitter account" instead of "Twitter logo" alt text).
+All images must have alternative text (alt text) that are representative, and descriptive of the image. It is important as we want our documentation to be accessible to everyone. Images with complex or with a lot of information, such as diagrams, should have a short description in the alt text, and have a full-fledge text explaining every part either within the documentation or as an additional page. As for "utility images", the alt text should be a description of the information or action intended by the image, and not the image or icon itself (ex.: a Twitter logo icon that links to our Twitter page should have "Kubefirst Twitter account" instead of "Twitter logo" alt text).
 
 #### Themed images
 
@@ -76,7 +76,7 @@ The magic happens with the CSS looking for path fragments, in our case, a URL wi
 
 ### Markdown
 
-Before being able to merge your PR, the [GitHub Action responsible for checking the Markdown validity](https://github.com/kubefirst/docs/blob/main/.github/workflows/check-markdown.yml) needs to pass. If you want to test your changes locally before sending a PR, you can do it by using [act](https://github.com/nektos/act), and run `act -j markdown-check`. We follow the [rules](https://github.com/DavidAnson/markdownlint#rules--aliases) from the [markdownlint application](https://github.com/DavidAnson/markdownlint) with the exceptions of:
+Before being able to merge your PR, the [GitHub Action responsible for checking the Markdown validity](https://github.com/konstructio/docs/blob/main/.github/workflows/check-markdown.yml) needs to pass. If you want to test your changes locally before sending a PR, you can do it by using [act](https://github.com/nektos/act), and run `act -j markdown-check`. We follow the [rules](https://github.com/DavidAnson/markdownlint#rules--aliases) from the [markdownlint application](https://github.com/DavidAnson/markdownlint) with the exceptions of:
 
 - [MD013](https://github.com/DavidAnson/markdownlint/blob/main/doc/md013.md): limiting the line length to 80 as it's easier to manage without line breaks within the text for documentation content.
 - [MD024](https://github.com/DavidAnson/markdownlint/blob/main/doc/md024.md): preventing same text headers as it's needed for our project documentation.
@@ -131,7 +131,7 @@ which generate
 
 ##### Tabs
 
-If you want to create tabs, it is possible with MDX syntax. To see an example of code, check the [common UI page code](https://github.com/kubefirst/docs/blob/main/versioned_docs/version-2.3/common/ui.mdx) from v2.3 docs. You can see the end result on the [live version of the docs page](https://docs.kubefirst.io/civo/quick-start/install/ui#step-1-install-kubefirst-console).
+If you want to create tabs, it is possible with MDX syntax. To see an example of code, check the [common UI page code](https://github.com/konstructio/docs/blob/main/versioned_docs/version-2.3/common/ui.mdx) from v2.3 docs. You can see the end result on the [live version of the docs page](https://kubefirst.konstruct.io/docs/civo/quick-start/install/ui#step-1-install-kubefirst-console).
 
 It will generate the following:
 
@@ -165,8 +165,8 @@ You'll be presented with a menu giving you the opportunity to select the files y
 
 ### Versioning
 
-Docusaurus manages [documentation versions](https://docusaurus.io/docs/versioning), which we started to use since the v2.0.0 release. It means that every time we release a new version (minor or major only) of kubefirst, we need to freeze the `next` documentation, meaning the documentation updated in the `docs` directory, into a versioned one inside the `versioned_docs\version-X.X` folder. To generate a new version, run the [Create a new docs version](https://github.com/kubefirst/docs/actions/workflows/release.yml) GitHub Actions workflow, and enter the desired version number. It will create a pull request with the new version for you.
+Docusaurus manages [documentation versions](https://docusaurus.io/docs/versioning), which we started to use since the v2.0.0 release. It means that every time we release a new version (minor or major only) of Kubefirst, we need to freeze the `next` documentation, meaning the documentation updated in the `docs` directory, into a versioned one inside the `versioned_docs\version-X.X` folder. To generate a new version, run the [Create a new docs version](https://github.com/konstructio/docs/actions/workflows/release.yml) GitHub Actions workflow, and enter the desired version number. It will create a pull request with the new version for you.
 
 ## Help
 
-If you need help in your kubefirst journey as a contributor, please join our [Slack Community](https://kubefirst.io/slack). We have the `#contributors` channel where you can ask any questions or get help with anything contribution-related. For support as a user, please ask in the `#helping-hands` channel, or directly to @fharper (Fred in Slack), our Developer Advocate.
+If you need help in your Kubefirst journey as a contributor, please join our [Slack Community](https://konstruct.io/slack). We have the `#contributors` channel where you can ask any questions or get help with anything contribution-related. For support as a user, please ask in the `#helping-hands` channel, or directly to @fharper (Fred in Slack), our Developer Advocate.
