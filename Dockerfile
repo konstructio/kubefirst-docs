@@ -10,7 +10,7 @@ COPY . .
 
 RUN npm run build
 
-FROM ghcr.io/patrickdappollonio/docker-http-server:v2.4.0
+FROM ghcr.io/patrickdappollonio/docker-http-server:v2.5.0
 
 WORKDIR /html
 
