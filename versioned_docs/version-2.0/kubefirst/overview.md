@@ -7,7 +7,7 @@ title: Overview
 If you are on macOS, and have [Homebrew](https://brew.sh) installed, you can run:
 
 ```shell
-brew install kubefirst/tools/kubefirst
+brew install konstructio/taps/kubefirst
 ```
 
 To upgrade an existing kubefirst CLI to the latest version run:
