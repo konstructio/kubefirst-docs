@@ -10,13 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout this repository
-        uses: actions/checkout@v3.5.3
+        uses: actions/checkout@v4.2.1
 
       - name: Run the crawler
         uses: celsiusnarhwal/typesense-scraper@v2.0.1
         with:
           api-key: ${{ secrets.TYPESENSE_ADMIN_KEY }}
-          host: typesense.mgmt-20.kubefirst.com
+          host: typesense.konstruct.io
           port: 443
           protocol: https
           config: typesense.docsearch.config.json
