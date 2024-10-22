@@ -1,6 +1,7 @@
+---
 files:
-  - *.md
-  - *.mdx
+  - "*.md"
+  - "*.mdx"
 
 ignorePatterns:
   - pattern: "^https://www.linkedin.com.*"
