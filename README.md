@@ -8,7 +8,7 @@
 
 # kubefirst Docs
 
-Welcome to the open source repository that powers [the Kubefirst documentation](https://kubefirst.konstruct.io/docs).
+Welcome to the open source repository that powers [the Kubefirst documentation](https://kubefirst.konstruect.io/docs).
 
 ## Contributing
 
