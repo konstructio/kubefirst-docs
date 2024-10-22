@@ -3,7 +3,7 @@ name: Dockerfile Validation
 on: [push, workflow_dispatch]
 
 jobs:
-  docker-check:
+  check-docker:
     runs-on: ubuntu-latest
     steps:
 

@@ -10,7 +10,7 @@ on:
         required: true
 
 jobs:
-  release-docs:
+  create-docs-version:
 
     runs-on: ubuntu-latest
     steps:

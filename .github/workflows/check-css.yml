@@ -3,7 +3,7 @@ name: Validate CSS files
 on: [push, workflow_dispatch]
 
 jobs:
-  csslint:
+  check-css:
     runs-on: ubuntu-latest
     steps:
 
