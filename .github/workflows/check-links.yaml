@@ -4,7 +4,7 @@ name: Markdown Links Validation
 on: [push, workflow_dispatch]
 
 jobs:
-  check-link-inspector:
+  check-links:
     runs-on: ubuntu-22.04
     steps:
 
