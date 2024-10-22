@@ -97,6 +97,13 @@ const config = {
           content: 'kubernetes, gitops, ci, cd, argocd, aws, civo, k3d, vultr'
         },
       ],
+      announcementBar: {
+        id: 'announcement',
+        content: '<img src="img/megaphone.svg">Please change your Homebrew tap by running <code>brew uninstall kubefirst; brew install konstructio/taps/kubefirst</code>',
+        backgroundColor: '#FA9247',
+        textColor: '#3B4954',
+        isCloseable: true,
+      },
       navbar: {
         title: 'Kubefirst',
         logo: {

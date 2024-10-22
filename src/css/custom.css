@@ -164,3 +164,30 @@
   display: flex;
   justify-content: flex-end;
 }
+
+/* Announcement banner */
+
+:root {
+  --docusaurus-announcement-bar-height: auto !important;
+}
+
+div[class*="announcementBar"] {
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 0.25em;
+
+  img {
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  code {
+    padding: 5px;
+    font-weight: normal;
+  }
+
+}
+
+button[class*="announcementBar"] svg g {
+      stroke: black;
+}
