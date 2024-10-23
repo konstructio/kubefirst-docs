@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,700&display=swap");
 
+/* Docusaurus CSS minification process don't support nested CSS https://github.com/facebook/docusaurus/issues/10334 */
+
 .clean-btn {
   color: rgb(148 163 184) !important;
 }
 
 :root {
+  --docusaurus-announcement-bar-height: auto !important;
   --ifm-color-primary: #8851c8;
   --ifm-color-primary-dark: #6f37ae;
   --ifm-color-primary-darker: #277148;
@@ -163,4 +166,26 @@
 .cloud_logo {
   display: flex;
   justify-content: flex-end;
+}
+
+/* Announcement banner */
+
+div[class*="announcementBar"] {
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 0.25em;
+}
+
+div[class*="announcementBar"] img {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+div[class*="announcementBar"] code {
+  padding: 5px;
+  font-weight: normal;
+}
+
+button[class*="announcementBar"] svg g {
+      stroke: black;
 }
