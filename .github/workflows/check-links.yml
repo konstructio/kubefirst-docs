@@ -4,7 +4,7 @@ name: Markdown Links Validation
 on: [push, workflow_dispatch]
 
 jobs:
-  markdown-link-check:
+  check-links:
     strategy:
       matrix:
         file-extension: [.mdx, .md]

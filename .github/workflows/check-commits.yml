@@ -3,7 +3,7 @@ name: Check Commit Messages
 on: push
 
 jobs:
-  commitlint:
+  check-commit:
     runs-on: ubuntu-latest
 
     steps:

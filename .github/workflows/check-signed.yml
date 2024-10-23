@@ -3,7 +3,7 @@ name: Validate if commits are signed
 on: [pull_request, pull_request_target]
 
 jobs:
-  signed-commits-check:
+  check-signed-commits:
     runs-on: ubuntu-latest
     steps:
 

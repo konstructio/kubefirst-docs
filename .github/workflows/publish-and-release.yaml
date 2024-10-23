@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  publish_and_release:
+  publish-and-release:
     runs-on: self-hosted
     steps:
       - name: checkout repository

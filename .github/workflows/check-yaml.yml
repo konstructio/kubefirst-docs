@@ -3,7 +3,7 @@ name: YAML Validation
 on: [push, workflow_dispatch]
 
 jobs:
-  yaml-check:
+  check-yaml:
     runs-on: ubuntu-latest
     steps:
 
