@@ -73,6 +73,9 @@ const sidebars = {
     'aws/faq',
     'aws/credits',
   ],
+  azure: [
+    'azure/overview',
+  ],
   do: [
     'do/overview',
     {

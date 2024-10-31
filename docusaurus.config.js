@@ -94,7 +94,7 @@ const config = {
       metadata: [
         {
           name: 'keywords',
-          content: 'kubernetes, gitops, ci, cd, argocd, aws, civo, k3d, vultr'
+          content: 'kubernetes, gitops, ci, cd, argocd, aws, azure, civo, k3d, vultr'
         },
       ],
       announcementBar: {
@@ -129,6 +129,12 @@ const config = {
             position: 'left',
             sidebarId: 'aws',
             label: 'AWS',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'azure',
+            label: 'Azure',
           },
           {
             type: 'docSidebar',
