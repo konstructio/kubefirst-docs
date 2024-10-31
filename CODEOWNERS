@@ -1,7 +1,3 @@
-# Defining who is responsible for the code in this repository
-#
-# Mostly using it to auto-assign PR to @fharper
-#
+# Code owners for the docs repository
 
-* @fharper
-
+@konstructcarrie
