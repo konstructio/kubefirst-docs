@@ -12,6 +12,7 @@ _For contribution to the Kubefirst CLI, please refer yourself to the [CONTRIBUTI
   - [Images](#images)
   - [Markdown](#markdown)
   - [Search Index](#search-index)
+  - [Syntax Validation](#syntax-validation)
   - [Testing](#testing)
   - [Update docs across versions](#update-docs-across-versions)
   - [Versioning](#versioning)
@@ -144,6 +145,18 @@ Docusaurus is using Prism for code block syntax highlighting. Here's a list of [
 ### Search Index
 
 We use [Typesense](https://github.com/typesense/typesense) as the search engine for our documentation. The index should be updated automatically when we deploy a new version, but it's implemented right now. To update it, run the [update-search.yml](.github/workflows/update-search.yml) GitHub Action.
+
+### Syntax Validation
+
+<!-- vale off -->
+We have a [GitHub Workflow that validates the syntax](https://github.com/konstructio/kubefirst-docs/blob/main/.github/workflows/check-syntax.yml) for typographical errors, and to enforce some ways to write specific words (ex.: GitHub instead of Github or github). It uses [Vale](https://github.com/errata-ai/vale), and all settings are in the [.vale](https://github.com/konstructio/kubefirst-docs/tree/main/.vale) folder.
+
+There are two ways implemented right now to modify its behavior: what it accepts, and what suggestions it can give you (ex.: Consider using 'Kubernetes' instead of 'kubernetes'). To add words that are valid, but rejected by Vale (ex.: Crossplane wasn't a known project name by Vale), add them in the [accept.txt](https://github.com/konstructio/kubefirst-docs/blob/main/.vale/config/vocabularies/base/accept.txt) file. If you want to ensure some words are writing specifically (ex.: Argo CD instead of ArgoCD or argocd), you have two steps to do. If it was reported as an unknown word, let Vale ignore it at first by adding it to [ignore.txt](https://github.com/konstructio/kubefirst-docs/blob/main/.vale/Custom/ignore.txt) file. Secondly, add the incorrect spelling or letter case (ex.: mongo should always be MongoDB) and what Vale should suggest to the person submitting a pull request in the [substitutions.yml](https://github.com/konstructio/kubefirst-docs/blob/main/.vale/Custom/substitutions.yml) file. You can even [use regular expressions](https://vale.sh/docs/topics/styles/#substitution).
+
+By default Vale will not check the syntax inside code block, inline code, or HTML/JSX in MDX files. If for whatever reasons you need to deactivate it for a small section of the documentation (as we've done for this section that has intentional mistakes), use the `<!-- vale off -->` JavaScript comment. To reactivate it for the rest of the document, use the `<!-- vale on -->`. We suggest mostly never using this!
+
+There are a lot more we can do with Vale to ensure we follow some syntax guides, prevent mistakes and enforce branding, but this is what is implemented so far.
+<!-- vale on -->
 
 ### Testing
 
