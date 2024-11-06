@@ -76,6 +76,7 @@ const sidebars = {
   azure: [
     'azure/overview',
     'azure/gitops-catalog',
+    'azure/deprovision',
     'azure/faq',
     'azure/credits',
   ],
