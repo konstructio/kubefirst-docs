@@ -75,6 +75,7 @@ const sidebars = {
   ],
   azure: [
     'azure/overview',
+    'azure/faq',
     'azure/credits',
   ],
   do: [
