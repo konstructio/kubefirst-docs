@@ -1,0 +1,60 @@
+---
+sidebar_label: Overview
+sidebar_position: 1
+description: an overview of kubefirst on a K3s kubernetes cluster
+image: "https://kubefirst.konstruct.io/docs/img/kubefirst.svg"
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import styles from "../stylesheets/tabs.module.css";
+import ReactDom from 'react-dom';
+import GitHubOverview from '../k3s/partials/github/_overview.mdx';
+import GitLabOverview from '../k3s/partials/gitlab/_overview.mdx';
+import CloudBanner from '@site/src/components/CloudBanner/CloudBanner.jsx';
+import CommonProvisionProcess from "../common/partials/common/_provision-process.mdx";
+import KnownLimitations from "../common/known-limitations.mdx";
+import K3sLogo from '../img/k3s/logo.svg';
+import GitHubLogo from '../common/components/GitHubLogo.jsx'
+import GitLabLogo from '../common/components/GitLabLogo.jsx'
+
+<div class="cloud_logo">
+  <K3sLogo width="200px" alt="K3s Logo" />
+</div>
+
+# Overview
+
+:::caution
+
+K3s is in beta. Use at your own risks.
+
+:::
+
+The K3s provisioning process will:
+<CommonProvisionProcess firstitem="Create a Kubernetes management cluster with K3s."/>
+
+<Tabs groupId="git_provider" defaultValue="github" queryString>
+  <TabItem value="github" attributes={{ className: styles.github }} label={ <GitHubLogo /> }>
+
+    ![Installation Diagram](../img/k3s/github/installation-diagram-light.svg#light-mode)![Installation Diagram](../img/k3s/github/installation-diagram-dark.svg#dark-mode)
+
+    ## Applications
+    <GitHubOverview />
+  </TabItem>
+  <TabItem value="gitlab" attributes={{ className: styles.gitlab }} label={ <GitLabLogo /> }>
+
+    ![Installation Diagram](../img/k3s/gitlab/installation-diagram-light.svg#light-mode)![Installation Diagram](../img/k3s/gitlab/installation-diagram-dark.svg#dark-mode)
+
+    ## Applications
+    <GitLabOverview />
+  </TabItem>
+</Tabs>
+
+## Known Limitations
+
+<KnownLimitations />
+
+### K3s Specific
+
+- Cloudflare is the only DNS provider implemented so far.
+- K3s [cannot be installed using the UI console](https://github.com/kubefirst/kubefirst/issues/2147): you can only use the CLI for now.

@@ -1,0 +1,42 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Homebrew from '../common/_prerequisites-homebrew.mdx';
+import Linux from '../common/_prerequisites-linux.mdx';
+import Windows from '../common/_prerequisites-windows.mdx';
+
+## Prerequisites
+
+### kubefirst
+
+<Tabs>
+    <TabItem value="homebrew" label="macOS & Linux (Homebrew)">
+      <Homebrew />
+    </TabItem>
+    <TabItem value="linux" label="Linux (manually)">
+      <Linux />
+    </TabItem>
+    <TabItem value="windows" label="Windows">
+      <Windows />
+    </TabItem>
+</Tabs>
+
+### Docker Desktop
+
+[Install](https://docs.docker.com/get-docker/) Docker Desktop.
+
+:::info
+
+If you are a Windows user, you need to be sure to enable Docker support in WSL2 distributions. More information in the [Docker documentation](https://docs.docker.com/desktop/wsl/#enabling-docker-support-in-wsl-2-distros).
+
+:::
+
+#### Docker Resources Allocation
+
+The more resources you give Docker, the faster your cluster creation will go, but here are the minimum requirements:
+
+- CPU: 5 Cores
+- Memory (RAM): 5 GB
+- Swap: 1 GB
+- Virtual Disk limit (for Docker images & containers): 10 GB
+
+If you pull multiple images from Docker Hub, you may reach the [rate limit](https://docs.docker.com/docker-hub/download-rate-limit/#whats-the-download-rate-limit-on-docker-hub): to help this issue not happening, we suggest you log in to your account (you can [create a free one](https://hub.docker.com/signup)) in Docker Desktop. At the time of writing this docs, the limit is doubled when signed in.

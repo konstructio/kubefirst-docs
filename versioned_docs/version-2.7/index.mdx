@@ -1,0 +1,167 @@
+---
+slug: /
+---
+
+import AkamaiHeader from './img/akamai/header.svg';
+import AWSHeader from './img/aws/header.svg';
+import CivoHeader from './img/civo/header.svg';
+import DOHeader from './img/do/header.svg';
+import GCPHeader from './img/gcp/header.svg';
+import K3dHeader from './img/k3d/header.svg';
+import K3sHeader from './img/k3s/header.svg';
+import VultrHeader from './img/vultr/header.svg';
+
+# Kubefirst Platforms
+
+## What is Kubefirst?
+
+kubefirst is a free, fully automated, and instantly operational open source platform that includes some of the most popular open source tools available in the Kubernetes space, all working together in a click.
+
+By running our installer in your cloud, you'll get a GitOps cloud management and application delivery ecosystem complete with automated Terraform workflows, Vault secrets management, GitLab or GitHub integrations with Argo, and a demo application that demonstrates how it all pieces together.
+
+![kubefirst Architecture](img/common/kubefirst/architecture-light.svg#light-mode)![kubefirst Architecture](img/common/kubefirst/architecture-dark.svg#dark-mode)
+
+---
+
+## Choose your environment
+
+<div className="row">
+    <div className="col col--4 margin-bottom--lg">
+        <div className="card">
+            <div className="card__image">
+                <K3dHeader />
+            </div>
+            <div className="card__body">
+            <h3>Kubefirst k3d (local)</h3>
+            <p>
+               The <strong>fastest</strong> way to explore the Kubefirst platform!
+            </p>
+            <p>
+               With Kubefirst k3d, you can explore some of the best parts of the Kubefirst platform running for <strong>free</strong> on a local k3d cluster in 5 minutes - without any cloud costs or domain prerequisites.
+            </p>
+            </div>
+            <div className="card__footer">
+                <form>
+                    <button className="button button--secondary button--block" formAction="k3d/overview/">View install instructions</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+        <div className="card">
+            <div className="card__image">
+                <AkamaiHeader />
+            </div>
+            <div className="card__body">
+            <h3>Akamai</h3>
+            <p>Scale with confidence on Akamai Connected Cloud. With more distribution, reliability, and visibility, Akamai Connected Cloud puts applications closer to your users — and keeps threats farther away.</p>
+            </div>
+            <div className="card__footer">
+                <form>
+                    <button className="button button--secondary button--block" formAction="akamai/overview/">View install instructions</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+        <div className="card">
+            <div className="card__image">
+                <AWSHeader />
+            </div>
+            <div className="card__body">
+            <h3>AWS</h3>
+            <p>
+               Our AWS cloud platform can accommodate all the <strong>needs of your enterprise</strong>. All you need is a domain in addition to a hosted zone, and within 35 minutes of running a single command, you'll have a secure EKS infrastructure management and application delivery platform.
+            </p>
+            </div>
+            <div className="card__footer">
+                <form>
+                    <button className="button button--secondary button--block" formAction="aws/overview/">View install instructions</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+        <div className="card">
+            <div className="card__image">
+                <CivoHeader />
+            </div>
+            <div className="card__body">
+            <h3>Civo</h3>
+            <p>
+               The perfect cloud environment when Kubernetes will be the center of attention.
+            </p>
+            <p>A <strong>simple cloud footprint</strong> with a powerful open source cloud native tool set for identity and infrastructure management, application delivery, and secrets management. Cloud native infrastructure with incredibly fast provisioning times.</p>
+            </div>
+            <div className="card__footer">
+                <form>
+                    <button className="button button--secondary button--block" formAction="civo/overview/">View install instructions</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+        <div className="card">
+            <div className="card__image">
+                <DOHeader />
+            </div>
+            <div className="card__body">
+            <h3>DigitalOcean</h3>
+            <p>Whatever your vision—a SaaS app, a website, an eCommerce store—build it here using DigitalOcean's simple, cost-effective cloud hosting services.</p>
+            </div>
+            <div className="card__footer">
+                <form>
+                    <button className="button button--secondary button--block" formAction="do/overview/">View install instructions</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+        <div className="card">
+            <div className="card__image">
+                <GCPHeader />
+            </div>
+            <div className="card__body">
+            <h3>Google Cloud (beta)</h3>
+            <p>Google Cloud Platform, offered by Google, is a suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products, such as Google Search, Gmail, Google Drive, and YouTube.</p>
+            </div>
+            <div className="card__footer">
+                <form>
+                    <button className="button button--secondary button--block" formAction="gcp/overview/">View install instructions</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+        <div className="card">
+            <div className="card__image">
+                <K3sHeader />
+            </div>
+            <div className="card__body">
+            <h3>K3s</h3>
+            <p>The certified Kubernetes distribution built for IoT & Edge computing</p>
+            </div>
+            <div className="card__footer">
+                <form>
+                    <button className="button button--secondary button--block" formAction="k3s/overview/">View install instructions</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+        <div className="card">
+            <div className="card__image">
+                <VultrHeader />
+            </div>
+            <div className="card__body">
+            <h3>Vultr (beta)</h3>
+            <p>A cloud hosting provider that offers high-performance SSD-based cloud servers, block storage, object storage, and dedicated servers in multiple locations worldwide.</p>
+            </div>
+            <div className="card__footer">
+                <form>
+                    <button className="button button--secondary button--block" formAction="vultr/overview/">View install instructions</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
