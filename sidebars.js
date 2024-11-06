@@ -85,6 +85,8 @@ const sidebars = {
             },
           ],
         },
+        'azure/quick-start/repositories',
+        'civo/quick-start/cluster-management',
       ]
     },
     'azure/gitops-catalog',
