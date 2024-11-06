@@ -26,11 +26,12 @@ If the apply is successful, your code will automatically be merged with main, yo
 
 The following table shows how state is stored based on your installation selection:
 
-| State Backed      | AWS | Local | Civo |
-|-------------------|-----|-------|------|
-| AWS S3 Bucket     | X   |       |      |
-| Civo object store |     |       | X    |
-| MinIO (locally)   |     | X     |      |
+| State Backed               | AWS | Local | Civo | Azure |
+|----------------------------|:---:|:-----:|:----:|:-----:|
+| AWS S3 Bucket              | X   |       |      |       |
+| Civo object store          |     |       | X    |       |
+| Azure container storage    |     |       |      | X     |
+| MinIO (locally)            |     | X     |      |       |
 
 ## Tips
 
