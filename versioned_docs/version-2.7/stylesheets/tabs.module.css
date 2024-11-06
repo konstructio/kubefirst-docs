@@ -1,0 +1,15 @@
+.gitlab {
+  color: #fc6d26;
+}
+
+.gitlab[aria-selected="true"] {
+  border-bottom-color: #fc6d26;
+}
+
+.github {
+  color: black;
+}
+
+.github[aria-selected="true"] {
+  border-bottom-color: black;
+}

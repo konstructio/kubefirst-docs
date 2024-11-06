@@ -1,0 +1,29 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Homebrew from '../common/partials/common/_ui-homebrew.mdx';
+import Helm from '../common/partials/common/_ui-helm.mdx';
+
+# Install kubefirst using the UI
+
+There are a few ways to install kubefirst, whether you have a cluster already or don't.
+
+## Step 1: Install kubefirst console
+
+<Tabs>
+    <TabItem value="homebrew" label="New cluster">
+      <Homebrew />
+    </TabItem>
+    <TabItem value="helm" label="Helm">
+      <Helm />
+    </TabItem>
+</Tabs>
+
+## Step 2: Install your kubefirst management cluster
+
+Provide details about your preferred git provider, cloud provider, access, and cluster details and let kubefirst do the rest.
+
+![kubefirst user interface showing cloud and git options](../img/console/installer.png)
+
+At the end of the process, you will be shown the password of your new administrator account named `kbot`. You need to use it to connect to the management console. If you forget to copy the password on the last screen, or lost it, you can always retrieve it from Vault. If you want to change the password for something else, please follow [this tip from the Vault documentation page](./vault.mdx#how-can-i-change-my-users-password).
+
+Once your management cluster is installed, you can safely destroy the Console UI by running `kubefirst launch down`.
