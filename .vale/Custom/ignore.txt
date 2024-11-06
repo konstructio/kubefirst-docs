@@ -18,6 +18,7 @@ cronjob
 # E
 ecr
 eks
+Entra
 
 # F
 
