@@ -1,11 +1,14 @@
 {
     "name": "devcontainer",
     "image": "ghcr.io/kubefirst/devcontainers/full",
-    "features": {},
+    "features": {
+      "ghcr.io/shinepukur/devcontainer-features/vale:1": {}
+    },
     "customizations": {
       "vscode": {
         "extensions": [
-          "unifiedjs.vscode-mdx"
+          "unifiedjs.vscode-mdx",
+          "ChrisChinchilla.vale-vscode"
         ],
         "settings": {}
       }
