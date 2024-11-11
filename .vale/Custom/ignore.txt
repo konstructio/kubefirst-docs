@@ -37,7 +37,7 @@ iam
 
 # K
 kubeconfig
-kubefirst
+Kubefirst
 kubernetes
 
 # L

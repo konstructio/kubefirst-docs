@@ -4,7 +4,7 @@ Firstly, we want to thank you for investing your valuable time to contribute to 
 
 Note we have a [code of conduct](CODE_OF_CONDUCT.md) which needs to be followed in all your interactions with the project to keep our community healthy.
 
-_For contribution to the Kubefirst CLI, please refer yourself to the [CONTRIBUTING.md](https://github.com/konstructio/kubefirst/blob/main/CONTRIBUTING.md) from the [kubefirst repository](https://github.com/konstructio/kubefirst)._
+_For contribution to the Kubefirst CLI, please refer yourself to the [CONTRIBUTING.md](https://github.com/konstructio/kubefirst/blob/main/CONTRIBUTING.md) from the [Kubefirst repository](https://github.com/konstructio/kubefirst)._
 
 - [Ways to Contribute](#ways-to-contribute)
 - [Getting Started](#getting-started)
