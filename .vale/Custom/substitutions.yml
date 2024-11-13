@@ -39,7 +39,7 @@ swap:
   https: HTTPS
   iam: IAM
   konstruct: Konstruct
-  # kubefirst: Kubefirst # Need to be activated again once we will fix all the lower cases.
+  # kubefirst: Kubefirst
   kubernetes: Kubernetes
   mongo: MongoDB
   oidc: OIDC
