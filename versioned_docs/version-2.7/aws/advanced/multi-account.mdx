@@ -1,0 +1,77 @@
+---
+title: AWS Multi-Account Support
+description: Install and explore details about using Kubefirst with AWS multi-account
+---
+
+## Summary
+
+Kubefirst supports AWS Multi-account to deploy and manage workload clusters across multiple AWS accounts. Using multi-account you can manage and deploy workloads in multiple AWS accounts without the need to log in and configure each account individually. In addition, take advantage of consolidated billing to improve budgeting and resource allocation for your AWS footprint.
+
+## Prerequisites
+
+This installation assumes you already have Kubefirst installed. In addition, before getting started you will need to have Terraform installed and generate a Role ARN.
+
+You can [run this Terraform script](https://github.com/konstructio/aws-arn/tree/main/examples/kubefirst-pro-role) locally with the following steps.
+
+1. Create a `terraform.tfvars` file with the OIDC endpoint from management cluster and cluster name.
+
+   ```text
+    oidc_endpoint     = "value"
+    mgmt_cluster_name = "value"
+   ```
+
+2. Run `terraform init` to download the AWS provider and configure the local state file.
+
+    ```bash
+    terraform init
+    ```
+
+3. Run `terraform apply` to create an identity provider and role. This allows crossplane and Kubefirst to access the downstream account in `us-east-1`.
+
+    ```bash
+    terraform apply
+    ```
+
+4. To view your new role ARN run the following
+
+    ```bash
+    terraform output
+    ```
+
+## Installing AWS Multi-Account Support
+
+Refer to the following steps to install this feature.
+
+1. Clone the repository.
+
+   ```bash
+   git clone https://github.com/konstructio/aws-arn.git
+   cd aws-arn/examples/kubefirst-pro-role
+   ```
+
+2. Install Terraform with [their instructions here.](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
+
+3. Configure your AWS credentials by setting your environment variables as follows (update the example with your values):
+
+    ```bash
+    export AWS_ACCESS_KEY_ID=<your-access-key-id> 
+    export AWS_SECRET_ACCESS_KEY=<your-secret-access-key>
+    ```
+
+4. Gather the required information for installation, you will need:
+   - **OIDC Endpoint**: The OIDC endpoint for the management cluster. You can find this in the AWS console under the EKS cluster details.
+   - **Management Cluster Name**: The name of your management cluster.
+
+5. Plan the Terraform deployment by running this command and reviewing the changes Terraform will make.
+
+    ```bash
+    terraform plan
+    ```
+
+6. Apply the Terraform configuration by running the following command to apply the configuration and create the IAM role.
+
+    ``` bash
+    terraform apply --auto-approve
+    ```
+
+When you've completed these steps you should have a Role ARN that you can use to provision physical clusters across multiple AWS accounts.
