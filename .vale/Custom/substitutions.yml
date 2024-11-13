@@ -39,7 +39,7 @@ swap:
   https: HTTPS
   iam: IAM
   konstruct: Konstruct
-  kubefirst: Kubefirst
+  #kubefirst: Kubefirst
   kubernetes: Kubernetes
   mongo: MongoDB
   oidc: OIDC
