@@ -209,8 +209,7 @@ rm .env
 
 ### Console UI
 
-
-As part of the provisioning process, a k3d cluster (k3s in Docker) is created in the machine. It contains the API and Console with which the CLI interacts. After the provisioning step is complete, you can safely delete this cluster. 
+As part of the provisioning process, a k3d cluster (k3s in Docker) is created in the machine. It contains the API and Console with which the CLI interacts. After the provisioning step is complete, you can safely delete this cluster.
 
 To do so, run the following command:
 
@@ -218,8 +217,7 @@ To do so, run the following command:
 kubefirst launch down
 ```
 
-This commands removes your `~/.k1/<cluster_name>` directory and the `~/.kubefirst` file. 
-
+This commands removes your `~/.k1/<cluster_name>` directory and the `~/.kubefirst` file.
 
 :::tip
 You don't have to wait till the deprovisioning to run this command: as soon as your cluster on the public cloud of your choice is created, you can get rid of cluster 0.
