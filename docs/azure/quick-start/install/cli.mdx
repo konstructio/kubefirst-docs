@@ -52,7 +52,7 @@ If you are using Firefox, you have one more step: you need to install the [Netwo
 
     <TabItem attributes={{ className: styles.gitlab }} value="gitlab" label={ <GitLabLogo /> }>
         <GitLabPrerequisites />
-        
+
 ### Install the CA (Certificate Authority) of mkcert in your trusted store
 
 We use [mkcert](https://github.com/FiloSottile/mkcert) to generate local certificates and serve `https` with the Traefik Ingress Controller. During the installation, Kubefirst generates these certificates and pushes them to Kubernetes as secrets to attach to Ingress resources.
