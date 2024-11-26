@@ -37,6 +37,7 @@ export const TabLabel = ({ imgSrc, label, alt }) => (
 <Tabs groupId="git_provider" defaultValue="gitlab" queryString>
   <TabItem attributes={{ className: styles.github }} value="github" label={ <GitHubLogo /> }>
     <GitHubPrerequisites />
+
 ### Install the CA (Certificate Authority) of mkcert in your trusted store
 
 We use [mkcert](https://github.com/FiloSottile/mkcert) to generate local certificates and serve `https` with the Traefik Ingress Controller. During the installation, Kubefirst generates these certificates and pushes them to Kubernetes as secrets to attach to Ingress resources.
@@ -52,14 +53,15 @@ This is not an optional step: the cluster creation will fail if you don't instal
 
 If you are using Firefox, you have one more step: you need to install the [Network Security Services](https://firefox-source-docs.mozilla.org/security/nss/index.html) (NSS):
 
-```shell
-brew install nss
-```
+    ```shell
+    brew install nss
+    ```
     <GitHubClusterCreateCmd />
     <CommonTerminalOutput cloud="K3s"  minutes="10" handoffScreen={GitHubHandoffScreen} />
   </TabItem>
   <TabItem attributes={{ className: styles.gitlab }} value="gitlab" label={ <GitLabLogo /> }>
     <GitLabPrerequisites />
+
 ### Install the CA (Certificate Authority) of mkcert in your trusted store
 
 We use [mkcert](https://github.com/FiloSottile/mkcert) to generate local certificates and serve `https` with the Traefik Ingress Controller. During the installation, Kubefirst generates these certificates and pushes them to Kubernetes as secrets to attach to Ingress resources.
@@ -78,6 +80,7 @@ If you are using Firefox, you have one more step: you need to install the [Netwo
 ```shell
 brew install nss
 ```
+
     <GitLabClusterCreateCmd />
     <CommonTerminalOutput cloud="K3s"  minutes="10" handoffScreen={GitLabHandoffScreen} />
   </TabItem>
