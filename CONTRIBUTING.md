@@ -176,6 +176,13 @@ You'll be presented with a menu giving you the opportunity to select the files y
 
 > Note that it is copying the entire file, so it will overwrite the content to the targeted version. We may support updating only changes content in the future.
 
+We also provide a script to delete all the `versioned_docs` for a specific version. This is useful when updating documentation for a patch release.
+
+```shell
+npm run remove_version <version>
+npm run docusaurus docs:version <version>
+```
+
 ### Versioning
 
 Docusaurus manages [documentation versions](https://docusaurus.io/docs/versioning), which we started to use since the v2.0.0 release. It means that every time we release a new version (minor or major only) of Kubefirst, we need to freeze the `next` documentation, meaning the documentation updated in the `docs` directory, into a versioned one inside the `versioned_docs\version-X.X` folder. To generate a new version, run the [Create a new docs version](https://github.com/konstructio/docs/actions/workflows/release.yml) GitHub Actions workflow, and enter the desired version number. It will create a pull request with the new version for you.
