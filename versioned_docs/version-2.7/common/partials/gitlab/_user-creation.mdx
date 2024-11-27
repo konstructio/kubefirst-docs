@@ -50,12 +50,12 @@ NOTE: Atlantis merges your merge request automatically once an apply is successf
 
 Atlantis will always run plans automatically for you when a merge request is opened that changes files mapped in `atlantis.yaml`.
 
-Any new users you have created through this process will have their temporary initial passwords stored in your Vault cluster. You can access Vault using the root login credentials provided to you during your kubefirst installation. Only the root Vault token can access these secrets. You will find your users' initial passwords in the Vault secret store `/secrets/users/<username>`.
+Any new users you have created through this process will have their temporary initial passwords stored in your Vault cluster. You can access Vault using the root login credentials provided to you during your Kubefirst installation. Only the root Vault token can access these secrets. You will find your users' initial passwords in the Vault secret store `/secrets/users/<username>`.
 
 ![Vault token login](../../../img/kubefirst/local/vault-token-login.png)
 
-Once you've provided them their initial password, they can update their own password throughout the platform by updating their user password entity in Vault. Anyone can change their own password, and Admins can reset anyone's password. These rules, just like everything else on kubefirst, can be configured in your new `gitops` repository.
+Once you've provided them their initial password, they can update their own password throughout the platform by updating their user password entity in Vault. Anyone can change their own password, and Admins can reset anyone's password. These rules, just like everything else on Kubefirst, can be configured in your new `gitops` repository.
 
 ![default user creation](../../../img/kubefirst/local/default-user-creation.png)
 
-The admins and developers that you add through IaC will automatically propagate to all tools due to the Vault OIDC provider that's preconfigured throughout the kubefirst platform tools.
+The admins and developers that you add through IaC will automatically propagate to all tools due to the Vault OIDC provider that's preconfigured throughout the Kubefirst platform tools.

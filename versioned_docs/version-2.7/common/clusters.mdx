@@ -1,10 +1,10 @@
-The kubefirst 2.3 release introduces Kubernetes cluster lifecycle management to the platform to provide our users with the ability to create their own opinionated workload clusters in a way that takes advantage of their management cluster. We're introducing both physical clusters, which will be created in your cloud account, as well as virtual clusters, which are also isolated Kubernetes clusters, but which run inside your management cluster.
+The Kubefirst 2.3 release introduces Kubernetes cluster lifecycle management to the platform to provide our users with the ability to create their own opinionated workload clusters in a way that takes advantage of their management cluster. We're introducing both physical clusters, which will be created in your cloud account, as well as virtual clusters, which are also isolated Kubernetes clusters, but which run inside your management cluster.
 
-![cluster creation in kubefirst user interface](../img/kubefirst/getting-started/cluster-creation.gif)
+![cluster creation in Kubefirst user interface](../img/kubefirst/getting-started/cluster-creation.gif)
 
 ## GitOps-Oriented Workload Clusters
 
-By default, a new kubefirst will provide you with 2 template-driven directories that will drive how your workload clusters are created.
+By default, a new Kubefirst will provide you with 2 template-driven directories that will drive how your workload clusters are created.
 
 ![cluster template directories in GitOps repository](../img/kubefirst/getting-started/cluster-template.png)
 
@@ -33,9 +33,9 @@ If you inspect your templates for cluster and vcluster, you'll find them to be v
 - you can customize this template in your `gitops` repository as your needs require
 
 :::tip
-The kubefirst Console "Physical Clusters" feature will be the first feature of our upcoming Pro tier. We'd love for you to try it out and tell us what you think during its free introductory period.
+The Kubefirst Console "Physical Clusters" feature will be the first feature of our upcoming Pro tier. We'd love for you to try it out and tell us what you think during its free introductory period.
 
-We plan to keep the kubefirst Console "Virtual Clusters" feature on the Community tier at no cost.
+We plan to keep the Kubefirst Console "Virtual Clusters" feature on the Community tier at no cost.
 
 You will always be able to create anything you need on your own without our user interface, and we hope you find that starting point immensely valuable. We hope to earn your business with our management interface. Thank you sincerely to all of our customers.
 :::
@@ -48,4 +48,4 @@ Cluster creation takes about 6 minutes to fully sync in Argo CD for virtual clus
 
 Your workload cluster will have a starting point app-of-apps in Argo CD in the `clusters` app and will share your cluster's name.
 
-When you delete a cluster, kubefirst will remove the binding from your management cluster so that it begins deleting in Argo CD, but we must leave the directory there so that the apps can remove gracefully. You're free to remove it once cluster deprovisioning has completed successfully. Deletion takes time to deprovision resources - can be anywhere from 5 to 15 minutes depending on the cloud. Be patient and inspect the deprovision operation in Argo CD.
+When you delete a cluster, Kubefirst will remove the binding from your management cluster so that it begins deleting in Argo CD, but we must leave the directory there so that the apps can remove gracefully. You're free to remove it once cluster deprovisioning has completed successfully. Deletion takes time to deprovision resources - can be anywhere from 5 to 15 minutes depending on the cloud. Be patient and inspect the deprovision operation in Argo CD.

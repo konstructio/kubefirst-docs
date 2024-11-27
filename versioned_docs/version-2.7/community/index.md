@@ -14,4 +14,4 @@ We're happy to engage with you to talk through your use cases and any points of 
 
 ## Email
 
-To request more information or schedule a demo email [info@kubefirst.io](mailto:info@kubefirst.io)
+To request more information or schedule a demo email [us](mailto:info@kubefirst.io)

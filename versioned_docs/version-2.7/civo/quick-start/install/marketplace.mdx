@@ -5,9 +5,9 @@ sidebar_position: 1
 image: "https://kubefirst.konstruct.io/docs/img/kubefirst.svg"
 ---
 
-# Install kubefirst using the Civo Marketplace
+# Install Kubefirst using the Civo Marketplace
 
-You can create a temporary kubefirst installer cluster through the Civo Kubernetes marketplace, and use it to create your kubefirst management cluster.
+You can create a temporary Kubefirst installer cluster through the Civo Kubernetes marketplace, and use it to create your Kubefirst management cluster.
 
 ## Create your installer cluster
 
@@ -20,9 +20,9 @@ Log into your Civo account and navigate to [Kubernetes](https://dashboard.civo.c
 5. In the Marketplace section select `kubefirst`
 6. Click Create Cluster and wait until the cluster is ready
 
-![kubefirst user interface showing cloud and git options](../../../img/civo/marketplace/installer-options.png)
+![Kubefirst user interface showing cloud and git options](../../../img/civo/marketplace/installer-options.png)
 
-## Connect to the install cluster and the kubefirst installer service
+## Connect to the install cluster and the Kubefirst installer service
 
 In your terminal, run the following commands to download and use your new cluster's kubeconfig. This example assumes you named your cluster `installer`.
 
@@ -35,12 +35,12 @@ Then launch the installer in your browser:
 
 [http://localhost:8080/](http://localhost:8080/)
 
-## Create your kubefirst management cluster
+## Create your Kubefirst management cluster
 
-Provide details about your preferred Git provider, access, and cluster details and let kubefirst do the rest.
+Provide details about your preferred Git provider, access, and cluster details and let Kubefirst do the rest.
 
-![kubefirst user interface showing cloud and git options](../../../img/civo/marketplace/create-management.png)
+![Kubefirst user interface showing cloud and git options](../../../img/civo/marketplace/create-management.png)
 
 ## Deleting your installer cluster
 
-Once you've successfully installed your kubefirst `management` cluster, you can delete the `installer` cluster directly in the Civo UI. It is only used to establish the platform.
+Once you've successfully installed your Kubefirst `management` cluster, you can delete the `installer` cluster directly in the Civo UI. It is only used to establish the platform.
