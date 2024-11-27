@@ -131,9 +131,9 @@ const config = {
             label: 'AWS',
           },
           {
-            type: 'docsVersion',
+            type: 'docSidebar',
             position: 'left',
-            to: '/next/azure/overview',
+            sidebarId: 'azure',
             label: 'Azure',
           },
           {

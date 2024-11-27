@@ -1,0 +1,18 @@
+### Azure Prerequisites
+
+For kubefirst to be able to provision your Azure cloud resources:
+
+- An [Azure account](https://portal.azure.com) in which you are an account owner.
+- A publicly routable [DNS zone](https://learn.microsoft.com/en-us/azure/dns/dns-zones-records).
+- A [Microsoft Entra app and service principal](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal) with `Owner` permissions on your subscription.
+
+#### Environment variables
+
+Azure authentication requires the following environment variables to be set:
+
+| Variable | Description |
+| --- | --- |
+| `ARM_CLIENT_ID` | The unique ID for your [service principal](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal#sign-in-to-the-application) |
+| `ARM_CLIENT_SECRET` | The secret for your [service principal](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal#option-3-create-a-new-client-secret) |
+| `ARM_SUBSCRIPTION_ID` | The unique ID for your [Azure subscription](https://learn.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id#find-your-azure-subscription) |
+| `ARM_TENANT_ID` | The unique ID for your [Microsoft Entra tenant](https://learn.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id#find-your-microsoft-entra-tenant) |

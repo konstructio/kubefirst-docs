@@ -1,0 +1,17 @@
+---
+title: FAQ
+description: frequently asked quesitons about the kubefirst platform
+image: "https://kubefirst.konstruct.io/docs/img/kubefirst.svg"
+---
+
+import FAQ from "../common/faq.mdx";
+
+<FAQ cloud="Azure" />
+
+## Azure
+
+### What authentication methods do you support?
+
+Currently, the only supported authentication method is a service principal with a client secret. Support for service principals with certificates is likely to be supported in the future. Please see [konstructio/kubefirst#2319](https://github.com/konstructio/kubefirst/issues/2319) for details and up-vote if you depend on this feature to use Kubefirst.
+
+There are no plans to support authentication without a service principal.
