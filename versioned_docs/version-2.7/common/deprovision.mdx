@@ -209,13 +209,15 @@ rm .env
 
 ### Console UI
 
-No matter is you created your new cluster, using the CLI directly (`kubefirst <cloud> create`) or by using the console UI (`kubefirst launch up`), Kubefirst will have created a k3d cluster in Docker. We call it the cluster 0, which is either used to display the Console UI, or to connect to our API and create your new Kubefirst cluster directly from the CLI. Since it's not needed anymore, you need to destroy it by running:
+As part of the provisioning process, a k3d cluster (k3s in Docker) is created in the machine. It contains the API and Console with which the CLI interacts. After the provisioning step is complete, you can safely delete this cluster.
+
+To do so, run the following command:
 
 ```shell
 kubefirst launch down
 ```
 
-This command will also reset any configurations files locally you can create new clusters.
+This command removes your `~/.k1/<cluster_name>` directory and the `~/.kubefirst` file.
 
 :::tip
 You don't have to wait till the deprovisioning to run this command: as soon as your cluster on the public cloud of your choice is created, you can get rid of cluster 0.
