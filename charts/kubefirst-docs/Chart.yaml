@@ -1,6 +1,6 @@
 apiVersion: v2
-appVersion: 6f4d6e2
+appVersion: 0894999
 description: Kubefirst documentation Helm chart
 name: kubefirst-docs
 type: application
-version: 1.194.0
+version: 1.195.0
