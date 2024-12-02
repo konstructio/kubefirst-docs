@@ -190,11 +190,11 @@ const config = {
             items: [
               {
                 label: 'Slack',
-                href: 'https://kubefirst.io/slack',
+                href: 'http://konstruct.io/slack',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/kubefirst',
+                href: 'https://x.com/konstructio',
               },
             ],
           },
@@ -203,7 +203,7 @@ const config = {
             items: [
               {
                 label: 'Blog',
-                to: 'https://kubefirst.io/blog',
+                to: 'https://blog.konstruct.io/',
               },
               {
                 label: 'GitHub',
