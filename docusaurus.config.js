@@ -171,12 +171,12 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://github.com/kubefirst/kubefirst',
+            href: 'https://github.com/konstructio/kubefirst',
             label: 'GitHub',
             position: 'right',
           },
           {
-            href: 'https://kubefirst.io',
+            href: 'https://konstruct.io/',
             label: 'Website',
             position: 'right',
           },
@@ -207,7 +207,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/kubefirst/kubefirst',
+                href: 'https://github.com/konstructio/kubefirst',
               },
             ],
           },
