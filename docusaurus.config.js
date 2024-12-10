@@ -99,7 +99,7 @@ const config = {
       ],
       announcementBar: {
         id: 'announcement',
-        content: '<img src="img/megaphone.svg">Please change your Homebrew tap by running <code>brew uninstall kubefirst; brew install konstructio/taps/kubefirst</code>',
+        content: '<img src="/docs/img/megaphone.svg">Please change your Homebrew tap by running <code>brew uninstall kubefirst; brew install konstructio/taps/kubefirst</code>',
         backgroundColor: '#FA9247',
         textColor: '#3B4954',
         isCloseable: true,
