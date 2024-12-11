@@ -166,7 +166,9 @@ To run our documentation locally, simply run `npm start`.
 
 ### Update docs across versions
 
-Sometimes changes in `v.next` are also valid for previous versions, which is often the case when refactoring a section, or adding missing information to a page. You can either copy the change content manually, or use the ZSH tools we created easily for that. First, you need to stage the file(s) you modified or created. Once it's done, run this command from the documentation folder in your terminal:
+Sometimes changes in `v.next` are also valid for previous versions, which is often the case when refactoring a section, or adding missing information to a page. Usually, we will only update the latest version, even if it means that previous Kubefirst versions docs won't up to date. It was a decision to make maintaining docs easier.
+
+To do so, you can either copy the change content manually (safest but more complicated way of doing it), or use (at your own risk since this script isn't bulletproof) the ZSH tools we created easily for that. First, you need to stage the file(s) you modified or created. Once it's done, run this command from the documentation folder in your terminal:
 
 ```shell
 zsh tools/duplicator.zsh
@@ -176,7 +178,7 @@ You'll be presented with a menu giving you the opportunity to select the files y
 
 > Note that it is copying the entire file, so it will overwrite the content to the targeted version. We may support updating only changes content in the future.
 
-We also provide a script to delete all the `versioned_docs` for a specific version. This is useful when updating documentation for a patch release.
+We also provide a script to delete all the `versioned_docs` for a specific version. This is useful when updating documentation for a patch release when `v.next` had nothing new that should be only for the next minor or major release..
 
 ```shell
 npm run remove_version <version>
