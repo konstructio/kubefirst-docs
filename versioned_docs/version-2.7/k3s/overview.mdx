@@ -31,7 +31,10 @@ K3s is in beta. Use at your own risks.
 :::
 
 The K3s provisioning process will:
-<CommonProvisionProcess firstitem="Create a Kubernetes management cluster with K3s."/>
+<CommonProvisionProcess 
+    firstitem="Create a Kubernetes management cluster with K3s."
+    seconditem="Create three virtual workload clusters for each default environment (development, staging & production)."
+/>
 
 <Tabs groupId="git_provider" defaultValue="github" queryString>
   <TabItem value="github" attributes={{ className: styles.github }} label={ <GitHubLogo /> }>
