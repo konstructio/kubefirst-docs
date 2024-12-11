@@ -1,16 +1,19 @@
 {
-    "name": "devcontainer",
-    "image": "ghcr.io/kubefirst/devcontainers/full",
-    "features": {
-      "ghcr.io/shinepukur/devcontainer-features/vale:1": {}
-    },
-    "customizations": {
-      "vscode": {
-        "extensions": [
-          "unifiedjs.vscode-mdx",
-          "ChrisChinchilla.vale-vscode"
-        ],
-        "settings": {}
-      }
+  "name": "devcontainer",
+  "image": "ghcr.io/kubefirst/devcontainers/full",
+  "forwardPorts": [
+    3000
+  ],
+  "features": {
+    "ghcr.io/shinepukur/devcontainer-features/vale:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "unifiedjs.vscode-mdx",
+        "ChrisChinchilla.vale-vscode"
+      ],
+      "settings": {}
     }
+  }
 }
