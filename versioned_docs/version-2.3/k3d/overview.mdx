@@ -22,7 +22,10 @@ import K3dLogo from '../img/k3d/logo.svg';
 # Overview
 
 The k3d provisioning process will:
-<CommonProvisionProcess firstitem="Create a multinode k3d Kubernetes cluster on your localhost." />
+<CommonProvisionProcess 
+    firstitem="Create a multinode k3d Kubernetes cluster on your localhost." 
+    seconditem="Create three namespaces for each default environment (development, staging & production). Note: This all runs in a single, multi-node cluster unlike other public clouds"
+/>
 
 <Tabs groupId="git_provider" defaultValue="github" queryString>
   <TabItem attributes={{ className: styles.github }} value="github" label={ <div className="git-tab"><img src="https://assets.kubefirst.com/console/github.svg" alt="GitHub logo" /><span>GitHub</span></div> }>
