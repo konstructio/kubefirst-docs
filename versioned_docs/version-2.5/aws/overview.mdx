@@ -25,7 +25,10 @@ import GitLabLogo from '../common/components/GitLabLogo.jsx'
 # Overview
 
 The AWS provisioning process will:
-<CommonProvisionProcess firstitem="Create a Kubernetes management cluster in the AWS cloud."/>
+<CommonProvisionProcess 
+    firstitem="Create a Kubernetes management cluster in the AWS cloud."
+    seconditem="Create three virtual workload clusters for each default environment (development, staging & production)."
+/>
 
 <Tabs groupId="git_provider" defaultValue="github" queryString>
   <TabItem attributes={{ className: styles.github }} value="github" label={ <GitHubLogo /> }>
