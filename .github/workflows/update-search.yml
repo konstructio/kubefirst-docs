@@ -3,6 +3,8 @@ name: Update the docs search index
 
 on:
   workflow_dispatch:
+  schedule:
+  - cron: "0 3 * * *" # Every day at 3AM
 
 jobs:
   update-search-index:
