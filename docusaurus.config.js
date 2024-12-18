@@ -228,7 +228,7 @@ const config = {
               protocol: 'https',
             },
           ],
-          apiKey: 'sqUxmLOtrBSwoSaEpm2LWFuFO9plnOYR',
+          apiKey: 'ZFVxD8g8mVhacZvrGmJf6C2VsOzRbfDq',
         },
         contextualSearch: true,
       },
