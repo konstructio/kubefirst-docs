@@ -4,7 +4,7 @@ on: [push, workflow_dispatch]
 
 jobs:
   check-svg:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
 
       - name: "Validate SVG files"
