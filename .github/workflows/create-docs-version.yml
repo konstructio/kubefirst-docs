@@ -12,7 +12,7 @@ on:
 jobs:
   create-docs-version:
 
-    runs-on: ubuntu-latest
+    runs-on: selfhosted
     steps:
       - name: Validate the version number
         run: |
