@@ -4,7 +4,7 @@ on: [push, workflow_dispatch]
 
 jobs:
   check-svg:
-    runs-on: selfhosted
+    runs-on: self-hosted
     steps:
 
       - name: "Validate SVG files"

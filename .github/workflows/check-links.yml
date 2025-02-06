@@ -9,7 +9,7 @@ jobs:
       matrix:
         file-extension: [.mdx, .md]
 
-    runs-on: selfhosted
+    runs-on: self-hosted
     steps:
 
       - name: Checkout this repository
