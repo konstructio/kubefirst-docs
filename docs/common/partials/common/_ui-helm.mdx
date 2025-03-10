@@ -1,10 +1,10 @@
 This will install our platform installer tools to your existing cluster so you can create your new management cluster in your favorite cloud provider using your favorite git provider.
 
 ```shell
-helm repo add kubefirst https://charts.konstruct.io
+helm repo add konstruct https://charts.konstruct.io
 helm repo update
 
-helm install kubefirst --namespace kubefirst --create-namespace  kubefirst/kubefirst
+helm install kubefirst --namespace kubefirst --create-namespace  konstruct/kubefirst
 
 kubectl -n kubefirst port-forward svc/kubefirst-console 8080:8080
 ```
